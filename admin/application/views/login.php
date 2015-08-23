@@ -1,45 +1,62 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
-    <head>
-        <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0">
-            <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-            <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
-            <?php include 'includes.php'; ?>
-            <title>Login | e-celula</title>
-    </head>
-    <body>
+<?php include 'includes.php'; ?>
 
-        <div id="div_login">
-            <div id="form_login">
+<div class="page-signin">
 
-                <div id="logo_empresa">
-                    <img src="<?php echo base_url(); ?>template/images/logo.png" style="max-height:100px;margin:20px 0px;" />
-                </div>
+    <div class="signin-header">
+        <div class="container text-center">
+            <section class="logo">
+                <a href="#/">admin WEB</a>
+            </section>
+        </div>
+    </div>
+    
+    <div class="signin-body">
+        <div class="container">
+            <div class="form-container">
 
-                <div id="barra_login">
-                    <div id="textlogin">Login</div>
-                </div>
-                <div id="corpologin">
-                    <?php echo form_open('login/verificarLogin'); ?>
+                
 
+                <span class="line-thru">LOGIN</span>
 
-                    <div id="divinput">
-                        <div id="inputicon"><i class="fa fa-user"style="margin-top: 9px; margin-left: 4px;"></i></div>
-                        <input id="inputlogin" type="text" name="cpf" placeholder="CPF"></input>
-                    </div>
+                <form class="form-horizontal">
+                    <fieldset>
+                        <div class="form-group">
+                            <div class="input-group input-group-lg">
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-envelope"></span>
+                                </span>
+                                <input type="email"
+                                       class="form-control"
+                                       placeholder="Email"
+                                       >
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group input-group-lg">
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-lock"></span>
+                                </span>
+                                <input type="password"
+                                       class="form-control"
+                                       placeholder="password"
+                                       >
+                            </div>
+                        </div>
+                        <div class="form-group">
+                        </div>
+                        <div class="form-group">
+                            <a href="#/" class="btn btn-primary btn-lg btn-block">Log in</a>
+                        </div>
+                    </fieldset>
+                </form>
 
-                    <div id="divinput">
-                        <div id="inputicon"><i class="fa fa-key"style="margin-top: 9px;margin-left: 4px;"></i></div>
-                        <input id="inputlogin" type="text" name="senha" placeholder="Senha"></input>
-                    </div>
+                <section>
+                    <p class="text-center"><a href="javascript:;">Forgot your password?</a></p>
+                    <p class="text-center text-muted text-small">Don't have an account yet? <a href="#/pages/signup">Sign up</a></p>
+                </section>
 
-                    <div id="esqueci">Esqueceu a Senha?</div>
-                    <input id="logar" type="submit"/>
-
-                    <?php echo form_close(); ?>
-
-                </div>
             </div>
         </div>
-    </body>
-</html>
+    </div>
+
+</div>

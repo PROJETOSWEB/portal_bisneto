@@ -2,10 +2,11 @@
 
 <div class="page-signin">
 
-    <div class="signin-header">
+    <div class="signin-header" style="padding-bottom: 0px;">
         <div class="container text-center">
             <section class="logo">
-                <img src="<?php echo  base_url(); ?>/template/img/logo-sky-admin.png" alt="" />
+                <img src="<?php echo  base_url(); ?>/template/img/arthur-bisneto.png" width="200" alt="" />
+                <img src="<?php echo  base_url(); ?>/template/img/logo-bisneto.png" width="200" alt="" />
             </section>
         </div>
     </div>

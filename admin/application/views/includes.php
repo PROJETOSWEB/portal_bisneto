@@ -1,9 +1,10 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Web Application</title>
+    <title>SKY•admin 2.0</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <link rel="shortcut icon" href="<?php echo base_url(); ?>template/img/ico-caboco.png" type="image/x-icon" />
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic" rel="stylesheet" type="text/css">
     <!-- needs images, font... therefore can not be part of ui.css -->

@@ -5,7 +5,7 @@
     <div class="signin-header">
         <div class="container text-center">
             <section class="logo">
-                <a href="#/">admin WEB</a>
+                <a href="#/">SKY•admin</a>
             </section>
         </div>
     </div>
@@ -16,7 +16,7 @@
 
                 
 
-                <span class="line-thru">LOGIN</span>
+                <span class="line-thru"> ENTRE NO ADMINISTRADOR</span>
 
                 <form class="form-horizontal">
                     <fieldset>
@@ -27,7 +27,7 @@
                                 </span>
                                 <input type="email"
                                        class="form-control"
-                                       placeholder="Email"
+                                       placeholder="Login"
                                        >
                             </div>
                         </div>
@@ -38,21 +38,20 @@
                                 </span>
                                 <input type="password"
                                        class="form-control"
-                                       placeholder="password"
+                                       placeholder="senha"
                                        >
                             </div>
                         </div>
                         <div class="form-group">
                         </div>
                         <div class="form-group">
-                            <a href="#/" class="btn btn-primary btn-lg btn-block">Log in</a>
+                            <a href="#/" class="btn btn-primary btn-lg btn-block">acessar</a>
                         </div>
                     </fieldset>
                 </form>
 
                 <section>
-                    <p class="text-center"><a href="javascript:;">Forgot your password?</a></p>
-                    <p class="text-center text-muted text-small">Don't have an account yet? <a href="#/pages/signup">Sign up</a></p>
+                    <p class="text-center"><a href="javascript:;">esqueceu a senha?</a></p>
                 </section>
 
             </div>

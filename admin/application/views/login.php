@@ -24,12 +24,11 @@
                         <div class="form-group">
                             <div class="input-group input-group-lg">
                                 <span class="input-group-addon">
-                                    <span class="glyphicon glyphicon-envelope"></span>
+                                    <span class="glyphicon glyphicon-user"></span>
                                 </span>
                                 <input type="email"
                                        class="form-control"
-                                       placeholder="Login"
-                                       >
+                                       placeholder="Login">
                             </div>
                         </div>
                         <div class="form-group">
@@ -39,13 +38,10 @@
                                 </span>
                                 <input type="password"
                                        class="form-control"
-                                       placeholder="senha"
-                                       >
+                                       placeholder="senha">
                             </div>
+                            <p class="text-right" style="padding-right: 5px;"><a href="javascript:;">esqueceu a senha?</a></p>
                         </div>
-                        <div class="form-group">
-                        </div>
-                         <p class="text-center"><a href="javascript:;">esqueceu a senha?</a></p>
                         <div class="form-group">
                             <a href="#/" class="btn btn-primary btn-lg btn-block">acessar</a>
                         </div>

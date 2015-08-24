@@ -5,7 +5,7 @@
     <div class="signin-header">
         <div class="container text-center">
             <section class="logo">
-                <a href="#/">SKY•admin</a>
+                <img src="<?php echo  base_url(); ?>/template/img/logo-sky-admin.png" alt="" />
             </section>
         </div>
     </div>
@@ -44,16 +44,17 @@
                         </div>
                         <div class="form-group">
                         </div>
+                         <p class="text-center"><a href="javascript:;">esqueceu a senha?</a></p>
                         <div class="form-group">
                             <a href="#/" class="btn btn-primary btn-lg btn-block">acessar</a>
                         </div>
                     </fieldset>
                 </form>
 
-                <section>
-                    <p class="text-center"><a href="javascript:;">esqueceu a senha?</a></p>
-                </section>
-
+				    <section class="logo text-center">
+				        <img src="<?php echo  base_url(); ?>/template/img/logo-sky-admin-footer.png" alt="Sistema Adiminstrativo de Sites Online" title="Sistema Adiminstrativo de Sites Online" width="150" alt="" />
+				    </section>
+				
             </div>
         </div>
     </div>

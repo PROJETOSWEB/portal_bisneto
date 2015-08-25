@@ -1,6 +1,6 @@
 <!doctype html>
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>SKY•admin 2.0</title>
@@ -16,6 +16,7 @@
     <!-- end needs images -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>template/css/ui.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>template/css/main.css">
+</head>
 
 
 
@@ -26,12 +27,11 @@
         <![endif]-->
 
         <div data-ng-controller="AppCtrl">
-        <p> MANESCHY </p>
 
             <div data-ng-hide="isSpecificPage()" data-ng-cloak>
-                <section data-ng-include="'../header.php'" id="header" class="top-header"></section>
+                <section data-ng-include="'views/header.php'" id="header" class="top-header"></section>
 
-                <aside data-ng-include="'../nav.php'" id="nav-container"></aside>
+                <aside data-ng-include="'views/nav.php'" id="nav-container"></aside>
             </div>
 
             <div class="view-container">

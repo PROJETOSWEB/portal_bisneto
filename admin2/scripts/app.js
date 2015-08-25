@@ -334,8 +334,8 @@
 }.call(this), function () {
     "use strict";
     angular.module("app", ["ngRoute", "ngAnimate", "ui.bootstrap", "easypiechart", "mgo-angular-wizard", "app.ui.ctrls", "app.ui.services", "app.controllers", "app.directives", "app.form.validation", "app.ui.form.ctrls", "app.ui.form.directives", "app.tables", "app.task", "app.localization", "app.chart.ctrls", "app.chart.directives"]).config(["$routeProvider", function ($routeProvider) {
-            return $routeProvider.when("/", {redirectTo: "/signin"}).
-                    when("/dashboard", {templateUrl: "views/pages/signin.html"}).
+            return $routeProvider.when("/", {redirectTo: "/pages/signin"}).
+                    when("/pages/signin", {templateUrl: "views/pages/signin.html"}).
                     when("/biografia", {templateUrl: "views/admin/biografia.php"}).
                     when("/ui/typography", {templateUrl: "views/ui/typography.html"}).
                     when("/post/posts", {templateUrl: "views/post/posts.php"}).

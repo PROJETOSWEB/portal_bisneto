@@ -17,5 +17,6 @@
 </head>
 
 
+<script src="<?php echo base_url(); ?>template/js/app.js"></script>
 <script src="<?php echo base_url(); ?>template/js/vendor.js"></script>
 <script src="<?php echo base_url(); ?>template/js/ui.js"></script>

@@ -28,11 +28,12 @@ class login extends CI_Controller {
 
     public function verificarLogin() {
 
-        $query = $this->db->get_where("discipulos", array(
-            'login' => $this->input->post('cpf'),
-            'senha' => $this->input->post('senha')
+        $query = $this->db->get_where("usuario", array(
+            'login' => $this->input->post('login'),
+            'senha' => $this->input->post('senha'),
+            'status' => 1
         ));
-
+        
         if ($query->num_rows() > 0) {
 
             
@@ -41,10 +42,10 @@ class login extends CI_Controller {
             $this->session->set_userdata('login', $row->login);
             $this->session->set_userdata('nome', $row->nome);
             $this->session->set_userdata('num', $query->num_rows);
-            $this->session->set_userdata('id', $query->discipulo_id);
+            $this->session->set_userdata('id', $row->usuario_id);
             
             
-            redirect(base_url() . 'index.php?celula', 'refresh');
+            redirect(base_url() . 'index.php?dashboard', 'refresh');
             
 
             return TRUE;

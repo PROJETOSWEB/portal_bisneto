@@ -1,217 +1,176 @@
+<div class="page page-table" data-ng-controller="ListaComprasController">
 
-<div class="page">
+    <a href="#/biografia_adc"><button class="btn btn-success"><span class="glyphicon glyphicon-plus">
+            </span> ADICIONAR BIOGRAFIA</button>
+    </a>
+    <div class="divider"></div>
+    <div class="divider"></div>
 
-    <div class="row">
-        <div class="col-md-6">
-            <section class="panel panel-default">
-                <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Basic Form</strong></div>
-                <div class="panel-body">
-                    <form role="form">
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox"> Check me out
-                            </label>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>      
-                </div>
-            </section>
-        </div>
-        <div class="col-md-6">
-            <section class="panel panel-default">
-                <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Horizontal Form</strong></div>
-                <div class="panel-body">
-                    <form class="form-horizontal" role="form">
-                        <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-                            <div class="col-sm-10">
-                                <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-                            <div class="col-sm-10">
-                                <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox"> Remember me
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10">
-                                <button type="submit" class="btn btn-success">Sign in</button>
-                            </div>
-                        </div>
-                    </form>  
-                </div>
-            </section>
-        </div>
-    </div>
-                
+    <section class="panel panel-default table-dynamic">
 
-    <section class="panel panel-default">
-        <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Inline Form</strong></div>
-        <div class="panel-body">
-            <form class="form-inline" role="form">
-                <div class="form-group">
-                    <label class="sr-only" for="exampleInputEmail2">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
+        <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> BIOGRAFIA</strong></div>
+
+        <div class="table-filters">
+            <div class="row">
+                <div class="col-sm-4 col-xs-6">
+                    <form>
+                        <input type="text"
+                               placeholder="Search..."
+                               class="form-control"
+                               data-ng-model="searchKeywords"
+                               data-ng-keyup="search()">
+                    </form>
                 </div>
-                <div class="form-group">
-                    <label class="sr-only" for="exampleInputPassword2">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
+                <div class="col-sm-3 col-xs-6 filter-result-info">
+                    <span>
+                        Showing {{filteredStores.length}}/{{stores.length}} entries
+                    </span>              
                 </div>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox"> Remember me
-                    </label>
-                </div>
-                <button type="submit" class="btn btn-info">Sign in</button>
-            </form>              
+            </div>
         </div>
+
+        <table  class="table table-bordered table-striped table-responsive">
+            <thead>
+                <tr>
+                    <th><div class="th">
+                Texto
+                <span class="fa fa-angle-up"
+                      data-ng-click=" order('name')"
+                      data-ng-class="{
+                                  active: row == 'name'
+                              }"></span>
+                <span class="fa fa-angle-down"
+                      data-ng-click=" order('-name')"
+                      data-ng-class="{
+                                  active: row == '-name'
+                              }"></span>
+            </div></th>
+            <th><div class="th">
+                Imagem
+                <span class="fa fa-angle-up"
+                      data-ng-click=" order('price')"
+                      data-ng-class="{
+                                  active: row == 'price'
+                              }"></span>
+                <span class="fa fa-angle-down"
+                      data-ng-click=" order('-price')"
+                      data-ng-class="{
+                                  active: row == '-price'
+                              }"></span>
+            </div></th>
+            <th><div class="th">
+                Legenda
+                <span class="fa fa-angle-up"
+                      data-ng-click=" order('sales')"
+                      data-ng-class="{
+                                  active: row == 'sales'
+                              }"></span>
+                <span class="fa fa-angle-down"
+                      data-ng-click=" order('-sales')"
+                      data-ng-class="{
+                                  active: row == '-sales'
+                              }"></span>
+            </div></th>
+            <th><div class="th">
+                AÇÕES
+                <span class="fa fa-angle-up"
+                      data-ng-click=" order('rating')"
+                      data-ng-class="{
+                                  active: row == 'rating'
+                              }"></span>
+                <span class="fa fa-angle-down"
+                      data-ng-click=" order('-rating')"
+                      data-ng-class="{
+                                  active: row == '-rating'
+                              }"></span>
+            </div></th>
+            </tr>
+            </thead>
+
+            <tbody>
+                <tr data-ng-repeat="store in currentPageStores">
+                    <td>{{store.name}}</td>
+                    <td>AHDUAD</td>
+                    <td>DUSAD</td>
+                    <td>{{store.rating}}</td>
+                </tr>
+            </tbody>
+
+
+
+        </table>
+
+        <footer class="table-footer">
+            <div class="row">
+                <div class="col-md-6 page-num-info">
+                    <span>
+                        Show 
+                        <select data-ng-model="numPerPage"
+                                data-ng-options="num for num in numPerPageOpt"
+                                data-ng-change="onNumPerPageChange()">
+                        </select> 
+                        entries per page
+                    </span>
+                </div>
+                <div class="col-md-6 text-right pagination-container">
+                    <pagination class="pagination-sm"
+                                ng-model="currentPage"
+                                total-items="filteredStores.length"
+                                max-size="4"
+                                ng-change="select(currentPage)"
+                                items-per-page="numPerPage"
+                                rotate="false"
+                                previous-text="&lsaquo;" next-text="&rsaquo;"
+                                boundary-links="true">
+
+                    </pagination>
+                </div>
+            </div>
+        </footer>
     </section>
-
-    <section class="panel panel-default">
-        <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Column sizing</strong></div>
-        <div class="panel-body">
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-sm-1">
-                        <input type="text" class="form-control col-sm-1" placeholder="col-sm-1"> 
-                    </div>
-                    <div class="col-sm-11">
-                        <input type="text" class="form-control col-sm-11" placeholder="col-sm-11"> 
-                    </div>                     
-                </div>
-
-                <div class="divider"></div>
-
-                <div class="row">
-                    <div class="col-sm-2">
-                        <input type="text" class="form-control col-sm-2" placeholder="col-sm-2"> 
-                    </div>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control col-sm-10" placeholder="col-sm-10"> 
-                    </div>                     
-                </div>
-
-                <div class="divider"></div>
-
-                <div class="row">
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control col-sm-3" placeholder="col-sm-3"> 
-                    </div>
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control col-sm-9" placeholder="col-sm-9"> 
-                    </div>                     
-                </div>
-
-                <div class="divider"></div>
-
-                <div class="row">
-                    <div class="col-sm-4">
-                        <input type="text" class="form-control col-sm-4" placeholder="col-sm-4"> 
-                    </div>
-                    <div class="col-sm-8">
-                        <input type="text" class="form-control col-sm-8" placeholder="col-sm-8"> 
-                    </div>                     
-                </div>
-
-                <div class="divider"></div>
-
-                <div class="row">
-                    <div class="col-sm-5">
-                        <input type="text" class="form-control col-sm-5" placeholder="col-sm-5"> 
-                    </div>
-                    <div class="col-sm-7">
-                        <input type="text" class="form-control col-sm-7" placeholder="col-sm-7"> 
-                    </div>                     
-                </div>
-
-                <div class="divider"></div>
-
-                <div class="row">
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control col-sm-6" placeholder="col-sm-6"> 
-                    </div>
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control col-sm-6" placeholder="col-sm-6"> 
-                    </div>                     
-                </div>
-
-                <div class="divider"></div>
-
-                <div class="row">
-                    <div class="col-sm-7">
-                        <input type="text" class="form-control col-sm-7" placeholder="col-sm-7"> 
-                    </div>
-                    <div class="col-sm-5">
-                        <input type="text" class="form-control col-sm-5" placeholder="col-sm-5"> 
-                    </div>                     
-                </div>
-
-                <div class="divider"></div>
-
-                <div class="row">
-                    <div class="col-sm-8">
-                        <input type="text" class="form-control col-sm-8" placeholder="col-sm-8"> 
-                    </div>
-                    <div class="col-sm-4">
-                        <input type="text" class="form-control col-sm-4" placeholder="col-sm-4"> 
-                    </div>                     
-                </div>
-
-                <div class="divider"></div>
-
-                <div class="row">
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control col-sm-9" placeholder="col-sm-9"> 
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control col-sm-3" placeholder="col-sm-3"> 
-                    </div>                     
-                </div>
-
-                <div class="divider"></div>
-
-                <div class="row">
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control col-sm-10" placeholder="col-sm-10"> 
-                    </div>
-                    <div class="col-sm-2">
-                        <input type="text" class="form-control col-sm-2" placeholder="col-sm-2"> 
-                    </div>                     
-                </div>
-
-                <div class="divider"></div>
-
-                <div class="row">
-                    <div class="col-sm-11">
-                        <input type="text" class="form-control col-sm-11" placeholder="col-sm-11"> 
-                    </div>
-                    <div class="col-sm-1">
-                        <input type="text" class="form-control col-sm-1" placeholder="col-sm-1"> 
-                    </div>                     
-                </div>
-
-                <div class="divider"></div>
-
-            </div>            
-        </div>
-    </section>
-
 </div>
+
+
+<script>
+    function ListaComprasController($scope,$filter) {
+         $scope.stores = [
+                {name: "Nijiya Market", price: "$$", sales: 292, rating: 4},
+              
+            ], $scope.searchKeywords = "", $scope.filteredStores = [], $scope.row = "", $scope.select = function (page) {
+                var end, start;
+                
+                return start = (page - 1) * $scope.numPerPage, end = start + $scope.numPerPage, $scope.currentPageStores = $scope.filteredStores.slice(start, end)
+            }, $scope.onFilterChange = function () {
+                return $scope.select(1), $scope.currentPage = 1, $scope.row = ""
+            }, $scope.onNumPerPageChange = function () {
+                return $scope.select(1), $scope.currentPage = 1
+            }, $scope.onOrderChange = function () {
+                return $scope.select(1), $scope.currentPage = 1
+            }, $scope.search = function () {
+                return $scope.filteredStores = $filter("filter")($scope.stores, $scope.searchKeywords), $scope.onFilterChange()
+            }, $scope.order = function (rowName) {
+                return $scope.row !== rowName ? ($scope.row = rowName, $scope.filteredStores = $filter("orderBy")($scope.stores, rowName), $scope.onOrderChange()) : void 0
+            }, $scope.numPerPageOpt = [3, 5, 10, 20], $scope.numPerPage = $scope.numPerPageOpt[2], $scope.currentPage = 1, $scope.currentPageStores = [], (init = function () {
+                return $scope.search(), $scope.select($scope.currentPage)
+            })()
+        
+        
+    }
+</script>
+
+<!--<div ng-controller="ListaComprasController">
+    <table>
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Quantidade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in itens">
+                <td><strong>{{ item.produto}}</strong></td>
+                <td>{{ item.quantidade}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>-->

@@ -104,12 +104,12 @@
             <div class="row">
                 <div class="col-md-6 page-num-info">
                     <span>
-                        Show 
+                        exibindo
                         <select data-ng-model="numPerPage"
                                 data-ng-options="num for num in numPerPageOpt"
                                 data-ng-change="onNumPerPageChange()">
                         </select> 
-                        entries per page
+                        itens por página
                     </span>
                 </div>
                 <div class="col-md-6 text-right pagination-container">

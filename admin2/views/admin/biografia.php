@@ -1,6 +1,6 @@
 <div class="page page-table" data-ng-controller="ListaComprasController">
-
-    <a href="#/biografia_adc"><button class="btn btn-success"><span class="glyphicon glyphicon-plus">
+	<br/><br/>
+    <a href="#/biografia_adc"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
             </span> ADICIONAR BIOGRAFIA</button>
     </a>
     <div class="divider"></div>
@@ -15,7 +15,7 @@
                 <div class="col-sm-4 col-xs-6">
                     <form>
                         <input type="text"
-                               placeholder="Search..."
+                               placeholder="procurando por..."
                                class="form-control"
                                data-ng-model="searchKeywords"
                                data-ng-keyup="search()">
@@ -23,7 +23,7 @@
                 </div>
                 <div class="col-sm-3 col-xs-6 filter-result-info">
                     <span>
-                        Showing {{filteredStores.length}}/{{stores.length}} entries
+                        exibindo {{filteredStores.length}} de {{stores.length}} encontrados
                     </span>              
                 </div>
             </div>

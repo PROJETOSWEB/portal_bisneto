@@ -12,16 +12,18 @@
                         </div>
 						
 						<div class="row">
-							<div class="col-sm-6" style="margin-bottom: ;">
-								<img style="width: 50%;" src="images/banner-footer.jpg" alt="" />
+							<div class="col-sm-6">
+								<img style="width: 50%; border-radius: 5px;" src="images/banner-footer.jpg" alt="" />
 							</div>
 						</div>
+						
                         <div class="divider"></div>
                         <div class="divider"></div>
+                        
                         <div class="row">
                             
                             <div class="col-sm-6">
-                                <input type="file" title="SELECIONE A IMAGEM" data-ui-file-upload class="btn-info">   
+                                <input type="file" title="SELECIONE A IMAGEM" data-ui-file-upload class="btn-reverse">   
                             </div>
 
                         </div>

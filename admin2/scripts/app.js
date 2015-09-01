@@ -351,6 +351,7 @@
                     when("/biografia_adc", {templateUrl: "views/admin/biografia_adc.php"}).
                     when("/biografia", {templateUrl: "views/admin/biografia.php"}).
                     when("/opiniao", {templateUrl: "views/admin/opiniao.php"}).
+                    when("/opiniao_adc", {templateUrl: "views/admin/opiniao_adc.php"}).
                     when("/depmidia", {templateUrl: "views/admin/depmidia.php"}).
                     when("/galeria", {templateUrl: "views/admin/galeria.php"}).
                     when("/salaimprensa", {templateUrl: "views/admin/salaimprensa.php"}).

@@ -17,7 +17,7 @@
                         </div>
 						
 						<div class="row">
-							<div class="col-sm-6" style="margin-bottom: ;">
+							<div class="col-sm-6">
 								<img style="width: 50%;" src="images/banner-footer.jpg" alt="" />
 							</div>
 						</div>

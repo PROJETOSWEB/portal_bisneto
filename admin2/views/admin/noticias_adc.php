@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-6">
             <section class="panel panel-default">
-                <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> CADASTRO OPINIÃO</strong></div>
+                <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> CADASTRO NOTÍCIAS</strong></div>
                 <div class="panel-body">
                     <form role="form">
                     		
@@ -29,7 +29,7 @@
 		        </div>                    	
                     	
                     	<div class="form-group">
-                    		<label for="exampleInputEmail1">TÍTULO</label>
+                    		<label for="exampleInputEmail1">TÍTULO DA NOTÍCIA</label>
                     	    <input tooltip="Título do seu artigo" type="text" class="form-control" data-placement="top">
                     	</div>
                     	
@@ -56,16 +56,14 @@
 								<input type="file" title="SELECIONE A IMAGEM" data-ui-file-upload class="btn-reverse">
 							</div>
                         </div>
-                        
 						<hr/>
 						<label style="margin-right: 20px;" for="exampleInputEmail1">PUBLICAR?</label>
 						<label class="switch switch-success">
 							<input type="checkbox" checked><i></i>
 						</label>
 						
-						<hr/>
-						<div class="divider"></div>
-						
+                        <hr/>
+                        <div class="divider"></div>
 
                         <button type="submit" class="btn btn-primary">SALVAR </button>
                     </form>      

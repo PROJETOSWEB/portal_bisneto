@@ -1,14 +1,14 @@
 <div class="page page-table" data-ng-controller="ListaComprasController">
 	<br/><br/>
-    <a href="#/informativo_adc"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
-            </span> INFORMATIVO</button>
+    <a href="#/usuarios_adc"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
+            </span> USUÁRIOS</button>
     </a>
     <div class="divider"></div>
     <div class="divider"></div>
 
     <section class="panel panel-default table-dynamic">
 
-        <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> INFORMATIVOS</strong></div>
+        <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> USUÁRIOS DO SISTEMA</strong></div>
 
         <div class="table-filters">
             <div class="row">
@@ -23,7 +23,7 @@
                 </div>
                 <div class="col-sm-3 col-xs-6 filter-result-info">
                     <span>
-                        exibindo {{filteredStores.length}} arquivos de {{stores.length}} encontrados
+                        exibindo {{filteredStores.length}} usuários de {{stores.length}} encontrados
                     </span>              
                 </div>
             </div>
@@ -33,7 +33,7 @@
             <thead>
                 <tr>
                     <th><div class="th">
-                Nº DA EDIÇÃO
+                NOME
                 <span class="fa fa-angle-up"
                       data-ng-click=" order('name')"
                       data-ng-class="{
@@ -47,7 +47,7 @@
             </div></th>
             
             <th><div class="th" style="text-align: center;">
-                POSTADO POR
+                NIVEL
                 <span class="fa fa-angle-up"
                       data-ng-click=" order('sales')"
                       data-ng-class="{
@@ -110,7 +110,7 @@
                                 data-ng-options="num for num in numPerPageOpt"
                                 data-ng-change="onNumPerPageChange()">
                         </select> 
-                        arquivos por página
+                        links por página
                     </span>
                 </div>
                 <div class="col-md-6 text-right pagination-container">

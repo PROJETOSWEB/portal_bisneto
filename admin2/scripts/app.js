@@ -350,15 +350,24 @@
                     when("/dashboard", {templateUrl: "views/dashboard.html"}).
                     when("/biografia_adc", {templateUrl: "views/admin/biografia_adc.php"}).
                     when("/biografia", {templateUrl: "views/admin/biografia.php"}).
-                    when("/opiniao", {templateUrl: "views/admin/opiniao.php"}).
                     when("/opiniao_adc", {templateUrl: "views/admin/opiniao_adc.php"}).
+                    when("/opiniao", {templateUrl: "views/admin/opiniao.php"}).
+                    when("/depmidia_adc", {templateUrl: "views/admin/depmidia_adc.php"}).
                     when("/depmidia", {templateUrl: "views/admin/depmidia.php"}).
+                    when("/videos_adc", {templateUrl: "views/admin/videos_adc.php"}).
+                    when("/fotos_adc", {templateUrl: "views/admin/fotos_adc.php"}).
                     when("/galeria", {templateUrl: "views/admin/galeria.php"}).
+                    when("/salaimprensa_adc", {templateUrl: "views/admin/salaimprensa_adc.php"}).
                     when("/salaimprensa", {templateUrl: "views/admin/salaimprensa.php"}).
+                    when("/noticias_adc", {templateUrl: "views/admin/noticias_adc.php"}).
                     when("/noticias", {templateUrl: "views/admin/noticias.php"}).
+                    when("/informativo_adc", {templateUrl: "views/admin/informativo_adc.php"}).
                     when("/informativo", {templateUrl: "views/admin/informativo.php"}).
+                    when("/banner_adc", {templateUrl: "views/admin/banner_adc.php"}).
                     when("/banner", {templateUrl: "views/admin/banner.php"}).
+                    when("/links_adc", {templateUrl: "views/admin/links_adc.php"}).
                     when("/links", {templateUrl: "views/admin/links.php"}).
+                    when("/usuarios_adc", {templateUrl: "views/admin/usuarios_adc.php"}).
                     when("/usuarios", {templateUrl: "views/admin/usuarios.php"}).
                     when("/ui/typography", {templateUrl: "views/ui/typography.html"}).
                     when("/post/posts", {templateUrl: "views/post/posts.php"}).

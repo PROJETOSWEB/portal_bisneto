@@ -72,6 +72,19 @@
                               }"></span>
             </div></th>
             <th><div class="th" style="text-align: center;">
+                PUBLICADO?
+                <span class="fa fa-angle-up"
+                      data-ng-click=" order('rating')"
+                      data-ng-class="{
+                                  active: row == 'rating'
+                              }"></span>
+                <span class="fa fa-angle-down"
+                      data-ng-click=" order('-rating')"
+                      data-ng-class="{
+                                  active: row == '-rating'
+                              }"></span>
+            </div></th>
+            <th><div class="th" style="text-align: center;">
                 EDITAR
                 <span class="fa fa-angle-up"
                       data-ng-click=" order('rating')"
@@ -104,7 +117,7 @@
                 <tr data-ng-repeat="store in currentPageStores">
                     <td><a href="#">{{store.name}}</a></td>
                     <td style="text-align: center;">AHDUAD</td>
-                    <td style="text-align: center;">{{store.rating}}</td>
+                    <td style="text-align: center;">{{store.rating}}</td><td style="text-align: center;"><a href="#"><img src="images/sim.png" alt="" /></a></td> <!-- aqui é só trocar o SIM pelo NAO, QUE MUDA O STATUS-->
                     <td style="text-align: center;"><a href="#"><img src="images/editar.png" alt="" /></a></td>
                     <td style="text-align: center;"><a href="#"><img src="images/excluir.png" alt="" /></a></td>
                 </tr>

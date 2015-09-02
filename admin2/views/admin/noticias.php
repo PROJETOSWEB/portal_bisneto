@@ -1,21 +1,21 @@
 <div class="page page-table" data-ng-controller="ListaComprasController">
 	<br/><br/>
-    <a href="#/informativo_adc"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
-            </span> INFORMATIVO</button>
+    <a href="#/noticias_adc"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
+            </span> NOTÍCIAS</button>
     </a>
     <div class="divider"></div>
     <div class="divider"></div>
 
     <section class="panel panel-default table-dynamic">
 
-        <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> INFORMATIVOS</strong></div>
+        <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> NOTÍCIAS</strong></div>
 
         <div class="table-filters">
             <div class="row">
                 <div class="col-sm-4 col-xs-6">
                     <form>
                         <input type="text"
-                               placeholder="procurando pela edição..."
+                               placeholder="procurando por..."
                                class="form-control"
                                data-ng-model="searchKeywords"
                                data-ng-keyup="search()">
@@ -23,7 +23,7 @@
                 </div>
                 <div class="col-sm-3 col-xs-6 filter-result-info">
                     <span>
-                        exibindo {{filteredStores.length}} arquivos de {{stores.length}} encontrados
+                        exibindo {{filteredStores.length}} notícias de {{stores.length}} encontrados
                     </span>              
                 </div>
             </div>
@@ -33,7 +33,7 @@
             <thead>
                 <tr>
                     <th><div class="th">
-                Nº DA EDIÇÃO
+                TÍTULO DA NOTÍCIA
                 <span class="fa fa-angle-up"
                       data-ng-click=" order('name')"
                       data-ng-class="{
@@ -45,7 +45,19 @@
                                   active: row == '-name'
                               }"></span>
             </div></th>
-            
+            <th><div class="th" style="text-align: center;">
+                DATA
+                <span class="fa fa-angle-up"
+                      data-ng-click=" order('price')"
+                      data-ng-class="{
+                                  active: row == 'price'
+                              }"></span>
+                <span class="fa fa-angle-down"
+                      data-ng-click=" order('-price')"
+                      data-ng-class="{
+                                  active: row == '-price'
+                              }"></span>
+            </div></th>
             <th><div class="th" style="text-align: center;">
                 POSTADO POR
                 <span class="fa fa-angle-up"
@@ -57,6 +69,19 @@
                       data-ng-click=" order('-sales')"
                       data-ng-class="{
                                   active: row == '-sales'
+                              }"></span>
+            </div></th>
+            <th><div class="th" style="text-align: center;">
+                PUBLICADO?
+                <span class="fa fa-angle-up"
+                      data-ng-click=" order('rating')"
+                      data-ng-class="{
+                                  active: row == 'rating'
+                              }"></span>
+                <span class="fa fa-angle-down"
+                      data-ng-click=" order('-rating')"
+                      data-ng-class="{
+                                  active: row == '-rating'
                               }"></span>
             </div></th>
             <th><div class="th" style="text-align: center;">
@@ -91,7 +116,9 @@
             <tbody>
                 <tr data-ng-repeat="store in currentPageStores">
                     <td><a href="#">{{store.name}}</a></td>
+                    <td style="text-align: center;">AHDUAD</td>
                     <td style="text-align: center;">{{store.rating}}</td>
+                    <td style="text-align: center;"><a href="#"><img src="images/sim.png" alt="" /></a></td> <!-- aqui é só trocar o SIM pelo NAO, QUE MUDA O STATUS-->
                     <td style="text-align: center;"><a href="#"><img src="images/editar.png" alt="" /></a></td>
                     <td style="text-align: center;"><a href="#"><img src="images/excluir.png" alt="" /></a></td>
                 </tr>
@@ -110,7 +137,7 @@
                                 data-ng-options="num for num in numPerPageOpt"
                                 data-ng-change="onNumPerPageChange()">
                         </select> 
-                        arquivos por página
+                        notícias por página
                     </span>
                 </div>
                 <div class="col-md-6 text-right pagination-container">

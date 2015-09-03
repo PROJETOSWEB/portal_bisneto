@@ -13,7 +13,7 @@ $executa_insert = mysql_query($insert)or die(mysql_error());
 if ($executa_insert) {
     ?>
     <script>
-        windows.href = '../views/admin/#/links_adc';
+         window.location.href = '#/links_adc?ID=1';
     </script>
 
     <?php

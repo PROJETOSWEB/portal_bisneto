@@ -367,6 +367,7 @@
                     when("/banner", {templateUrl: "views/admin/banner.php"}).
                     when("/links_adc", {templateUrl: "views/admin/links_adc.php"}).
                     when("/links", {templateUrl: "views/admin/links.php"}).
+                    when("/salva_links", {templateUrl: "php/salva_links.php"}).
                     when("/usuarios_adc", {templateUrl: "views/admin/usuarios_adc.php"}).
                     when("/usuarios", {templateUrl: "views/admin/usuarios.php"}).
                     when("/ui/typography", {templateUrl: "views/ui/typography.html"}).

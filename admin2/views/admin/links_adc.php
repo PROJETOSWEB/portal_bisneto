@@ -4,7 +4,7 @@
             <section class="panel panel-default">
                 <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> CADASTRO de LINKS ÚTEIS</strong></div>
                 <div class="panel-body">
-                    <form role="form" action="../../php/salva_links.php" method="POST">
+                    <form role="form" action="#/salva_links" method="POST">
                     
 			        <div class="panel-body" data-ng-controller="DatepickerDemoCtrl" style="margin-bottom: 30px;">
 			            <div class="row">

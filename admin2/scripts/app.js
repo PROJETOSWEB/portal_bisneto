@@ -58,7 +58,7 @@
                             return colors = void 0 === attrs.barColors || "" === attrs.barColors ? null : JSON.parse(attrs.barColors), options = {element: ele[0], data: data, xkey: attrs.xkey, ykeys: JSON.parse(attrs.ykeys), labels: JSON.parse(attrs.labels), barColors: colors || ["#0b62a4", "#7a92a3", "#4da74d", "#afd8f8", "#edc240", "#cb4b4b", "#9440ed"], stacked: attrs.stacked || null, resize: !0}, new Morris.Bar(options);
                         case"donut":
                             return colors = void 0 === attrs.colors || "" === attrs.colors ? null : JSON.parse(attrs.colors), options = {element: ele[0], data: data, colors: colors || ["#0B62A4", "#3980B5", "#679DC6", "#95BBD7", "#B0CCE1", "#095791", "#095085", "#083E67", "#052C48", "#042135"], resize: !0}, attrs.formatter && (func = new Function("y", "data", attrs.formatter), options.formatter = func), new Morris.Donut(options)
-                        }
+                    }
                 }}
         }])
 }.call(this), function () {
@@ -168,20 +168,19 @@
         }])
 }.call(this), function () {
     "use strict";
-    angular.module("app.tables", []).controller("tableCtrl", ["$scope", "$filter", function ($scope, $filter){
+    angular.module("app.tables", []).controller("tableCtrl", ["$scope", "$filter", function ($scope, $filter) {
             var init;
             return $scope.stores = [
                 {name: "Nijiya Market", price: "$$", sales: 292, rating: 4},
-                {name: "Eat On Monday Truck", price: "$", sales: 119, rating: 4.3}, 
-                {name: "Tea Era", price: "$", sales: 874, rating: 4}, 
-                {name: "Rogers Deli", price: "$", sales: 347, rating: 4.2}, 
+                {name: "Eat On Monday Truck", price: "$", sales: 119, rating: 4.3},
+                {name: "Tea Era", price: "$", sales: 874, rating: 4},
+                {name: "Rogers Deli", price: "$", sales: 347, rating: 4.2},
                 {name: "MoBowl", price: "$$$", sales: 24, rating: 4.6},
-                {name: "The Milk Pail Market", price: "$", sales: 543, rating: 4.5}, 
-                {name: "Nob Hill Foods", price: "$$", sales: 874, rating: 4}, 
-                                
+                {name: "The Milk Pail Market", price: "$", sales: 543, rating: 4.5},
+                {name: "Nob Hill Foods", price: "$$", sales: 874, rating: 4},
             ], $scope.searchKeywords = "", $scope.filteredStores = [], $scope.row = "", $scope.select = function (page) {
                 var end, start;
-                
+
                 return start = (page - 1) * $scope.numPerPage, end = start + $scope.numPerPage, $scope.currentPageStores = $scope.filteredStores.slice(start, end)
             }, $scope.onFilterChange = function () {
                 return $scope.select(1), $scope.currentPage = 1, $scope.row = ""
@@ -224,7 +223,7 @@
                         return $scope.statusFilter = {completed: !1};
                     case"completed":
                         return $scope.statusFilter = {completed: !0}
-                    }
+                }
             }, $scope.add = function () {
                 var newTask;
                 return newTask = $scope.newTask.trim(), 0 !== newTask.length ? (tasks.push({title: newTask, completed: !1}), logger.logSuccess('New task: "' + newTask + '" added'), taskStorage.put(tasks), $scope.newTask = "", $scope.remainingCount++) : void 0
@@ -264,10 +263,14 @@
                         return logger.logWarning("Warning! Best check yo self, you're not looking too good.");
                     case"error":
                         return logger.logError("Oh snap! Change a few things up and try submitting again.")
-                    }
+                }
             }
         }]).controller("AlertDemoCtrl", ["$scope", function ($scope) {
-            return $scope.alerts = [{type: "success", msg: "Well done! You successfully read this important alert message."}, {type: "info", msg: "Heads up! This alert needs your attention, but it is not super important."}, {type: "warning", msg: "Warning! Best check yo self, you're not looking too good."}, {type: "danger", msg: "Oh snap! Change a few things up and try submitting again."}], $scope.addAlert = function () {
+            return $scope.alerts = [
+                {type: "success", msg: "Well done! You successfully read this important alert message."},
+                {type: "info", msg: "Heads up! This alert needs your attention, but it is not super important."},
+                {type: "warning", msg: "Warning! Best check yo self, you're not looking too good."},
+                {type: "danger", msg: "Oh snap! Change a few things up and try submitting again."}], $scope.addAlert = function () {
                 var num, type;
                 switch (num = Math.ceil(4 * Math.random()), type = void 0, num) {
                     case 0:
@@ -345,7 +348,7 @@
     "use strict";
     angular.module("app", ["ngRoute", "ngAnimate", "ui.bootstrap", "easypiechart", "mgo-angular-wizard", "app.ui.ctrls", "app.ui.services", "app.controllers", "app.directives", "app.form.validation", "app.ui.form.ctrls", "app.ui.form.directives", "app.tables", "app.task", "app.localization", "app.chart.ctrls", "app.chart.directives"]).config(["$routeProvider", function ($routeProvider) {
             return $routeProvider.when("/", {redirectTo: "/pages/signin"}).
-                                        when("/dashboard", {templateUrl: "views/dashboard.html"}).
+                    when("/dashboard", {templateUrl: "views/dashboard.html"}).
                     //when("/pages/signin", {templateUrl: "views/pages/signin.html"}).
                     when("/dashboard", {templateUrl: "views/dashboard.html"}).
                     when("/biografia_adc", {templateUrl: "views/admin/biografia_adc.php"}).
@@ -367,7 +370,7 @@
                     when("/banner", {templateUrl: "views/admin/banner.php"}).
                     when("/links_adc", {templateUrl: "views/admin/links_adc.php"}).
                     when("/links", {templateUrl: "views/admin/links.php"}).
-                    when("/salva_links", {templateUrl: "php/salva_links.php"}).
+                    when("/excluir_links", {templateUrl: "php/excluir_links.php"}).
                     when("/usuarios_adc", {templateUrl: "views/admin/usuarios_adc.php"}).
                     when("/usuarios", {templateUrl: "views/admin/usuarios.php"}).
                     when("/ui/typography", {templateUrl: "views/ui/typography.html"}).
@@ -420,7 +423,7 @@
                                 return $element.addClass("body-special");
                             case"/tasks":
                                 return $element.addClass("body-tasks")
-                            }
+                        }
                     }, addBg($location.path()), $scope.$watch(path, function (newVal, oldVal) {
                         return newVal !== oldVal ? addBg($location.path()) : void 0
                     })

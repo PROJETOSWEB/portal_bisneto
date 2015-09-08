@@ -385,7 +385,8 @@
 
     <!-- Alert -->
     <section class="panel panel-default">
-        <div class="panel-heading"><span class="glyphicon glyphicon-th"></span> Alerts</div>
+        <div class="panel-heading">
+            <span class="glyphicon glyphicon-th"></span> Alerts</div>
         <div class="panel-body" data-ng-controller="AlertDemoCtrl">
             <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
             <button class='btn btn-primary' ng-click="addAlert()">Add Alert</button>

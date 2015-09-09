@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 08-Set-2015 às 05:47
+-- Generation Time: 09-Set-2015 às 04:47
 -- Versão do servidor: 5.6.15-log
 -- PHP Version: 5.5.8
 
@@ -129,10 +129,10 @@ CREATE TABLE IF NOT EXISTS `opiniao` (
   `texto` longtext NOT NULL,
   `texto_detalhe` varchar(45) DEFAULT NULL,
   `foto` varchar(45) NOT NULL DEFAULT '',
-  `publicar` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '1-ATIVO 2-INATIVO',
+  `publicar` int(10) unsigned DEFAULT NULL COMMENT '1-ATIVO 2-INATIVO',
   `usuario_id` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`opiniao_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
 
 --
 -- Extraindo dados da tabela `opiniao`
@@ -140,7 +140,21 @@ CREATE TABLE IF NOT EXISTS `opiniao` (
 
 INSERT INTO `opiniao` (`opiniao_id`, `data`, `titulo`, `texto`, `texto_detalhe`, `foto`, `publicar`, `usuario_id`) VALUES
 (1, '7', 'jkjkjk', 'ojk', 'ljkj', '2.jpg', 1, 1),
-(2, 'DASD', 'TITULO TESTE', 'DASHUDHAUXHASUHXUAS', 'SAX', 'boleto2.png', 1, 1);
+(2, 'DASD', 'TITULO TESTE', 'DASHUDHAUXHASUHXUAS', 'SAX', 'boleto2.png', 1, 1),
+(3, 'j', 'j', 'j', 'j', '2.jpg', 0, 1),
+(4, 'j', 'j', 'j', 'j', '2.jpg', 0, 1),
+(5, 'j', 'j', 'j', 'j', '2.jpg', 0, 1),
+(6, 'j', 'j', 'j', 'j', '2.jpg', 0, 1),
+(7, 'j', 'j', 'j', 'j', '2.jpg', 0, 1),
+(8, 'j', 'j', 'j', 'j', '2.jpg', 0, 1),
+(9, 'j', 'j', 'j', 'j', '2.jpg', 0, 1),
+(10, 'j', 'j', 'j', 'j', '2.jpg', 0, 1),
+(11, 'j', 'j', 'j', 'j', '2.jpg', 0, 1),
+(12, 'j', 'j', 'j', 'j', '2.jpg', 0, 1),
+(13, 'j', 'j', 'j', 'j', '2.jpg', 0, 1),
+(14, 'j', 'j', 'j', 'j', '2.jpg', 0, 1),
+(15, 'j', 'j', 'j', 'j', '2.jpg', 0, 1),
+(16, 'h', 'hh', 'hh', 'hhh', '2.jpg', 2, 1);
 
 -- --------------------------------------------------------
 

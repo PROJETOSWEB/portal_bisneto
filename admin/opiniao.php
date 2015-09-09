@@ -10,6 +10,26 @@
     <section class="wrapper">
 
         <div class="col-lg-6">
+            
+               <?php
+            if (isset($_GET['respt'])) {
+
+                if ($_GET['respt'] == "sucesso") {
+                    ?>
+
+                    <div class="alert alert-success fade in">
+                        <button data-dismiss="alert" class="close close-sm" type="button">
+                            <i class="fa fa-times"></i>
+                        </button>
+                        <strong>SUCESSO!</strong> Opinião cadastrada com sucesso!
+                    </div>
+                    <?php
+                }
+            }
+            ?>
+
+            
+            
             <section class="panel">
                 <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> CADASTRO DE OPINIÃO</strong></div>
                 <div class="panel-body">

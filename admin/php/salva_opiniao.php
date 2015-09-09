@@ -9,6 +9,12 @@ $texto_detalhe = $_POST['texto_detalhe'];
 $img = $_FILES['img'];
 $publicar = $_POST['publicar'];
 
+if ($publicar == "") {
+    
+    $publicar = 2;
+    
+}
+
 
 $fileName = $_FILES["img"]["name"];
 $pathAndName = "../imagens/biografia/" . $fileName;
@@ -16,7 +22,7 @@ $fileTmpLoc = $_FILES["img"]["tmp_name"];
 $moveResult = move_uploaded_file($fileTmpLoc, $pathAndName);
 
 
-$insert = "INSERT INTO opiniao (data,titulo, texto, texto_detalhe, foto, publicar, usuario_id)VALUES('$data', '$titulo', '$texto', '$texto_detalhe', '$fileName', $publicar,  1)";
+ $insert = "INSERT INTO opiniao (data,titulo, texto, texto_detalhe, foto, publicar, usuario_id)VALUES('$data', '$titulo', '$texto', '$texto_detalhe', '$fileName', $publicar,  1)";
 $executa_insert = mysql_query($insert)or die(mysql_error());
 
 

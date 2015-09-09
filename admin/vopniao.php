@@ -70,28 +70,29 @@
                                                 <td><?php echo $dados_array['data']; ?></td>
                                                 <td><?php echo $dados_array['nome']; ?></td>
                                                 <td>
-                                                    
-                                                    <?php 
-                                                    
-                                                    if($dados_array['publicar']== 1){
+
+                                                    <?php
+                                                    if ($dados_array['publicar'] == 1) {
                                                         ?>
-                                                    <img src="img/sim.png" alt="">
+                                                        <img src="img/sim.png" alt="">
+                                                        <?php
+                                                    } else {
+                                                        ?>
+                                                        <img src="img/nao.png" alt="">
                                                         <?php
                                                     }
-                                                    
-                                                    
                                                     ?>
-                                                    
-                                                    
+
+
                                                 </td>
-                                              
+
                                                 <td><a href="#"><img src="img/editar.png" alt="" /></a></td>
                                                 <td><a href="#"><img src="img/excluir.png" alt="" /></a></td>
                                             </tr>
 
-                                            <?php
-                                        }
-                                        ?>
+    <?php
+}
+?>
 
                                     </tbody>
 

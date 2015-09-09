@@ -44,61 +44,49 @@
                                 <table  class="display table table-bordered table-striped" id="example">
                                     <thead>
                                         <tr>
-                                            <th>Rendering engine</th>
-                                            <th>Browser</th>
-                                            <th>Platform(s)</th>
-                                            <th class="hidden-phone">Engine version</th>
-                                            <th class="hidden-phone">CSS grade</th>
+                                            <th style="text-align: center;">NOME</th>
+                                            <th style="text-align: center;">NIVEL</th>
+                                            <th style="text-align: center;">EDITAR</th>
+                                            <th style="text-align: center;">EXCLUIR</th>
+
                                         </tr>
                                     </thead>
                                     <tbody>
 
 
-                                        <tr class="gradeC">
-                                            <td>Tasman</td>
-                                            <td>Internet Explorer 5.1</td>
-                                            <td>Mac OS 7.6-9</td>
-                                            <td class="center hidden-phone">1</td>
-                                            <td class="center hidden-phone">C</td>
-                                        </tr>
-                                        <tr class="gradeC">
-                                            <td>Tasman</td>
-                                            <td>Internet Explorer 5.2</td>
-                                            <td>Mac OS 8-X</td>
-                                            <td class="center hidden-phone">1</td>
-                                            <td class="center hidden-phone">C</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Misc</td>
-                                            <td>NetFront 3.1</td>
-                                            <td>Embedded devices</td>
-                                            <td class="center hidden-phone">-</td>
-                                            <td class="center hidden-phone">C</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Misc</td>
-                                            <td>NetFront 3.4</td>
-                                            <td>Embedded devices</td>
-                                            <td class="center hidden-phone">-</td>
-                                            <td class="center hidden-phone">A</td>
-                                        </tr>
-                                        <tr class="gradeX">
-                                            <td>Misc</td>
-                                            <td>Dillo 0.8</td>
-                                            <td>Embedded devices</td>
-                                            <td class="center hidden-phone">-</td>
-                                            <td class="center hidden-phone">X</td>
-                                        </tr>
+
+
+
+                                        <?php
+                                        $seleciona = "SELECT * FROM usuario";
+
+                                        $seleciona_executa = mysql_query($seleciona)or die(mysql_error());
+
+                                        while ($dados_array = mysql_fetch_array($seleciona_executa)) {
+                                            ?>
+
+                                            <tr class="gradeA" style="text-align: center;">
+                                                <td><?php echo $dados_array['nome']; ?></td>
+                                                <td><?php echo $dados_array['nivel']; ?></td>
+                                                
+
+                                                <td><a href="#"><img src="img/editar.png" alt="" /></a></td>
+                                                <td><a href="#"><img src="img/excluir.png" alt="" /></a></td>
+                                            </tr>
+
+                                            <?php
+                                        }
+                                        ?>
+
 
 
                                     </tbody>
                                     <tfoot>
                                         <tr>
-                                            <th>Rendering engine</th>
-                                            <th>Browser</th>
-                                            <th>Platform(s)</th>
-                                            <th class="hidden-phone">Engine version</th>
-                                            <th class="hidden-phone">CSS grade</th>
+                                            <th style="text-align: center;">NOME</th>
+                                            <th style="text-align: center;">NIVEL</th>
+                                            <th style="text-align: center;">EDITAR</th>
+                                            <th style="text-align: center;">EXCLUIR</th>
                                         </tr>
                                     </tfoot>
                                 </table>

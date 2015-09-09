@@ -16,19 +16,22 @@
 <link href="css/style-responsive.css" rel="stylesheet" />
 
 
-</br></br>
+</br>
 <section id="container" class="">
 
+
     <section id="main-content">
+
+
         <section class="wrapper site-min-height">
 
-            <a href="salaimprensa.php"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
-                    </span> ARQUIVO</button>
-            </a>
+            <h1 style="font-weight: 900;"><span class="glyphicon glyphicon-th"></span> GALERIAS</h1>
+            <hr style="border: 1px solid #333;">
+            <div class="divider"></div>
+            <div class="divider"></div>
 
             </br>
             </br>   
-
 
             <div class="row">
                 <div class="col-lg-12">
@@ -36,7 +39,9 @@
                     <section class="panel">
 
                         <header class="panel-heading">
-                            SALA DE IMPRENSA
+                            <a href="salaimprensa.php"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
+                                    </span> ARQUIVO</button>
+                            </a>
                         </header>
 
                         <div class="panel-body">
@@ -112,6 +117,96 @@
     </section>
     <!--main content end-->
 
+    
+    
+     <section id="main-content">
+
+
+        <section class="wrapper site-min-height">
+
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <section class="panel">
+
+                        <header class="panel-heading">
+                            <a href="salaimprensa.php"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
+                                    </span> ARQUIVO</button>
+                            </a>
+                        </header>
+
+                        <div class="panel-body">
+                            <div class="adv-table">
+                                <table  class="display table table-bordered table-striped" id="example">
+                                    <thead>
+                                        <tr>
+                                            <th>Rendering engine</th>
+                                            <th>Browser</th>
+                                            <th>Platform(s)</th>
+                                            <th class="hidden-phone">Engine version</th>
+                                            <th class="hidden-phone">CSS grade</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+
+                                        <tr class="gradeC">
+                                            <td>Tasman</td>
+                                            <td>Internet Explorer 5.1</td>
+                                            <td>Mac OS 7.6-9</td>
+                                            <td class="center hidden-phone">1</td>
+                                            <td class="center hidden-phone">C</td>
+                                        </tr>
+                                        <tr class="gradeC">
+                                            <td>Tasman</td>
+                                            <td>Internet Explorer 5.2</td>
+                                            <td>Mac OS 8-X</td>
+                                            <td class="center hidden-phone">1</td>
+                                            <td class="center hidden-phone">C</td>
+                                        </tr>
+                                        <tr class="gradeA">
+                                            <td>Misc</td>
+                                            <td>NetFront 3.1</td>
+                                            <td>Embedded devices</td>
+                                            <td class="center hidden-phone">-</td>
+                                            <td class="center hidden-phone">C</td>
+                                        </tr>
+                                        <tr class="gradeA">
+                                            <td>Misc</td>
+                                            <td>NetFront 3.4</td>
+                                            <td>Embedded devices</td>
+                                            <td class="center hidden-phone">-</td>
+                                            <td class="center hidden-phone">A</td>
+                                        </tr>
+                                        <tr class="gradeX">
+                                            <td>Misc</td>
+                                            <td>Dillo 0.8</td>
+                                            <td>Embedded devices</td>
+                                            <td class="center hidden-phone">-</td>
+                                            <td class="center hidden-phone">X</td>
+                                        </tr>
+
+
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Rendering engine</th>
+                                            <th>Browser</th>
+                                            <th>Platform(s)</th>
+                                            <th class="hidden-phone">Engine version</th>
+                                            <th class="hidden-phone">CSS grade</th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <!-- page end-->
+        </section>
+    </section>
+    
 </section>
 
 <!--main content start-->

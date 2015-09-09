@@ -3,7 +3,7 @@
 <div class="page page-table" data-ng-controller="ListaComprasController">
 	
     <h1 style="font-weight: 900;"><span class="glyphicon glyphicon-th"></span> GALERIAS</h1>
-    <hr/ style="border: 1px solid #333;">
+    <hr style="border: 1px solid #333;">
     <div class="divider"></div>
     <div class="divider"></div>
 

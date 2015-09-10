@@ -168,7 +168,7 @@ a, a:hover, a:focus {
     width: 210px;
     height: 100%;
     position: fixed;
-    background: #2a3542;
+    background: #423627;
 }
 
 #sidebar ul li {
@@ -290,7 +290,7 @@ ul.sidebar-menu li a{
 }
 
 ul.sidebar-menu li a.active, ul.sidebar-menu li a:hover, ul.sidebar-menu li a:focus {
-    background: #35404d;
+    background: #726658;
     color: #fff;
     display: block;
     border-radius: 4px;
@@ -314,7 +314,7 @@ ul.sidebar-menu li a:hover i, ul.sidebar-menu li a:focus i {
 }
 
 ul.sidebar-menu li a.active i {
-    color: #FF6C60;
+    color: #EFA031;
 }
 
 
@@ -339,6 +339,7 @@ ul.sidebar-menu li a.active i {
     left: 0;
     right: 0;
     z-index: 1002;
+	color: #000000;
 }
 
 .white-bg {

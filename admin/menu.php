@@ -80,6 +80,9 @@
                     <span>Usuários</span>
                 </a>
             </li>
+            <hr/>
+            <li>
+             <img src="img/logo-sky-admin.png" width="70%" style="align-content: center;" alt="" />
 
 
 

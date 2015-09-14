@@ -22,12 +22,14 @@
     <section id="main-content">
         <section class="wrapper site-min-height">
 
-            <a href="opiniao.php"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
-                    </span> OPINIÃO</button>
-            </a>
-
-            </br>
-            </br>   
+            <h1 style="font-weight: 900;"><span class="glyphicon glyphicon-th"></span> OPINIÃO</h1>
+                        <hr style="border: 1px solid #333;">
+                        <div class="divider"></div>
+                        <div class="divider"></div>
+            
+                        </br>
+                        </br>   
+            
 
 
             <div class="row">
@@ -36,7 +38,9 @@
                     <section class="panel">
 
                         <header class="panel-heading">
-                            OPINIÃO
+                            <a href="opiniao.php"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
+                                    </span> OPINIÃO</button>
+                            </a>
                         </header>
 
                         <div class="panel-body">
@@ -96,17 +100,7 @@
 
                                     </tbody>
 
-                                    <tfoot >
-                                        <tr>
-                                            <th style="text-align: center;">TITULO</th>
-                                            <th style="text-align: center">DATA</th>
-                                            <th style="text-align: center">POSTADO POR</th>
-                                            <th style="text-align: center;">PUBLICADO?</th>
-                                            <th style="text-align: center;">EDITAR</th>
-                                            <th style="text-align: center;">EXCLUIR</th>
-
-                                        </tr>
-                                    </tfoot>
+                                    
                                 </table>
                             </div>
                         </div>

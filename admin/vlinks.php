@@ -22,22 +22,25 @@
     <section id="main-content">
         <section class="wrapper site-min-height">
 
-            <a href="links.php"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
-                    </span> LINKS</button>
-            </a>
-
-            </br>
-            </br>   
-
-
-            <div class="row">
-                <div class="col-lg-12">
-
-                    <section class="panel">
-
-                        <header class="panel-heading">
-                            LINS ÚTEIS
-                        </header>
+            <h1 style="font-weight: 900;"><span class="glyphicon glyphicon-th"></span> LINKS ÚTEIS</h1>
+                                    <hr style="border: 1px solid #333;">
+                                    <div class="divider"></div>
+                                    <div class="divider"></div>
+                        
+                                    </br>
+                                    </br>    
+            
+            
+                        <div class="row">
+                            <div class="col-lg-12">
+            
+                                <section class="panel">
+            
+                                    <header class="panel-heading">
+                                        <a href="links.php"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
+                                                </span> LINKS</button>
+                                        </a>
+                                    </header>
 
                         <div class="panel-body">
                             <div class="adv-table">

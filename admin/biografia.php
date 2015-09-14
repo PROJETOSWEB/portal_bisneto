@@ -59,7 +59,7 @@
                 ?>
 
                 <section class="panel">
-                    <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> CADASTRO DE BIOGRAFIA</strong></div>
+                    <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> ATUALIZAÇÃO DA BIOGRAFIA</strong></div>
                     <div class="panel-body">
 
 
@@ -86,11 +86,11 @@
                                             <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
                                             <div>
                                                 <span class="btn btn-white btn-file">
-                                                    <span class="fileupload-new"><i class="fa fa-paper-clip"></i> Select image</span>
-                                                    <span class="fileupload-exists"><i class="fa fa-undo"></i> Change</span>
+                                                    <span class="fileupload-new"><i class="fa fa-paper-clip"></i> selecionar imagem</span>
+                                                    <span class="fileupload-exists"><i class="fa fa-undo"></i> trocar</span>
                                                     <input type="file" <?php echo $dadosb['foto']; ?> name="img" class="default" />
                                                 </span>
-                                                <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload"><i class="fa fa-trash"></i> Remove</a>
+                                                <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload"><i class="fa fa-trash"></i> excluir</a>
                                             </div>
                                         </div>
                                     </div>
@@ -103,7 +103,7 @@
                             </div>
 
 
-                            <input type="submit" class="btn btn-primary" value="SALVAR"></input>
+                            <input type="submit" class="btn btn-primary" value="ATUALIZAR"></input>
 
                         </form>
 
@@ -115,7 +115,7 @@
             } else {
                 ?>
                 <section class="panel">
-                    <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> CADASTRO DE BIOGRAFIA</strong></div>
+                    <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span>ATUALIZAÇÃO DA  BIOGRAFIA</strong></div>
                     <div class="panel-body">
 
 
@@ -142,11 +142,11 @@
                                             <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
                                             <div>
                                                 <span class="btn btn-white btn-file">
-                                                    <span class="fileupload-new"><i class="fa fa-paper-clip"></i> Select image</span>
-                                                    <span class="fileupload-exists"><i class="fa fa-undo"></i> Change</span>
+                                                    <span class="fileupload-new"><i class="fa fa-paper-clip"></i> selecionar imagem</span>
+                                                    <span class="fileupload-exists"><i class="fa fa-undo"></i> trocar</span>
                                                     <input type="file" name="img" class="default" />
                                                 </span>
-                                                <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload"><i class="fa fa-trash"></i> Remove</a>
+                                                <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload"><i class="fa fa-trash"></i> excluir</a>
                                             </div>
                                         </div>
                                     </div>

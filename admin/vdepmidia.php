@@ -22,12 +22,13 @@
     <section id="main-content">
         <section class="wrapper site-min-height">
 
-            <a href="depmidia.php"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
-                    </span> MÍDIA</button>
-            </a>
-
-            </br>
-            </br>   
+            <h1 style="font-weight: 900;"><span class="glyphicon glyphicon-th"></span> DEP. NA MÍDIA</h1>
+                        <hr style="border: 1px solid #333;">
+                        <div class="divider"></div>
+                        <div class="divider"></div>
+            
+                        </br>
+                        </br>    
 
 
             <div class="row">
@@ -36,7 +37,9 @@
                     <section class="panel">
 
                         <header class="panel-heading">
-                            DEPUTADO NA MÍDIA
+                            <a href="opiniao.php"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
+                                    </span> DEP. NA MÍDIA</button>
+                            </a>
                         </header>
 
                         <div class="panel-body">
@@ -44,7 +47,7 @@
                                 <table  class="display table table-bordered table-striped" id="example">
                                     <thead>
                                         <tr>
-                                            <th style="text-align: center">TITULO</th>
+                                            <th style="text-align: left;">TITULO</th>
                                             <th style="text-align: center;">DATA</th>
                                             <th style="text-align: center;">POSTADO POR</th>
                                             <th style="text-align: center;">EDITAR</th>
@@ -66,7 +69,7 @@
 
 
                                             <tr class="gradeA" style="text-align: center;">
-                                                <td><?php echo $array_dados['titulo']; ?></td>
+                                                <td style="text-align: left;"><?php echo $array_dados['titulo']; ?></td>
                                                 <td><?php echo $array_dados['data']; ?></td>
                                                 <td><?php echo $array_dados['nome']; ?></td>
 
@@ -83,15 +86,7 @@
 
 
                                     </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <th style="text-align: center">TITULO</th>
-                                            <th style="text-align: center;">DATA</th>
-                                            <th style="text-align: center;">POSTADO POR</th>
-                                            <th style="text-align: center;">EDITAR</th>
-                                            <th style="text-align: center;">EXCLUIR</th>
-                                        </tr>
-                                    </tfoot>
+                                    
                                 </table>
                             </div>
                         </div>

@@ -48,7 +48,7 @@
                                 <table  class="display table table-bordered table-striped" id="example">
                                     <thead>
                                         <tr>
-                                            <th style="text-align: center;">TITULO</th>
+                                            <th style="text-align: left;">TITULO</th>
                                             <th style="text-align: center">DATA</th>
                                             <th style="text-align: center">POSTADO POR</th>
                                             <th style="text-align: center;">PUBLICADO?</th>
@@ -70,7 +70,7 @@
                                             ?>
 
                                             <tr class="gradeA" style="text-align: center;">
-                                                <td><?php echo $dados_array['titulo']; ?></td>
+                                                <td style="text-align: left;"><?php echo $dados_array['titulo']; ?></td>
                                                 <td><?php echo $dados_array['data']; ?></td>
                                                 <td><?php echo $dados_array['nome']; ?></td>
                                                 <td>

@@ -35,12 +35,19 @@
             </li>
 
 
-            <li>
-                <a  href="vgaleria.php">
-                    <i class="fa fa-picture-o"></i>
+
+            <li class="sub-menu">
+                <a href="javascript:;" >
+                    <i class="fa fa-book"></i>
                     <span>Galeria</span>
                 </a>
+                <ul class="sub">
+                    <li><a  href="vfotos.php">FOTOS</a></li>
+                    <li><a  href="vvideos.php">VÍDEOS</a></li>
+                    <li><a  href="vbanner.php">BANNER</a></li>
+                </ul>
             </li>
+
 
 
             <li>
@@ -64,7 +71,7 @@
                     <span>Informativo</span>
                 </a>
             </li>
-            
+
 
             <li>
                 <a  href="vlinks.php">
@@ -72,7 +79,7 @@
                     <span>Links Úteis</span>
                 </a>
             </li>
-            
+
 
             <li>
                 <a  href="vusuario.php">
@@ -82,7 +89,7 @@
             </li>
             <hr/>
             <li>
-             <img src="img/logo-sky-admin.png" width="70%" style="align-content: center;" alt="" />
+                <img src="img/logo-sky-admin.png" width="70%" style="align-content: center;" alt="" />
 
 
 

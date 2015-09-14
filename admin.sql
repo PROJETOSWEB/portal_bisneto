@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 09-Set-2015 às 04:47
+-- Generation Time: 14-Set-2015 às 05:30
 -- Versão do servidor: 5.6.15-log
 -- PHP Version: 5.5.8
 
@@ -65,6 +65,21 @@ CREATE TABLE IF NOT EXISTS `depmidia` (
 
 INSERT INTO `depmidia` (`depmidia_id`, `data`, `titulo`, `link`, `codigo`, `foto`, `usuario_id`) VALUES
 (1, 'HUAHDUA', 'DUAHUSD', 'DAHSUDAUD', 'DD', '11866412_923345824399818_7638106130952624583_n.jpg', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `fotos`
+--
+
+CREATE TABLE IF NOT EXISTS `fotos` (
+  `fotos_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `data_foto` varchar(45) NOT NULL DEFAULT '',
+  `legenda` varchar(45) NOT NULL DEFAULT '',
+  `foto` varchar(45) NOT NULL DEFAULT '',
+  `usuario_id` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`fotos_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -195,6 +210,21 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 INSERT INTO `usuario` (`usuario_id`, `nome`, `login`, `senha`, `status`, `email`, `nivel`) VALUES
 (1, 'Karoline', 'karol', '123', 1, '', 0),
 (2, 'JOAO SILVA', 'joao', 'karol031091', 1, 'joao@hotmail.com', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `videos`
+--
+
+CREATE TABLE IF NOT EXISTS `videos` (
+  `videos_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `data_video` varchar(45) NOT NULL DEFAULT '',
+  `legenda` varchar(45) NOT NULL DEFAULT '',
+  `video` varchar(45) NOT NULL DEFAULT '',
+  `usuario_id` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`videos_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
 -- Constraints for dumped tables

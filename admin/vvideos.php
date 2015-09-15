@@ -61,7 +61,9 @@
 
 
                                         <tr class="gradeA" style="text-align: center; vertical-align: center;">
-                                            <td style="text-align: left;"><iframe width="150" height="100" src="https://www.youtube.com/embed/Lcubw2IeNtM?wmode=transparent" allowfullscreen></iframe></td>
+                                            <td style="text-align: left;">
+                                            	<iframe width="150" height="100" src="https://www.youtube.com/embed/Lcubw2IeNtM?wmode=transparent" allowfullscreen></iframe>
+                                            </td>
                                             <td style="text-align: left; vertical-align: center;">nononon onononon onononon</td>
                                             <td>20/01/2014</td>
                                             <td>fulano</td>

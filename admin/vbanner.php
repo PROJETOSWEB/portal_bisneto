@@ -11,10 +11,15 @@
 <link href="assets/advanced-datatable/media/css/demo_page.css" rel="stylesheet" />
 <link href="assets/advanced-datatable/media/css/demo_table.css" rel="stylesheet" />
 <link rel="stylesheet" href="assets/data-tables/DT_bootstrap.css" />
+
+<link href="assets/fancybox/source/jquery.fancybox.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="css/gallery.css" />
+
 <!-- Custom styles for this template -->
 <link href="css/style.css" rel="stylesheet">
 <link href="css/style-responsive.css" rel="stylesheet" />
-
+<script src="js/html5shiv.js"></script>
+<script src="js/respond.min.js"></script>
 
 </br></br>
 <section id="container" class="">
@@ -61,7 +66,11 @@
 
 
                                         <tr class="gradeA" style="text-align: center; vertical-align: center;">
-                                            <td style="text-align: left;"><img src="img/banner-topo.png" height="100" alt="" /></td>
+                                            <td style="text-align: left;">
+                                            	<a class="fancybox" rel="id_foto" href="img/banner-topo.png">
+                                            		<img src="img/banner-topo.png" height="100" alt="" />
+                                            	</a>
+                                            </td>
                                             <td>20/01/2014</td>
                                             <td>fulano</td>
                                             <td><a href="#"><img src="img/sim.png" alt="" /></a></td>
@@ -97,10 +106,10 @@
 <?php include './footer.php'; ?>
 <!--footer end-->
 
-
 <script type="text/javascript" language="javascript" src="assets/advanced-datatable/media/js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script class="include" type="text/javascript" src="js/jquery.dcjqaccordion.2.7.js"></script>
+<script src="assets/fancybox/source/jquery.fancybox.js"></script>
 <script src="js/jquery.scrollTo.min.js"></script>
 <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
 <script type="text/javascript" language="javascript" src="assets/advanced-datatable/media/js/jquery.dataTables.js"></script>
@@ -120,6 +129,13 @@
         });
     });
 </script>
+  <script type="text/javascript">
+      $(function() {
+        //    fancybox
+          jQuery(".fancybox").fancybox();
+      });
+
+  </script>
 
 </body>
 </html>

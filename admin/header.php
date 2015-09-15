@@ -37,9 +37,9 @@ include './conections/conexao.php';
         <section id="container" >
             <!--header start-->
             <header class="header white-bg">
-               <!-- <div class="sidebar-toggle-box">
-                    <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
-                </div>-->
+                <div class="sidebar-toggle-box">
+                    <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Menu de navegação"></div>
+                </div>
                 <!--logo start-->
                 <a href="index.html" class="logo">
                 	<img style="margin-left: 10px; margin-bottom: -1px;" src="img/arthur-bisneto-foto.png" height="50" alt="" />

@@ -22,85 +22,55 @@
     <section id="main-content">
         <section class="wrapper site-min-height">
 
-            <a href="fotos.php"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
-                    </span> FOTOS</button>
-            </a>
-
-            </br>
-            </br>   
-
-
-            <div class="row">
-                <div class="col-lg-12">
-
-                    <section class="panel">
-
-                        <header class="panel-heading">
-                            FOTOS
-                        </header>
+            <h1 style="font-weight: 900;"><span class="glyphicon glyphicon-th"></span> GALERIA DE FOTOS</h1>
+                                    <hr style="border: 1px solid #333;">
+                                    <div class="divider"></div>
+                                    <div class="divider"></div>
+                        
+                                    </br>
+                                    </br>   
+                        
+            
+            
+                        <div class="row">
+                            <div class="col-lg-12">
+            
+                                <section class="panel">
+            
+                                    <header class="panel-heading">
+                                        <a href="fotos.php"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
+                                                </span> fotos</button>
+                                        </a>
+                                    </header>
 
                         <div class="panel-body">
                             <div class="adv-table">
                                 <table  class="display table table-bordered table-striped" id="example">
-                                    <thead>
+									<thead>
                                         <tr>
-                                            <th>Rendering engine</th>
-                                            <th>Browser</th>
-                                            <th>Platform(s)</th>
-                                            <th class="hidden-phone">Engine version</th>
-                                            <th class="hidden-phone">CSS grade</th>
+                                            <th style="text-align: left;">FOTO</th>
+                                            <th style="text-align: left;">LEGENDA</th>
+                                            <th style="text-align: center;">DATA</th>
+                                            <th style="text-align: center;">POSTADO POR</th>
+                                            <th style="text-align: center;">EDITAR</th>
+                                            <th style="text-align: center;">EXCLUIR</th>
+
                                         </tr>
                                     </thead>
                                     <tbody>
 
 
-                                        <tr class="gradeC">
-                                            <td>Tasman</td>
-                                            <td>Internet Explorer 5.1</td>
-                                            <td>Mac OS 7.6-9</td>
-                                            <td class="center hidden-phone">1</td>
-                                            <td class="center hidden-phone">C</td>
-                                        </tr>
-                                        <tr class="gradeC">
-                                            <td>Tasman</td>
-                                            <td>Internet Explorer 5.2</td>
-                                            <td>Mac OS 8-X</td>
-                                            <td class="center hidden-phone">1</td>
-                                            <td class="center hidden-phone">C</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Misc</td>
-                                            <td>NetFront 3.1</td>
-                                            <td>Embedded devices</td>
-                                            <td class="center hidden-phone">-</td>
-                                            <td class="center hidden-phone">C</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Misc</td>
-                                            <td>NetFront 3.4</td>
-                                            <td>Embedded devices</td>
-                                            <td class="center hidden-phone">-</td>
-                                            <td class="center hidden-phone">A</td>
-                                        </tr>
-                                        <tr class="gradeX">
-                                            <td>Misc</td>
-                                            <td>Dillo 0.8</td>
-                                            <td>Embedded devices</td>
-                                            <td class="center hidden-phone">-</td>
-                                            <td class="center hidden-phone">X</td>
+                                        <tr class="gradeA" style="text-align: center; vertical-align: center;">
+                                            <td style="text-align: left;"><img src="img/arthur-bisneto02.jpg" height="100" alt="" /></td>
+                                            <td style="text-align: left;">nononon onononon onononon</td>
+                                            <td>20/01/2014</td>
+                                            <td>fulano</td>
+                                            <td><a href="#"><img src="img/editar.png" alt="" /></a></td>
+                                            <td><a href="#"><img src="img/excluir.png" alt="" /></a></td>
                                         </tr>
 
 
                                     </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Rendering engine</th>
-                                            <th>Browser</th>
-                                            <th>Platform(s)</th>
-                                            <th class="hidden-phone">Engine version</th>
-                                            <th class="hidden-phone">CSS grade</th>
-                                        </tr>
-                                    </tfoot>
                                 </table>
                             </div>
                         </div>

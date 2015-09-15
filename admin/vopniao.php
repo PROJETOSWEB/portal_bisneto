@@ -49,8 +49,8 @@
                                     <thead>
                                         <tr>
                                             <th style="text-align: left;">TITULO</th>
-                                            <th style="text-align: center">DATA</th>
-                                            <th style="text-align: center">POSTADO POR</th>
+                                            <th style="text-align: center;">DATA</th>
+                                            <th style="text-align: center;">POSTADO POR</th>
                                             <th style="text-align: center;">PUBLICADO?</th>
                                             <th style="text-align: center;">EDITAR</th>
                                             <th style="text-align: center;">EXCLUIR</th>

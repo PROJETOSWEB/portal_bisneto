@@ -48,9 +48,9 @@
                                     <thead>
                                         <tr>
                                             <th>NOME DO LINK</th>
-                                            <th>POSTADO POR</th>
-                                            <th>EDITAR</th>
-                                            <th>EXCLUIR</th>
+                                            <th style="text-align: center;">POSTADO POR</th>
+                                            <th style="text-align: center;">EDITAR</th>
+                                            <th style="text-align: center;">EXCLUIR</th>
 
 
                                         </tr>
@@ -68,9 +68,9 @@
                                         while ($array_dados = mysql_fetch_array($executa_sql_selecinona)) {
                                             ?>
 
-                                            <tr class="gradeC">
+                                            <tr class="gradeA">
                                                 <td><?php echo $array_dados['link'] ?></td>
-                                                <td><?php echo $array_dados['usuario'] ?></td>
+                                                <td style="text-align: center;"><?php echo $array_dados['usuario'] ?></td>
                                                 <td style="text-align: center;"><a href="#"><img src="img/editar.png" alt="" /></a></td>
                                                 <td style="text-align: center;"><a href="#"><img src="img/excluir.png" alt="" /></a></td>
                                               
@@ -88,15 +88,6 @@
 
 
                                     </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Rendering engine</th>
-                                            <th>Browser</th>
-                                            <th>Platform(s)</th>
-                                            <th class="hidden-phone">Engine version</th>
-
-                                        </tr>
-                                    </tfoot>
                                 </table>
                             </div>
                         </div>

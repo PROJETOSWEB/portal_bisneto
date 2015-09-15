@@ -22,7 +22,7 @@
     <section id="main-content">
         <section class="wrapper site-min-height">
 
-            <h1 style="font-weight: 900;"><span class="glyphicon glyphicon-th"></span> DEP. NA MÍDIA</h1>
+            <h1 style="font-weight: 900;"><span class="glyphicon glyphicon-th"></span> DEP. NA MÍDIA • CLIPPING</h1>
                         <hr style="border: 1px solid #333;">
                         <div class="divider"></div>
                         <div class="divider"></div>
@@ -38,7 +38,7 @@
 
                         <header class="panel-heading">
                             <a href="opiniao.php"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
-                                    </span> DEP. NA MÍDIA</button>
+                                    </span> CLIPPING</button>
                             </a>
                         </header>
 

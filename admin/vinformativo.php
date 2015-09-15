@@ -22,12 +22,13 @@
     <section id="main-content">
         <section class="wrapper site-min-height">
 
-            <a href="informativo.php"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
-                    </span> INFORMATIVO</button>
-            </a>
-
-            </br>
-            </br>   
+            <h1 style="font-weight: 900;"><span class="glyphicon glyphicon-th"></span> INFORMATIVOS</h1>
+                        <hr style="border: 1px solid #333;">
+                        <div class="divider"></div>
+                        <div class="divider"></div>
+            
+                        </br>
+                        </br>    
 
 
             <div class="row">
@@ -36,7 +37,9 @@
                     <section class="panel">
 
                         <header class="panel-heading">
-                            INFORMATIVO
+                            <a href="informativo.php"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
+                                    </span> EDIÇÕES</button>
+                            </a>
                         </header>
 
                         <div class="panel-body">
@@ -44,63 +47,44 @@
                                 <table  class="display table table-bordered table-striped" id="example">
                                     <thead>
                                         <tr>
-                                            <th>Rendering engine</th>
-                                            <th>Browser</th>
-                                            <th>Platform(s)</th>
-                                            <th class="hidden-phone">Engine version</th>
-                                            <th class="hidden-phone">CSS grade</th>
+                                            <th style="text-align: left;">Nº DA EDIÇÃO</th>
+                                            <th style="text-align: center;">POSTADO POR</th>
+                                            <th style="text-align: center;">EDITAR</th>
+                                            <th style="text-align: center;">EXCLUIR</th>
+
                                         </tr>
                                     </thead>
                                     <tbody>
 
 
-                                        <tr class="gradeC">
-                                            <td>Tasman</td>
-                                            <td>Internet Explorer 5.1</td>
-                                            <td>Mac OS 7.6-9</td>
-                                            <td class="center hidden-phone">1</td>
-                                            <td class="center hidden-phone">C</td>
-                                        </tr>
-                                        <tr class="gradeC">
-                                            <td>Tasman</td>
-                                            <td>Internet Explorer 5.2</td>
-                                            <td>Mac OS 8-X</td>
-                                            <td class="center hidden-phone">1</td>
-                                            <td class="center hidden-phone">C</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Misc</td>
-                                            <td>NetFront 3.1</td>
-                                            <td>Embedded devices</td>
-                                            <td class="center hidden-phone">-</td>
-                                            <td class="center hidden-phone">C</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Misc</td>
-                                            <td>NetFront 3.4</td>
-                                            <td>Embedded devices</td>
-                                            <td class="center hidden-phone">-</td>
-                                            <td class="center hidden-phone">A</td>
-                                        </tr>
-                                        <tr class="gradeX">
-                                            <td>Misc</td>
-                                            <td>Dillo 0.8</td>
-                                            <td>Embedded devices</td>
-                                            <td class="center hidden-phone">-</td>
-                                            <td class="center hidden-phone">X</td>
-                                        </tr>
+                                        <?php
+                                        
+                                        $seleciona = "SELECT * FROM informativo";
+
+                                        $seleciona_executa = mysql_query($seleciona)or die(mysql_error());
+
+                                        while ($array_dados = mysql_fetch_array($seleciona_executa)) {
+                                            ?>
+
+
+                                            <tr class="gradeA" style="text-align: center;">
+                                                <td style="text-align: left;"><?php echo $array_dados['edicao']; ?></td>
+                                                <td><?php echo $array_dados['nome']; ?></td>
+
+                                                <td><a href="#"><img src="img/editar.png" alt="" /></a></td>
+                                                <td><a href="#"><img src="img/excluir.png" alt="" /></a></td>
+                                            </tr>
+
+
+                                            <?php
+                                        }
+                                        ?>
+
+
 
 
                                     </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Rendering engine</th>
-                                            <th>Browser</th>
-                                            <th>Platform(s)</th>
-                                            <th class="hidden-phone">Engine version</th>
-                                            <th class="hidden-phone">CSS grade</th>
-                                        </tr>
-                                    </tfoot>
+                                    
                                 </table>
                             </div>
                         </div>

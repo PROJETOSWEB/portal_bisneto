@@ -23,24 +23,40 @@
         <section class="wrapper site-min-height">
 
             <h1 style="font-weight: 900;"><span class="glyphicon glyphicon-th"></span> LISTA DE USUÁRIOS</h1>
-                                    <hr style="border: 1px solid #333;">
-                                    <div class="divider"></div>
-                                    <div class="divider"></div>
-                        
-                                    </br>
-                                    </br>    
-            
-            
-                        <div class="row">
-                            <div class="col-lg-12">
-            
-                                <section class="panel">
-            
-                                    <header class="panel-heading">
-                                        <a href="usuario.php"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
-                                                </span> USUÁRIOS</button>
-                                        </a>
-                                    </header>
+            <hr style="border: 1px solid #333;">
+            <div class="divider"></div>
+            <div class="divider"></div>
+
+            </br>
+           
+
+            <?php
+            if (isset($_GET['respt'])) {
+
+                if ($_GET['respt'] == "sucesso") {
+                    ?>
+
+                    <div class="alert alert-success fade in">
+                        <button data-dismiss="alert" class="close close-sm" type="button">
+                            <i class="fa fa-times"></i>
+                        </button>
+                        <strong>SUCESSO!</strong> Usuario excluido com sucesso!
+                    </div>
+                    <?php
+                }
+            }
+            ?>
+
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <section class="panel">
+
+                        <header class="panel-heading">
+                            <a href="usuario.php"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
+                                    </span> USUÁRIOS</button>
+                            </a>
+                        </header>
 
                         <div class="panel-body">
                             <div class="adv-table">
@@ -71,7 +87,7 @@
                                             <tr class="gradeA" style="text-align: center;">
                                                 <td><?php echo $dados_array['nome']; ?></td>
                                                 <td><?php echo $dados_array['nivel']; ?></td>
-                                                
+
 
                                                 <td><a href="#"><img src="img/editar.png" alt="" /></a></td>
                                                 <td><a href="php/exclui_usuario.php?id=<?php echo $dados_array['usuario_id']; ?>"><img src="img/excluir.png" alt="" /></a></td>

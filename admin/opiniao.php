@@ -51,10 +51,14 @@
                         <div class="divider"></div>
                         <hr/>
                         <div class="divider"></div>
-
+                        
+                        <div class="col-sm-12">
+                        	<hr/>
+						</div>
+						
                         <div class="row ">
                             <div class="form-group col-sm-12">
-                                <label for="exampleInputEmail1">USAR IMAGENS COM TAM. PADRÃO 800x430px</label>
+                                <label class="col-sm-3 col-sm-3">Usar imagens com tam. padrão 800x430px</label>
 
 
                                 <div class="form-group last">
@@ -78,9 +82,22 @@
                                 </div>
                             </div>
 
-						
-                        </div>
+							<div class="col-sm-12">
+                            	
+                            	<hr/>
+                                
+                                <label style="margin-right: 20px;" class="col-sm-3 col-sm-3">PUBLICAR?</label>
+                               <div class="switch switch-square"
+                               	  data-off-label="<i class='fa fa-times'></i>"
+                                    data-on-label="<i class=' fa fa-check'></i>">
+                                   <input type="checkbox"  checked />
+                               </div>
+                                
+                                
+                                <hr/>
 
+                            </div>
+                        </div>
 
                         <input type="submit" class="btn btn-primary" value="SALVAR"></input>
 

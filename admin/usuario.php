@@ -18,7 +18,7 @@
 
                         <div class="form-group">
                             <div class="col-sm-3">
-                                <label for="">NOME</label>
+                                <label for="">NOME </label>
                             </div>
                             <div class="col-sm-9">
                                 <input  type="text"

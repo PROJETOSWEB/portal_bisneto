@@ -39,12 +39,6 @@
 
                     <form role="form" action="php/salvar_link.php" method="POST">
 
-                        <div class="form-group">
-
-                            <input class="form-control form-control-inline input-medium default-date-picker"  size="16" type="text" value="" name="data"/>
-                            <span class="help-block">Select date</span>
-
-                        </div>
 
 
                         <div class="form-group">

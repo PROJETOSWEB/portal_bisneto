@@ -59,7 +59,7 @@
                         
                         <div class="row ">
                             <div class="form-group col-sm-12">
-                                <label for="exampleInputEmail1">USAR IMAGENS COM TAM. PADRÃO 800x430px</label>
+                                <label class="col-sm-3 col-sm-3">Usar imagens com tam. padrão 800x430px</label>
 
 
                                 <div class="form-group last">
@@ -72,11 +72,11 @@
                                             <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
                                             <div>
                                                 <span class="btn btn-white btn-file">
-                                                    <span class="fileupload-new"><i class="fa fa-paper-clip"></i> Select image</span>
-                                                    <span class="fileupload-exists"><i class="fa fa-undo"></i> Change</span>
+                                                    <span class="fileupload-new"><i class="fa fa-paper-clip"></i> selecionar imagem</span>
+                                                    <span class="fileupload-exists"><i class="fa fa-undo"></i> trocar</span>
                                                     <input type="file" name="img" class="default" />
                                                 </span>
-                                                <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload"><i class="fa fa-trash"></i> Remove</a>
+                                                <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload"><i class="fa fa-trash"></i> excluir</a>
                                             </div>
                                         </div>
                                     </div>

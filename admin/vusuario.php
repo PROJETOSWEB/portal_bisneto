@@ -74,7 +74,7 @@
                                                 
 
                                                 <td><a href="#"><img src="img/editar.png" alt="" /></a></td>
-                                                <td><a href="#"><img src="img/excluir.png" alt="" /></a></td>
+                                                <td><a href="php/exclui_usuario.php?id=<?php echo $dados_array['usuario_id']; ?>"><img src="img/excluir.png" alt="" /></a></td>
                                             </tr>
 
                                             <?php

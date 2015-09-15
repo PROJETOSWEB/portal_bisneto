@@ -2,11 +2,11 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
-        <meta name="author" content="Mosaddek">
-        <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-        <link rel="shortcut icon" href="img/favicon.png">
+        <meta name="author" content="SkyAdmin">
+        <meta name="keyword" content="Sky admin, administrador de sites">
+        <link rel="shortcut icon" href="img/ico-sky.png">
 
-        <title>SKY admin 2</title>
+         <title>SKY admin 2.0</title>
 
         <!-- Bootstrap core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">

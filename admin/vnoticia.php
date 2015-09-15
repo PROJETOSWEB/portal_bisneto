@@ -22,7 +22,7 @@
     <section id="main-content">
         <section class="wrapper site-min-height">
 
-            <h1 style="font-weight: 900;"><span class="glyphicon glyphicon-th"></span> NOTÍCIAS</h1>
+            <h1 style="font-weight: 300;"><span class="fa fa-list-alt"></span> NOTÍCIAS</h1>
                         <hr style="border: 1px solid #333;">
                         <div class="divider"></div>
                         <div class="divider"></div>

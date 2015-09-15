@@ -10,9 +10,9 @@ include './conections/conexao.php';
         <meta name="description" content="">
         <meta name="author" content="Mosaddek">
         <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-        <link rel="shortcut icon" href="img/favicon.png">
+        <link rel="shortcut icon" href="img/ico-sky.png">
 
-        <title>SKY admin 2</title>
+        <title>SKY admin 2.0</title>
 
         <!-- Bootstrap core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">

@@ -4,34 +4,52 @@
 <!--sidebar end-->
 
 
-<link rel="stylesheet" type="text/css" href="assets/bootstrap-fileupload/bootstrap-fileupload.css" />
-    <link rel="stylesheet" type="text/css" href="assets/bootstrap-datepicker/css/datepicker.css" />
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap-fileupload/bootstrap-fileupload.css" />
+        <link rel="stylesheet" type="text/css" href="assets/bootstrap-datepicker/css/datepicker.css" />
+
 <!--main content start-->
 <section id="main-content">
     <section class="wrapper">
 
         <div class="col-lg-6">
-            <section class="panel">
+            
+               <?php
+            if (isset($_GET['respt'])) {
 
+                if ($_GET['respt'] == "sucesso") {
+                    ?>
+
+                    <div class="alert alert-success fade in">
+                        <button data-dismiss="alert" class="close close-sm" type="button">
+                            <i class="fa fa-times"></i>
+                        </button>
+                        <strong>SUCESSO!</strong> Opinião cadastrada com sucesso!
+                    </div>
+                    <?php
+                }
+            }
+            ?>
+
+            
+            
+            <section class="panel">
                 <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> CADASTRO DE OPINIÃO</strong></div>
                 <div class="panel-body">
-
-                    <form role="form" action="php/salva_depmidia.php" method="POST" enctype='multipart/form-data'>
-
-
-                        <div class="form-group">
-                        	<label for="exampleInputEmail1">SELECIONE A DATA</label>
+                    
+                    
+                    <form role="form" action="php/salva_opiniao.php" method="POST" enctype='multipart/form-data'>
+                        
+						<div class="form-group">
+							<label for="exampleInputEmail1">SELECIONE A DATA</label>
                             <input class="form-control form-control-inline input-medium default-date-picker"  size="16" type="text" value="" />
                         </div>
-
-
-
+						
                         <div class="form-group">
                             <label for="exampleInputEmail1">TÍTULO</label>
-                            <input tooltip="Título do seu artigo, EVITE TÍTULOS LONGOS" name="titulo" type="text" class="form-control" data-placement="top">
+                            <input tooltip="Título do seu artigo" name="titulo" type="text" class="form-control" data-placement="top">
                         </div>
 
- 						<div class="form-group">
+                        <div class="form-group">
 
                             <label for="exampleInputEmail1">TEXTO</label>
                             <textarea name="texto" id="" class="form-control" rows="7"></textarea>
@@ -51,6 +69,7 @@
                         <div class="divider"></div>
                         <hr/>
                         <div class="divider"></div>
+
 
                         <div class="row ">
                             <div class="form-group col-sm-12">
@@ -78,7 +97,10 @@
                                 </div>
                             </div>
 
-						
+                            <div class="col-sm-12">
+
+
+                            </div>
                         </div>
 
 
@@ -100,18 +122,13 @@
 
 </section>
 
-<!-- js placed at the end of the document so the pages load faster -->
-<script src="js/jquery.js"></script>
-<script src="js/jquery-1.8.3.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script class="include" type="text/javascript" src="js/jquery.dcjqaccordion.2.7.js"></script>
-<script src="js/jquery.scrollTo.min.js"></script>
-<script src="js/jquery.nicescroll.js" type="text/javascript"></script>
-<script src="js/jquery.sparkline.js" type="text/javascript"></script>
-<script src="assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
-<script src="js/owl.carousel.js" ></script>
-<script src="js/jquery.customSelect.min.js" ></script>
-<script src="js/respond.min.js" ></script>
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="js/jquery.scrollTo.min.js"></script>
+    <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="js/respond.min.js" ></script>
   <!--custom switch-->
   <script src="js/bootstrap-switch.js"></script>
   <!--custom tagsinput-->
@@ -129,6 +146,8 @@
     <script src="js/common-scripts.js"></script>
     <!--this page  script only-->
     <script src="js/advanced-form-components.js"></script>
+
+
 
 </body>
 </html>

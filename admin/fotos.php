@@ -5,6 +5,7 @@
 
 
 <link rel="stylesheet" type="text/css" href="assets/bootstrap-fileupload/bootstrap-fileupload.css" />
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap-datepicker/css/datepicker.css" />
 <!--main content start-->
 <section id="main-content">
     <section class="wrapper">
@@ -39,12 +40,11 @@
 
                     <form role="form" action="php/salvar_link.php" method="POST">
 
-                        <div class="form-group">
-
-                            <input class="form-control form-control-inline input-medium default-date-picker"  size="16" type="text" value="" name="data"/>
-                            <span class="help-block">Select date</span>
-
-                        </div>
+                       <div class="form-group">
+                       	<label for="exampleInputEmail1">SELECIONE A DATA</label>
+                           <input class="form-control form-control-inline input-medium default-date-picker"  size="16" type="text" value="" />
+                       </div>
+                       
 
 
                         <div class="form-group">
@@ -121,40 +121,23 @@
 <script src="js/owl.carousel.js" ></script>
 <script src="js/jquery.customSelect.min.js" ></script>
 <script src="js/respond.min.js" ></script>
-<script type="text/javascript" src="assets/bootstrap-fileupload/bootstrap-fileupload.js"></script>
+  <!--custom switch-->
+  <script src="js/bootstrap-switch.js"></script>
+  <!--custom tagsinput-->
+  <script src="js/jquery.tagsinput.js"></script>
+  <!--this page plugins-->
+  
+    <!--this page plugins-->
 
+  <script type="text/javascript" src="assets/fuelux/js/spinner.min.js"></script>
+  <script type="text/javascript" src="assets/bootstrap-fileupload/bootstrap-fileupload.js"></script>
+  <script type="text/javascript" src="assets/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+  <script type="text/javascript" src="assets/ckeditor/ckeditor.js"></script>
 
-
-<!--common script for all pages-->
-<script src="js/common-scripts.js"></script>
-
-<!--script for this page-->
-<script src="js/sparkline-chart.js"></script>
-<script src="js/easy-pie-chart.js"></script>
-<script src="js/count.js"></script>
-
-<script>
-
-    //owl carousel
-
-    $(document).ready(function () {
-        $("#owl-demo").owlCarousel({
-            navigation: true,
-            slideSpeed: 300,
-            paginationSpeed: 400,
-            singleItem: true,
-            autoPlay: true
-
-        });
-    });
-
-    //custom select box
-
-    $(function () {
-        $('select.styled').customSelect();
-    });
-
-</script>
+  <!--common script for all pages-->
+    <script src="js/common-scripts.js"></script>
+    <!--this page  script only-->
+    <script src="js/advanced-form-components.js"></script>
 
 </body>
 </html>

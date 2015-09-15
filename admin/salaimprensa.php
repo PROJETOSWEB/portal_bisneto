@@ -5,6 +5,7 @@
 
 
 <link rel="stylesheet" type="text/css" href="assets/bootstrap-fileupload/bootstrap-fileupload.css" />
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap-datepicker/css/datepicker.css" />
 <!--main content start-->
 <section id="main-content">
     <section class="wrapper">
@@ -17,12 +18,12 @@
                     
                     <form role="form" action="php/salva_salaimprensa.php" method="POST" enctype='multipart/form-data'>
 
-                        <div class="form-group">
-
-                            <input class="form-control form-control-inline input-medium default-date-picker" name="data" size="16" type="text" value="" />
-                            <span class="help-block">Select date</span>
-                        </div>
-
+                       <div class="form-group">
+                       	<label for="exampleInputEmail1">SELECIONE A DATA</label>
+                           <input class="form-control form-control-inline input-medium default-date-picker"  size="16" type="text" value="" />
+                       </div>
+                       
+                       
 
                         <div class="col-sm-13">
                             <label for="exampleInputEmail1">NOME DO ARQUIVO</label>
@@ -31,30 +32,39 @@
 
                         
                         </br>
-                        <div class="col-sm-13">
-                            <select name="tipo">
-                                <option>TIPO DE ARQUIVO</option>
-                                <option>•••••••••••••••</option>
-                                <option>PDF</option>
-                                <option>JPG</option>
-                                <option>PNG</option>
-                                <option>TIF</option>
-                                <option>DOC</option>
-                                <option>XLS</option>
-                            </select>
-                        </div>
+                        </br>
+                        
+                        
+                        
+                            <div class="form-group">
+                                <div class="col-lg-10">
+                                    <select class="form-control m-bot15">
+                                    	<option>TIPO DE ARQUIVO</option>
+                                    	<option>•••••••••••••••</option>
+                                        <option>PDF</option>
+                                        <option>JPG</option>
+                                        <option>PNG</option>
+                                        <option>TIF</option>
+                                        <option>DOC</option>
+                                        <option>XLS</option>
+                                    </select>
+                                </div>
+                            </div>
+                        
 
+                        </br>
+                        </br>
                         </br>
 
                         <div class="col-sm-13">
                             <div class="fileupload fileupload-new" data-provides="fileupload">
                                 <span class="btn btn-white btn-file">
                                     <span class="fileupload-new"><i class="fa fa-paper-clip"></i> Carregar arquivo</span>
-                                    <span class="fileupload-exists"><i class="fa fa-undo"></i> Change</span>
+                                    <span class="fileupload-exists"><i class="fa fa-undo"></i> trocar</span>
                                     <input type="file" name="img" class="default" />
                                 </span>
                                 <span class="fileupload-preview" style="margin-left:5px;"></span>
-                                <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none; margin-left:5px;"></a>
+                                <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload"><i class="fa fa-trash"></i> excluir</a>
                             </div>
                         </div>
 
@@ -92,40 +102,23 @@
 <script src="js/owl.carousel.js" ></script>
 <script src="js/jquery.customSelect.min.js" ></script>
 <script src="js/respond.min.js" ></script>
-<script type="text/javascript" src="assets/bootstrap-fileupload/bootstrap-fileupload.js"></script>
+  <!--custom switch-->
+  <script src="js/bootstrap-switch.js"></script>
+  <!--custom tagsinput-->
+  <script src="js/jquery.tagsinput.js"></script>
+  <!--this page plugins-->
+  
+    <!--this page plugins-->
 
+  <script type="text/javascript" src="assets/fuelux/js/spinner.min.js"></script>
+  <script type="text/javascript" src="assets/bootstrap-fileupload/bootstrap-fileupload.js"></script>
+  <script type="text/javascript" src="assets/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+  <script type="text/javascript" src="assets/ckeditor/ckeditor.js"></script>
 
-
-<!--common script for all pages-->
-<script src="js/common-scripts.js"></script>
-
-<!--script for this page-->
-<script src="js/sparkline-chart.js"></script>
-<script src="js/easy-pie-chart.js"></script>
-<script src="js/count.js"></script>
-
-<script>
-
-    //owl carousel
-
-    $(document).ready(function () {
-        $("#owl-demo").owlCarousel({
-            navigation: true,
-            slideSpeed: 300,
-            paginationSpeed: 400,
-            singleItem: true,
-            autoPlay: true
-
-        });
-    });
-
-    //custom select box
-
-    $(function () {
-        $('select.styled').customSelect();
-    });
-
-</script>
+  <!--common script for all pages-->
+    <script src="js/common-scripts.js"></script>
+    <!--this page  script only-->
+    <script src="js/advanced-form-components.js"></script>
 
 </body>
 </html>

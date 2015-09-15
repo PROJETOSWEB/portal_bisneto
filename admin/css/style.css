@@ -8,10 +8,13 @@ Website: http://thevectorlab.net/
 /* Import fonts */
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic);
 
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,300,600,700,800,900);
+
+
 body {
     color: #797979;
     background: #f1f2f7;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
     padding: 0px !important;
     margin: 0px !important;
     font-size:13px;
@@ -99,12 +102,12 @@ a, a:hover, a:focus {
 }
 
 .form-signin .btn-login {
-    background: #f67a6e;
+    background: #F09F11;
     color: #fff;
     text-transform: uppercase;
     font-weight: 300;
     font-family: 'Open Sans', sans-serif;
-    box-shadow: 0 4px #e56b60;
+    box-shadow: 0 4px #CE8611;
     margin-bottom: 20px;
 }
 
@@ -116,7 +119,7 @@ a, a:hover, a:focus {
 }
 
 .form-signin a {
-    color: #41cac0;
+    color: #CE8611;
 }
 
 .form-signin a:hover {
@@ -251,7 +254,7 @@ ul.sidebar-menu li ul.sub li a {
 }
 
 ul.sidebar-menu li ul.sub li a:hover, ul.sidebar-menu li ul.sub li.active a {
-    color: #FF6C60;
+    color: #F09F11;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
@@ -310,7 +313,7 @@ ul.sidebar-menu li a i {
 }
 
 ul.sidebar-menu li a:hover i, ul.sidebar-menu li a:focus i {
-    color: #FF6C60;
+    color: #F09F11;
 }
 
 ul.sidebar-menu li a.active i {
@@ -368,7 +371,7 @@ a.logo:hover, a.logo:focus {
 }
 
 a.logo span {
-    color: #FF6C60;
+    color: #F09F11;
 }
 
 

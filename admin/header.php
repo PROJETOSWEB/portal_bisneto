@@ -264,7 +264,7 @@ include './conections/conexao.php';
                             </a>
                             <ul class="dropdown-menu extended logout">
                                 <div class="log-arrow-up"></div>
-                                <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
+                                <li><a href="index.php"><i class="fa fa-key"></i> SAIR</a></li>
                             </ul>
                         </li>
                         <!-- user login dropdown end -->

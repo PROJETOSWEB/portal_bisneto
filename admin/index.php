@@ -34,34 +34,23 @@
 
         <form class="form-signin" action="dashboard.php">
           
-        <h2 class="form-signin-heading">sign in now</h2>
+        <h2 class="form-signin-heading" style="background-color: #FFD31A;">
+        	<img style="margin-left: 10px; margin-bottom: -20px;" src="img/arthur-bisneto-foto.png" height="80" alt="" />
+        </h2>
         <div class="login-wrap">
-            <input type="text" class="form-control" placeholder="User ID" autofocus>
-            <input type="password" class="form-control" placeholder="Password">
+            <input type="text" class="form-control" placeholder="Usuário" autofocus>
+            <input type="password" class="form-control" placeholder="Senha">
             <label class="checkbox">
-                <input type="checkbox" value="remember-me"> Remember me
-                <span class="pull-right">
-                    <a data-toggle="modal" href="#myModal"> Forgot Password?</a>
+                <span class="pull-right ">
+                    <a data-toggle="modal" href="#myModal"> Esqueceu a senha?</a>
 
                 </span>
             </label>
-            <button class="btn btn-lg btn-login btn-block" type="submit">Sign in</button>
-            <p>or you can sign in via social network</p>
-            <div class="login-social-link">
-                <a href="index.html" class="facebook">
-                    <i class="fa fa-facebook"></i>
-                    Facebook
-                </a>
-                <a href="index.html" class="twitter">
-                    <i class="fa fa-twitter"></i>
-                    Twitter
-                </a>
-            </div>
-            <div class="registration">
-                Don't have an account yet?
-                <a class="" href="registration.html">
-                    Create an account
-                </a>
+            <button class="btn btn-lg btn-login btn-block" type="submit">Entrar</button>
+            <hr/>
+            <div class="registration" style="align-content: center;">
+            <img src="img/logo-sky-admin-footer.png" width="50%" alt="" />
+            
             </div>
 
         </div>
@@ -70,18 +59,16 @@
           <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
               <div class="modal-dialog">
                   <div class="modal-content">
-                      <div class="modal-header">
-                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                          <h4 class="modal-title">Forgot Password ?</h4>
+                      <div class="modal-header" style="background-color: #312A1F;">
+                          <h4 class="modal-title">Esqueceu a senha?</h4>
                       </div>
                       <div class="modal-body">
-                          <p>Enter your e-mail address below to reset your password.</p>
+                          <p>coloque seu email, para mandar-mos um lembrete</p>
                           <input type="text" name="email" placeholder="Email" autocomplete="off" class="form-control placeholder-no-fix">
 
                       </div>
                       <div class="modal-footer">
-                          <button data-dismiss="modal" class="btn btn-default" type="button">Cancel</button>
-                          <button class="btn btn-success" type="button">Submit</button>
+                          <button class="btn btn-primary" type="button">Lembrar</button>
                       </div>
                   </div>
               </div>
@@ -91,6 +78,10 @@
       </form>
 
     </div>
+
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 
 </body>
 </html>

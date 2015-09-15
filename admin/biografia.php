@@ -69,13 +69,19 @@
                                 <label for="exampleInputEmail1">Texto</label>
                                 <textarea name="texto" id="" class="form-control" rows="7"><?php echo $dadosb['texto'] ?></textarea>
                             </div>
-
+                            
+                            <div class="col-sm-12">
+                            	<hr/>
+                            </div>
+                            
+                            
+							 <div class="row ">
                             <div class="form-group">
-                                <label for="exampleInputEmail1">USAR IMAGENS COM TAM. PADRÃO 800x430px</label>
+                                <label class="col-sm-3 col-sm-3">Usar imagens com tam. padrão 800x430px</label>
                             </div>
 
-                            <div class="row ">
-                                <div class="form-group">
+                           
+                                <div class="form-group last">
 
                                     <label class="control-label col-md-3"></label>
                                     <div class="col-md-9">

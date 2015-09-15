@@ -28,12 +28,12 @@
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">TÍTULO</label>
-                            <input tooltip="Título do seu artigo, EVITE TÍTULOS LONGOS" name="titulo" type="text" class="form-control" data-placement="top">
+                            <input name="titulo" type="text" class="form-control tooltips" data-placement="top" data-original-title="Título do seu artigo, EVITE TÍTULOS LONGOS">
                         </div>
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">LINK da MATÉRIA</label>
-                            <input tooltip="Colque aqui o link do site de onde a matéria foi tirada" type="text" name="link" class="form-control" value="http://">
+                            <input type="text" name="link" class="form-control tooltips" data-placement="top" data-original-title="Colque aqui o link do site de onde a matéria foi tirada" value="http://">
                         </div>
 
 
@@ -41,7 +41,7 @@
                             <label for="exampleInputEmail1">CÓDIGO DO VÍDEO NO YOUTUBE</label>
                             <div class="input-group">
                                 <span class="input-group-addon">https://www.youtube.com/watch?v=</span>
-                                <input tooltip="Poste o vídeo no youtube, copie o código de 11 dígitos gerado no link do vídeo após o sinal de igual (=), conforme o modelo abaixo" type="text" name="codigo" class="form-control" placeholder="1xq0gD-DIoc">
+                                <input type="text" name="codigo" class="form-control tooltips" data-placement="top" data-original-title="Poste o vídeo no youtube, copie o código de 11 dígitos gerado no link do vídeo após o sinal de igual (=), conforme o modelo abaixo" placeholder="1xq0gD-DIoc">
                             </div>
                         </div>
                         <br/>

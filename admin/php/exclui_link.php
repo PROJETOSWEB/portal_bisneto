@@ -1,8 +1,28 @@
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+include '../conections/conexao.php';
+$id_link = $_GET['id'];
+
+
+$delete_usuario = "DELETE FROM links WHERE links_id = $id_link";
+$executa_delete = mysql_query($delete_usuario)or die(mysql_error());
+
+
+if ($executa_delete) {
+    ?>
+
+    <script>
+        window.location.href = '../vlinks.php?respt=sucesso';
+    </script>
+    <?php
+
+} else {
+    ?>
+
+    <script>
+        window.location.href = '../vlinks.php?respt=erro';
+    </script>
+    <?php
+
+}
 

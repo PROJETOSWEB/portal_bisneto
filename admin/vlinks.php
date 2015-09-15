@@ -23,24 +23,41 @@
         <section class="wrapper site-min-height">
 
             <h1 style="font-weight: 900;"><span class="glyphicon glyphicon-th"></span> LINKS ÚTEIS</h1>
-                                    <hr style="border: 1px solid #333;">
-                                    <div class="divider"></div>
-                                    <div class="divider"></div>
-                        
-                                    </br>
-                                    </br>    
-            
-            
-                        <div class="row">
-                            <div class="col-lg-12">
-            
-                                <section class="panel">
-            
-                                    <header class="panel-heading">
-                                        <a href="links.php"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
-                                                </span> LINKS</button>
-                                        </a>
-                                    </header>
+            <hr style="border: 1px solid #333;">
+            <div class="divider"></div>
+            <div class="divider"></div>
+
+            </br>
+
+            <?php
+            if (isset($_GET['respt'])) {
+
+                if ($_GET['respt'] == "sucesso") {
+                    ?>
+
+                    <div class="alert alert-success fade in">
+                        <button data-dismiss="alert" class="close close-sm" type="button">
+                            <i class="fa fa-times"></i>
+                        </button>
+                        <strong>SUCESSO!</strong> Link excluido com sucesso!
+                    </div>
+                    <?php
+                }
+            }
+            ?>
+
+
+
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <section class="panel">
+
+                        <header class="panel-heading">
+                            <a href="links.php"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
+                                    </span> LINKS</button>
+                            </a>
+                        </header>
 
                         <div class="panel-body">
                             <div class="adv-table">
@@ -72,8 +89,8 @@
                                                 <td><?php echo $array_dados['link'] ?></td>
                                                 <td style="text-align: center;"><?php echo $array_dados['usuario'] ?></td>
                                                 <td style="text-align: center;"><a href="#"><img src="img/editar.png" alt="" /></a></td>
-                                                <td style="text-align: center;"><a href="#"><img src="img/excluir.png" alt="" /></a></td>
-                                              
+                                                <td style="text-align: center;"><a href="php/exclui_link.php?id=<?php echo $array_dados['links_id']; ?>"><img src="img/excluir.png" alt="" /></a></td>
+
 
                                             </tr>
 

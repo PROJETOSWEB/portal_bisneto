@@ -37,7 +37,7 @@
                     <section class="panel">
 
                         <header class="panel-heading">
-                            <a href="opiniao.php"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
+                            <a href="depmidia.php"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
                                     </span> CLIPPING</button>
                             </a>
                         </header>

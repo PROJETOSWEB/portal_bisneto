@@ -27,7 +27,7 @@ if ($publicar == "") {
 
 
 $fileName = $_FILES["img"]["name"];
-$pathAndName = "../imagens/biografia/" . $fileName;
+$pathAndName = "../imagens/opiniao/" . $fileName;
 $fileTmpLoc = $_FILES["img"]["tmp_name"];
 $moveResult = move_uploaded_file($fileTmpLoc, $pathAndName);
 

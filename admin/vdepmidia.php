@@ -23,12 +23,29 @@
         <section class="wrapper site-min-height">
 
             <h1 style="font-weight: 300;"><span class="fa fa-camera-retro"></span> DEP. NA MÍDIA • CLIPPING</h1>
-                        <hr style="border: 1px solid #333;">
-                        <div class="divider"></div>
-                        <div class="divider"></div>
-            
-                        </br>
-                        </br>    
+            <hr style="border: 1px solid #333;">
+            <div class="divider"></div>
+            <div class="divider"></div>
+
+            </br>
+
+
+            <?php
+            if (isset($_GET['respt'])) {
+
+                if ($_GET['respt'] == "sucesso") {
+                    ?>
+
+                    <div class="alert alert-success fade in">
+                        <button data-dismiss="alert" class="close close-sm" type="button">
+                            <i class="fa fa-times"></i>
+                        </button>
+                        <strong>SUCESSO!</strong> Mídia excluida com sucesso!
+                    </div>
+                    <?php
+                }
+            }
+            ?>
 
 
             <div class="row">
@@ -60,7 +77,7 @@
 
                                         <?php
                                         $seleciona = "SELECT * FROM depmidia INNER JOIN
-                                                      usuario ON depmidia.usuario_id = depmidia.usuario_id";
+                                                      usuario ON usuario.usuario_id = depmidia.usuario_id";
 
                                         $seleciona_executa = mysql_query($seleciona)or die(mysql_error());
 
@@ -74,7 +91,7 @@
                                                 <td><?php echo $array_dados['nome']; ?></td>
 
                                                 <td><a href="#"><img src="img/editar.png" alt="" /></a></td>
-                                                <td><a href="#"><img src="img/excluir.png" alt="" /></a></td>
+                                                <td><a href="php/exclui_depmidia.php?id=<?php echo $array_dados['depmidia_id']; ?>"><img src="img/excluir.png" alt="" /></a></td>
                                             </tr>
 
 
@@ -86,7 +103,7 @@
 
 
                                     </tbody>
-                                    
+
                                 </table>
                             </div>
                         </div>

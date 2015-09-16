@@ -5,7 +5,7 @@
 
 
 <link rel="stylesheet" type="text/css" href="assets/bootstrap-fileupload/bootstrap-fileupload.css" />
-    <link rel="stylesheet" type="text/css" href="assets/bootstrap-datepicker/css/datepicker.css" />
+<link rel="stylesheet" type="text/css" href="assets/bootstrap-datepicker/css/datepicker.css" />
 <!--main content start-->
 <section id="main-content">
     <section class="wrapper">
@@ -25,7 +25,7 @@
                         <button data-dismiss="alert" class="close close-sm" type="button">
                             <i class="fa fa-times"></i>
                         </button>
-                        <strong>SUCESSO!</strong> Link cadastrado com sucesso!
+                        <strong>SUCESSO!</strong> Banner cadastrado com sucesso!
                     </div>
                     <?php
                 }
@@ -38,13 +38,14 @@
 
 
 
-                    <form role="form" action="php/salvar_banner.php" method="POST">
+                    <form role="form" action="php/salva_banner.php" method="POST" enctype='multipart/form-data'>
+                        
 
-                       <div class="form-group">
-                       	<label for="exampleInputEmail1">SELECIONE A DATA</label>
-                           <input class="form-control form-control-inline input-medium default-date-picker"  size="16" type="text" value="" />
-                       </div>
-                       
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">SELECIONE A DATA</label>
+                            <input name="data" class="form-control form-control-inline input-medium default-date-picker"  size="16" type="text" value="" />
+                        </div>
+
 
 
                         <div class="form-group">
@@ -53,10 +54,10 @@
                         </div>
 
 
-                          </br>
+                        </br>
 
                         <hr/>
-                        
+
                         <div class="row ">
                             <div class="form-group col-sm-12">
                                 <label class="col-sm-3 col-sm-3">Usar imagens com tam. padrão 800x430px</label>
@@ -83,26 +84,26 @@
                                 </div>
                             </div>
 
-                            
-							<div class="col-sm-12">
-                            	
-                            	<hr/>
-                            	
-                                
+
+                            <div class="col-sm-12">
+
+                                <hr/>
+
+
                                 <label style="margin-right: 20px;" class="col-sm-3 col-sm-3">PUBLICAR?</label>
-                               <div class="switch switch-square"
-                               	  data-off-label="<i class='fa fa-times'></i>"
-                                    data-on-label="<i class=' fa fa-check'></i>">
-                                   <input type="checkbox"  checked />
-                               </div>
-                                
-                                
+                                <div class="switch switch-square"
+                                     data-off-label="<i class='fa fa-times'></i>"
+                                     data-on-label="<i class=' fa fa-check'></i>">
+                                    <input name="publicar" value="1" type="checkbox"  checked />
+                                </div>
+
+
                                 <hr/>
 
                             </div>
                         </div>
 
-                            
+
 
                         <input type="submit" class="btn btn-primary" value="SALVAR"></input>
 
@@ -134,23 +135,23 @@
 <script src="js/owl.carousel.js" ></script>
 <script src="js/jquery.customSelect.min.js" ></script>
 <script src="js/respond.min.js" ></script>
-  <!--custom switch-->
-  <script src="js/bootstrap-switch.js"></script>
-  <!--custom tagsinput-->
-  <script src="js/jquery.tagsinput.js"></script>
-  <!--this page plugins-->
-  
-    <!--this page plugins-->
+<!--custom switch-->
+<script src="js/bootstrap-switch.js"></script>
+<!--custom tagsinput-->
+<script src="js/jquery.tagsinput.js"></script>
+<!--this page plugins-->
 
-  <script type="text/javascript" src="assets/fuelux/js/spinner.min.js"></script>
-  <script type="text/javascript" src="assets/bootstrap-fileupload/bootstrap-fileupload.js"></script>
-  <script type="text/javascript" src="assets/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
-  <script type="text/javascript" src="assets/ckeditor/ckeditor.js"></script>
+<!--this page plugins-->
 
-  <!--common script for all pages-->
-    <script src="js/common-scripts.js"></script>
-    <!--this page  script only-->
-    <script src="js/advanced-form-components.js"></script>
+<script type="text/javascript" src="assets/fuelux/js/spinner.min.js"></script>
+<script type="text/javascript" src="assets/bootstrap-fileupload/bootstrap-fileupload.js"></script>
+<script type="text/javascript" src="assets/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="assets/ckeditor/ckeditor.js"></script>
+
+<!--common script for all pages-->
+<script src="js/common-scripts.js"></script>
+<!--this page  script only-->
+<script src="js/advanced-form-components.js"></script>
 
 </body>
 </html>

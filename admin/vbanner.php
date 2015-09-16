@@ -1,3 +1,13 @@
+<?php
+session_start();
+if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == true)) {
+    unset($_SESSION['usuario']);
+    unset($_SESSION['senha']);
+    header('location:index.php');
+}
+?>
+
+
 <!--header end-->
 <?php include './header.php'; ?>
 <?php include './menu.php'; ?>
@@ -28,30 +38,47 @@
         <section class="wrapper site-min-height">
 
             <h1 style="font-weight: 300;"><span class="fa fa-picture-o"></span> BANNERS</h1>
-                                    <hr style="border: 1px solid #333;">
-                                    <div class="divider"></div>
-                                    <div class="divider"></div>
-                        
-                                    </br>
-                                    </br>   
-                        
-            
-            
-                        <div class="row">
-                            <div class="col-lg-12">
-            
-                                <section class="panel">
-            
-                                    <header class="panel-heading">
-                                        <a href="banner.php"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
-                                                </span> BANNERS</button>
-                                        </a>
-                                    </header>
+            <hr style="border: 1px solid #333;">
+            <div class="divider"></div>
+            <div class="divider"></div>
+
+            </br>
+
+            <?php
+            if (isset($_GET['respt'])) {
+
+                if ($_GET['respt'] == "sucesso") {
+                    ?>
+
+                    <div class="alert alert-success fade in">
+                        <button data-dismiss="alert" class="close close-sm" type="button">
+                            <i class="fa fa-times"></i>
+                        </button>
+                        <strong>SUCESSO!</strong> Banner excluido com sucesso!
+                    </div>
+                    <?php
+                }
+            }
+            ?>
+
+
+
+
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <section class="panel">
+
+                        <header class="panel-heading">
+                            <a href="banner.php"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
+                                    </span> BANNERS</button>
+                            </a>
+                        </header>
 
                         <div class="panel-body">
                             <div class="adv-table">
                                 <table  class="display table table-bordered table-striped" id="example">
-									<thead>
+                                    <thead>
                                         <tr>
                                             <th style="text-align: left;">BANNER</th>
                                             <th style="text-align: center;">DATA</th>
@@ -64,20 +91,32 @@
                                     </thead>
                                     <tbody>
 
+                                        <?php
+                                        $seleciona_dados = "SELECT * FROM banner INNER JOIN
+                                                            usuario ON banner.usuario_id = usuario.usuario_id";
 
-                                        <tr class="gradeA" style="text-align: center; vertical-align: center;">
-                                            <td style="text-align: left;">
-                                            	<a class="fancybox" rel="id_foto" href="img/banner-topo.png">
-                                            		<img src="img/banner-topo.png" height="100" alt="" />
-                                            	</a>
-                                            </td>
-                                            <td>20/01/2014</td>
-                                            <td>fulano</td>
-                                            <td><a href="#"><img src="img/sim.png" alt="" /></a></td>
-                                            <td><a href="#"><img src="img/editar.png" alt="" /></a></td>
-                                            <td><a href="#"><img src="img/excluir.png" alt="" /></a></td>
-                                        </tr>
+                                        $executa_seleciona_dados = mysql_query($seleciona_dados)or die(mysql_error());
 
+                                        while ($dados_array = mysql_fetch_array($executa_seleciona_dados)) {
+                                            ?>
+
+                                            <tr class="gradeA" style="text-align: center; vertical-align: center;">
+                                                <td style="text-align: left;">
+                                                    <a class="fancybox" rel="id_foto" href="imagens/banner/<?php echo $dados_array['img']; ?>">
+                                                        <img src="imagens/banner/<?php echo $dados_array['img']; ?>" height="100" alt="" />
+                                                    </a>
+                                                </td>
+                                                <td><?php echo $dados_array['data_banner']; ?></td>
+                                                <td><?php echo $dados_array['nome']; ?></td>
+                                                <td><a href="#"><img src="img/sim.png" alt="" /></a></td>
+                                                <td><a href="#"><img src="img/editar.png" alt="" /></a></td>
+                                                <td><a href="php/exclui_banner.php?id=<?php echo $dados_array['banner_id']; ?>"><img src="img/excluir.png" alt="" /></a></td>
+                                            </tr>
+
+
+                                            <?php
+                                        }
+                                        ?>
 
                                     </tbody>
                                 </table>
@@ -129,13 +168,13 @@
         });
     });
 </script>
-  <script type="text/javascript">
-      $(function() {
+<script type="text/javascript">
+    $(function () {
         //    fancybox
-          jQuery(".fancybox").fancybox();
-      });
+        jQuery(".fancybox").fancybox();
+    });
 
-  </script>
+</script>
 
 </body>
 </html>

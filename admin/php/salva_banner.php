@@ -13,19 +13,18 @@ include '../conections/conexao.php';
 
 //PEGANDO DADOS POR POST
 $data = $_POST['data'];
-$titulo = $_POST['titulo'];
-$link = $_POST['link'];
-$codigo = $_POST['codigo'];
+$nome = $_POST['nome'];
+$publicar = $_POST['publicar'];
 $img = $_FILES['img'];
 
 
 $fileName = $_FILES["img"]["name"];
-$pathAndName = "../imagens/depmidia/" . $fileName;
+$pathAndName = "../imagens/banner/" . $fileName;
 $fileTmpLoc = $_FILES["img"]["tmp_name"];
 $moveResult = move_uploaded_file($fileTmpLoc, $pathAndName);
 
 
-$insert = "INSERT INTO depmidia (data,titulo, link, codigo, foto, usuario_id)VALUES('$data', '$titulo', '$link', '$codigo', '$fileName', $id_usuario)";
+$insert = "INSERT INTO banner (data_banner, nome_banner, img, publicar, usuario_id)VALUES('$data', '$nome', '$fileName', $publicar, $id_usuario)";
 $executa_insert = mysql_query($insert)or die(mysql_error());
 
 
@@ -33,14 +32,14 @@ if ($executa_insert) {
     ?>
 
     <script>
-        window.location.href = '../depmidia.php?respt=sucesso';
+        window.location.href = '../banner.php?respt=sucesso';
     </script>
 
     <?php
 } else {
     ?>
     <script>
-        window.location.href = '../depmidia.php?respt=erro';
+        window.location.href = '../banner.php?respt=erro';
     </script>
     <?php
 }

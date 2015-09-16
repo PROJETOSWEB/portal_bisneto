@@ -1,10 +1,10 @@
 <?php
 
 include '../conections/conexao.php';
-$id_fotos = $_GET['id'];
+$id_banner = $_GET['id'];
 
 
-$delete_usuario = "DELETE FROM fotos WHERE fotos_id = $id_fotos";
+$delete_usuario = "DELETE FROM banner WHERE banner_id = $id_banner";
 $executa_delete = mysql_query($delete_usuario)or die(mysql_error());
 
 
@@ -12,7 +12,7 @@ if ($executa_delete) {
     ?>
 
     <script>
-        window.location.href = '../vfotos.php?respt=sucesso';
+        window.location.href = '../vbanner.php?respt=sucesso';
     </script>
     <?php
 
@@ -20,7 +20,7 @@ if ($executa_delete) {
     ?>
 
     <script>
-        window.location.href = '../vfotos.php?respt=erro';
+        window.location.href = '../vbanner.php?respt=erro';
     </script>
     <?php
 

@@ -1,3 +1,13 @@
+<?php
+session_start();
+if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == true)) {
+    unset($_SESSION['usuario']);
+    unset($_SESSION['senha']);
+    header('location:index.php');
+}
+?>
+
+
 <!--header end-->
 <?php include './header.php'; ?>
 <?php include './menu.php'; ?>
@@ -21,7 +31,7 @@
 
                         <div class="form-group">
                         	<label for="exampleInputEmail1">SELECIONE A DATA</label>
-                            <input class="form-control form-control-inline input-medium default-date-picker"  size="16" type="text" value="" />
+                            <input name="data" class="form-control form-control-inline input-medium default-date-picker"  size="16" type="text" value="" />
                         </div>
 
 

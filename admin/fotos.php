@@ -1,3 +1,12 @@
+<?php
+session_start();
+if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == true)) {
+    unset($_SESSION['usuario']);
+    unset($_SESSION['senha']);
+    header('location:index.php');
+}
+?>
+
 <!--header end-->
 <?php include './header.php'; ?>
 <?php include './menu.php'; ?>
@@ -25,7 +34,7 @@
                         <button data-dismiss="alert" class="close close-sm" type="button">
                             <i class="fa fa-times"></i>
                         </button>
-                        <strong>SUCESSO!</strong> Link cadastrado com sucesso!
+                        <strong>SUCESSO!</strong> Foto cadastrada com sucesso!
                     </div>
                     <?php
                 }
@@ -38,18 +47,18 @@
 
 
 
-                    <form role="form" action="php/salvar_link.php" method="POST">
+                    <form role="form" action="php/salva_fotos.php" method="POST" enctype='multipart/form-data'>
 
                        <div class="form-group">
                        	<label for="exampleInputEmail1">SELECIONE A DATA</label>
-                           <input class="form-control form-control-inline input-medium default-date-picker"  size="16" type="text" value="" />
+                           <input name="data" class="form-control form-control-inline input-medium default-date-picker"  size="16" type="text" value="" />
                        </div>
                        
 
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">LEGENDA DA FOTO</label>
-                            <input name="nome" id="nome" tooltip="Título do seu artigo, EVITE TÍTULOS LONGOS" type="text" class="form-control" data-placement="top">
+                            <input name="legenda" id="nome" tooltip="Título do seu artigo, EVITE TÍTULOS LONGOS" type="text" class="form-control" data-placement="top">
                         </div>
 
 

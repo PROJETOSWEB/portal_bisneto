@@ -1,3 +1,13 @@
+<?php
+session_start();
+if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == true)) {
+    unset($_SESSION['usuario']);
+    unset($_SESSION['senha']);
+    header('location:index.php');
+}
+?>
+
+
 <!--header end-->
 <?php include './header.php'; ?>
 <?php include './menu.php'; ?>
@@ -28,30 +38,46 @@
         <section class="wrapper site-min-height">
 
             <h1 style="font-weight: 300;"><span class="fa fa-video-camera"></span> GALERIA DE FOTOS</h1>
-                                    <hr style="border: 1px solid #333;">
-                                    <div class="divider"></div>
-                                    <div class="divider"></div>
-                        
-                                    </br>
-                                    </br>   
-                        
-            
-            
-                        <div class="row">
-                            <div class="col-lg-12">
-            
-                                <section class="panel">
-            
-                                    <header class="panel-heading">
-                                        <a href="fotos.php"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
-                                                </span> fotos</button>
-                                        </a>
-                                    </header>
+            <hr style="border: 1px solid #333;">
+            <div class="divider"></div>
+            <div class="divider"></div>
+
+            </br>
+            <?php
+            if (isset($_GET['respt'])) {
+
+                if ($_GET['respt'] == "sucesso") {
+                    ?>
+
+                    <div class="alert alert-success fade in">
+                        <button data-dismiss="alert" class="close close-sm" type="button">
+                            <i class="fa fa-times"></i>
+                        </button>
+                        <strong>SUCESSO!</strong> Foto excluida com sucesso!
+                    </div>
+                    <?php
+                }
+            }
+            ?>
+
+
+
+
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <section class="panel">
+
+                        <header class="panel-heading">
+                            <a href="fotos.php"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
+                                    </span> fotos</button>
+                            </a>
+                        </header>
 
                         <div class="panel-body">
                             <div class="adv-table">
                                 <table  class="display table table-bordered table-striped" id="example">
-									<thead>
+                                    <thead>
                                         <tr>
                                             <th style="text-align: left;">FOTO</th>
                                             <th style="text-align: left;">LEGENDA</th>
@@ -64,20 +90,31 @@
                                     </thead>
                                     <tbody>
 
+                                        <?php
+                                        $seleciona_dados = "SELECT * FROM fotos INNER JOIN usuario
+                                                            ON fotos.usuario_id = usuario.usuario_id";
 
-                                        <tr class="gradeA" style="text-align: center; vertical-align: center;">
-                                            <td style="text-align: left;">
-                                            	<a class="fancybox" rel="id_foto" href="img/arthur-bisneto02.jpg" title="Legenda da foto">
-                                            		<img src="img/arthur-bisneto02.jpg" height="100" alt="" />
-                                            	</a>
-                                            </td>
-                                            <td style="text-align: left;">nononon onononon onononon</td>
-                                            <td>20/01/2014</td>
-                                            <td>fulano</td>
-                                            <td><a href="#"><img src="img/editar.png" alt="" /></a></td>
-                                            <td><a href="#"><img src="img/excluir.png" alt="" /></a></td>
-                                        </tr>
+                                        $executa_seleciona_dados = mysql_query($seleciona_dados)or die(mysql_error());
 
+                                        while ($array_dados = mysql_fetch_array($executa_seleciona_dados)) {
+                                            ?>
+
+                                            <tr class="gradeA" style="text-align: center; vertical-align: center;">
+                                                <td style="text-align: left;">
+                                                    <a class="fancybox" rel="id_foto" href="imagens/fotos/<?php echo $array_dados['foto']; ?>" title="<?php echo $array_dados['legenda']; ?>">
+                                                        <img src="imagens/fotos/<?php echo $array_dados['foto']; ?>" height="100" alt="" />
+                                                    </a>
+                                                </td>
+                                                <td style="text-align: left;"><?php echo $array_dados['legenda']; ?></td>
+                                                <td><?php echo $array_dados['data_foto']; ?></td>
+                                                <td><?php echo $array_dados['nome']; ?></td>
+                                                <td><a href="#"><img src="img/editar.png" alt="" /></a></td>
+                                                <td><a href="php/exclui_fotos.php?id=<?php echo $array_dados['fotos_id']; ?>"><img src="img/excluir.png" alt="" /></a></td>
+                                            </tr>
+
+                                            <?php
+                                        }
+                                        ?>
 
                                     </tbody>
                                 </table>
@@ -130,13 +167,13 @@
         });
     });
 </script>
-  <script type="text/javascript">
-      $(function() {
+<script type="text/javascript">
+    $(function () {
         //    fancybox
-          jQuery(".fancybox").fancybox();
-      });
+        jQuery(".fancybox").fancybox();
+    });
 
-  </script>
+</script>
 
 </body>
 </html>

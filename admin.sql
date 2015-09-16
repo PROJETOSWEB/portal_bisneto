@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 16-Set-2015 às 06:32
+-- Generation Time: 16-Set-2015 às 07:33
 -- Versão do servidor: 5.6.15-log
 -- PHP Version: 5.5.8
 
@@ -19,6 +19,29 @@ SET time_zone = "+00:00";
 --
 -- Database: `admin`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `banner`
+--
+
+CREATE TABLE IF NOT EXISTS `banner` (
+  `banner_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `data_banner` varchar(45) NOT NULL DEFAULT '',
+  `nome_banner` varchar(100) NOT NULL DEFAULT '',
+  `img` varchar(45) NOT NULL DEFAULT '',
+  `publicar` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '1-ATIVO 2-INATIVO',
+  `usuario_id` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`banner_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Extraindo dados da tabela `banner`
+--
+
+INSERT INTO `banner` (`banner_id`, `data_banner`, `nome_banner`, `img`, `publicar`, `usuario_id`) VALUES
+(1, '05-09-2015', 'huhu', '2.jpg', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -57,7 +80,7 @@ CREATE TABLE IF NOT EXISTS `depmidia` (
   `foto` varchar(100) NOT NULL DEFAULT '',
   `usuario_id` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`depmidia_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Extraindo dados da tabela `depmidia`
@@ -65,7 +88,8 @@ CREATE TABLE IF NOT EXISTS `depmidia` (
 
 INSERT INTO `depmidia` (`depmidia_id`, `data`, `titulo`, `link`, `codigo`, `foto`, `usuario_id`) VALUES
 (1, 'HUAHDUA', 'DUAHUSD', 'DAHSUDAUD', 'DD', '11866412_923345824399818_7638106130952624583_n.jpg', 1),
-(2, '', 'HDUAHUD', '', '', '2.jpg', 1);
+(3, '', 'TITULO TESTE', 'http://dasdadad', 'dafsdfs', '2.jpg', 1),
+(4, '', 'HDUAHUD', 'DAHDUHAUD', 'DAD', '2.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -80,7 +104,14 @@ CREATE TABLE IF NOT EXISTS `fotos` (
   `foto` varchar(45) NOT NULL DEFAULT '',
   `usuario_id` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`fotos_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Extraindo dados da tabela `fotos`
+--
+
+INSERT INTO `fotos` (`fotos_id`, `data_foto`, `legenda`, `foto`, `usuario_id`) VALUES
+(1, '11-09-2015', 'legenda teste', '2.jpg', 1);
 
 -- --------------------------------------------------------
 

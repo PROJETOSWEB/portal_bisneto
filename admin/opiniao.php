@@ -1,3 +1,11 @@
+<?php
+session_start();
+if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == true)) {
+    unset($_SESSION['usuario']);
+    unset($_SESSION['senha']);
+    header('location:index.php');
+}
+?>
 <!--header end-->
 <?php include './header.php'; ?>
 <?php include './menu.php'; ?>
@@ -16,7 +24,7 @@
                 <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> CADASTRO DE OPINIÃO</strong></div>
                 <div class="panel-body">
 
-                    <form role="form" action="php/salva_depmidia.php" method="POST" enctype='multipart/form-data'>
+                    <form role="form" action="php/salva_opiniao.php" method="POST" enctype='multipart/form-data'>
 
 
                         <div class="form-group">

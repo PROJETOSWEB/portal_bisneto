@@ -1,3 +1,12 @@
+<?php
+session_start();
+if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == true)) {
+    unset($_SESSION['usuario']);
+    unset($_SESSION['senha']);
+    header('location:index.php');
+}
+?>
+
 <!--header end-->
 <?php include './header.php'; ?>
 <?php include './menu.php'; ?>
@@ -23,13 +32,28 @@
         <section class="wrapper site-min-height">
 
             <h1 style="font-weight: 300;"><span class="fa  fa-check-square-o"></span> OPINIÃO</h1>
-                        <hr style="border: 1px solid #333;">
-                        <div class="divider"></div>
-                        <div class="divider"></div>
-            
-                        </br>
-                        </br>   
-            
+            <hr style="border: 1px solid #333;">
+            <div class="divider"></div>
+            <div class="divider"></div>
+
+            </br>
+
+            <?php
+            if (isset($_GET['respt'])) {
+
+                if ($_GET['respt'] == "sucesso") {
+                    ?>
+
+                    <div class="alert alert-success fade in">
+                        <button data-dismiss="alert" class="close close-sm" type="button">
+                            <i class="fa fa-times"></i>
+                        </button>
+                        <strong>SUCESSO!</strong> Opinião excluida com sucesso!
+                    </div>
+                    <?php
+                }
+            }
+            ?>
 
 
             <div class="row">
@@ -91,16 +115,16 @@
                                                 </td>
 
                                                 <td><a href="#"><img src="img/editar.png" alt="" /></a></td>
-                                                <td><a href="#"><img src="img/excluir.png" alt="" /></a></td>
+                                                <td><a href="php/exclui_opiniao.php?id=<?php echo $dados_array['opiniao_id']; ?>"><img src="img/excluir.png" alt="" /></a></td>
                                             </tr>
 
-    <?php
-}
-?>
+                                            <?php
+                                        }
+                                        ?>
 
                                     </tbody>
 
-                                    
+
                                 </table>
                             </div>
                         </div>

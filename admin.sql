@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 14-Set-2015 às 05:30
+-- Generation Time: 16-Set-2015 às 06:32
 -- Versão do servidor: 5.6.15-log
 -- PHP Version: 5.5.8
 
@@ -57,14 +57,15 @@ CREATE TABLE IF NOT EXISTS `depmidia` (
   `foto` varchar(100) NOT NULL DEFAULT '',
   `usuario_id` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`depmidia_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Extraindo dados da tabela `depmidia`
 --
 
 INSERT INTO `depmidia` (`depmidia_id`, `data`, `titulo`, `link`, `codigo`, `foto`, `usuario_id`) VALUES
-(1, 'HUAHDUA', 'DUAHUSD', 'DAHSUDAUD', 'DD', '11866412_923345824399818_7638106130952624583_n.jpg', 1);
+(1, 'HUAHDUA', 'DUAHUSD', 'DAHSUDAUD', 'DD', '11866412_923345824399818_7638106130952624583_n.jpg', 1),
+(2, '', 'HDUAHUD', '', '', '2.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -128,8 +129,25 @@ INSERT INTO `links` (`links_id`, `nome`, `link`, `data_cadastro`, `usuario_id`) 
 (16, 'TESTE', 'K', '05-setembro-2015', 1),
 (17, 'KAROLINE', 'DASDASD', '06-setembro-2015', 1),
 (18, 'KKK', 'KK', '06-setembro-2015', 1),
-(19, '898', '98', '898', 1),
 (20, 'ASDAD', 'http://', 'DASD', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `noticia`
+--
+
+CREATE TABLE IF NOT EXISTS `noticia` (
+  `noticia_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `data_noticia` varchar(45) NOT NULL DEFAULT '',
+  `titulo` varchar(100) NOT NULL DEFAULT '',
+  `texto` longtext NOT NULL,
+  `texto_detalhe` longtext NOT NULL,
+  `img` varchar(100) NOT NULL DEFAULT '',
+  `destaque_banner` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '1-ATIVO 2- INATIVO',
+  `publicar` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '1-ATIVO 2-INATIVO',
+  PRIMARY KEY (`noticia_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -147,7 +165,7 @@ CREATE TABLE IF NOT EXISTS `opiniao` (
   `publicar` int(10) unsigned DEFAULT NULL COMMENT '1-ATIVO 2-INATIVO',
   `usuario_id` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`opiniao_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
 
 --
 -- Extraindo dados da tabela `opiniao`
@@ -156,20 +174,17 @@ CREATE TABLE IF NOT EXISTS `opiniao` (
 INSERT INTO `opiniao` (`opiniao_id`, `data`, `titulo`, `texto`, `texto_detalhe`, `foto`, `publicar`, `usuario_id`) VALUES
 (1, '7', 'jkjkjk', 'ojk', 'ljkj', '2.jpg', 1, 1),
 (2, 'DASD', 'TITULO TESTE', 'DASHUDHAUXHASUHXUAS', 'SAX', 'boleto2.png', 1, 1),
-(3, 'j', 'j', 'j', 'j', '2.jpg', 0, 1),
 (4, 'j', 'j', 'j', 'j', '2.jpg', 0, 1),
-(5, 'j', 'j', 'j', 'j', '2.jpg', 0, 1),
 (6, 'j', 'j', 'j', 'j', '2.jpg', 0, 1),
-(7, 'j', 'j', 'j', 'j', '2.jpg', 0, 1),
 (8, 'j', 'j', 'j', 'j', '2.jpg', 0, 1),
 (9, 'j', 'j', 'j', 'j', '2.jpg', 0, 1),
 (10, 'j', 'j', 'j', 'j', '2.jpg', 0, 1),
-(11, 'j', 'j', 'j', 'j', '2.jpg', 0, 1),
 (12, 'j', 'j', 'j', 'j', '2.jpg', 0, 1),
 (13, 'j', 'j', 'j', 'j', '2.jpg', 0, 1),
 (14, 'j', 'j', 'j', 'j', '2.jpg', 0, 1),
 (15, 'j', 'j', 'j', 'j', '2.jpg', 0, 1),
-(16, 'h', 'hh', 'hh', 'hhh', '2.jpg', 2, 1);
+(16, 'h', 'hh', 'hh', 'hhh', '2.jpg', 2, 1),
+(17, '', 'uhuadh', 'daudhu', 'dauhduahdu', '2.jpg', 2, 2);
 
 -- --------------------------------------------------------
 
@@ -208,8 +223,8 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 --
 
 INSERT INTO `usuario` (`usuario_id`, `nome`, `login`, `senha`, `status`, `email`, `nivel`) VALUES
-(1, 'Karoline', 'karol', '123', 1, '', 0),
-(2, 'JOAO SILVA', 'joao', 'karol031091', 1, 'joao@hotmail.com', 1);
+(1, 'Karol Oliveira', 'karol', '123', 1, '', 0),
+(2, 'Thiago Maneschy', 'thiago', '123', 1, '', 0);
 
 -- --------------------------------------------------------
 

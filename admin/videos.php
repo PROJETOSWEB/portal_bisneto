@@ -25,7 +25,7 @@
                         <button data-dismiss="alert" class="close close-sm" type="button">
                             <i class="fa fa-times"></i>
                         </button>
-                        <strong>SUCESSO!</strong> Link cadastrado com sucesso!
+                        <strong>SUCESSO!</strong> Vídeo cadastrado com sucesso!
                     </div>
                     <?php
                 }
@@ -38,17 +38,17 @@
 
 
 
-                    <form role="form" action="php/salvar_videos.php" method="POST">
+                    <form role="form" action="php/salva_videos.php" method="POST">
 
                         <div class="form-group">
                         	<label for="exampleInputEmail1">SELECIONE A DATA</label>
-                            <input class="form-control form-control-inline input-medium default-date-picker"  size="16" type="text" value="" />
+                            <input name="data" class="form-control form-control-inline input-medium default-date-picker"  size="16" type="text" value="" />
                         </div>
 
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">LEGENDA DA VÍDEO</label>
-                            <input name="nome" id="nome" tooltip="Título do seu artigo, EVITE TÍTULOS LONGOS" type="text" class="form-control" data-placement="top">
+                            <input name="legenda" id="nome" tooltip="Título do seu artigo, EVITE TÍTULOS LONGOS" type="text" class="form-control" data-placement="top">
                         </div>
 
 
@@ -58,7 +58,7 @@
                             <label for="exampleInputEmail1">CÓDIGO DO VÍDEO NO YOUTUBE</label>
                             <div class="input-group">
                                 <span class="input-group-addon">https://www.youtube.com/watch?v=</span>
-                                <input tooltip="Poste o vídeo no youtube, copie o código de 11 dígitos gerado no link do vídeo após o sinal de igual (=), conforme o modelo abaixo" type="text" name="codigo" class="form-control" placeholder="1xq0gD-DIoc">
+                                <input name="codigo" tooltip="Poste o vídeo no youtube, copie o código de 11 dígitos gerado no link do vídeo após o sinal de igual (=), conforme o modelo abaixo" type="text" name="codigo" class="form-control" placeholder="1xq0gD-DIoc">
                             </div>
                         </div>
                         <br/>

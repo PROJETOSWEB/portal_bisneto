@@ -11,24 +11,43 @@
     <section class="wrapper">
 
         <div class="col-lg-6">
+            
+               <?php
+            if (isset($_GET['respt'])) {
+
+                if ($_GET['respt'] == "sucesso") {
+                    ?>
+
+                    <div class="alert alert-success fade in">
+                        <button data-dismiss="alert" class="close close-sm" type="button">
+                            <i class="fa fa-times"></i>
+                        </button>
+                        <strong>SUCESSO!</strong> Notícia cadastrada com sucesso!
+                    </div>
+                    <?php
+                }
+            }
+            ?>
+            
+            
             <section class="panel">
 
                 <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> CADASTRO DE NOTÍCIAS</strong></div>
                 <div class="panel-body">
 
-                    <form role="form" action="php/salva_depmidia.php" method="POST" enctype='multipart/form-data'>
+                    <form role="form" action="php/salva_noticia.php" method="POST" enctype='multipart/form-data'>
 
 
                         <div class="form-group">
                         	<label for="exampleInputEmail1">SELECIONE A DATA</label>
-                            <input class="form-control form-control-inline input-medium default-date-picker"  size="16" type="text" value="" />
+                            <input name="data" class="form-control form-control-inline input-medium default-date-picker"  size="16" type="text" value="" />
                         </div>
 
 
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">TÍTULO</label>
-                            <input tooltip="Título do seu artigo, EVITE TÍTULOS LONGOS" name="titulo" type="text" class="form-control" data-placement="top">
+                            <input name="titulo" tooltip="Título do seu artigo, EVITE TÍTULOS LONGOS" name="titulo" type="text" class="form-control" data-placement="top">
                         </div>
 
  						<div class="form-group">
@@ -90,7 +109,7 @@
                                 <div class="switch switch-square"
                                  data-on-label="<i class=' fa fa-check'></i>"
                                 	data-off-label="<i class='fa fa-times'></i>">
-                                    <input type="checkbox" />
+                                    <input name="destaque" value="1" type="checkbox" />
                                 </div>
 
                                 <hr/>
@@ -99,7 +118,7 @@
                                <div class="switch switch-square"
                                	  data-off-label="<i class='fa fa-times'></i>"
                                     data-on-label="<i class=' fa fa-check'></i>">
-                                   <input type="checkbox"  checked />
+                                   <input name="publicar" value="1" type="checkbox"  checked />
                                </div>
                                 
                                 

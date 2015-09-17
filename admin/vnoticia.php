@@ -23,13 +23,28 @@
         <section class="wrapper site-min-height">
 
             <h1 style="font-weight: 300;"><span class="fa fa-list-alt"></span> NOTÍCIAS</h1>
-                        <hr style="border: 1px solid #333;">
-                        <div class="divider"></div>
-                        <div class="divider"></div>
-            
-                        </br>
-                        </br>   
-            
+            <hr style="border: 1px solid #333;">
+            <div class="divider"></div>
+            <div class="divider"></div>
+
+            </br>
+
+            <?php
+            if (isset($_GET['respt'])) {
+
+                if ($_GET['respt'] == "sucesso") {
+                    ?>
+
+                    <div class="alert alert-success fade in">
+                        <button data-dismiss="alert" class="close close-sm" type="button">
+                            <i class="fa fa-times"></i>
+                        </button>
+                        <strong>SUCESSO!</strong> Notícia excluida com sucesso!
+                    </div>
+                    <?php
+                }
+            }
+            ?>
 
 
             <div class="row">
@@ -62,8 +77,8 @@
 
 
                                         <?php
-                                        $seleciona = "SELECT * FROM opiniao INNER JOIN
-                                                      usuario ON opiniao.usuario_id = usuario.usuario_id";
+                                        $seleciona = "SELECT * FROM noticia INNER JOIN
+                                                      usuario ON noticia.usuario_id = usuario.usuario_id";
 
                                         $seleciona_executa = mysql_query($seleciona)or die(mysql_error());
 
@@ -72,7 +87,7 @@
 
                                             <tr class="gradeA" style="text-align: center;">
                                                 <td style="text-align: left;"><?php echo $dados_array['titulo']; ?></td>
-                                                <td><?php echo $dados_array['data']; ?></td>
+                                                <td><?php echo $dados_array['data_noticia']; ?></td>
                                                 <td><?php echo $dados_array['nome']; ?></td>
                                                 <td>
 
@@ -88,20 +103,34 @@
                                                     }
                                                     ?>
 
+                                                </td>
+
+                                                <td>
+                                                    <?php
+                                                    if ($dados_array['destaque_banner'] == 1) {
+                                                        ?>
+                                                        <img src="img/sim.png" alt="">
+                                                        <?php
+                                                    } else {
+                                                        ?>
+                                                        <img src="img/nao.png" alt="">
+                                                        <?php
+                                                    }
+                                                    ?>
+
 
                                                 </td>
-												<td><a href="#"><img src="img/nao.png" alt="" /></a></td>
                                                 <td><a href="#"><img src="img/editar.png" alt="" /></a></td>
-                                                <td><a href="#"><img src="img/excluir.png" alt="" /></a></td>
+                                                <td><a href="php/exclui_noticia.php?id=<?php echo $dados_array['noticia_id']; ?>"><img src="img/excluir.png" alt="" /></a></td>
                                             </tr>
 
-    <?php
-}
-?>
+                                            <?php
+                                        }
+                                        ?>
 
                                     </tbody>
 
-                                    
+
                                 </table>
                             </div>
                         </div>

@@ -5,20 +5,41 @@
 
 
 <link rel="stylesheet" type="text/css" href="assets/bootstrap-fileupload/bootstrap-fileupload.css" />
-    <link rel="stylesheet" type="text/css" href="assets/bootstrap-datepicker/css/datepicker.css" />
+<link rel="stylesheet" type="text/css" href="assets/bootstrap-datepicker/css/datepicker.css" />
 <!--main content start-->
 <section id="main-content">
     <section class="wrapper">
 
         <div class="col-lg-6">
+
+            <?php
+            if (isset($_GET['respt'])) {
+
+                if ($_GET['respt'] == "sucesso") {
+                    ?>
+
+                    <div class="alert alert-success fade in">
+                        <button data-dismiss="alert" class="close close-sm" type="button">
+                            <i class="fa fa-times"></i>
+                        </button>
+                        <strong>SUCESSO!</strong> Informativo cadastrado com sucesso!
+                    </div>
+                    <?php
+                }
+            }
+            ?>
+
+
             <section class="panel">
                 <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> CADASTRO DE INFORMATIVO</strong></div>
                 <div class="panel-body">
-                    <form role="form">
+
+
+                    <form role="form" method="post" action="php/salva_informativo.php" enctype='multipart/form-data'>
 
                         <div class="form-group">
-                        	<label for="exampleInputEmail1">SELECIONE A DATA</label>
-                            <input class="form-control form-control-inline input-medium default-date-picker"  size="16" type="text" value="" />
+                            <label for="exampleInputEmail1">SELECIONE A DATA</label>
+                            <input name="data" class="form-control form-control-inline input-medium default-date-picker"  size="16" type="text" value="" />
                         </div>
 
 
@@ -47,7 +68,7 @@
                                                 <span class="btn btn-white btn-file">
                                                     <span class="fileupload-new"><i class="fa fa-paper-clip"></i> SELECIONE A CAPA JPG</span>
                                                     <span class="fileupload-exists"><i class="fa fa-undo"></i> trocar</span>
-                                                    <input type="file" class="default" />
+                                                    <input type="file" name="img" class="default" />
                                                 </span>
                                                 <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload"><i class="fa fa-trash"></i> excluir</a>
                                             </div>
@@ -63,7 +84,7 @@
                                     <span class="btn btn-white btn-file">
                                         <span class="fileupload-new"><i class="fa fa-paper-clip"></i> Carregar arquivo • PDF</span>
                                         <span class="fileupload-exists"><i class="fa fa-undo"></i> Trocar</span>
-                                        <input type="file" class="default" />
+                                        <input type="file" name="arquivo" class="default" />
                                     </span>
                                     <span class="fileupload-preview" style="margin-left:5px;"></span>
                                     <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload"><i class="fa fa-trash"></i> excluir</a>
@@ -104,23 +125,23 @@
 <script src="js/owl.carousel.js" ></script>
 <script src="js/jquery.customSelect.min.js" ></script>
 <script src="js/respond.min.js" ></script>
-  <!--custom switch-->
-  <script src="js/bootstrap-switch.js"></script>
-  <!--custom tagsinput-->
-  <script src="js/jquery.tagsinput.js"></script>
-  <!--this page plugins-->
-  
-    <!--this page plugins-->
+<!--custom switch-->
+<script src="js/bootstrap-switch.js"></script>
+<!--custom tagsinput-->
+<script src="js/jquery.tagsinput.js"></script>
+<!--this page plugins-->
 
-  <script type="text/javascript" src="assets/fuelux/js/spinner.min.js"></script>
-  <script type="text/javascript" src="assets/bootstrap-fileupload/bootstrap-fileupload.js"></script>
-  <script type="text/javascript" src="assets/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
-  <script type="text/javascript" src="assets/ckeditor/ckeditor.js"></script>
+<!--this page plugins-->
 
-  <!--common script for all pages-->
-    <script src="js/common-scripts.js"></script>
-    <!--this page  script only-->
-    <script src="js/advanced-form-components.js"></script>
+<script type="text/javascript" src="assets/fuelux/js/spinner.min.js"></script>
+<script type="text/javascript" src="assets/bootstrap-fileupload/bootstrap-fileupload.js"></script>
+<script type="text/javascript" src="assets/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="assets/ckeditor/ckeditor.js"></script>
+
+<!--common script for all pages-->
+<script src="js/common-scripts.js"></script>
+<!--this page  script only-->
+<script src="js/advanced-form-components.js"></script>
 
 </body>
 </html>

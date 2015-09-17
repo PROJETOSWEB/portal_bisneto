@@ -23,30 +23,46 @@
         <section class="wrapper site-min-height">
 
             <h1 style="font-weight: 300;"><span class="fa fa-video-camera"></span> GALERIA DE VÍDEOS</h1>
-                                    <hr style="border: 1px solid #333;">
-                                    <div class="divider"></div>
-                                    <div class="divider"></div>
-                        
-                                    </br>
-                                    </br>   
-                        
-            
-            
-                        <div class="row">
-                            <div class="col-lg-12">
-            
-                                <section class="panel">
-            
-                                    <header class="panel-heading">
-                                        <a href="videos.php"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
-                                                </span> vídeos</button>
-                                        </a>
-                                    </header>
+            <hr style="border: 1px solid #333;">
+            <div class="divider"></div>
+            <div class="divider"></div>
+
+            </br>
+
+            <?php
+            if (isset($_GET['respt'])) {
+
+                if ($_GET['respt'] == "sucesso") {
+                    ?>
+
+                    <div class="alert alert-success fade in">
+                        <button data-dismiss="alert" class="close close-sm" type="button">
+                            <i class="fa fa-times"></i>
+                        </button>
+                        <strong>SUCESSO!</strong> Vídeo excluido com sucesso!
+                    </div>
+                    <?php
+                }
+            }
+            ?>
+
+
+
+
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <section class="panel">
+                        <header class="panel-heading">
+                            <a href="videos.php"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
+                                    </span> vídeos</button>
+                            </a>
+                        </header>
 
                         <div class="panel-body">
                             <div class="adv-table">
                                 <table  class="display table table-bordered table-striped" id="example">
-									<thead>
+                                    <thead>
                                         <tr>
                                             <th style="text-align: left;">VÍDEO</th>
                                             <th style="text-align: left;">LEGENDA</th>
@@ -59,18 +75,29 @@
                                     </thead>
                                     <tbody>
 
+                                        <?php
+                                        $seleciona_dados = "SELECT * FROM videos INNER JOIN usuario ON videos.usuario_id = usuario.usuario_id";
 
-                                        <tr class="gradeA" style="text-align: center; vertical-align: center;">
-                                            <td style="text-align: left;">
-                                            	<iframe width="150" height="100" src="https://www.youtube.com/embed/Lcubw2IeNtM?wmode=transparent" allowfullscreen></iframe>
-                                            </td>
-                                            <td style="text-align: left; vertical-align: center;">nononon onononon onononon</td>
-                                            <td>20/01/2014</td>
-                                            <td>fulano</td>
-                                            <td><a href="#"><img src="img/editar.png" alt="" /></a></td>
-                                            <td><a href="#"><img src="img/excluir.png" alt="" /></a></td>
-                                        </tr>
+                                        $executa_seleciona_dados = mysql_query($seleciona_dados)or die(mysql_error());
 
+                                        while ($array_dados = mysql_fetch_array($executa_seleciona_dados)) {
+                                            ?>
+
+                                            <tr class="gradeA" style="text-align: center; vertical-align: center;">
+                                                <td style="text-align: left;">
+                                                    <iframe width="150" height="100" src="https://www.youtube.com/embed/<?php echo $array_dados['video'] ?>?wmode=transparent" allowfullscreen></iframe>
+                                                </td>
+                                                <td style="text-align: left; vertical-align: center;"><?php echo $array_dados['legenda']; ?></td>
+                                                <td><?php echo $array_dados['data_video']; ?></td>
+                                                <td><?php echo $array_dados['nome'] ?></td>
+                                                <td><a href="#"><img src="img/editar.png" alt="" /></a></td>
+                                                <td><a href="php/exclui_videos.php?id=<?php echo $array_dados['videos_id']; ?>"><img src="img/excluir.png" alt="" /></a></td>
+                                            </tr>
+
+
+                                            <?php
+                                        }
+                                        ?>
 
                                     </tbody>
                                 </table>

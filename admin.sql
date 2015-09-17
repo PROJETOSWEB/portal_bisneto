@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 16-Set-2015 às 07:33
+-- Generation Time: 17-Set-2015 às 05:58
 -- Versão do servidor: 5.6.15-log
 -- PHP Version: 5.5.8
 
@@ -127,14 +127,15 @@ CREATE TABLE IF NOT EXISTS `informativo` (
   `pdf` varchar(100) NOT NULL DEFAULT '',
   `usuario_id` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`informativo_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Extraindo dados da tabela `informativo`
 --
 
 INSERT INTO `informativo` (`informativo_id`, `data_informativo`, `edicao`, `img`, `pdf`, `usuario_id`) VALUES
-(1, '06-setembro-2015', '888', '', '', 1);
+(2, '04-09-2015', 'DUAHDUAHDU', 'hora-de-aventura-destaque.jpg', 'hora-de-aventura-destaque.jpg', 1),
+(3, '11-09-2015', 'DUAHDU', 'hora-de-aventura-destaque.jpg', 'ordem.sql', 1);
 
 -- --------------------------------------------------------
 
@@ -177,8 +178,16 @@ CREATE TABLE IF NOT EXISTS `noticia` (
   `img` varchar(100) NOT NULL DEFAULT '',
   `destaque_banner` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '1-ATIVO 2- INATIVO',
   `publicar` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '1-ATIVO 2-INATIVO',
+  `usuario_id` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`noticia_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Extraindo dados da tabela `noticia`
+--
+
+INSERT INTO `noticia` (`noticia_id`, `data_noticia`, `titulo`, `texto`, `texto_detalhe`, `img`, `destaque_banner`, `publicar`, `usuario_id`) VALUES
+(2, '03-09-2015', 'HUHAUD', 'SDHAUDHUAHDUAHXDHAS', 'DUASHDUAHDUAHUD', 'hora_de_aventura.gif', 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -226,11 +235,20 @@ INSERT INTO `opiniao` (`opiniao_id`, `data`, `titulo`, `texto`, `texto_detalhe`,
 CREATE TABLE IF NOT EXISTS `salaimprensa` (
   `salaimprensa_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `data` varchar(45) NOT NULL DEFAULT '',
+  `nome` varchar(45) NOT NULL DEFAULT '',
   `tipo_arquivo` varchar(45) NOT NULL DEFAULT '',
-  `arquivo` varchar(100) NOT NULL DEFAULT '',
+  `arquivo` varchar(100) DEFAULT NULL,
   `usuario_id` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`salaimprensa_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Extraindo dados da tabela `salaimprensa`
+--
+
+INSERT INTO `salaimprensa` (`salaimprensa_id`, `data`, `nome`, `tipo_arquivo`, `arquivo`, `usuario_id`) VALUES
+(1, '11-09-2015', '', 'JPG', 'ordem.sql', 1),
+(2, '11-09-2015', '', 'JPG', 'boletoRequisicao.pdf', 1);
 
 -- --------------------------------------------------------
 
@@ -270,7 +288,14 @@ CREATE TABLE IF NOT EXISTS `videos` (
   `video` varchar(45) NOT NULL DEFAULT '',
   `usuario_id` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`videos_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Extraindo dados da tabela `videos`
+--
+
+INSERT INTO `videos` (`videos_id`, `data_video`, `legenda`, `video`, `usuario_id`) VALUES
+(1, '01-09-2015', 'kjdiajdia', 'geFj_kMvasQ', 1);
 
 --
 -- Constraints for dumped tables

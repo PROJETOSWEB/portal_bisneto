@@ -102,6 +102,7 @@ window['rangy'] = (function() {
         version: "1.2.2",
         initialized: false,
         supported: true,
+        image: false,
 
         util: {
             isHostMethod: isHostMethod,

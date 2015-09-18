@@ -1,9 +1,4 @@
-
-<!DOCTYPE html>
-
-<html>
-
-	<head>
+<html><head>
 		
 		<!-- Meta Tags -->
 		<meta charset="utf-8">
@@ -13,8 +8,8 @@
 		<title>Deputado Arthur Bisneto</title>
 		
 		<!-- Google Fonts -->
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+		<link href="http://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet" type="text/css">
 		
 		<!-- Favicon -->
 		<link rel="shortcut icon" type="image/x-icon" href="img/psdb-ico.png">
@@ -23,12 +18,12 @@
 		<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 		<link href="css/fontello.css" rel="stylesheet" type="text/css">
 		<link href="css/flexslider.css" rel="stylesheet" type="text/css">
-		<link href="js/revolution-slider/css/settings.css" rel="stylesheet" type="text/css" media="screen" />
+		<link href="js/revolution-slider/css/settings.css" rel="stylesheet" type="text/css" media="screen">
 		<link href="css/owl.carousel.css" rel="stylesheet" type="text/css">
 		<link href="css/responsive-calendar.css" rel="stylesheet" type="text/css">
 		<link href="css/chosen.css" rel="stylesheet" type="text/css">
-		<link href="jackbox/css/jackbox.min.css" rel="stylesheet" type="text/css" />
-		<link href="css/cloud-zoom.css" rel="stylesheet" type="text/css" />
+		<link href="jackbox/css/jackbox.min.css" rel="stylesheet" type="text/css">
+		<link href="css/cloud-zoom.css" rel="stylesheet" type="text/css">
 		<link href="css/style.css" rel="stylesheet" type="text/css">
 
 		
@@ -105,12 +100,12 @@
 		});
 		</script>
 		
-	</head>
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"></head>
 	
 	<body class="sticky-header-on tablet-sticky-header">
 	
 	<div id="fb-root"></div>
-	<script>(function(d, s, id) {
+	<script class="">(function(d, s, id) {
 	  var js, fjs = d.getElementsByTagName(s)[0];
 	  if (d.getElementById(id)) return;
 	  js = d.createElement(s); js.id = id;
@@ -135,7 +130,7 @@
 						<!-- Logo arthur -->
 						<div id="logo" class="col-lg-4 col-md-4 col-sm-4 animate-onscroll" style="margin: 0px; padding: 0px;">
 							
-							<a href="index.html"><img src="img/Topo-Site-1.png"alt="Logo"></a>
+							<a href="index.html"><img src="img/Topo-Site-1.png" alt="Logo"></a>
 							
 						</div>
 						<!-- /Logo arthur-->
@@ -144,14 +139,14 @@
 						
 						<!-- foto arthur bisneto -->
 						<div class="col-lg-4 col-md-4 col-sm-4 animate-onscroll" style="margin: 0px; padding: 0px;">
-							<img src="img/Topo-Site-2.png"alt="" />
+							<img src="img/Topo-Site-2.png" alt="">
 							
 						</div>
 						<!-- // foto arthur bisneto -->
 						
 						<!-- Main Quote -->
 						<div class="col-lg-4 col-md-4 col-sm-4 animate-onscroll" style="margin: 0px; padding: 0px;">
-							<img src="img/Topo-Site-3.png" alt="" />
+							<img src="img/Topo-Site-3.png" alt="">
 							
 						</div>
 						<!-- /Main Quote -->
@@ -224,7 +219,7 @@
 						<!-- /Home -->
 						
 						<!-- biografia -->
-						<li >
+						<li>
 						
 							<a href="#">BIOGRAFIA</a>
 							
@@ -232,7 +227,7 @@
 						<!-- // biografia -->
 						
 						<!-- opniao -->
-						<li >
+						<li>
 						
 							<a href="#">OPINIÃO</a>
 							
@@ -240,7 +235,7 @@
 						<!-- // opiniao -->
 						
 						<!-- DEP. na midia -->
-						<li >
+						<li>
 						
 							<a href="#">DEPUTADO NA MÍDIA</a>
 							
@@ -248,7 +243,7 @@
 						<!-- // dep. na midia -->
 						
 						<!-- DEP. na midia -->
-						<li >
+						<li>
 						
 							<a href="#">ATIVIDADE PARLAMENTAR</a>
 							
@@ -256,7 +251,7 @@
 						<!-- // dep. na midia -->
 						
 						<!-- GALERIA-->
-						<li >
+						<li>
 						
 							<span>GALERIA</span>
 							
@@ -278,7 +273,7 @@
 						
 						
 						<!-- CONTATO-->
-						<li >
+						<li>
 						
 							<span>CONTATO</span>
 							
@@ -300,7 +295,7 @@
 						
 						<!-- Donate -->
 						<li class="donate-button ">
-							<a style=" padding: 0px; border: none;" href="#"><img src="img/logo-PSDB.png" alt="" /></a>
+							<a style=" padding: 0px; border: none;" href="#"><img src="img/logo-PSDB.png" alt=""></a>
 							
 						</li>
 						<!-- /Donate -->
@@ -322,10 +317,10 @@
 		<section id="content">	
 					
 					<!-- Page Heading -->
-					<section class="section page-heading animate-onscroll full-width-bg">
+					<section class="section page-heading animate-onscroll ">
 						
-						<h1>BIOGRAFIA</h1>
-						<p class="breadcrumb"><a href="main-v1.html">Home</a> / Biografia</p>
+						<h1>Galeria de Vídeos</h1>
+						<p class="breadcrumb"><a href="#">Home</a> / Galeria / Vídeos</p>
 						
 					</section>
 					<!-- Page Heading -->
@@ -337,160 +332,301 @@
 						
 						<div class="row">
 						
-							<div class="col-lg-9 col-md-9 col-sm-8">
+							<div class="col-lg-12 col-md-12 col-sm-12">
 								
-								<div class="row">
 								
-									<div class="col-lg-12 col-md-12 col-sm-12">
-								
+								<div class="media-items row">
+									
+									
+									<!-- item VIDEOS -->
+									<div class="col-lg-3 col-md-4 col-sm-6">
+									<div class="media-item animate-onscroll gallery-media">
 										
-										<img class="animate-onscroll" src="img/banner-footer.jpg" alt="">
+										<div class="media-image">
+											<img src="img/media/media2-medium.jpg" alt="">
+											
+											<div class="media-hover">
+												<div class="media-icons">
+													<a href="https://www.youtube.com/watch?v=1WbQe-wVK9E" 	
+														data-group="media-jackbox" 
+														data-thumbnail="img/media/media2-medium.jpg" 
+														data-title="LEGENDA LEGENDA"
+														class="jackbox media-icon">
+														<i class="icons icon-play"></i>
+													</a>
+												</div>
+											</div>
 										
-										<p class="animate-onscroll"><br/>
-										<strong>ARTHUR VIRGÍLIO DO CARMO RIBEIRO BISNETO</strong><br/><br/><br/>
-										Informações Pessoais<br/><br/>
+										</div>
 										
-										Nacionalidade: Brasileiro<br/>
-										Data do Nascimento: 1º/10/1979<br/>
-										Naturalidade: Brasiliense<br/>
-										Filiação: Arthur do Carmo Ribeiro Neto e Jacqueline Arduini Duarte do Carmo Ribeiro<br/><br/><br/>
-										
-										 
-										Formação<br/><br/>
-										
-										Ensino Médio: Escola CETEB – Brasília-DF<br/>
-										Ensino Superior: Incompleto<br/>
-										Idiomas: Inglês e Francês<br/><br/><br/>
-										
-										 
-										Mandatos parlamentares<br/><br/>
-										
-										• Foi vereador de Manaus (2001/2003)<br/>
-										
-										• Foi deputado estadual com três mandatos (2003/2006); (2007/2010) e (2011/2014). No terceiro mandato foi o segundo vice-presidente da Assembleia Legislativa do Amazonas.<br/>
-										
-										• É deputado federal pelo PSDB do Amazonas. Na Câmara Federal assumiu a vice-liderança do Bloco da Oposição. É membro titular na Comissão de Minas e Energia (CME) e na Comissão de Integração Nacional, Desenvolvimento Regional e da Amazônia (Cindra) e suplente na Comissão de Ciência e Tecnologia, Comunicação e Informática (CCTCI).<br/><br/>
-										
-										Biografia na página da Câmara Federal:<a href="http://www.camara.gov.br/internet/Deputado/dep_Detalhe.asp?id=178847" target="_blank"> clique aqui</a><br/><br/><br/>
-										
-										 
-										
-										Outras informações<br/><br/>
-										
-										• É presidente regional do PSDB-AM.<br/>
-										
-										• São 14 anos de vida pública<br/>
-										
-										• É neto do saudoso senador Arthur Virgílio Filho e filho do atual prefeito de Manaus, Arthur Virgílio Neto.
-										</p>
-										
-										
-										
+																		
+									</div>							
 									</div>
+									<!-- // item VIDEOS -->
+									
+									<!-- item VIDEOS -->
+									<div class="col-lg-3 col-md-4 col-sm-6">
+									<div class="media-item animate-onscroll gallery-media">
+										
+										<div class="media-image">
+											<img src="img/media/media2-medium.jpg" alt="">
+											
+											<div class="media-hover">
+												<div class="media-icons">
+													<a href="https://www.youtube.com/watch?v=1WbQe-wVK9E" 	
+														data-group="media-jackbox" 
+														data-thumbnail="img/media/media2-medium.jpg" 
+														data-title="LEGENDA LEGENDA"
+														class="jackbox media-icon">
+														<i class="icons icon-play"></i>
+													</a>
+												</div>
+											</div>
+										
+										</div>
+										
+																		
+									</div>							
+									</div>
+									<!-- // item VIDEOS -->
+									
+									<!-- item VIDEOS -->
+									<div class="col-lg-3 col-md-4 col-sm-6">
+									<div class="media-item animate-onscroll gallery-media">
+										
+										<div class="media-image">
+											<img src="img/media/media2-medium.jpg" alt="">
+											
+											<div class="media-hover">
+												<div class="media-icons">
+													<a href="https://www.youtube.com/watch?v=1WbQe-wVK9E" 	
+														data-group="media-jackbox" 
+														data-thumbnail="img/media/media2-medium.jpg" 
+														data-title="LEGENDA LEGENDA"
+														class="jackbox media-icon">
+														<i class="icons icon-play"></i>
+													</a>
+												</div>
+											</div>
+										
+										</div>
+										
+																		
+									</div>							
+									</div>
+									<!-- // item VIDEOS -->
+									
+									<!-- item VIDEOS -->
+									<div class="col-lg-3 col-md-4 col-sm-6">
+									<div class="media-item animate-onscroll gallery-media">
+										
+										<div class="media-image">
+											<img src="img/media/media2-medium.jpg" alt="">
+											
+											<div class="media-hover">
+												<div class="media-icons">
+													<a href="https://www.youtube.com/watch?v=1WbQe-wVK9E" 	
+														data-group="media-jackbox" 
+														data-thumbnail="img/media/media2-medium.jpg" 
+														data-title="LEGENDA LEGENDA"
+														class="jackbox media-icon">
+														<i class="icons icon-play"></i>
+													</a>
+												</div>
+											</div>
+										
+										</div>
+										
+																		
+									</div>							
+									</div>
+									<!-- // item VIDEOS -->
+									
+									<!-- item VIDEOS -->
+									<div class="col-lg-3 col-md-4 col-sm-6">
+									<div class="media-item animate-onscroll gallery-media">
+										
+										<div class="media-image">
+											<img src="img/media/media2-medium.jpg" alt="">
+											
+											<div class="media-hover">
+												<div class="media-icons">
+													<a href="https://www.youtube.com/watch?v=1WbQe-wVK9E" 	
+														data-group="media-jackbox" 
+														data-thumbnail="img/media/media2-medium.jpg" 
+														data-title="LEGENDA LEGENDA"
+														class="jackbox media-icon">
+														<i class="icons icon-play"></i>
+													</a>
+												</div>
+											</div>
+										
+										</div>
+										
+																		
+									</div>							
+									</div>
+									<!-- // item VIDEOS -->
+									
+									<!-- item VIDEOS -->
+									<div class="col-lg-3 col-md-4 col-sm-6">
+									<div class="media-item animate-onscroll gallery-media">
+										
+										<div class="media-image">
+											<img src="img/media/media2-medium.jpg" alt="">
+											
+											<div class="media-hover">
+												<div class="media-icons">
+													<a href="https://www.youtube.com/watch?v=1WbQe-wVK9E" 	
+														data-group="media-jackbox" 
+														data-thumbnail="img/media/media2-medium.jpg" 
+														data-title="LEGENDA LEGENDA"
+														class="jackbox media-icon">
+														<i class="icons icon-play"></i>
+													</a>
+												</div>
+											</div>
+										
+										</div>
+										
+																		
+									</div>							
+									</div>
+									<!-- // item VIDEOS -->
+									
+									<!-- item VIDEOS -->
+									<div class="col-lg-3 col-md-4 col-sm-6">
+									<div class="media-item animate-onscroll gallery-media">
+										
+										<div class="media-image">
+											<img src="img/media/media2-medium.jpg" alt="">
+											
+											<div class="media-hover">
+												<div class="media-icons">
+													<a href="https://www.youtube.com/watch?v=1WbQe-wVK9E" 	
+														data-group="media-jackbox" 
+														data-thumbnail="img/media/media2-medium.jpg" 
+														data-title="LEGENDA LEGENDA"
+														class="jackbox media-icon">
+														<i class="icons icon-play"></i>
+													</a>
+												</div>
+											</div>
+										
+										</div>
+										
+																		
+									</div>							
+									</div>
+									<!-- // item VIDEOS -->
+									
+									<!-- item VIDEOS -->
+									<div class="col-lg-3 col-md-4 col-sm-6">
+									<div class="media-item animate-onscroll gallery-media">
+										
+										<div class="media-image">
+											<img src="img/media/media2-medium.jpg" alt="">
+											
+											<div class="media-hover">
+												<div class="media-icons">
+													<a href="https://www.youtube.com/watch?v=1WbQe-wVK9E" 	
+														data-group="media-jackbox" 
+														data-thumbnail="img/media/media2-medium.jpg" 
+														data-title="LEGENDA LEGENDA"
+														class="jackbox media-icon">
+														<i class="icons icon-play"></i>
+													</a>
+												</div>
+											</div>
+										
+										</div>
+										
+																		
+									</div>							
+									</div>
+									<!-- // item VIDEOS -->
+									
+									<!-- item VIDEOS -->
+									<div class="col-lg-3 col-md-4 col-sm-6">
+									<div class="media-item animate-onscroll gallery-media">
+										
+										<div class="media-image">
+											<img src="img/media/media2-medium.jpg" alt="">
+											
+											<div class="media-hover">
+												<div class="media-icons">
+													<a href="https://www.youtube.com/watch?v=1WbQe-wVK9E" 	
+														data-group="media-jackbox" 
+														data-thumbnail="img/media/media2-medium.jpg" 
+														data-title="LEGENDA LEGENDA"
+														class="jackbox media-icon">
+														<i class="icons icon-play"></i>
+													</a>
+												</div>
+											</div>
+										
+										</div>
+										
+																		
+									</div>							
+									</div>
+									<!-- // item VIDEOS -->
+									
+									<!-- item VIDEOS -->
+									<div class="col-lg-3 col-md-4 col-sm-6">
+									<div class="media-item animate-onscroll gallery-media">
+										
+										<div class="media-image">
+											<img src="img/media/media2-medium.jpg" alt="">
+											
+											<div class="media-hover">
+												<div class="media-icons">
+													<a href="https://www.youtube.com/watch?v=1WbQe-wVK9E" 	
+														data-group="media-jackbox" 
+														data-thumbnail="img/media/media2-medium.jpg" 
+														data-title="LEGENDA LEGENDA"
+														class="jackbox media-icon">
+														<i class="icons icon-play"></i>
+													</a>
+												</div>
+											</div>
+										
+										</div>
+										
+																		
+									</div>							
+									</div>
+									<!-- // item VIDEOS -->
+									
+									
+									
+									
+									
+									
 									
 								</div>
 								
 								
+								<div class="animate-onscroll">
 								
+									<div class="divider"></div>
+									
+									<div class="numeric-pagination">
+										<a href="#" class="button"><i class="icons icon-left-dir"></i></a>
+										<a href="#" class="button">1</a>
+										<a href="#" class="button active-button">2</a>
+										<a href="#" class="button">3</a>
+										<a href="#" class="button"><i class="icons icon-right-dir"></i></a>
+									</div>
+								
+								</div>
 								
 								
 							</div>
 							
 							
 							
-							<!-- Sidebar -->
-							<div class="col-lg-3 col-md-3 col-sm-4 sidebar">
 							
-								<div class="social-media animate-onscroll">
-									<span class="small-caption">CONECTE-SE COM A GENTE</span>
-									<ul class="social-icons">
-										<li class="facebook"><a href="https://www.facebook.com/arthurvirgiliobisneto" target="_blank" class="tooltip-ontop" title="Facebook"><i class="icons icon-facebook-1"></i></a></li>
-										<li class="twitter"><a href="https://twitter.com/arthurbisneto" target="_blank" class="tooltip-ontop" title="Twitter"><i class="icons icon-twitter-1"></i></a></li>
-										<li class="instagram"><a href="https://instagram.com/arthurbisnetooficial" target="_blank" class="tooltip-ontop" title="Instagram"><i class="icons icon-instagram-1"></i></a></li>
-										<li class="youtube"><a href="https://www.youtube.com/user/arthurbisneto" target="_blank" class="tooltip-ontop" title="Youtube"><i class="icons icon-youtube-1"></i></a></li>
-										<li class="flickr"><a href="#" class="tooltip-ontop" title="Flickr"><i class="icons icon-flickr-1"></i></a></li>
-										<li class="email"><a href="#" class="tooltip-ontop" title="Email"><i class="icons icon-mail-1"></i></a></li>
-									</ul>
-									<ul class="social-buttons">
-										<li>
-											<iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Farthurvirgiliobisneto&amp;width=50&amp;height=21&amp;show_faces=true&amp;colorscheme=light&amp;stream=false&amp;border_color&amp;header=false" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:21px;" allowTransparency="true"></iframe>
-										</li>
-										<li class="facebook-share">
-											<div class="fb-share-button" data-href="https://www.facebook.com/arthurvirgiliobisneto" data-type="button_count"></div>
-										</li>
-										<li class="twitter-share">
-											<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
-										</li>
-									</ul>
-								</div>
-								
-								<div class="banner-wrapper">
-									<a class="banner animate-onscroll" href="#">
-										<i class="icons icon-calendar"></i>
-										<h4>AGENDA<br/> PARLAMENTAR</h4>
-									</a>
-								</div>
-								
-								<div class="banner-wrapper">
-									<a class="banner animate-onscroll" href="#">
-										<i class="icons icon-check"></i>
-										<h4>OPNIÃO DO<br/> DEPUTADO</h4>
-									</a>
-								</div>
-								
-								<div class="banner-wrapper">
-									<a class="banner animate-onscroll" href="#">
-										<i class="icons icon-user"></i>
-										<h4>SALA DE <br/>IMPRENSA</h4>
-									</a>
-								</div>
-								<div class="banner-wrapper">
-									<a class="banner animate-onscroll" href="#">
-										<i class="icons icon-camera-alt"></i>
-										<h4>CLIPPING</h4>
-										<P> Tudo sobre o Deputado</P>
-									</a>
-								</div>
-														
-														
-							</div>
-							<div class="col-lg-3 col-md-3 col-sm-4 sidebar">
-							
-							<hr/ style="border-bottom: 1px solid #EDEDED;">
-							
-								<!-- Featured Video -->
-								<div class="sidebar-box featured-video animate-onscroll fundo-listra">
-									<h3><strong>VÍDEO</strong></h3>
-									<iframe width="560" height="315" src="https://www.youtube.com/embed/Lcubw2IeNtM?wmode=transparent" allowfullscreen></iframe>
-									<a href="#" class="button transparent button-arrow">todos os videos</a>
-								</div>
-								<!-- /Featured Video -->
-								
-								<hr/ style="border-bottom: 1px solid #EDEDED;">
-																					
-								<!-- Instagram Photos -->
-								<div class="sidebar-box white flickr-photos animate-onscroll">
-									<h3>Nosso Instagram</h3>
-									<ul id="instagram-feed">
-									</ul>
-								</div>
-								<!-- /Instagram Photos -->	
-								
-								<hr/ style="border-bottom: 1px solid #EDEDED;">		
-												
-								<!-- Flickr Photos -->
-								<div class="sidebar-box white flickr-photos animate-onscroll">
-									<h3>Fotos do Flickr</h3>
-									<ul class="flickr-feed">
-									</ul>
-								</div>
-								<!-- /Flickr Photos -->	
-								
-								<hr/ style="border-bottom: 1px solid #EDEDED;">
-												
-							</div>
-							
-							<!-- /Sidebar -->
 							
 							
 							
@@ -610,6 +746,6 @@
 		<![endif]-->
 		
 		
-	</body>
+	
 
-</html>
+</body></html>

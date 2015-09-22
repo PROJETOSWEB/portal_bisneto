@@ -41,14 +41,14 @@ if ($executa_insert) {
     ?>
 
     <script>
-        window.location.href = '../opiniao.php?respt=sucesso';
+        window.location.href = '../opiniao.php?respt=sucesso&tipo=insert';
     </script>
 
     <?php
 } else {
     ?>
     <script>
-        window.location.href = '../opiniao.php?respt=erro';
+        window.location.href = '../opiniao.php?respt=erro&tipo=insert';
     </script>
     <?php
 }

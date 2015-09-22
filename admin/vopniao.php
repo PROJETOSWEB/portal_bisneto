@@ -54,6 +54,23 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
                 }
             }
             ?>
+            
+                        <?php
+            if (isset($_GET['respte'])) {
+
+                if ($_GET['respte'] == "sucesso") {
+                    ?>
+
+                    <div class="alert alert-success fade in">
+                        <button data-dismiss="alert" class="close close-sm" type="button">
+                            <i class="fa fa-times"></i>
+                        </button>
+                        <strong>SUCESSO!</strong> Opinião editada com sucesso!
+                    </div>
+                    <?php
+                }
+            }
+            ?>
 
 
             <div class="row">
@@ -62,7 +79,7 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
                     <section class="panel">
 
                         <header class="panel-heading">
-                            <a href="opiniao.php"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
+                            <a href="opiniao.php?tipo=insert"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
                                     </span> OPINIÃO</button>
                             </a>
                         </header>

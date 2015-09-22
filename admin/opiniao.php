@@ -104,7 +104,7 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
                                         <div class="switch switch-square"
                                              data-off-label="<i class='fa fa-times'></i>"
                                              data-on-label="<i class=' fa fa-check'></i>">
-                                            <input type="checkbox"  checked />
+                                            <input name="publicar" type="checkbox"  checked />
                                         </div>
 
 
@@ -135,8 +135,10 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
                             $linha_editar = mysql_fetch_array($executa_select_editar);
                             ?>
 
-                            <form role="form" action="php/salva_opiniao.php" method="POST" enctype='multipart/form-data'>
+                    <form role="form" action="php/update_opiniao.php" method="POST" enctype='multipart/form-data'>
 
+                        <input type="hidden" value="<?php echo $id_opiniao; ?>" name="id_opiniao"/>
+                        
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">SELECIONE A DATA</label>
                                     <input value="<?php echo $linha_editar['data']; ?>" name="data" class="form-control form-control-inline input-medium default-date-picker"  size="16" type="text" value="" />
@@ -184,7 +186,8 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
                                             <div class="col-md-9">
                                                 <div class="fileupload fileupload-new" data-provides="fileupload">
                                                     <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
-                                                        <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" />
+                                                        <img src="imagens/opiniao/<?php echo $linha_editar['foto']; ?>" alt="" />
+                                                        <input name="imagem" value="<?php echo $linha_editar['foto']; ?>" type="hidden"/>
                                                     </div>
                                                     <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;">
                                                         <img src="imagens/biografia/2.jpg" style="max-height: 150px;">
@@ -211,7 +214,7 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
                                         <div class="switch switch-square"
                                              data-off-label="<i class='fa fa-times'></i>"
                                              data-on-label="<i class=' fa fa-check'></i>">
-                                            <input type="checkbox"  checked />
+                                            <input name="publicar" value="1" type="checkbox"  checked />
                                         </div>
 
 

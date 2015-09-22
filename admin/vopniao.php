@@ -114,7 +114,7 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
 
                                                 </td>
 
-                                                <td><a href="#"><img src="img/editar.png" alt="" /></a></td>
+                                                <td><a href="opiniao.php?tipo=edit&id=<?php echo $dados_array['opiniao_id']; ?>"><img src="img/editar.png" alt="" /></a></td>
                                                 <td><a href="php/exclui_opiniao.php?id=<?php echo $dados_array['opiniao_id']; ?>"><img src="img/excluir.png" alt="" /></a></td>
                                             </tr>
 

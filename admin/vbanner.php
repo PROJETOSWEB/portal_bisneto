@@ -109,7 +109,7 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
                                                 <td><?php echo $dados_array['data_banner']; ?></td>
                                                 <td><?php echo $dados_array['nome']; ?></td>
                                                 <td><a href="#"><img src="img/sim.png" alt="" /></a></td>
-                                                <td><a href="#"><img src="img/editar.png" alt="" /></a></td>
+                                                <td><a href="banner.php?tipo=edit&id=<?php echo $dados_array['banner_id'];?>"><img src="img/editar.png" alt="" /></a></td>
                                                 <td><a href="php/exclui_banner.php?id=<?php echo $dados_array['banner_id']; ?>"><img src="img/excluir.png" alt="" /></a></td>
                                             </tr>
 

@@ -54,7 +54,7 @@
                     <section class="panel">
 
                         <header class="panel-heading">
-                            <a href="depmidia.php"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
+                            <a href="depmidia.php?tipo=insert"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
                                     </span> CLIPPING</button>
                             </a>
                         </header>
@@ -90,7 +90,7 @@
                                                 <td><?php echo $array_dados['data']; ?></td>
                                                 <td><?php echo $array_dados['nome']; ?></td>
 
-                                                <td><a href="#"><img src="img/editar.png" alt="" /></a></td>
+                                                <td><a href="depmidia.php?tipo=edit&id=<?php echo $array_dados['depmidia_id']; ?>"><img src="img/editar.png" alt="" /></a></td>
                                                 <td><a href="php/exclui_depmidia.php?id=<?php echo $array_dados['depmidia_id']; ?>"><img src="img/excluir.png" alt="" /></a></td>
                                             </tr>
 

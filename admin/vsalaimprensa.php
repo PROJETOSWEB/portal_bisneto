@@ -23,30 +23,30 @@
         <section class="wrapper site-min-height">
 
             <h1 style="font-weight: 300;">
-            <span class="fa fa-bullhorn"></span>  SALA DE IMPRENSA</h1>
-                                    <hr style="border: 1px solid #333;">
-                                    <div class="divider"></div>
-                                    <div class="divider"></div>
-                        
-                                    </br>
-                                    </br>    
-            
-            
-                        <div class="row">
-                            <div class="col-lg-12">
-            
-                                <section class="panel">
-            
-                                    <header class="panel-heading">
-                                        <a href="salaimprensa.php"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
-                                                </span> ARQUIVOS</button>
-                                        </a>
-                                    </header>
+                <span class="fa fa-bullhorn"></span>  SALA DE IMPRENSA</h1>
+            <hr style="border: 1px solid #333;">
+            <div class="divider"></div>
+            <div class="divider"></div>
+
+            </br>
+            </br>    
+
+
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <section class="panel">
+
+                        <header class="panel-heading">
+                            <a href="salaimprensa.php"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
+                                    </span> ARQUIVOS</button>
+                            </a>
+                        </header>
 
                         <div class="panel-body">
                             <div class="adv-table">
                                 <table  class="display table table-bordered table-striped" id="example">
- 									<thead>
+                                    <thead>
                                         <tr>
                                             <th style="text-align: left;">NOME DO ARQUIVO</th>
                                             <th style="text-align: center;">TIPO</th>
@@ -57,18 +57,27 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <?php
+                                        $seleciona_dados = "SELECT *, salaimprensa.nome as salaim, usuario.nome as nomeusuario FROM salaimprensa INNER JOIN
+                                                            usuario ON salaimprensa.usuario_id = usuario.usuario_id";
 
+                                        $executa_seleciona_dados = mysql_query($seleciona_dados)or die(mysql_error());
 
-                                        <tr class="gradeA" style="text-align: center;">
-                                            <td style="text-align: left;">ESTATUTO 002</td>
-                                            <td>PDF</td>
-                                            <td>Fulano</td>
-                                            <td><a href="#"><img src="img/editar.png" alt="" /></a></td>
-                                            <td><a href="#"><img src="img/excluir.png" alt="" /></a></td>
-                                        </tr>
                                         
+                                        while ($dados_array = mysql_fetch_array($executa_seleciona_dados)) {
+                                            ?>
 
+                                            <tr class = "gradeA" style = "text-align: center;">
+                                                <td><?php echo $dados_array['salaim']; ?></td>
+                                                <td><?php echo $dados_array['tipo_arquivo']; ?></td>
+                                                <td><?php echo $dados_array['nomeusuario']; ?></td>
+                                                <td><a href = "salaimprensa.php?tipo=edit&id=<?php echo $dados_array['salaimprensa_id'] ?>"><img src = "img/editar.png" alt = "" /></a></td>
+                                                <td><a href = "#"><img src = "img/excluir.png" alt = "" /></a></td>
+                                            </tr>
 
+                                            <?php
+                                        }
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -76,7 +85,7 @@
                     </section>
                 </div>
             </div>
-            <!-- page end-->
+            <!--page end-->
         </section>
     </section>
     <!--main content end-->
@@ -84,8 +93,8 @@
 </section>
 
 <!--main content start-->
-<section id="main-content">
-    <section class="wrapper">
+<section id = "main-content">
+    <section class = "wrapper">
 
 
     </section>
@@ -93,7 +102,8 @@
 <!--main content end-->
 
 <!--footer start-->
-<?php include './footer.php'; ?>
+<?php include './footer.php';
+?>
 <!--footer end-->
 
 

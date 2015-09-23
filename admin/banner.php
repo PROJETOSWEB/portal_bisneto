@@ -37,77 +37,175 @@
                 <div class="panel-body">
 
 
+                    <?php
+                    if (isset($_GET['tipo'])) {
 
-                    <form role="form" action="php/salva_banner.php" method="POST" enctype='multipart/form-data'>
-                        
+                        if ($_GET['tipo'] == "insert") {
+                            ?>
 
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">SELECIONE A DATA</label>
-                            <input name="data" class="form-control form-control-inline input-medium default-date-picker"  size="16" type="text" value="" />
-                        </div>
+                            <form role="form" action="php/salva_banner.php" method="POST" enctype='multipart/form-data'>
 
-
-
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">NOME DO BANNER</label>
-                            <input name="nome" id="nome" tooltip="Título do seu artigo, EVITE TÍTULOS LONGOS" type="text" class="form-control" data-placement="top">
-                        </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">SELECIONE A DATA</label>
+                                    <input name="data" class="form-control form-control-inline input-medium default-date-picker"  size="16" type="text" value="" />
+                                </div>
 
 
-                        </br>
 
-                        <hr/>
-
-                        <div class="row ">
-                            <div class="form-group col-sm-12">
-                                <label class="col-sm-3 col-sm-3">Usar imagens com tam. padrão 800x430px</label>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">NOME DO BANNER</label>
+                                    <input name="nome" id="nome" tooltip="Título do seu artigo, EVITE TÍTULOS LONGOS" type="text" class="form-control" data-placement="top">
+                                </div>
 
 
-                                <div class="form-group last">
-                                    <label class="control-label col-md-3"></label>
-                                    <div class="col-md-9">
-                                        <div class="fileupload fileupload-new" data-provides="fileupload">
-                                            <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
-                                                <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" />
-                                            </div>
-                                            <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
-                                            <div>
-                                                <span class="btn btn-white btn-file">
-                                                    <span class="fileupload-new"><i class="fa fa-paper-clip"></i> selecionar imagem</span>
-                                                    <span class="fileupload-exists"><i class="fa fa-undo"></i> trocar</span>
-                                                    <input type="file" name="img" class="default" />
-                                                </span>
-                                                <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload"><i class="fa fa-trash"></i> excluir</a>
+                                </br>
+
+                                <hr/>
+
+                                <div class="row ">
+                                    <div class="form-group col-sm-12">
+                                        <label class="col-sm-3 col-sm-3">Usar imagens com tam. padrão 800x430px</label>
+
+
+                                        <div class="form-group last">
+                                            <label class="control-label col-md-3"></label>
+                                            <div class="col-md-9">
+                                                <div class="fileupload fileupload-new" data-provides="fileupload">
+                                                    <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                                                        <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" />
+                                                    </div>
+                                                    <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+                                                    <div>
+                                                        <span class="btn btn-white btn-file">
+                                                            <span class="fileupload-new"><i class="fa fa-paper-clip"></i> selecionar imagem</span>
+                                                            <span class="fileupload-exists"><i class="fa fa-undo"></i> trocar</span>
+                                                            <input type="file" name="img" class="default" />
+                                                        </span>
+                                                        <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload"><i class="fa fa-trash"></i> excluir</a>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
+
+
+                                    <div class="col-sm-12">
+
+                                        <hr/>
+
+
+                                        <label style="margin-right: 20px;" class="col-sm-3 col-sm-3">PUBLICAR?</label>
+                                        <div class="switch switch-square"
+                                             data-off-label="<i class='fa fa-times'></i>"
+                                             data-on-label="<i class=' fa fa-check'></i>">
+                                            <input name="publicar" value="1" type="checkbox"  checked />
+                                        </div>
+
+                                        <hr/>
+
+                                    </div>
                                 </div>
-                            </div>
+
+                                <input type="submit" class="btn btn-primary" value="SALVAR"></input>
+                            </form>
 
 
-                            <div class="col-sm-12">
+                            <?php
+                        }
+                    }
+
+                    if (isset($_GET['tipo'])) {
+
+                        if ($_GET['tipo'] == "edit") {
+
+                            $id_banner = $_GET['id'];
+
+                            $select_editar = "SELECT * FROM banner WHERE banner_id = $id_banner";
+                            $executa_select_editar = mysql_query($select_editar)or die(mysql_error());
+                            $linha_editar = mysql_fetch_array($executa_select_editar);
+                            ?>
+
+                            <form role="form" action="php/update_banner.php" method="POST" enctype='multipart/form-data'>
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">SELECIONE A DATA</label>
+                                    <input value="<?php echo $linha_editar['data_banner']; ?>" name="data" class="form-control form-control-inline input-medium default-date-picker"  size="16" type="text" value="" />
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">NOME DO BANNER</label>
+                                    <input value="<?php echo $linha_editar['nome_banner']; ?>" name="nome" id="nome" tooltip="Título do seu artigo, EVITE TÍTULOS LONGOS" type="text" class="form-control" data-placement="top">
+                                </div>
+
+
+                                </br>
 
                                 <hr/>
 
+                                <div class="row ">
+                                    <div class="form-group col-sm-12">
+                                        <label class="col-sm-3 col-sm-3">Usar imagens com tam. padrão 800x430px</label>
 
-                                <label style="margin-right: 20px;" class="col-sm-3 col-sm-3">PUBLICAR?</label>
-                                <div class="switch switch-square"
-                                     data-off-label="<i class='fa fa-times'></i>"
-                                     data-on-label="<i class=' fa fa-check'></i>">
-                                    <input name="publicar" value="1" type="checkbox"  checked />
+
+                                        <div class="form-group last">
+                                            <label class="control-label col-md-3"></label>
+                                            <div class="col-md-9">
+                                                <div class="fileupload fileupload-new" data-provides="fileupload">
+                                                    <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                                                        <img src="imagens/banner/<?php echo $linha_editar['img']; ?>" alt="" />
+                                                        <input type="hidden" name="imagem" value="<?php echo $linha_editar['img']; ?>"/>
+                                                        <input type="hidden" name="banner_id" value="<?php echo $id_banner; ?>"/>
+                                                        
+                                                    </div>
+                                                    <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+                                                    <div>
+                                                        <span class="btn btn-white btn-file">
+                                                            <span class="fileupload-new"><i class="fa fa-paper-clip"></i> selecionar imagem</span>
+                                                            <span class="fileupload-exists"><i class="fa fa-undo"></i> trocar</span>
+                                                            <input type="file" name="img" class="default" />
+                                                        </span>
+                                                        <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload"><i class="fa fa-trash"></i> excluir</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-sm-12">
+
+                                        <hr/>
+
+
+                                        <label style="margin-right: 20px;" class="col-sm-3 col-sm-3">PUBLICAR?</label>
+                                        <div class="switch switch-square"
+                                             data-off-label="<i class='fa fa-times'></i>"
+                                             data-on-label="<i class=' fa fa-check'></i>">
+                                            <input name="publicar" value="1" type="checkbox" <?php if ($linha_editar['publicar'] == 1) {
+                        echo "checked";
+                    } else {
+                        echo "";
+                    } ?> />
+                                        </div>
+
+
+                                        <hr/>
+
+                                    </div>
                                 </div>
 
+                                <input type="submit" class="btn btn-primary" value="SALVAR"></input>
 
-                                <hr/>
+                            </form>
 
-                            </div>
-                        </div>
+                            <?php
+                        }
+                    }
+                    ?>
 
 
 
-                        <input type="submit" class="btn btn-primary" value="SALVAR"></input>
-
-                    </form>
 
                 </div>
             </section>

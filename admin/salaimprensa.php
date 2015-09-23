@@ -37,65 +37,152 @@
                 <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> CADASTRO DE ARQUIVOS</strong></div>
                 <div class="panel-body">
 
-                    <form role="form" action="php/salva_salaimprensa.php" method="POST" enctype='multipart/form-data'>
 
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">SELECIONE A DATA</label>
-                            <input name="data" class="form-control form-control-inline input-medium default-date-picker"  size="16" type="text" value="" />
-                        </div>
+                    <?php
+                    if (isset($_GET['tipo'])) {
 
+                        if ($_GET['tipo'] == "insert") {
+                            ?>
 
+                            <form role="form" action="php/salva_salaimprensa.php" method="POST" enctype='multipart/form-data'>
 
-                        <div class="col-sm-13">
-                            <label for="exampleInputEmail1">NOME DO ARQUIVO</label>
-                            <input name="nome" tooltip="Título do seu artigo, EVITE TÍTULOS LONGOS" type="text" name="nome" class="form-control" data-placement="top">
-                        </div>
-
-
-                        </br>
-                        </br>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">SELECIONE A DATA</label>
+                                    <input name="data" class="form-control form-control-inline input-medium default-date-picker"  size="16" type="text" value="" />
+                                </div>
 
 
 
-                        <div class="form-group">
-                            <div class="col-lg-10">
-                                <select name="tipo_arquivo" class="form-control m-bot15">
-                                    <option>TIPO DE ARQUIVO</option>
-                                    <option>•••••••••••••••</option>
-                                    <option>PDF</option>
-                                    <option>JPG</option>
-                                    <option>PNG</option>
-                                    <option>TIF</option>
-                                    <option>DOC</option>
-                                    <option>XLS</option>
-                                </select>
-                            </div>
-                        </div>
+                                <div class="col-sm-13">
+                                    <label for="exampleInputEmail1">NOME DO ARQUIVO</label>
+                                    <input name="nome" tooltip="Título do seu artigo, EVITE TÍTULOS LONGOS" type="text" name="nome" class="form-control" data-placement="top">
+                                </div>
 
 
-                        </br>
-                        </br>
-                        </br>
+                                </br>
+                                </br>
 
-                        <div class="col-sm-13">
-                            <div class="fileupload fileupload-new" data-provides="fileupload">
-                                <span class="btn btn-white btn-file">
-                                    <span class="fileupload-new"><i class="fa fa-paper-clip"></i> Carregar arquivo</span>
-                                    <span class="fileupload-exists"><i class="fa fa-undo"></i> trocar</span>
-                                    <input type="file" name="arquivo" class="default" />
-                                </span>
-                                <span class="fileupload-preview" style="margin-left:5px;"></span>
-                                <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload"><i class="fa fa-trash"></i> excluir</a>
-                            </div>
-                        </div>
 
-                        <div class="col-sm-13">
-                            <hr/>
-                        </div>
 
-                        <input type="submit" class="btn btn-primary" value="SALVAR"></input>
+                                <div class="form-group">
+                                    <div class="col-lg-10">
+                                        <select name="tipo_arquivo" class="form-control m-bot15">
+                                            <option>TIPO DE ARQUIVO</option>
+                                            <option>•••••••••••••••</option>
+                                            <option>PDF</option>
+                                            <option>JPG</option>
+                                            <option>PNG</option>
+                                            <option>TIF</option>
+                                            <option>DOC</option>
+                                            <option>XLS</option>
+                                        </select>
+                                    </div>
+                                </div>
 
-                    </form>
+
+                                </br>
+                                </br>
+                                </br>
+
+                                <div class="col-sm-13">
+                                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                                        <span class="btn btn-white btn-file">
+                                            <span class="fileupload-new"><i class="fa fa-paper-clip"></i> Carregar arquivo</span>
+                                            <span class="fileupload-exists"><i class="fa fa-undo"></i> trocar</span>
+                                            <input type="file" name="arquivo" class="default" />
+                                        </span>
+                                        <span class="fileupload-preview" style="margin-left:5px;"></span>
+                                        <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload"><i class="fa fa-trash"></i> excluir</a>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-13">
+                                    <hr/>
+                                </div>
+
+                                <input type="submit" class="btn btn-primary" value="SALVAR"></input>
+
+                            </form>
+
+
+                            <?php
+                        }
+                    }
+                    ?>
+
+                    <?php
+                    if (isset($_GET['tipo'])) {
+
+                        if ($_GET['tipo'] == "edit") {
+
+                            $id_fotos = $_GET['id'];
+                            ?>
+
+
+                            <form role="form" action="php/update_salaimprensa.php" method="POST" enctype='multipart/form-data'>
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">SELECIONE A DATA</label>
+                                    <input name="data" class="form-control form-control-inline input-medium default-date-picker"  size="16" type="text" value="" />
+                                </div>
+
+
+
+                                <div class="col-sm-13">
+                                    <label for="exampleInputEmail1">NOME DO ARQUIVO</label>
+                                    <input name="nome" tooltip="Título do seu artigo, EVITE TÍTULOS LONGOS" type="text" name="nome" class="form-control" data-placement="top">
+                                </div>
+
+
+                                </br>
+                                </br>
+
+
+                                <div class="form-group">
+                                    <div class="col-lg-10">
+                                        <select name="tipo_arquivo" class="form-control m-bot15">
+                                            <option>TIPO DE ARQUIVO</option>
+                                            <option>•••••••••••••••</option>
+                                            <option>PDF</option>
+                                            <option>JPG</option>
+                                            <option>PNG</option>
+                                            <option>TIF</option>
+                                            <option>DOC</option>
+                                            <option>XLS</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+
+                                </br>
+                                </br>
+                                </br>
+
+                                <div class="col-sm-13">
+                                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                                        <span class="btn btn-white btn-file">
+                                            <span class="fileupload-new"><i class="fa fa-paper-clip"></i> Carregar arquivo</span>
+                                            <span class="fileupload-exists"><i class="fa fa-undo"></i> trocar</span>
+                                            <input type="file" name="arquivo" class="default" />
+                                        </span>
+                                        <span class="fileupload-preview" style="margin-left:5px;"></span>
+                                        <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload"><i class="fa fa-trash"></i> excluir</a>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-13">
+                                    <hr/>
+                                </div>
+
+                                <input type="submit" class="btn btn-primary" value="SALVAR"></input>
+
+                            </form>
+
+
+                            <?php
+                        }
+                    }
+                    ?>
 
                 </div>
             </section>

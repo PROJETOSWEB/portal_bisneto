@@ -90,7 +90,7 @@
                                                 <td style="text-align: left; vertical-align: center;"><?php echo $array_dados['legenda']; ?></td>
                                                 <td><?php echo $array_dados['data_video']; ?></td>
                                                 <td><?php echo $array_dados['nome'] ?></td>
-                                                <td><a href="#"><img src="img/editar.png" alt="" /></a></td>
+                                                <td><a href="videos.php?tipo=edit&id=<?php echo $array_dados['videos_id']; ?>"><img src="img/editar.png" alt="" /></a></td>
                                                 <td><a href="php/exclui_videos.php?id=<?php echo $array_dados['videos_id']; ?>"><img src="img/excluir.png" alt="" /></a></td>
                                             </tr>
 

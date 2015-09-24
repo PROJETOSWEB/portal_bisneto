@@ -120,7 +120,7 @@
 
 
                                                 </td>
-                                                <td><a href="#"><img src="img/editar.png" alt="" /></a></td>
+                                                <td><a href="noticias.php?tipo=edit&id=<?php echo $dados_array['noticia_id'] ?>"><img src="img/editar.png" alt="" /></a></td>
                                                 <td><a href="php/exclui_noticia.php?id=<?php echo $dados_array['noticia_id']; ?>"><img src="img/excluir.png" alt="" /></a></td>
                                             </tr>
 

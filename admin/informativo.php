@@ -35,69 +35,165 @@
                 <div class="panel-body">
 
 
-                    <form role="form" method="post" action="php/salva_informativo.php" enctype='multipart/form-data'>
+                    <?php
+                    if (isset($_GET['tipo'])) {
 
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">SELECIONE A DATA</label>
-                            <input name="data" class="form-control form-control-inline input-medium default-date-picker"  size="16" type="text" value="" />
-                        </div>
+                        if ($_GET['tipo'] == "insert") {
+                            ?>
+                            <form role="form" method="post" action="php/salva_informativo.php" enctype='multipart/form-data'>
 
-
-                        <div class="col-sm-13">
-                            <label for="exampleInputEmail1">Nº da EDIÇÃO</label>
-                            <input name="edicao" id="edicao" tooltip="Título do seu artigo, EVITE TÍTULOS LONGOS" type="text" class="form-control" data-placement="top">
-                        </div>
-
-                        <br/>
-                        <hr/>
-
-                        <div class="row ">
-                            <div class="form-group col-sm-12">
-                                <label class="col-sm-3 col-sm-3">Usar imagens com tam. padrão 500x700px</label>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">SELECIONE A DATA</label>
+                                    <input name="data" class="form-control form-control-inline input-medium default-date-picker"  size="16" type="text" value="" />
+                                </div>
 
 
-                                <div class="form-group last">
-                                    <label class="control-label col-md-3"></label>
-                                    <div class="col-md-9">
-                                        <div class="fileupload fileupload-new" data-provides="fileupload">
-                                            <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
-                                                <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" />
-                                            </div>
-                                            <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
-                                            <div>
-                                                <span class="btn btn-white btn-file">
-                                                    <span class="fileupload-new"><i class="fa fa-paper-clip"></i> SELECIONE A CAPA JPG</span>
-                                                    <span class="fileupload-exists"><i class="fa fa-undo"></i> trocar</span>
-                                                    <input type="file" name="img" class="default" />
-                                                </span>
-                                                <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload"><i class="fa fa-trash"></i> excluir</a>
+                                <div class="col-sm-13">
+                                    <label for="exampleInputEmail1">Nº da EDIÇÃO</label>
+                                    <input name="edicao" id="edicao" tooltip="Título do seu artigo, EVITE TÍTULOS LONGOS" type="text" class="form-control" data-placement="top">
+                                </div>
+
+                                <br/>
+                                <hr/>
+
+                                <div class="row ">
+                                    <div class="form-group col-sm-12">
+                                        <label class="col-sm-3 col-sm-3">Usar imagens com tam. padrão 500x700px</label>
+
+
+                                        <div class="form-group last">
+                                            <label class="control-label col-md-3"></label>
+                                            <div class="col-md-9">
+                                                <div class="fileupload fileupload-new" data-provides="fileupload">
+                                                    <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                                                        <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" />
+                                                    </div>
+                                                    <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+                                                    <div>
+                                                        <span class="btn btn-white btn-file">
+                                                            <span class="fileupload-new"><i class="fa fa-paper-clip"></i> SELECIONE A CAPA JPG</span>
+                                                            <span class="fileupload-exists"><i class="fa fa-undo"></i> trocar</span>
+                                                            <input type="file" name="img" class="default" />
+                                                        </span>
+                                                        <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload"><i class="fa fa-trash"></i> excluir</a>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
+
+                                    <div class="col-sm-12">
+
+                                        <hr/>
+                                        <div class="fileupload fileupload-new" data-provides="fileupload">
+                                            <span class="btn btn-white btn-file">
+                                                <span class="fileupload-new"><i class="fa fa-paper-clip"></i> Carregar arquivo • PDF</span>
+                                                <span class="fileupload-exists"><i class="fa fa-undo"></i> Trocar</span>
+                                                <input type="file" name="arquivo" class="default" />
+                                            </span>
+                                            <span class="fileupload-preview" style="margin-left:5px;"></span>
+                                            <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload"><i class="fa fa-trash"></i> excluir</a>
+                                        </div>
+                                        <hr/>
+
+                                    </div>
+
                                 </div>
-                            </div>
 
-                            <div class="col-sm-12">
+                                <input type="submit" class="btn btn-primary" value="SALVAR"></input>
 
-                                <hr/>
-                                <div class="fileupload fileupload-new" data-provides="fileupload">
-                                    <span class="btn btn-white btn-file">
-                                        <span class="fileupload-new"><i class="fa fa-paper-clip"></i> Carregar arquivo • PDF</span>
-                                        <span class="fileupload-exists"><i class="fa fa-undo"></i> Trocar</span>
-                                        <input type="file" name="arquivo" class="default" />
-                                    </span>
-                                    <span class="fileupload-preview" style="margin-left:5px;"></span>
-                                    <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload"><i class="fa fa-trash"></i> excluir</a>
+                            </form>
+
+
+                            <?php
+                        }
+                    }
+                    ?>
+
+
+                    <?php
+                    if (isset($_GET['tipo'])) {
+
+                        if ($_GET['tipo'] == "edit") {
+
+
+                            $id_informativo = $_GET['id'];
+
+                            $select_editar = "SELECT * FROM informativo WHERE informativo_id = $id_informativo";
+                            $executa_select_editar = mysql_query($select_editar)or die(mysql_error());
+                            $linha_editar = mysql_fetch_array($executa_select_editar);
+                            ?>
+
+                            <form role = "form" method = "post" action = "php/update_informativo.php" enctype = 'multipart/form-data'>
+
+                                <div class = "form-group">
+                                    <label for = "exampleInputEmail1">SELECIONE A DATA</label>
+                                    <input value="<?php echo $linha_editar['data_informativo']; ?>" name = "data" class = "form-control form-control-inline input-medium default-date-picker" size = "16" type = "text" value = "" />
                                 </div>
+
+
+                                <div class = "col-sm-13">
+                                    <label for = "exampleInputEmail1">Nº da EDIÇÃO</label>
+                                    <input value="<?php echo $linha_editar['edicao']; ?>" name = "edicao" id = "edicao" tooltip = "Título do seu artigo, EVITE TÍTULOS LONGOS" type = "text" class = "form-control" data-placement = "top">
+                                </div>
+
+                                <br/>
                                 <hr/>
 
-                            </div>
+                                <div class = "row ">
+                                    <div class = "form-group col-sm-12">
+                                        <label class = "col-sm-3 col-sm-3">Usar imagens com tam. padrão 500x700px</label>
 
-                        </div>
 
-                        <input type="submit" class="btn btn-primary" value="SALVAR"></input>
+                                        <div class = "form-group last">
+                                            <label class = "control-label col-md-3"></label>
+                                            <div class = "col-md-9">
+                                                <div class = "fileupload fileupload-new" data-provides = "fileupload">
+                                                    <div class = "fileupload-new thumbnail" style = "width: 200px; height: 150px;">
+                                                        <img src = "imagens/informativo/<?php echo $linha_editar['img']; ?>" alt = "" />
+                                                    </div>
+                                                    <div class = "fileupload-preview fileupload-exists thumbnail" style = "max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+                                                    <div>
+                                                        <span class = "btn btn-white btn-file">
+                                                            <span class = "fileupload-new"><i class = "fa fa-paper-clip"></i> SELECIONE A CAPA JPG</span>
+                                                            <span class = "fileupload-exists"><i class = "fa fa-undo"></i> trocar</span>
+                                                            <input type = "file" name = "img" class = "default" />
+                                                        </span>
+                                                        <a href = "#" class = "btn btn-danger fileupload-exists" data-dismiss = "fileupload"><i class = "fa fa-trash"></i> excluir</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                    </form>
+                                    <div class = "col-sm-12">
+
+                                        <hr/>
+                                        <div class = "fileupload fileupload-new" data-provides = "fileupload">
+                                            <span class = "btn btn-white btn-file">
+                                                <span class = "fileupload-new"><i class = "fa fa-paper-clip"></i> Carregar arquivo • PDF</span>
+                                                <span class = "fileupload-exists"><i class = "fa fa-undo"></i> Trocar</span>
+                                                <input type = "file" name = "arquivo" class = "default" />
+                                                <input type = "hidden" name = "arquivo_nome" value="<?php echo $linha_editar['pdf'] ?>" class = "default" />
+                                                <input type = "hidden" name = "informativo_id" value="<?php echo $id_informativo; ?>" class = "default" />
+                                            </span>
+                                            <span class = "fileupload-preview" style = "margin-left:5px;"><?php echo $linha_editar['pdf']; ?></span>
+                                            <a href = "#" class = "btn btn-danger fileupload-exists" data-dismiss = "fileupload"><i class = "fa fa-trash"></i> excluir</a>
+                                        </div>
+                                        <hr/>
+
+                                    </div>
+
+                                </div>
+
+                                <input type = "submit" class = "btn btn-primary" value = "SALVAR"></input>
+
+                            </form>
+
+        <?php
+    }
+}
+?>
 
                 </div>
             </section>
@@ -108,7 +204,8 @@
 <!--main content end-->
 
 <!--footer start-->
-<?php include './footer.php'; ?>
+<?php include './footer.php';
+?>
 <!--footer end-->
 
 </section>

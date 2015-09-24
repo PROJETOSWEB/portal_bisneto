@@ -115,7 +115,14 @@
 
                         if ($_GET['tipo'] == "edit") {
 
-                            $id_fotos = $_GET['id'];
+                            $id_salaimprensa = $_GET['id'];
+                            
+                           
+                            $select_editar = "SELECT * FROM salaimprensa WHERE salaimprensa_id = $id_salaimprensa";
+                            $executa_select_editar = mysql_query($select_editar)or die(mysql_error());
+                            $linha_editar = mysql_fetch_array($executa_select_editar);
+                            
+                            
                             ?>
 
 
@@ -123,14 +130,13 @@
 
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">SELECIONE A DATA</label>
-                                    <input name="data" class="form-control form-control-inline input-medium default-date-picker"  size="16" type="text" value="" />
+                                    <input value="<?php echo $linha_editar['data']; ?>" name="data" class="form-control form-control-inline input-medium default-date-picker"  size="16" type="text" value="" />
                                 </div>
-
 
 
                                 <div class="col-sm-13">
                                     <label for="exampleInputEmail1">NOME DO ARQUIVO</label>
-                                    <input name="nome" tooltip="Título do seu artigo, EVITE TÍTULOS LONGOS" type="text" name="nome" class="form-control" data-placement="top">
+                                    <input value="<?php echo $linha_editar['nome'];?>" name="nome" tooltip="Título do seu artigo, EVITE TÍTULOS LONGOS" type="text" name="nome" class="form-control" data-placement="top">
                                 </div>
 
 
@@ -141,14 +147,14 @@
                                 <div class="form-group">
                                     <div class="col-lg-10">
                                         <select name="tipo_arquivo" class="form-control m-bot15">
-                                            <option>TIPO DE ARQUIVO</option>
+                                            <option value="<?php echo $linha_editar['tipo_arquivo']; ?>"><?php echo $linha_editar['tipo_arquivo']; ?></option>
                                             <option>•••••••••••••••</option>
-                                            <option>PDF</option>
-                                            <option>JPG</option>
-                                            <option>PNG</option>
-                                            <option>TIF</option>
-                                            <option>DOC</option>
-                                            <option>XLS</option>
+                                            <option value="PDF">PDF</option>
+                                            <option value="JPG">JPG</option>
+                                            <option value="PNG">PNG</option>
+                                            <option value="TIF">TIF</option>
+                                            <option value="DOC">DOC</option>
+                                            <option value="XLS">XLS</option>
                                         </select>
                                     </div>
                                 </div>
@@ -164,8 +170,12 @@
                                             <span class="fileupload-new"><i class="fa fa-paper-clip"></i> Carregar arquivo</span>
                                             <span class="fileupload-exists"><i class="fa fa-undo"></i> trocar</span>
                                             <input type="file" name="arquivo" class="default" />
+                                            <input type="hidden" value="<?php echo $linha_editar['arquivo']; ?>" name="arquivo_nome" class="default" />
+                                            <input type="hidden" value="<?php echo $id_salaimprensa; ?>" name="salaimprensa_id" class="default" />
+                                            
                                         </span>
                                         <span class="fileupload-preview" style="margin-left:5px;"></span>
+                                        <?php echo $linha_editar['arquivo']; ?>
                                         <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload"><i class="fa fa-trash"></i> excluir</a>
                                     </div>
                                 </div>

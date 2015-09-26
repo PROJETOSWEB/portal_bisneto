@@ -70,7 +70,7 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
                     <section class="panel">
 
                         <header class="panel-heading">
-                            <a href="banner.php"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
+                            <a href="banner.php?tipo=insert"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
                                     </span> BANNERS</button>
                             </a>
                         </header>

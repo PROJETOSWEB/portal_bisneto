@@ -38,7 +38,7 @@
                     <section class="panel">
 
                         <header class="panel-heading">
-                            <a href="salaimprensa.php"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
+                            <a href="salaimprensa.php?tipo=insert"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
                                     </span> ARQUIVOS</button>
                             </a>
                         </header>

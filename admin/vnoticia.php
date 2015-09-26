@@ -53,7 +53,7 @@
                     <section class="panel">
 
                         <header class="panel-heading">
-                            <a href="noticias.php"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
+                            <a href="noticias.php?tipo=insert"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
                                     </span> NOTÍCIAS</button>
                             </a>
                         </header>

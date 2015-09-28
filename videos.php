@@ -135,7 +135,7 @@ include './admin/conections/conexao.php';
                             <!-- Logo arthur -->
                             <div id="logo" class="col-lg-4 col-md-4 col-sm-4 animate-onscroll" style="margin: 0px; padding: 0px;">
 
-                                <a href="index.html"><img src="img/Topo-Site-1.png" alt="Logo"></a>
+                                <a href="indexxx.html"><img src="img/Topo-Site-1.png" alt="Logo"></a>
 
                             </div>
                             <!-- /Logo arthur-->
@@ -218,7 +218,7 @@ include './admin/conections/conexao.php';
                             <!-- Home -->
                             <li class="home-button current-menu-item">
 
-                                <a href="index.html"><i class="icons icon-home"></i></a>
+                                <a href="indexxx.html"><i class="icons icon-home"></i></a>
 
                             </li>
                             <!-- /Home -->
@@ -342,272 +342,45 @@ include './admin/conections/conexao.php';
 
                             <div class="media-items row">
 
+                                <?php
+                                $seleciona_videos = "SELECT * FROM videos order by videos_id DESC";
+                                $executa_seleciona_videos = mysql_query($seleciona_videos)or die(mysql_error());
+                                ?>
 
-                                <!-- item VIDEOS -->
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <div class="media-item animate-onscroll gallery-media">
 
-                                        <div class="media-image">
-                                            <img src="img/media/media2-medium.jpg" alt="">
+                                <?php
+                                while ($array_videos = mysql_fetch_array($executa_seleciona_videos)) {
+                                    ?>
+                                    <!-- item VIDEOS -->
+                                    <div class="col-lg-3 col-md-4 col-sm-6">
+                                        <div class="media-item animate-onscroll gallery-media">
 
-                                            <div class="media-hover">
-                                                <div class="media-icons">
-                                                    <a href="https://www.youtube.com/watch?v=1WbQe-wVK9E" 	
-                                                       data-group="media-jackbox" 
-                                                       data-thumbnail="img/media/media2-medium.jpg" 
-                                                       data-title="LEGENDA LEGENDA"
-                                                       class="jackbox media-icon">
-                                                        <i class="icons icon-play"></i>
-                                                    </a>
+                                            <div class="media-image">
+                                                <img src="img/media/media2-medium.jpg" alt="">
+
+                                                <div class="media-hover">
+                                                    <div class="media-icons">
+                                                        <a href="https://www.youtube.com/watch?v=<?php echo $array_videos['video']; ?>" 	
+                                                           data-group="media-jackbox" 
+                                                           data-thumbnail="img/media/media2-medium.jpg" 
+                                                           data-title="<?php echo $array_videos['legenda']; ?>"
+                                                           class="jackbox media-icon">
+                                                            <i class="icons icon-play"></i>
+                                                        </a>
+                                                    </div>
                                                 </div>
+
                                             </div>
 
-                                        </div>
+
+                                        </div>							
+                                    </div>
+                                    <!-- // item VIDEOS -->
 
 
-                                    </div>							
-                                </div>
-                                <!-- // item VIDEOS -->
-
-                                <!-- item VIDEOS -->
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <div class="media-item animate-onscroll gallery-media">
-
-                                        <div class="media-image">
-                                            <img src="img/media/media2-medium.jpg" alt="">
-
-                                            <div class="media-hover">
-                                                <div class="media-icons">
-                                                    <a href="https://www.youtube.com/watch?v=1WbQe-wVK9E" 	
-                                                       data-group="media-jackbox" 
-                                                       data-thumbnail="img/media/media2-medium.jpg" 
-                                                       data-title="LEGENDA LEGENDA"
-                                                       class="jackbox media-icon">
-                                                        <i class="icons icon-play"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-
-                                    </div>							
-                                </div>
-                                <!-- // item VIDEOS -->
-
-                                <!-- item VIDEOS -->
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <div class="media-item animate-onscroll gallery-media">
-
-                                        <div class="media-image">
-                                            <img src="img/media/media2-medium.jpg" alt="">
-
-                                            <div class="media-hover">
-                                                <div class="media-icons">
-                                                    <a href="https://www.youtube.com/watch?v=1WbQe-wVK9E" 	
-                                                       data-group="media-jackbox" 
-                                                       data-thumbnail="img/media/media2-medium.jpg" 
-                                                       data-title="LEGENDA LEGENDA"
-                                                       class="jackbox media-icon">
-                                                        <i class="icons icon-play"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-
-                                    </div>							
-                                </div>
-                                <!-- // item VIDEOS -->
-
-                                <!-- item VIDEOS -->
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <div class="media-item animate-onscroll gallery-media">
-
-                                        <div class="media-image">
-                                            <img src="img/media/media2-medium.jpg" alt="">
-
-                                            <div class="media-hover">
-                                                <div class="media-icons">
-                                                    <a href="https://www.youtube.com/watch?v=1WbQe-wVK9E" 	
-                                                       data-group="media-jackbox" 
-                                                       data-thumbnail="img/media/media2-medium.jpg" 
-                                                       data-title="LEGENDA LEGENDA"
-                                                       class="jackbox media-icon">
-                                                        <i class="icons icon-play"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-
-                                    </div>							
-                                </div>
-                                <!-- // item VIDEOS -->
-
-                                <!-- item VIDEOS -->
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <div class="media-item animate-onscroll gallery-media">
-
-                                        <div class="media-image">
-                                            <img src="img/media/media2-medium.jpg" alt="">
-
-                                            <div class="media-hover">
-                                                <div class="media-icons">
-                                                    <a href="https://www.youtube.com/watch?v=1WbQe-wVK9E" 	
-                                                       data-group="media-jackbox" 
-                                                       data-thumbnail="img/media/media2-medium.jpg" 
-                                                       data-title="LEGENDA LEGENDA"
-                                                       class="jackbox media-icon">
-                                                        <i class="icons icon-play"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-
-                                    </div>							
-                                </div>
-                                <!-- // item VIDEOS -->
-
-                                <!-- item VIDEOS -->
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <div class="media-item animate-onscroll gallery-media">
-
-                                        <div class="media-image">
-                                            <img src="img/media/media2-medium.jpg" alt="">
-
-                                            <div class="media-hover">
-                                                <div class="media-icons">
-                                                    <a href="https://www.youtube.com/watch?v=1WbQe-wVK9E" 	
-                                                       data-group="media-jackbox" 
-                                                       data-thumbnail="img/media/media2-medium.jpg" 
-                                                       data-title="LEGENDA LEGENDA"
-                                                       class="jackbox media-icon">
-                                                        <i class="icons icon-play"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-
-                                    </div>							
-                                </div>
-                                <!-- // item VIDEOS -->
-
-                                <!-- item VIDEOS -->
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <div class="media-item animate-onscroll gallery-media">
-
-                                        <div class="media-image">
-                                            <img src="img/media/media2-medium.jpg" alt="">
-
-                                            <div class="media-hover">
-                                                <div class="media-icons">
-                                                    <a href="https://www.youtube.com/watch?v=1WbQe-wVK9E" 	
-                                                       data-group="media-jackbox" 
-                                                       data-thumbnail="img/media/media2-medium.jpg" 
-                                                       data-title="LEGENDA LEGENDA"
-                                                       class="jackbox media-icon">
-                                                        <i class="icons icon-play"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-
-                                    </div>							
-                                </div>
-                                <!-- // item VIDEOS -->
-
-                                <!-- item VIDEOS -->
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <div class="media-item animate-onscroll gallery-media">
-
-                                        <div class="media-image">
-                                            <img src="img/media/media2-medium.jpg" alt="">
-
-                                            <div class="media-hover">
-                                                <div class="media-icons">
-                                                    <a href="https://www.youtube.com/watch?v=1WbQe-wVK9E" 	
-                                                       data-group="media-jackbox" 
-                                                       data-thumbnail="img/media/media2-medium.jpg" 
-                                                       data-title="LEGENDA LEGENDA"
-                                                       class="jackbox media-icon">
-                                                        <i class="icons icon-play"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-
-                                    </div>							
-                                </div>
-                                <!-- // item VIDEOS -->
-
-                                <!-- item VIDEOS -->
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <div class="media-item animate-onscroll gallery-media">
-
-                                        <div class="media-image">
-                                            <img src="img/media/media2-medium.jpg" alt="">
-
-                                            <div class="media-hover">
-                                                <div class="media-icons">
-                                                    <a href="https://www.youtube.com/watch?v=1WbQe-wVK9E" 	
-                                                       data-group="media-jackbox" 
-                                                       data-thumbnail="img/media/media2-medium.jpg" 
-                                                       data-title="LEGENDA LEGENDA"
-                                                       class="jackbox media-icon">
-                                                        <i class="icons icon-play"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-
-                                    </div>							
-                                </div>
-                                <!-- // item VIDEOS -->
-
-                                <!-- item VIDEOS -->
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <div class="media-item animate-onscroll gallery-media">
-
-                                        <div class="media-image">
-                                            <img src="img/media/media2-medium.jpg" alt="">
-
-                                            <div class="media-hover">
-                                                <div class="media-icons">
-                                                    <a href="https://www.youtube.com/watch?v=1WbQe-wVK9E" 	
-                                                       data-group="media-jackbox" 
-                                                       data-thumbnail="img/media/media2-medium.jpg" 
-                                                       data-title="LEGENDA LEGENDA"
-                                                       class="jackbox media-icon">
-                                                        <i class="icons icon-play"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-
-                                    </div>							
-                                </div>
-                                <!-- // item VIDEOS -->
-
-
-
-
-
-
+                                    <?php
+                                }
+                                ?>
 
                             </div>
 

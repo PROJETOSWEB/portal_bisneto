@@ -2,6 +2,7 @@
 include './admin/conections/conexao.php';
 ?>
 <!DOCTYPE html>
+
 <html>
 
     <head>
@@ -229,7 +230,7 @@ include './admin/conections/conexao.php';
                             <!-- biografia -->
                             <li >
 
-                                <a href="#">BIOGRAFIA</a>
+                                <a href="biografia.php">BIOGRAFIA</a>
 
                             </li>
                             <!-- // biografia -->
@@ -237,7 +238,7 @@ include './admin/conections/conexao.php';
                             <!-- opniao -->
                             <li >
 
-                                <a href="#">OPINIÃO</a>
+                                <a href="lista-materias-opiniao.html">OPINIÃO</a>
 
                             </li>
                             <!-- // opiniao -->
@@ -245,7 +246,7 @@ include './admin/conections/conexao.php';
                             <!-- DEP. na midia -->
                             <li >
 
-                                <a href="#">DEPUTADO NA MÍDIA</a>
+                                <a href="midia.php">DEPUTADO NA MÍDIA</a>
 
                             </li>
                             <!-- // dep. na midia -->
@@ -266,11 +267,11 @@ include './admin/conections/conexao.php';
                                 <ul>
 
                                     <li>
-                                        <a href="#">fotos</a>
+                                        <a href="fotos.php">fotos</a>
                                     </li>
 
                                     <li>
-                                        <a href="#">videos</a>
+                                        <a href="videos.php">videos</a>
                                     </li>
 
 
@@ -288,7 +289,7 @@ include './admin/conections/conexao.php';
                                 <ul>
 
                                     <li>
-                                        <a href="#">sala de imprensa</a>
+                                        <a href="imprensa.html">sala de imprensa</a>
                                     </li>
 
                                     <li>
@@ -322,64 +323,58 @@ include './admin/conections/conexao.php';
 
 
 
-            <section id="content">	
-
-                <!-- Page Heading -->
-                <section class="section page-heading animate-onscroll full-width-bg">
-
-                    <h1>BIOGRAFIA</h1>
-                    <p class="breadcrumb"><a href="main-v1.html">Home</a> / Biografia</p>
-
-                </section>
-                <!-- Page Heading -->
-
-
+            <section id="content">
 
                 <!-- Section -->
-                <section class="section full-width-bg gray-bg">
+                <section class="section full-width-bg">
 
                     <div class="row">
 
                         <div class="col-lg-9 col-md-9 col-sm-8">
 
-                            <div class="row">
+                            <!-- Main Slider -->
+                            <div class="flexslider main-flexslider animate-onscroll">
 
-                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                <ul class="slides">
 
-                                    <?php
-                                    $seleciona_biografia = "SELECT * FROM biografia";
-                                    $executa_seleciona_biografia = mysql_query($seleciona_biografia)or die(mysql_error());
-                                    $dados_biografia = mysql_fetch_array($executa_seleciona_biografia);
-                                    
-                                    
-                                    
-                                    ?>
-                                    
+                                    <li id="main_flex_2" style="background: url(img/slide-temp1.jpg) no-repeat;"> </li>
 
-                                    <img class="animate-onscroll" src="admin/imagens/biografia/<?php echo $dados_biografia['foto'];  ?>" alt="">
+                                    <li id="main_flex_2" style="background: url(img/fotos/arthur-bisneto02.jpg) no-repeat;">
 
-                                    <p class="animate-onscroll"><br/>
-                                    
-                                        <?php echo $dados_biografia['texto']; ?>
-                                    
-                                    
-                                    </p>
+                                        <div class="slide align-center">
+                                            <h2>Arthur Bisneto propõe estimular a qualificação dos beneficiários do programa Minha Casa, Minha Vida</h2>
+                                        </div>
 
+                                    </li>
 
+                                    <li id="main_flex_2" style="background: url(img/slide-temp2.jpg) no-repeat;"> </li>
 
-                                </div>
+                                    <li id="main_flex_2" style="background: url(img/fotos/arthur-bisneto.jpg) no-repeat;">
 
-                            </div>
+                                        <div class="slide align-center">
+                                            <h2>Arthur Virgílio Bisneto propõe blindagem nos vidros das viaturas da segurança pública</h2>
+                                        </div>
+
+                                    </li>
 
 
+                                    <li id="main_flex_2" style="background: url(img/fotos/arthur-bisneto03.jpg) no-repeat;">
+
+                                        <div class="slide align-center">
+                                            <h2>Bisneto vota a favor da redução da maioridade penal</h2>
+                                        </div>
+
+                                    </li>
 
 
+                                </ul>
+
+                            </div>	
+                            <!-- /Main Slider -->
 
                         </div>
 
 
-
-                        <!-- Sidebar -->
                         <div class="col-lg-3 col-md-3 col-sm-4 sidebar">
 
                             <div class="social-media animate-onscroll">
@@ -435,17 +430,232 @@ include './admin/conections/conexao.php';
 
 
                         </div>
+
+                    </div>
+
+                </section>
+                <!-- /Section -->
+
+
+
+
+                <!-- Section -->
+                <section class="section full-width-bg gray-bg">
+
+                    <div class="row">
+
+                        <div class="col-lg-9 col-md-9 col-sm-8">
+
+                            <h1 class="animate-onscroll no-margin-top">OPINIÃO</h1>
+
+                            <?php
+                            
+                            $seleciona_opiniao = "SELECT * FROM opiniao order by opiniao_id DESC LIMIT 0,1";
+                            $executa_seleciona_opiniao = mysql_query($seleciona_opiniao)or die(mysql_error());
+                            $linha_opiniao = mysql_fetch_array($executa_seleciona_opiniao);
+                            ?>
+                            
+                            
+                            
+                            <!-- Blog Post -->
+                            <div class="blog-post big animate-onscroll">
+
+                                <div class="post-image">
+                                    <img src="admin/imagens/opiniao/<?php echo $linha_opiniao['foto']; ?>" alt="">
+                                </div>
+
+                                <h5 class="post-title"><a href="blog-single-sidebar.html"><?php echo $linha_opiniao['']; ?> </a></h5>
+
+                                <div class="post-meta">
+                                    <span>29 de junho de 2015 •  11:28AM</span>
+                                </div>
+
+                                <p>Realizado no último final de semana, o Festival Folclórico de Parintins completou a marca fantástica de 50 edições. Nós, do Amazonas, temos mais do que ninguém a dimensão do que isso representa para a nossa gente, para a nossa cultura.</p>
+
+                                <a href="blog-single-sidebar.html" class="button read-more-button button-arrow">ler mais...</a>
+
+                            </div>
+                            <!-- /Blog Post -->						
+                            <!-- Owl Carousel -->
+                            <div class="owl-carousel-container">
+
+                                <div class="owl-header">
+
+                                    <h3 class="animate-onscroll">MAIS NOTÍCIAS</h3>
+
+                                    <div class="carousel-arrows animate-onscroll">
+                                        <span class="left-arrow"><i class="icons icon-left-dir"></i></span>
+                                        <span class="right-arrow"><i class="icons icon-right-dir"></i></span>
+                                    </div>
+
+                                </div>
+
+                                <div class="owl-carousel" data-max-items="3">
+
+
+                                    <?php
+                                    $seleciona_noticias = "SELECT * FROM noticia order by noticia_id DESC LIMIT 0,5";
+                                    $executa_seleciona_noticia = mysql_query($seleciona_noticias)or die(mysql_error());
+                                    ?>
+
+                                    <?php
+                                    while ($array_noticia = mysql_fetch_array($executa_seleciona_noticia)) {
+                                        ?>
+
+                                        <!-- Owl Item -->
+                                        <div>
+
+                                            <!-- Blog Post -->
+                                            <div class="blog-post animate-onscroll">
+
+                                                <div class="post-image">
+                                                    <img src="admin/imagens/noticia/<?php echo $array_noticia['img']; ?>" alt="">
+                                                </div>
+
+                                                <h5 class="post-title"><a href="#"><?php echo $array_noticia['titulo']; ?></a></h5>
+
+                                                <?php
+                                                $max = 150;
+                                                $str = $array_noticia['texto'];
+                                                ?>
+
+
+                                                <p><?php echo substr_replace($str, (strlen($str) > $max ? '...' : ''), $max); ?></p>
+
+
+                                            </div>
+                                            <!-- /Blog Post -->
+
+                                        </div>
+                                        <!-- /Owl Item -->
+
+    <?php
+}
+?>
+
+
+
+
+                                </div>
+
+                            </div>
+                            <!-- /Owl Carousel -->	
+
+                            <!-- Related Articles -->
+                            <div class="related-articles">
+
+                                <h3 class="animate-onscroll">GALERIA DE IMAGENS</h3>
+
+                                <div class="row">
+
+<?php
+//SELECIONANDO AS ULTIMAS 3 IMAGENS DA GALERIA
+$seleciona_imagem = "SELECT * FROM fotos order by fotos_id DESC LIMIT 0,3";
+$executa_seleciona_imagem = mysql_query($seleciona_imagem) or die(mysql_error());
+?>
+
+                                    <?php
+                                    while ($linha_fotos = mysql_fetch_array($executa_seleciona_imagem)) {
+                                        ?>
+
+                                        <div class="col-lg-4 col-md-4 col-sm-4">
+
+                                            <!-- Blog Post -->
+                                            <div class="blog-post animate-onscroll">
+
+                                                <div class="post-image">
+                                                    <img src="admin/imagens/fotos/<?php echo $linha_fotos['foto']; ?>" alt="">
+                                                </div>
+
+                                            </div>
+                                            <!-- /Blog Post -->
+
+                                        </div>
+
+
+    <?php
+}
+?>
+
+
+
+
+                                    <div class="col-lg-4 col-md-4 col-sm-4 animate-onscroll" style="margin-top: 20px;">
+                                        <a href="fotos.php" class="button donate button-arrow">toda galeria</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- /Related Articles -->	
+                            <hr/>				
+
+                            <!-- Banner Rotator -->
+                            <div class="banner-rotator animate-onscroll">
+
+                                <div class="flexslider banner-rotator-flexslider">
+
+                                    <ul class="slides">
+
+                                        <li id="flex_rotator_1">
+                                            <!--<div class="banner-rotator-content">
+                                                    <h5>Campaign trial</h5>
+                                                    <h2>New York</h2>
+                                                    <span class="date">December 17th</span>
+                                            </div>-->
+                                        </li>
+
+                                        <!--<li id="flex_rotator_2">
+                                                <div class="banner-rotator-content">
+                                                        <h5>Campaign trial</h5>
+                                                        <h2>Corden</h2>
+                                                        <span class="date">April 12th</span>
+                                                        <a href="#" class="button big button-arrow">Details</a>
+                                                </div>
+                                        </li>-->
+
+
+                                    </ul>
+
+                                </div>
+
+                            </div>
+                            <!-- /Banner Rotator -->
+
+
+                            <div class="col-lg-10 col-md-10 col-sm-10 animate-onscroll">
+                                <h4>DEPUTADO ARTHUR VIRGILIO BISNETO</h4>
+
+                                <p>É deputado federal pelo PSDB do Amazonas. Na Câmara Federal assumiu a vice-liderança do Bloco da Oposição. É membro titular na Comissão de Minas e Energia (CME) e na Comissão de Integração Nacional, Desenvolvimento Regional e da Amazônia (Cindra) e suplente na Comissão de Ciência e Tecnologia, Comunicação e Informática (CCTCI).</p>
+
+
+                                <a href="biografia.html" class="button read-more-button button-arrow">ler mais...</a>
+
+                            </div>
+                        </div>
+
+
+
+                        <!-- Sidebar -->
                         <div class="col-lg-3 col-md-3 col-sm-4 sidebar">
-
-                            <hr/ style="border-bottom: 1px solid #EDEDED;">
-
-                                <!-- Featured Video -->
-                                <div class="sidebar-box featured-video animate-onscroll fundo-listra">
+                            <!-- Featured Video -->
+                            <div class="sidebar-box featured-video animate-onscroll fundo-listra">
                                 <h3><strong>VÍDEO</strong></h3>
                                 <iframe width="560" height="315" src="https://www.youtube.com/embed/Lcubw2IeNtM?wmode=transparent" allowfullscreen></iframe>
                                 <a href="#" class="button transparent button-arrow">todos os videos</a>
                             </div>
                             <!-- /Featured Video -->
+
+                            <hr/ style="border-bottom: 1px solid #EDEDED;">
+
+                                <!-- Image Banner -->
+                                <div class="sidebar-box image-banner animate-onscroll">
+                                <a href="#">
+                                    <img src="img/capa-informativo.jpg" alt="">
+                                    <h3>INFORMATIVO EDIÇÃO 230</h3>
+                                    <span class="button  button-arrow">VER TODOS</span>
+                                </a>
+                            </div>
+                            <!-- /Image Banner -->
 
                             <hr/ style="border-bottom: 1px solid #EDEDED;">
 
@@ -467,16 +677,43 @@ include './admin/conections/conexao.php';
                             </div>
                             <!-- /Flickr Photos -->	
 
-                            <hr/ style="border-bottom: 1px solid #EDEDED;">
+                            <hr style="border-bottom: 1px solid #EDEDED;">	
+
+                            <!-- Categories -->
+                            <div class="sidebar-box category-box white animate-onscroll">
+
+                                <h3>LINKS ÚTEIS</h3>
+                                <ul>
+<?php
+$seleciona_links = "SELECT * FROM links order by links_id DESC LIMIT 0,10";
+$executa_seleciona_links = mysql_query($seleciona_links)or die(mysql_error());
+?>
+
+                                    <?php
+                                    while ($array_links = mysql_fetch_array($executa_seleciona_links)) {
+                                        ?>
+
+
+                                        <li><a href="<?php echo $array_links['link']; ?>"><?php echo $array_links['nome']; ?></a></li>
+
+    <?php
+}
+?>
+
+
+                                </ul>
+
+                            </div>
+                            <!-- /Categories -->					
 
                         </div>
-
                         <!-- /Sidebar -->
 
 
 
 
                     </div>
+
 
                 </section>
                 <!-- /Section -->

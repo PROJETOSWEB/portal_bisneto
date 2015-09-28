@@ -133,7 +133,7 @@
                             <!-- Logo arthur -->
                             <div id="logo" class="col-lg-4 col-md-4 col-sm-4 animate-onscroll" style="margin: 0px; padding: 0px;">
 
-                                <a href="index.html"><img src="img/Topo-Site-1.png" alt="Logo"></a>
+                                <a href="indexxx.html"><img src="img/Topo-Site-1.png" alt="Logo"></a>
 
                             </div>
                             <!-- /Logo arthur-->
@@ -216,7 +216,7 @@
                             <!-- Home -->
                             <li class="home-button current-menu-item">
 
-                                <a href="index.html"><i class="icons icon-home"></i></a>
+                                <a href="indexxx.html"><i class="icons icon-home"></i></a>
 
                             </li>
                             <!-- /Home -->

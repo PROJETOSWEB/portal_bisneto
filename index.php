@@ -222,7 +222,7 @@ include './admin/conections/conexao.php';
                             <!-- Home -->
                             <li class="home-button current-menu-item">
 
-                                <a href="indexxx.html"><i class="icons icon-home"></i></a>
+                                <a href="index.php"><i class="icons icon-home"></i></a>
 
                             </li>
                             <!-- /Home -->
@@ -337,34 +337,26 @@ include './admin/conections/conexao.php';
 
                                 <ul class="slides">
 
-                                    <li id="main_flex_2" style="background: url(img/slide-temp1.jpg) no-repeat;"> </li>
+                                    <?php
+                                    $seleciona_noticia = "SELECT * FROM noticia WHERE destaque_banner = 1 "
+                                            . "order by noticia_id DESC LIMIT 0,5";
+                                    $executa_seleciona_noticia = mysql_query($seleciona_noticia)or die(mysql_error());
+                                    ?>
 
-                                    <li id="main_flex_2" style="background: url(img/fotos/arthur-bisneto02.jpg) no-repeat;">
-
+                                    <?php
+                                    while ($array_not = mysql_fetch_array($executa_seleciona_noticia)) {
+                                        ?>
+                                        <li id="main_flex_2" style="background: url(admin/imagens/noticia/<?php echo $array_not['img']; ?>) no-repeat;"> </li>
                                         <div class="slide align-center">
                                             <h2>Arthur Bisneto propõe estimular a qualificação dos beneficiários do programa Minha Casa, Minha Vida</h2>
-                                        </div>
+                                        </div>                                      
 
-                                    </li>
-
-                                    <li id="main_flex_2" style="background: url(img/slide-temp2.jpg) no-repeat;"> </li>
-
-                                    <li id="main_flex_2" style="background: url(img/fotos/arthur-bisneto.jpg) no-repeat;">
-
-                                        <div class="slide align-center">
-                                            <h2>Arthur Virgílio Bisneto propõe blindagem nos vidros das viaturas da segurança pública</h2>
-                                        </div>
-
-                                    </li>
+                                        <?php
+                                    }
+                                    ?>
 
 
-                                    <li id="main_flex_2" style="background: url(img/fotos/arthur-bisneto03.jpg) no-repeat;">
 
-                                        <div class="slide align-center">
-                                            <h2>Bisneto vota a favor da redução da maioridade penal</h2>
-                                        </div>
-
-                                    </li>
 
 
                                 </ul>

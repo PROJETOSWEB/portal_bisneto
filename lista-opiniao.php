@@ -1,10 +1,8 @@
 <?php
 include './admin/conections/conexao.php';
 ?>
-<!DOCTYPE html>
 
 <html>
-
     <head>
 
         <!-- Meta Tags -->
@@ -15,8 +13,8 @@ include './admin/conections/conexao.php';
         <title>Deputado Arthur Bisneto</title>
 
         <!-- Google Fonts -->
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet" type="text/css">
 
         <!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="img/psdb-ico.png">
@@ -25,12 +23,12 @@ include './admin/conections/conexao.php';
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
         <link href="css/fontello.css" rel="stylesheet" type="text/css">
         <link href="css/flexslider.css" rel="stylesheet" type="text/css">
-        <link href="js/revolution-slider/css/settings.css" rel="stylesheet" type="text/css" media="screen" />
+        <link href="js/revolution-slider/css/settings.css" rel="stylesheet" type="text/css" media="screen">
         <link href="css/owl.carousel.css" rel="stylesheet" type="text/css">
         <link href="css/responsive-calendar.css" rel="stylesheet" type="text/css">
         <link href="css/chosen.css" rel="stylesheet" type="text/css">
-        <link href="jackbox/css/jackbox.min.css" rel="stylesheet" type="text/css" />
-        <link href="css/cloud-zoom.css" rel="stylesheet" type="text/css" />
+        <link href="jackbox/css/jackbox.min.css" rel="stylesheet" type="text/css">
+        <link href="css/cloud-zoom.css" rel="stylesheet" type="text/css">
         <link href="css/style.css" rel="stylesheet" type="text/css">
 
 
@@ -107,12 +105,12 @@ include './admin/conections/conexao.php';
             });
         </script>
 
-    </head>
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"></head>
 
     <body class="sticky-header-on tablet-sticky-header">
 
         <div id="fb-root"></div>
-        <script>(function (d, s, id) {
+        <script class="">(function (d, s, id) {
                 var js, fjs = d.getElementsByTagName(s)[0];
                 if (d.getElementById(id))
                     return;
@@ -139,7 +137,7 @@ include './admin/conections/conexao.php';
                             <!-- Logo arthur -->
                             <div id="logo" class="col-lg-4 col-md-4 col-sm-4 animate-onscroll" style="margin: 0px; padding: 0px;">
 
-                                <a href="index.php"><img src="img/Topo-Site-1.png"alt="Logo"></a>
+                                <a href="indexxx.html"><img src="img/Topo-Site-1.png" alt="Logo"></a>
 
                             </div>
                             <!-- /Logo arthur-->
@@ -148,14 +146,14 @@ include './admin/conections/conexao.php';
 
                             <!-- foto arthur bisneto -->
                             <div class="col-lg-4 col-md-4 col-sm-4 animate-onscroll" style="margin: 0px; padding: 0px;">
-                                <img src="img/Topo-Site-2.png"alt="" />
+                                <img src="img/Topo-Site-2.png" alt="">
 
                             </div>
                             <!-- // foto arthur bisneto -->
 
                             <!-- Main Quote -->
                             <div class="col-lg-4 col-md-4 col-sm-4 animate-onscroll" style="margin: 0px; padding: 0px;">
-                                <img src="img/Topo-Site-3.png" alt="" />
+                                <img src="img/Topo-Site-3.png" alt="">
 
                             </div>
                             <!-- /Main Quote -->
@@ -222,37 +220,37 @@ include './admin/conections/conexao.php';
                             <!-- Home -->
                             <li class="home-button current-menu-item">
 
-                                <a href="indexxx.html"><i class="icons icon-home"></i></a>
+                                <a href="index.php"><i class="icons icon-home"></i></a>
 
                             </li>
                             <!-- /Home -->
 
                             <!-- biografia -->
-                            <li >
+                            <li>
 
-                                <a href="biografia.php">BIOGRAFIA</a>
+                                <a href="#">BIOGRAFIA</a>
 
                             </li>
                             <!-- // biografia -->
 
                             <!-- opniao -->
-                            <li >
+                            <li>
 
-                                <a href="lista-opiniao.php">OPINIÃO</a>
+                                <a href="#">OPINIÃO</a>
 
                             </li>
                             <!-- // opiniao -->
 
                             <!-- DEP. na midia -->
-                            <li >
+                            <li>
 
-                                <a href="midia.php">DEPUTADO NA MÍDIA</a>
+                                <a href="#">DEPUTADO NA MÍDIA</a>
 
                             </li>
                             <!-- // dep. na midia -->
 
                             <!-- DEP. na midia -->
-                            <li >
+                            <li>
 
                                 <a href="#">ATIVIDADE PARLAMENTAR</a>
 
@@ -260,18 +258,18 @@ include './admin/conections/conexao.php';
                             <!-- // dep. na midia -->
 
                             <!-- GALERIA-->
-                            <li >
+                            <li>
 
                                 <span>GALERIA</span>
 
                                 <ul>
 
                                     <li>
-                                        <a href="fotos.php">fotos</a>
+                                        <a href="#">fotos</a>
                                     </li>
 
                                     <li>
-                                        <a href="videos.php">videos</a>
+                                        <a href="#">videos</a>
                                     </li>
 
 
@@ -282,14 +280,14 @@ include './admin/conections/conexao.php';
 
 
                             <!-- CONTATO-->
-                            <li >
+                            <li>
 
                                 <span>CONTATO</span>
 
                                 <ul>
 
                                     <li>
-                                        <a href="imprensa.html">sala de imprensa</a>
+                                        <a href="#">sala de imprensa</a>
                                     </li>
 
                                     <li>
@@ -304,7 +302,7 @@ include './admin/conections/conexao.php';
 
                             <!-- Donate -->
                             <li class="donate-button ">
-                                <a style=" padding: 0px; border: none;" href="#"><img src="img/logo-PSDB.png" alt="" /></a>
+                                <a style=" padding: 0px; border: none;" href="#"><img src="img/logo-PSDB.png" alt=""></a>
 
                             </li>
                             <!-- /Donate -->
@@ -323,58 +321,112 @@ include './admin/conections/conexao.php';
 
 
 
-            <section id="content">
+            <section id="content">	
+
+
+                <!-- Page Heading -->
+                <section class="section page-heading animate-onscroll full-width-bg">
+
+                    <p class="breadcrumb"><a href="main-v1.html">Home</a> /opinião</p>
+
+                </section>
+                <!-- Page Heading -->
+
 
                 <!-- Section -->
-                <section class="section full-width-bg">
+                <section class="section full-width-bg gray-bg">
 
                     <div class="row">
 
                         <div class="col-lg-9 col-md-9 col-sm-8">
 
-                            <!-- Main Slider -->
-                            <div class="flexslider main-flexslider animate-onscroll">
+                            <div class="row">
 
-                                <ul class="slides">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
 
-                                    <li id="main_flex_2" style="background: url(img/slide-temp1.jpg) no-repeat;"> </li>
-
-                                    <li id="main_flex_2" style="background: url(img/fotos/arthur-bisneto02.jpg) no-repeat;">
-
-                                        <div class="slide align-center">
-                                            <h2>Arthur Bisneto propõe estimular a qualificação dos beneficiários do programa Minha Casa, Minha Vida</h2>
-                                        </div>
-
-                                    </li>
-
-                                    <li id="main_flex_2" style="background: url(img/slide-temp2.jpg) no-repeat;"> </li>
-
-                                    <li id="main_flex_2" style="background: url(img/fotos/arthur-bisneto.jpg) no-repeat;">
-
-                                        <div class="slide align-center">
-                                            <h2>Arthur Virgílio Bisneto propõe blindagem nos vidros das viaturas da segurança pública</h2>
-                                        </div>
-
-                                    </li>
+                                    <h1 class="animate-onscroll">LISTA de opinião</h1>
+                                    <hr class="animate-onscroll" style="margin:5px;">
+                                    <br/>
 
 
-                                    <li id="main_flex_2" style="background: url(img/fotos/arthur-bisneto03.jpg) no-repeat;">
-
-                                        <div class="slide align-center">
-                                            <h2>Bisneto vota a favor da redução da maioridade penal</h2>
-                                        </div>
-
-                                    </li>
+                                    <?php
+                                    $seleciona_opiniao = "SELECT * FROM opiniao";
+                                    $executa_seleciona_opiniao = mysql_query($seleciona_opiniao)or die(mysql_error());
+                                    ?>
 
 
-                                </ul>
+                                    <?php
+                                    while ($array_opiniao = mysql_fetch_array($executa_seleciona_opiniao)) {
+                                        ?>
 
-                            </div>	
-                            <!-- /Main Slider -->
+                                        <!-- item -->		
+                                        <div class="blog-post style2 animate-onscroll">
+
+                                            <div class="post-image">
+                                                <img src="admin/imagens/opiniao/<?php echo $array_opiniao['foto']; ?>" alt="">
+                                                <div class="media-hover">
+                                                    <div class="media-icons">
+                                                        <a href="admin/imagens/<?php echo $array_opiniao['foto']; ?>" data-group="media-jackbox" class="jackbox media-icon"><i class="icons icon-zoom-in"></i></a>
+                                                        <a href="materias.html" class="media-icon"><i class="icons icon-link"></i></a>
+                                                    </div>
+                                                </div>								
+                                            </div>
+                                            <div class="post-content">
+                                                <div class="post-header">
+                                                    <h2><a href="materias.html"><?php echo $array_opiniao['titulo']; ?> </a></h2>
+                                                    <div class="post-meta">
+                                                        <span><?php echo $array_opiniao['data']; ?></span>
+                                                    </div>
+                                                </div>
+                                                <div class="post-exceprt">
+
+                                                    <?php
+                                                    $maxp = 100;
+                                                    $strp = $array_opiniao['texto'];
+                                                    ?>
+
+                                                    <p><?php echo substr_replace($strp, (strlen($strp) > $maxp ? '...' : ''), $maxp); ?></p>
+
+                                                    <a href="materias.html" class="button read-more-button big button-arrow">ver</a>
+                                                </div>
+                                            </div>
+
+                                        </div>	
+                                        <div class="divider animate-onscroll"></div>																		
+                                        <!-- // item -->
+
+                                        <?php
+                                    }
+                                    ?>
+
+                                </div>
+
+
+                            </div>
+
+                            <div class="animate-onscroll">
+
+                                <div class="divider"></div>
+
+                                <div class="numeric-pagination">
+                                    <a href="#" class="button"><i class="icons icon-left-dir"></i></a>
+                                    <a href="#" class="button">1</a>
+                                    <a href="#" class="button active-button">2</a>
+                                    <a href="#" class="button">3</a>
+                                    <a href="#" class="button"><i class="icons icon-right-dir"></i></a>
+                                </div>
+
+                            </div>
+
+
+
+
 
                         </div>
 
 
+
+                        <!-- Sidebar -->
                         <div class="col-lg-3 col-md-3 col-sm-4 sidebar">
 
                             <div class="social-media animate-onscroll">
@@ -387,341 +439,81 @@ include './admin/conections/conexao.php';
                                     <li class="flickr"><a href="#" class="tooltip-ontop" title="Flickr"><i class="icons icon-flickr-1"></i></a></li>
                                     <li class="email"><a href="#" class="tooltip-ontop" title="Email"><i class="icons icon-mail-1"></i></a></li>
                                 </ul>
-                                <ul class="social-buttons">
-                                    <li>
-                                        <iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Farthurvirgiliobisneto&amp;width=50&amp;height=21&amp;show_faces=true&amp;colorscheme=light&amp;stream=false&amp;border_color&amp;header=false" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:21px;" allowTransparency="true"></iframe>
-                                    </li>
-                                    <li class="facebook-share">
-                                        <div class="fb-share-button" data-href="https://www.facebook.com/arthurvirgiliobisneto" data-type="button_count"></div>
-                                    </li>
-                                    <li class="twitter-share">
-                                        <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
-                                    </li>
-                                </ul>
+
                             </div>
 
                             <div class="banner-wrapper">
                                 <a class="banner animate-onscroll" href="#">
                                     <i class="icons icon-calendar"></i>
-                                    <h4>AGENDA<br/> PARLAMENTAR</h4>
+                                    <h4>AGENDA<br> PARLAMENTAR</h4>
                                 </a>
                             </div>
 
                             <div class="banner-wrapper">
                                 <a class="banner animate-onscroll" href="#">
                                     <i class="icons icon-check"></i>
-                                    <h4>OPNIÃO DO<br/> DEPUTADO</h4>
+                                    <h4>OPNIÃO DO<br> DEPUTADO</h4>
                                 </a>
                             </div>
 
                             <div class="banner-wrapper">
                                 <a class="banner animate-onscroll" href="#">
                                     <i class="icons icon-user"></i>
-                                    <h4>SALA DE <br/>IMPRENSA</h4>
+                                    <h4>SALA DE <br>IMPRENSA</h4>
                                 </a>
                             </div>
                             <div class="banner-wrapper">
                                 <a class="banner animate-onscroll" href="#">
                                     <i class="icons icon-camera-alt"></i>
                                     <h4>CLIPPING</h4>
-                                    <P> Tudo sobre o Deputado</P>
+                                    <p> Tudo sobre o Deputado</p>
                                 </a>
                             </div>
 
 
                         </div>
-
-                    </div>
-
-                </section>
-                <!-- /Section -->
-
-
-
-
-                <!-- Section -->
-                <section class="section full-width-bg gray-bg">
-
-                    <div class="row">
-
-                        <div class="col-lg-9 col-md-9 col-sm-8">
-
-                            <h1 class="animate-onscroll no-margin-top">OPINIÃO</h1>
-
-                            <?php
-                            $seleciona_opiniao = "SELECT * FROM opiniao order by opiniao_id DESC LIMIT 0,1";
-                            $executa_seleciona_opiniao = mysql_query($seleciona_opiniao)or die(mysql_error());
-                            $linha_opiniao = mysql_fetch_array($executa_seleciona_opiniao);
-                            ?>
-
-
-
-                            <!-- Blog Post -->
-                            <div class="blog-post big animate-onscroll">
-
-                                <div class="post-image">
-                                    <img src="admin/imagens/opiniao/<?php echo $linha_opiniao['foto']; ?>" alt="">
-                                </div>
-
-                                <h5 class="post-title"><a href="blog-single-sidebar.html"><?php echo $linha_opiniao['titulo']; ?> </a></h5>
-
-                                <div class="post-meta">
-                                    <span>29 de junho de 2015 •  11:28AM</span>
-                                </div>
-
-                                <?php
-                                $maxp = 150;
-                                $strp = $linha_opiniao['texto'];
-                                ?>
-
-                                <p><?php echo substr_replace($strp, (strlen($strp) > $maxp ? '...' : ''), $maxp); ?></p>
-
-
-
-                                <p></p>
-
-                                <a href="blog-single-sidebar.html" class="button read-more-button button-arrow">ler mais...</a>
-
-                            </div>
-                            <!-- /Blog Post -->						
-                            <!-- Owl Carousel -->
-                            <div class="owl-carousel-container">
-
-                                <div class="owl-header">
-
-                                    <h3 class="animate-onscroll">MAIS NOTÍCIAS</h3>
-
-                                    <div class="carousel-arrows animate-onscroll">
-                                        <span class="left-arrow"><i class="icons icon-left-dir"></i></span>
-                                        <span class="right-arrow"><i class="icons icon-right-dir"></i></span>
-                                    </div>
-
-                                </div>
-
-                                <div class="owl-carousel" data-max-items="3">
-
-
-                                    <?php
-                                    $seleciona_noticias = "SELECT * FROM noticia order by noticia_id DESC LIMIT 0,5";
-                                    $executa_seleciona_noticia = mysql_query($seleciona_noticias)or die(mysql_error());
-                                    ?>
-
-                                    <?php
-                                    while ($array_noticia = mysql_fetch_array($executa_seleciona_noticia)) {
-                                        ?>
-
-                                        <!-- Owl Item -->
-                                        <div>
-
-                                            <!-- Blog Post -->
-                                            <div class="blog-post animate-onscroll">
-
-                                                <div class="post-image">
-                                                    <img src="admin/imagens/noticia/<?php echo $array_noticia['img']; ?>" alt="">
-                                                </div>
-
-                                                <h5 class="post-title"><a href="#"><?php echo $array_noticia['titulo']; ?></a></h5>
-
-                                                <?php
-                                                $max = 150;
-                                                $str = $array_noticia['texto'];
-                                                ?>
-
-
-                                                <p><?php echo substr_replace($str, (strlen($str) > $max ? '...' : ''), $max); ?></p>
-
-
-                                            </div>
-                                            <!-- /Blog Post -->
-
-                                        </div>
-                                        <!-- /Owl Item -->
-
-                                        <?php
-                                    }
-                                    ?>
-
-
-
-
-                                </div>
-
-                            </div>
-                            <!-- /Owl Carousel -->	
-
-                            <!-- Related Articles -->
-                            <div class="related-articles">
-
-                                <h3 class="animate-onscroll">GALERIA DE IMAGENS</h3>
-
-                                <div class="row">
-
-                                    <?php
-//SELECIONANDO AS ULTIMAS 3 IMAGENS DA GALERIA
-                                    $seleciona_imagem = "SELECT * FROM fotos order by fotos_id DESC LIMIT 0,3";
-                                    $executa_seleciona_imagem = mysql_query($seleciona_imagem) or die(mysql_error());
-                                    ?>
-
-                                    <?php
-                                    while ($linha_fotos = mysql_fetch_array($executa_seleciona_imagem)) {
-                                        ?>
-
-                                        <div class="col-lg-4 col-md-4 col-sm-4">
-
-                                            <!-- Blog Post -->
-                                            <div class="blog-post animate-onscroll">
-
-                                                <div class="post-image">
-                                                    <img src="admin/imagens/fotos/<?php echo $linha_fotos['foto']; ?>" alt="">
-                                                </div>
-
-                                            </div>
-                                            <!-- /Blog Post -->
-
-                                        </div>
-
-
-                                        <?php
-                                    }
-                                    ?>
-
-
-
-
-                                    <div class="col-lg-4 col-md-4 col-sm-4 animate-onscroll" style="margin-top: 20px;">
-                                        <a href="fotos.php" class="button donate button-arrow">toda galeria</a>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <!-- /Related Articles -->	
-                            <hr/>				
-
-                            <!-- Banner Rotator -->
-                            <div class="banner-rotator animate-onscroll">
-
-                                <div class="flexslider banner-rotator-flexslider">
-
-                                    <ul class="slides">
-
-                                        <li id="flex_rotator_1">
-                                            <!--<div class="banner-rotator-content">
-                                                    <h5>Campaign trial</h5>
-                                                    <h2>New York</h2>
-                                                    <span class="date">December 17th</span>
-                                            </div>-->
-                                        </li>
-
-                                        <!--<li id="flex_rotator_2">
-                                                <div class="banner-rotator-content">
-                                                        <h5>Campaign trial</h5>
-                                                        <h2>Corden</h2>
-                                                        <span class="date">April 12th</span>
-                                                        <a href="#" class="button big button-arrow">Details</a>
-                                                </div>
-                                        </li>-->
-
-
-                                    </ul>
-
-                                </div>
-
-                            </div>
-                            <!-- /Banner Rotator -->
-
-
-                            <div class="col-lg-10 col-md-10 col-sm-10 animate-onscroll">
-                                <h4>DEPUTADO ARTHUR VIRGILIO BISNETO</h4>
-
-                                <p>É deputado federal pelo PSDB do Amazonas. Na Câmara Federal assumiu a vice-liderança do Bloco da Oposição. É membro titular na Comissão de Minas e Energia (CME) e na Comissão de Integração Nacional, Desenvolvimento Regional e da Amazônia (Cindra) e suplente na Comissão de Ciência e Tecnologia, Comunicação e Informática (CCTCI).</p>
-
-
-                                <a href="biografia.html" class="button read-more-button button-arrow">ler mais...</a>
-
-                            </div>
-                        </div>
-
-
-
-                        <!-- Sidebar -->
                         <div class="col-lg-3 col-md-3 col-sm-4 sidebar">
+
+                            <hr style="border-bottom: 1px solid #EDEDED;">
+
                             <!-- Featured Video -->
                             <div class="sidebar-box featured-video animate-onscroll fundo-listra">
                                 <h3><strong>VÍDEO</strong></h3>
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/Lcubw2IeNtM?wmode=transparent" allowfullscreen></iframe>
+                                <iframe src="https://www.youtube.com/embed/Lcubw2IeNtM?wmode=transparent" allowfullscreen="" height="315" width="560"></iframe>
                                 <a href="#" class="button transparent button-arrow">todos os videos</a>
                             </div>
                             <!-- /Featured Video -->
 
-                            <hr/ style="border-bottom: 1px solid #EDEDED;">
+                            <hr style="border-bottom: 1px solid #EDEDED;">
 
-                                <!-- Image Banner -->
-                                <div class="sidebar-box image-banner animate-onscroll">
-                                <a href="#">
-                                    <img src="img/capa-informativo.jpg" alt="">
-                                    <h3>INFORMATIVO EDIÇÃO 230</h3>
-                                    <span class="button  button-arrow">VER TODOS</span>
-                                </a>
-                            </div>
-                            <!-- /Image Banner -->
-
-                            <hr/ style="border-bottom: 1px solid #EDEDED;">
-
-                                <!-- Instagram Photos -->
-                                <div class="sidebar-box white flickr-photos animate-onscroll">
+                            <!-- Instagram Photos -->
+                            <div class="sidebar-box white flickr-photos animate-onscroll">
                                 <h3>Nosso Instagram</h3>
                                 <ul id="instagram-feed">
                                 </ul>
                             </div>
                             <!-- /Instagram Photos -->	
 
-                            <hr/ style="border-bottom: 1px solid #EDEDED;">		
+                            <hr style="border-bottom: 1px solid #EDEDED;">		
 
-                                <!-- Flickr Photos -->
-                                <div class="sidebar-box white flickr-photos animate-onscroll">
+                            <!-- Flickr Photos -->
+                            <div class="sidebar-box white flickr-photos animate-onscroll">
                                 <h3>Fotos do Flickr</h3>
                                 <ul class="flickr-feed">
                                 </ul>
                             </div>
                             <!-- /Flickr Photos -->	
 
-                            <hr style="border-bottom: 1px solid #EDEDED;">	
-
-                            <!-- Categories -->
-                            <div class="sidebar-box category-box white animate-onscroll">
-
-                                <h3>LINKS ÚTEIS</h3>
-                                <ul>
-                                    <?php
-                                    $seleciona_links = "SELECT * FROM links order by links_id DESC LIMIT 0,10";
-                                    $executa_seleciona_links = mysql_query($seleciona_links)or die(mysql_error());
-                                    ?>
-
-                                    <?php
-                                    while ($array_links = mysql_fetch_array($executa_seleciona_links)) {
-                                        ?>
-
-
-                                        <li><a href="<?php echo $array_links['link']; ?>"><?php echo $array_links['nome']; ?></a></li>
-
-                                        <?php
-                                    }
-                                    ?>
-
-
-                                </ul>
-
-                            </div>
-                            <!-- /Categories -->					
+                            <hr style="border-bottom: 1px solid #EDEDED;">
 
                         </div>
+
                         <!-- /Sidebar -->
 
 
 
 
                     </div>
-
 
                 </section>
                 <!-- /Section -->
@@ -836,6 +628,6 @@ include './admin/conections/conexao.php';
         <![endif]-->
 
 
-    </body>
 
-</html>
+
+    </body></html>

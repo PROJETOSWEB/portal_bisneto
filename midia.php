@@ -216,7 +216,7 @@
                             <!-- Home -->
                             <li class="home-button current-menu-item">
 
-                                <a href="indexxx.html"><i class="icons icon-home"></i></a>
+                                <a href="index.php"><i class="icons icon-home"></i></a>
 
                             </li>
                             <!-- /Home -->
@@ -339,190 +339,124 @@
 
                             <div class="media-items row">
 
-                                <!-- ITEM IMAGEM -->
-                                <div class="col-lg-4 col-md-6 col-sm-12 mix category-photos" 
-                                     data-nameorder="1"> <!-- variável "1" para as imagens -->
+                                <?php
+                                $seleciona_midia = "SELECT * FROM depmidia";
+                                $executa_seleciona_midia = mysql_query($seleciona_midia)or die(mysql_error());
+                                ?>
 
-                                    <div class="media-item animate-onscroll ">
+                                <?php
+                                while ($array_midia = mysql_fetch_array($executa_seleciona_midia)) {
 
-                                        <div class="media-image">
+                                    if ($array_midia['link'] <> "") {
+                                        ?>
+                                        <!-- ITEM VIDEO -->
+                                        <div class="col-lg-4 col-md-6 col-sm-12 mix category-videos category-meetings" 
+                                             data-nameorder="2"><!-- variável "2" para os videos -->
 
-                                            <img src="img/media/media1.jpg" alt="">
+                                            <div class="media-item animate-onscroll ">
 
-                                            <div class="media-hover">
-                                                <div class="media-icons">
+                                                <div class="media-image">
 
-                                                    <a href="img/media/media1.jpg" 
-                                                       data-thumbnail="img/media/media1.jpg"
-                                                       data-group="media-jackbox"  
-                                                       class="jackbox media-icon">
-                                                        <i class="icons icon-zoom-in"></i>
-                                                    </a>
+                                                    <img src="img/media/media2.jpg" alt="">
+
+                                                    <div class="media-hover">
+                                                        <div class="media-icons">
+
+                                                            <a href="https://www.youtube.com/watch?v=1WbQe-wVK9E" 
+                                                               data-group="media-jackbox" 
+                                                               data-thumbnail="img/media/media2.jpg"
+                                                               data-title="legenda do video" 
+                                                               class="jackbox media-icon">
+                                                                <i class="icons icon-play"></i>
+                                                            </a>
+
+                                                        </div>
+                                                    </div>
+
+                                                </div>	
+
+
+                                                <div class="media-info">
+
+                                                    <div class="media-header">
+
+                                                        <div class="media-caption">
+                                                            <h2>
+                                                                <span style="font-weight: 300; color: #444; font-size: 10px;">postado em: 14-08-2015</span><br/>
+                                                                <a href="#">TITULO DO VIDEO</a>
+                                                            </h2>
+                                                        </div>
+
+                                                    </div>
 
                                                 </div>
+
                                             </div>
 
                                         </div>
+                                        <!-- // ITEM VIDEO -->
+                                        <?php
+                                    }
 
 
-                                        <div class="media-info">
-                                            <div class="media-header">
-                                                <div class="media-caption">
-                                                    <h2>
-                                                        <a href="#">
-                                                            <span style="font-weight: 300; color: #444; font-size: 10px;">postado em: 14-08-2015</span><br/>
-                                                            TÍTULO DA IMAGEM
+                                    if ($array_midia['foto'] <> "") {
+                                        ?>
+
+
+                                        <?php
+                                    }
+                                    ?>
+                                    <!-- ITEM IMAGEM -->
+                                    <div class="col-lg-4 col-md-6 col-sm-12 mix category-photos" 
+                                         data-nameorder="1"> <!-- variável "1" para as imagens -->
+
+                                        <div class="media-item animate-onscroll ">
+
+                                            <div class="media-image">
+
+                                                <img src="img/media/media1.jpg" alt="">
+
+                                                <div class="media-hover">
+                                                    <div class="media-icons">
+
+                                                        <a href="img/media/media1.jpg" 
+                                                           data-thumbnail="img/media/media1.jpg"
+                                                           data-group="media-jackbox"  
+                                                           class="jackbox media-icon">
+                                                            <i class="icons icon-zoom-in"></i>
                                                         </a>
-                                                    </h2>
+
+                                                    </div>
                                                 </div>
 
                                             </div>
 
-                                        </div>
 
+                                            <div class="media-info">
+                                                <div class="media-header">
+                                                    <div class="media-caption">
+                                                        <h2>
+                                                            <a href="#">
+                                                                <span style="font-weight: 300; color: #444; font-size: 10px;">postado em: 14-08-2015</span><br/>
+                                                                TÍTULO DA IMAGEM
+                                                            </a>
+                                                        </h2>
+                                                    </div>
 
-                                    </div>
-
-                                </div>
-                                <!-- // ITEM IMAGEM -->
-
-                                <!-- ITEM VIDEO -->
-                                <div class="col-lg-4 col-md-6 col-sm-12 mix category-videos category-meetings" 
-                                     data-nameorder="2"><!-- variável "2" para os videos -->
-
-                                    <div class="media-item animate-onscroll ">
-
-                                        <div class="media-image">
-
-                                            <img src="img/media/media2.jpg" alt="">
-
-                                            <div class="media-hover">
-                                                <div class="media-icons">
-
-                                                    <a href="https://www.youtube.com/watch?v=1WbQe-wVK9E" 
-                                                       data-group="media-jackbox" 
-                                                       data-thumbnail="img/media/media2.jpg"
-                                                       data-title="legenda do video" 
-                                                       class="jackbox media-icon">
-                                                        <i class="icons icon-play"></i>
-                                                    </a>
-
-                                                </div>
-                                            </div>
-
-                                        </div>		
-                                        <div class="media-info">
-
-                                            <div class="media-header">
-
-                                                <div class="media-caption">
-                                                    <h2>
-                                                        <span style="font-weight: 300; color: #444; font-size: 10px;">postado em: 14-08-2015</span><br/>
-                                                        <a href="#">TITULO DO VIDEO</a>
-                                                    </h2>
                                                 </div>
 
                                             </div>
+
 
                                         </div>
 
                                     </div>
-
-                                </div>
-                                <!-- // ITEM VIDEO -->
+                                    <!-- // ITEM IMAGEM -->
 
 
-                                <!-- ITEM IMAGEM -->
-                                <div class="col-lg-4 col-md-6 col-sm-12 mix category-photos" 
-                                     data-nameorder="1"> <!-- variável "1" para as imagens -->
-
-                                    <div class="media-item animate-onscroll ">
-
-                                        <div class="media-image">
-
-                                            <img src="img/media/media1.jpg">
-
-                                            <div class="media-hover">
-                                                <div class="media-icons">
-
-                                                    <a href="img/media/media1.jpg"
-                                                       data-thumbnail="img/media/media1.jpg"
-                                                       data-group="media-jackbox" 
-                                                       data-title="legenda da imagem" 
-                                                       class="jackbox media-icon">
-                                                        <i class="icons icon-zoom-in"></i>
-                                                    </a>
-
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-
-                                        <div class="media-info">
-                                            <div class="media-header">
-                                                <div class="media-caption">
-                                                    <h2>
-                                                        <a href="#">
-                                                            <span style="font-weight: 300; color: #444; font-size: 10px;">postado em: 14-08-2015</span><br/>
-                                                            TÍTULO DA IMAGEM
-                                                        </a>
-                                                    </h2>
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-
-
-                                    </div>
-
-                                </div>
-                                <!-- // ITEM IMAGEM -->
-
-                                <!-- ITEM VIDEO -->
-                                <div class="col-lg-4 col-md-6 col-sm-12 mix category-videos category-meetings" 
-                                     data-nameorder="2"><!-- variável "2" para os videos -->
-
-                                    <div class="media-item animate-onscroll ">
-
-                                        <div class="media-image">
-
-                                            <img src="img/media/media2.jpg" alt="">
-
-                                            <div class="media-hover">
-                                                <div class="media-icons">
-
-                                                    <a href="https://www.youtube.com/watch?v=1WbQe-wVK9E" 
-                                                       data-group="media-jackbox" 
-                                                       data-thumbnail="img/media/media2.jpg" 
-                                                       class="jackbox media-icon">
-                                                        <i class="icons icon-play"></i>
-                                                    </a>
-
-                                                </div>
-                                            </div>
-
-                                        </div>		
-                                        <div class="media-info">
-
-                                            <div class="media-header">
-
-                                                <div class="media-caption">
-                                                    <h2>
-                                                        <span style="font-weight: 300; color: #444; font-size: 10px;">postado em: 14-08-2015</span><br/>
-                                                        <a href="#">TITULO DO VIDEO</a>
-                                                    </h2>
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-                                <!-- // ITEM VIDEO -->
+                                    <?php
+                                }
+                                ?>
 
 
                             </div>

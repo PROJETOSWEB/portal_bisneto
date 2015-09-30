@@ -132,7 +132,7 @@
                             <!-- Logo arthur -->
                             <div id="logo" class="col-lg-4 col-md-4 col-sm-4 animate-onscroll" style="margin: 0px; padding: 0px;">
 
-                                <a href="indexxx.html"><img src="img/Topo-Site-1.png" alt="Logo"></a>
+                                <a href="index.php"><img src="img/Topo-Site-1.png" alt="Logo"></a>
 
                             </div>
                             <!-- /Logo arthur-->
@@ -210,99 +210,7 @@
                             <span>Menu MOBILE</span>
                         </div>
 
-                        <ul id="navigation">
-
-                            <!-- Home -->
-                            <li class="home-button current-menu-item">
-
-                                <a hrefindexxx.htmlml"><i class="icons icon-home"></i></a>
-
-                            </li>
-                            <!-- /Home -->
-
-                            <!-- biografia -->
-                            <li>
-
-                                <a href="#">BIOGRAFIA</a>
-
-                            </li>
-                            <!-- // biografia -->
-
-                            <!-- opniao -->
-                            <li>
-
-                                <a href="#">OPINIÃO</a>
-
-                            </li>
-                            <!-- // opiniao -->
-
-                            <!-- DEP. na midia -->
-                            <li>
-
-                                <a href="#">DEPUTADO NA MÍDIA</a>
-
-                            </li>
-                            <!-- // dep. na midia -->
-
-                            <!-- DEP. na midia -->
-                            <li>
-
-                                <a href="#">ATIVIDADE PARLAMENTAR</a>
-
-                            </li>
-                            <!-- // dep. na midia -->
-
-                            <!-- GALERIA-->
-                            <li>
-
-                                <span>GALERIA</span>
-
-                                <ul>
-
-                                    <li>
-                                        <a href="#">fotos</a>
-                                    </li>
-
-                                    <li>
-                                        <a href="#">videos</a>
-                                    </li>
-
-
-                                </ul>
-
-                            </li>
-                            <!-- // galeria -->
-
-
-                            <!-- CONTATO-->
-                            <li>
-
-                                <span>CONTATO</span>
-
-                                <ul>
-
-                                    <li>
-                                        <a href="#">sala de imprensa</a>
-                                    </li>
-
-                                    <li>
-                                        <a href="#">contatos</a>
-                                    </li>
-
-
-                                </ul>
-
-                            </li>
-                            <!-- // CONTATO -->
-
-                            <!-- Donate -->
-                            <li class="donate-button ">
-                                <a style=" padding: 0px; border: none;" href="#"><img src="img/logo-PSDB.png" alt=""></a>
-
-                            </li>
-                            <!-- /Donate -->
-
-                        </ul>
+                        <ul id="navigation">                            <!-- Home -->                            <li class="home-button current-menu-item">                                <a href="index.php"><i class="icons icon-home"></i></a>                            </li>                            <!-- /Home -->                            <!-- biografia -->                            <li>                                <a href="biografia.php">BIOGRAFIA</a>                            </li>                            <!-- // biografia -->                            <!-- opniao -->                            <li>                                <a href="lista-opiniao.php">OPINIÃO</a>                            </li>                            <!-- // opiniao -->                            <!-- DEP. na midia -->                            <li>                                <a href="midia.php">DEPUTADO NA MÍDIA</a>                            </li>                            <!-- // dep. na midia -->                            <!-- DEP. na midia -->                            <li>                                <a href="#">ATIVIDADE PARLAMENTAR</a>                            </li>                            <!-- // dep. na midia -->                            <!-- GALERIA-->                            <li>                                <span>GALERIA</span>                                <ul>                                    <li>                                        <a href="fotos.php">fotos</a>                                    </li>                                    <li>                                        <a href="videos.php">videos</a>                                    </li>                                </ul>                            </li>                            <!-- // galeria -->                            <!-- CONTATO-->                            <li>                                <span>CONTATO</span>                                <ul>                                    <li>                                        <a href="imprensa.php">sala de imprensa</a>                                    </li>                                    <li>                                        <a href="#">contatos</a>                                    </li>                                </ul>                            </li>                            <!-- // CONTATO -->                            <!-- Donate -->                            <li class="donate-button ">                                <a style=" padding: 0px; border: none;" href="#"><img src="img/logo-PSDB.png" alt=""></a>                            </li>                            <!-- /Donate -->                        </ul>
 
                     </div>
 

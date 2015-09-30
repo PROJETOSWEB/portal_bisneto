@@ -135,7 +135,7 @@ include './admin/conections/conexao.php';
                             <!-- Logo arthur -->
                             <div id="logo" class="col-lg-4 col-md-4 col-sm-4 animate-onscroll" style="margin: 0px; padding: 0px;">
 
-                                <a href="indexxx.html"><img src="img/Topo-Site-1.png" alt="Logo"></a>
+                                <a href="index.php"><img src="img/Topo-Site-1.png" alt="Logo"></a>
 
                             </div>
                             <!-- /Logo arthur-->
@@ -218,7 +218,7 @@ include './admin/conections/conexao.php';
                             <!-- Home -->
                             <li class="home-button current-menu-item">
 
-                                <a href="indexxx.html"><i class="icons icon-home"></i></a>
+                                <a href="index.php"><i class="icons icon-home"></i></a>
 
                             </li>
                             <!-- /Home -->
@@ -226,7 +226,7 @@ include './admin/conections/conexao.php';
                             <!-- biografia -->
                             <li>
 
-                                <a href="#">BIOGRAFIA</a>
+                                <a href="biografia.php">BIOGRAFIA</a>
 
                             </li>
                             <!-- // biografia -->
@@ -234,7 +234,7 @@ include './admin/conections/conexao.php';
                             <!-- opniao -->
                             <li>
 
-                                <a href="#">OPINIÃO</a>
+                                <a href="lista-opiniao.php">OPINIÃO</a>
 
                             </li>
                             <!-- // opiniao -->
@@ -242,7 +242,7 @@ include './admin/conections/conexao.php';
                             <!-- DEP. na midia -->
                             <li>
 
-                                <a href="#">DEPUTADO NA MÍDIA</a>
+                                <a href="midia.php">DEPUTADO NA MÍDIA</a>
 
                             </li>
                             <!-- // dep. na midia -->
@@ -263,11 +263,11 @@ include './admin/conections/conexao.php';
                                 <ul>
 
                                     <li>
-                                        <a href="#">fotos</a>
+                                        <a href="fotos.php">fotos</a>
                                     </li>
 
                                     <li>
-                                        <a href="#">videos</a>
+                                        <a href="videos.php">videos</a>
                                     </li>
 
 
@@ -285,7 +285,7 @@ include './admin/conections/conexao.php';
                                 <ul>
 
                                     <li>
-                                        <a href="#">sala de imprensa</a>
+                                        <a href="imprensa.php">sala de imprensa</a>
                                     </li>
 
                                     <li>
@@ -325,7 +325,7 @@ include './admin/conections/conexao.php';
                 <section class="section page-heading animate-onscroll ">
 
                     <h1>Galeria de Vídeos</h1>
-                    <p class="breadcrumb"><a href="#">Home</a> / Galeria / Vídeos</p>
+                    <p class="breadcrumb"><a href="index.php">Home</a> / Galeria / Vídeos</p>
 
                 </section>
                 <!-- Page Heading -->
@@ -355,8 +355,7 @@ include './admin/conections/conexao.php';
                                     <div class="col-lg-3 col-md-4 col-sm-6">
                                         <div class="media-item animate-onscroll gallery-media">
 
-                                            <div class="media-image">
-                                                <img src="img/media/media2-medium.jpg" alt="">
+                                            <div class="media-image">                                            	<iframe src="https://www.youtube.com/embed/<?php echo $array_videos['video']; ?>?wmode=transparent" allowfullscreen></iframe>
 
                                                 <div class="media-hover">
                                                     <div class="media-icons">

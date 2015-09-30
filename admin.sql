@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 17-Set-2015 às 05:58
+-- Generation Time: 30-Set-2015 às 05:47
 -- Versão do servidor: 5.6.15-log
 -- PHP Version: 5.5.8
 
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `banner` (
 --
 
 INSERT INTO `banner` (`banner_id`, `data_banner`, `nome_banner`, `img`, `publicar`, `usuario_id`) VALUES
-(1, '05-09-2015', 'huhu', '2.jpg', 1, 1);
+(1, '05-09-2016', 'huhu', '2.jpg', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `biografia` (
 --
 
 INSERT INTO `biografia` (`biografia_id`, `texto`, `foto`, `usuario_id`) VALUES
-(2, 'HDUAHDUAHDUAHDUASUXXASXAXAXA', '2.jpg', 1);
+(2, '<b>ARTHUR VIRGÍLIO DO CARMO RIBEIRO BISNETO</b><br><br>Informações Pessoais<br><br>Nacionalidade: Brasileiro<br>Data do Nascimento: 1º/10/1979<br>Naturalidade: Brasiliense<br>Filiação: Arthur do Carmo Ribeiro Neto e Jacqueline Arduini Duarte do Carmo Ribeiro<br><br><br>Formação<br><br>Ensino Médio: Escola CETEB – Brasília-DF<br>Ensino Superior: Incompleto<br>Idiomas: Inglês e Francês<br><br><br>Mandatos parlamentares<br><br>• Foi vereador de Manaus (2001/2003)<br>• Foi deputado estadual com três mandatos (2003/2006); (2007/2010) e (2011/2014). No terceiro mandato foi o segundo vice-presidente da Assembleia Legislativa do Amazonas.<br>• É deputado federal pelo PSDB do Amazonas. Na Câmara Federal assumiu a vice-liderança do Bloco da Oposição. É membro titular na Comissão de Minas e Energia (CME) e na Comissão de Integração Nacional, Desenvolvimento Regional e da Amazônia (Cindra) e suplente na Comissão de Ciência e Tecnologia, Comunicação e Informática (CCTCI).<br><br>Biografia na página da Câmara Federal:&nbsp;<br><a target="" rel=""></a><br>Outras informações<br><br>• É presidente regional do PSDB-AM.<br>• São 14 anos de vida pública<br>• É neto do saudoso senador Arthur Virgílio Filho e filho do atual prefeito de Manaus, Arthur Virgílio Neto.&nbsp;', 'banner-footer.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -80,7 +80,7 @@ CREATE TABLE IF NOT EXISTS `depmidia` (
   `foto` varchar(100) NOT NULL DEFAULT '',
   `usuario_id` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`depmidia_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Extraindo dados da tabela `depmidia`
@@ -89,7 +89,8 @@ CREATE TABLE IF NOT EXISTS `depmidia` (
 INSERT INTO `depmidia` (`depmidia_id`, `data`, `titulo`, `link`, `codigo`, `foto`, `usuario_id`) VALUES
 (1, 'HUAHDUA', 'DUAHUSD', 'DAHSUDAUD', 'DD', '11866412_923345824399818_7638106130952624583_n.jpg', 1),
 (3, '', 'TITULO TESTE', 'http://dasdadad', 'dafsdfs', '2.jpg', 1),
-(4, '', 'HDUAHUD', 'DAHDUHAUD', 'DAD', '2.jpg', 1);
+(4, '12-09-2015', 'HDUAHUD', 'DAHDUHAUD', 'DAD', 'adventure-time-jake.jpg', 1),
+(5, '22-09-2015', 'DUAHUSDhudahud', '', 'DD', 'hora-de-aventura-finn-5373ac5591bd4.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -104,14 +105,17 @@ CREATE TABLE IF NOT EXISTS `fotos` (
   `foto` varchar(45) NOT NULL DEFAULT '',
   `usuario_id` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`fotos_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Extraindo dados da tabela `fotos`
 --
 
 INSERT INTO `fotos` (`fotos_id`, `data_foto`, `legenda`, `foto`, `usuario_id`) VALUES
-(1, '11-09-2015', 'legenda teste', '2.jpg', 1);
+(3, '04-09-2016', 'HORA DA AVENTURA', 'hora-de-aventura-destaque.jpg', 1),
+(4, '02-09-2015', 'HORA DA AVENTURA', 'hora-de-aventura-finn-5373ac5591bd4.jpg', 1),
+(5, '02-09-2015', 'HORA DA AVENTURA', 'hora-de-aventura-finn-5373ac5591bd4.jpg', 1),
+(6, '02-09-2015', 'HORA DA AVENTURA', 'hora-de-aventura-finn-5373ac5591bd4.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -127,7 +131,7 @@ CREATE TABLE IF NOT EXISTS `informativo` (
   `pdf` varchar(100) NOT NULL DEFAULT '',
   `usuario_id` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`informativo_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Extraindo dados da tabela `informativo`
@@ -135,7 +139,9 @@ CREATE TABLE IF NOT EXISTS `informativo` (
 
 INSERT INTO `informativo` (`informativo_id`, `data_informativo`, `edicao`, `img`, `pdf`, `usuario_id`) VALUES
 (2, '04-09-2015', 'DUAHDUAHDU', 'hora-de-aventura-destaque.jpg', 'hora-de-aventura-destaque.jpg', 1),
-(3, '11-09-2015', 'DUAHDU', 'hora-de-aventura-destaque.jpg', 'ordem.sql', 1);
+(3, '11-09-2015', 'DUAHDU', 'hora-de-aventura-destaque.jpg', 'ordem.sql', 1),
+(4, '04-09-2016', 'DUAHDUAHDU', '', '', 1),
+(5, '04-09-2016', 'DUAHDUAHDUYGYAGSDA', '', '', 1);
 
 -- --------------------------------------------------------
 
@@ -157,11 +163,11 @@ CREATE TABLE IF NOT EXISTS `links` (
 --
 
 INSERT INTO `links` (`links_id`, `nome`, `link`, `data_cadastro`, `usuario_id`) VALUES
-(15, 'LINK TESTE', 'KHDUAHD', '17-setembro-2015', 1),
-(16, 'TESTE', 'K', '05-setembro-2015', 1),
-(17, 'KAROLINE', 'DASDASD', '06-setembro-2015', 1),
-(18, 'KKK', 'KK', '06-setembro-2015', 1),
-(20, 'ASDAD', 'http://', 'DASD', 1);
+(15, 'Câmara dos Deputados', 'KHDUAHD', '17-setembro-2015', 1),
+(16, 'PSDB Nacional', 'K', '05-setembro-2015', 1),
+(17, 'PSDB Regional', 'DASDASD', '06-setembro-2015', 1),
+(18, 'Governo do Amazonas', 'KK', '06-setembro-2015', 1),
+(20, 'SEDUC-AM', 'http://', 'DASD', 1);
 
 -- --------------------------------------------------------
 
@@ -187,7 +193,7 @@ CREATE TABLE IF NOT EXISTS `noticia` (
 --
 
 INSERT INTO `noticia` (`noticia_id`, `data_noticia`, `titulo`, `texto`, `texto_detalhe`, `img`, `destaque_banner`, `publicar`, `usuario_id`) VALUES
-(2, '03-09-2015', 'HUHAUD', 'SDHAUDHUAHDUAHXDHAS', 'DUASHDUAHDUAHUD', 'hora_de_aventura.gif', 1, 1, 1);
+(2, '03-09-2016', 'HUHAUD', 'SDHAUDHUAHDUAHXDHASSDHAUDHUAHDUAHXDHASSDHAUDHUAHDUAHXDHASSDHAUDHUAHDUAHXDHASSDHAUDHUAHDUAHXDHASSDHAUDHUAHDUAHXDHASSDHAUDHUAHDUAHXDHASSDHAUDHUAHDUAHXDHASSDHAUDHUAHDUAHXDHASSDHAUDHUAHDUAHXDHAS', 'DUASHDUAHDUAHUD', 'hora_de_aventura.gif', 1, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -205,26 +211,14 @@ CREATE TABLE IF NOT EXISTS `opiniao` (
   `publicar` int(10) unsigned DEFAULT NULL COMMENT '1-ATIVO 2-INATIVO',
   `usuario_id` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`opiniao_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
 
 --
 -- Extraindo dados da tabela `opiniao`
 --
 
 INSERT INTO `opiniao` (`opiniao_id`, `data`, `titulo`, `texto`, `texto_detalhe`, `foto`, `publicar`, `usuario_id`) VALUES
-(1, '7', 'jkjkjk', 'ojk', 'ljkj', '2.jpg', 1, 1),
-(2, 'DASD', 'TITULO TESTE', 'DASHUDHAUXHASUHXUAS', 'SAX', 'boleto2.png', 1, 1),
-(4, 'j', 'j', 'j', 'j', '2.jpg', 0, 1),
-(6, 'j', 'j', 'j', 'j', '2.jpg', 0, 1),
-(8, 'j', 'j', 'j', 'j', '2.jpg', 0, 1),
-(9, 'j', 'j', 'j', 'j', '2.jpg', 0, 1),
-(10, 'j', 'j', 'j', 'j', '2.jpg', 0, 1),
-(12, 'j', 'j', 'j', 'j', '2.jpg', 0, 1),
-(13, 'j', 'j', 'j', 'j', '2.jpg', 0, 1),
-(14, 'j', 'j', 'j', 'j', '2.jpg', 0, 1),
-(15, 'j', 'j', 'j', 'j', '2.jpg', 0, 1),
-(16, 'h', 'hh', 'hh', 'hhh', '2.jpg', 2, 1),
-(17, '', 'uhuadh', 'daudhu', 'dauhduahdu', '2.jpg', 2, 2);
+(18, '03-09-2015', 'AUHDAUDHAUD', 'TEXTO TESTE ts', 'DUAHDUAHDUAHDU', 'hora_de_aventura.gif', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -247,8 +241,8 @@ CREATE TABLE IF NOT EXISTS `salaimprensa` (
 --
 
 INSERT INTO `salaimprensa` (`salaimprensa_id`, `data`, `nome`, `tipo_arquivo`, `arquivo`, `usuario_id`) VALUES
-(1, '11-09-2015', '', 'JPG', 'ordem.sql', 1),
-(2, '11-09-2015', '', 'JPG', 'boletoRequisicao.pdf', 1);
+(1, '11-09-2015', 'HUDHAD', 'PNG', 'ordem.sql', 1),
+(2, '11-09-2015', 'KKOKOO', 'JPG', 'boletoRequisicao.pdf', 1);
 
 -- --------------------------------------------------------
 
@@ -288,14 +282,14 @@ CREATE TABLE IF NOT EXISTS `videos` (
   `video` varchar(45) NOT NULL DEFAULT '',
   `usuario_id` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`videos_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Extraindo dados da tabela `videos`
 --
 
 INSERT INTO `videos` (`videos_id`, `data_video`, `legenda`, `video`, `usuario_id`) VALUES
-(1, '01-09-2015', 'kjdiajdia', 'geFj_kMvasQ', 1);
+(1, '01-09-2016', 'kjdiajdia', 'geFj_kMvasQ', 1);
 
 --
 -- Constraints for dumped tables

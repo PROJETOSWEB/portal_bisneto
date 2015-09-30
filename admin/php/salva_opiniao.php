@@ -25,6 +25,15 @@ if ($publicar == "") {
     
 }
 
+if ($publicar == "on") {
+    
+    $publicar = 1;
+    
+}else if($publicar == "off"){
+ 
+     $publicar = 2; 
+}
+
 
 $fileName = $_FILES["img"]["name"];
 $pathAndName = "../imagens/opiniao/" . $fileName;
@@ -32,7 +41,9 @@ $fileTmpLoc = $_FILES["img"]["tmp_name"];
 $moveResult = move_uploaded_file($fileTmpLoc, $pathAndName);
 
 
- $insert = "INSERT INTO opiniao (data,titulo, texto, texto_detalhe, foto, publicar, usuario_id)VALUES('$data', '$titulo', '$texto', '$texto_detalhe', '$fileName', $publicar,  $id_usuario)";
+  $insert = "INSERT INTO opiniao (data,titulo, texto, texto_detalhe, foto, "
+                . "publicar, usuario_id)VALUES('$data', '$titulo', '$texto', '$texto_detalhe', '$fileName', "
+                . "'$publicar',  $id_usuario)";
 $executa_insert = mysql_query($insert)or die(mysql_error());
 
 

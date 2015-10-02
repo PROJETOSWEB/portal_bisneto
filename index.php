@@ -289,7 +289,7 @@ include './admin/conections/conexao.php';
                                 <ul>
 
                                     <li>
-                                        <a href="imprensa.html">sala de imprensa</a>
+                                        <a href="imprensa.php">sala de imprensa</a>
                                     </li>
 
                                     <li>
@@ -533,10 +533,7 @@ include './admin/conections/conexao.php';
                                     }
                                     ?>
 
-
-
-
-                                </div>
+                                </div>								<div class="col-lg-4 col-md-4 col-sm-4 animate-onscroll" style="margin-top: 20px;">								    <a href="fotos.php" class="button read-more-button button-arrow">ver todas</a>								</div>								<br/>								<hr/>                                
 
                             </div>
                             <!-- /Owl Carousel -->	

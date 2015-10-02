@@ -252,24 +252,7 @@
 
                                     <div class="media-item animate-onscroll ">
 
-                                        <div class="media-image">
-
-                                            <img src="img/media/media1.jpg" alt="">
-
-                                            <div class="media-hover">
-                                                <div class="media-icons">
-
-                                                    <a href="img/media/media1.jpg" 
-                                                       data-thumbnail="img/media/media1.jpg"
-                                                       data-group="media-jackbox"  
-                                                       class="jackbox media-icon">
-                                                        <i class="icons icon-zoom-in"></i>
-                                                    </a>
-
-                                                </div>
-                                            </div>
-
-                                        </div>
+                                        
 
 
                                         <div class="media-info">

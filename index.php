@@ -346,15 +346,14 @@ include './admin/conections/conexao.php';
                                     <?php
                                     while ($array_not = mysql_fetch_array($executa_seleciona_noticia)) {
                                         ?>
-                                        <li id="main_flex_2" style="background: url(admin/imagens/noticia/<?php echo $array_not['img']; ?>) no-repeat;"> </li>
+                                        <li id="main_flex_2" style="background: url(admin/imagens/noticia/<?php echo $array_not['img']; ?>) no-repeat;"> 
                                         <div class="slide align-center">
                                             <h2><?php echo $array_not['titulo']; ?></h2>
                                         </div>                                      
-
+										</li>
                                         <?php
                                     }
                                     ?>
-
 
 
 

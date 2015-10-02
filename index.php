@@ -494,7 +494,7 @@ include './admin/conections/conexao.php';
 
 
                                     <?php
-                                    $seleciona_noticias = "SELECT * FROM noticia order by noticia_id DESC LIMIT 0,5";
+                                    $seleciona_noticias = "SELECT * FROM noticia WHERE publicar = 1 order by noticia_id DESC LIMIT 0,5";
                                     $executa_seleciona_noticia = mysql_query($seleciona_noticias)or die(mysql_error());
                                     ?>
 

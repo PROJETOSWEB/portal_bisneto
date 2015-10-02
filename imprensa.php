@@ -1,3 +1,7 @@
+<?php 
+include './admin/conections/conexao.php';
+?>
+
 <html><head>
 
         <!-- Meta Tags -->
@@ -210,7 +214,99 @@
                             <span>Menu MOBILE</span>
                         </div>
 
-                        <ul id="navigation">                            <!-- Home -->                            <li class="home-button current-menu-item">                                <a href="index.php"><i class="icons icon-home"></i></a>                            </li>                            <!-- /Home -->                            <!-- biografia -->                            <li>                                <a href="biografia.php">BIOGRAFIA</a>                            </li>                            <!-- // biografia -->                            <!-- opniao -->                            <li>                                <a href="lista-opiniao.php">OPINIÃO</a>                            </li>                            <!-- // opiniao -->                            <!-- DEP. na midia -->                            <li>                                <a href="midia.php">DEPUTADO NA MÍDIA</a>                            </li>                            <!-- // dep. na midia -->                            <!-- DEP. na midia -->                            <li>                                <a href="#">ATIVIDADE PARLAMENTAR</a>                            </li>                            <!-- // dep. na midia -->                            <!-- GALERIA-->                            <li>                                <span>GALERIA</span>                                <ul>                                    <li>                                        <a href="fotos.php">fotos</a>                                    </li>                                    <li>                                        <a href="videos.php">videos</a>                                    </li>                                </ul>                            </li>                            <!-- // galeria -->                            <!-- CONTATO-->                            <li>                                <span>CONTATO</span>                                <ul>                                    <li>                                        <a href="imprensa.php">sala de imprensa</a>                                    </li>                                    <li>                                        <a href="#">contatos</a>                                    </li>                                </ul>                            </li>                            <!-- // CONTATO -->                            <!-- Donate -->                            <li class="donate-button ">                                <a style=" padding: 0px; border: none;" href="#"><img src="img/logo-PSDB.png" alt=""></a>                            </li>                            <!-- /Donate -->                        </ul>
+                        <ul id="navigation">
+
+                            <!-- Home -->
+                            <li class="home-button current-menu-item">
+
+                                <a href="index.php"><i class="icons icon-home"></i></a>
+
+                            </li>
+                            <!-- /Home -->
+
+                            <!-- biografia -->
+                            <li>
+
+                                <a href="biografia.php">BIOGRAFIA</a>
+
+                            </li>
+                            <!-- // biografia -->
+
+                            <!-- opniao -->
+                            <li>
+
+                                <a href="lista-opiniao.php">OPINIÃO</a>
+
+                            </li>
+                            <!-- // opiniao -->
+
+                            <!-- DEP. na midia -->
+                            <li>
+
+                                <a href="midia.php">DEPUTADO NA MÍDIA</a>
+
+                            </li>
+                            <!-- // dep. na midia -->
+
+                            <!-- DEP. na midia -->
+                            <li>
+
+                                <a href="#">ATIVIDADE PARLAMENTAR</a>
+
+                            </li>
+                            <!-- // dep. na midia -->
+
+                            <!-- GALERIA-->
+                            <li>
+
+                                <span>GALERIA</span>
+
+                                <ul>
+
+                                    <li>
+                                        <a href="fotos.php">fotos</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="videos.php">videos</a>
+                                    </li>
+
+
+                                </ul>
+
+                            </li>
+                            <!-- // galeria -->
+
+
+                            <!-- CONTATO-->
+                            <li>
+
+                                <span>CONTATO</span>
+
+                                <ul>
+
+                                    <li>
+                                        <a href="imprensa.php">sala de imprensa</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">contatos</a>
+                                    </li>
+
+
+                                </ul>
+
+                            </li>
+                            <!-- // CONTATO -->
+
+                            <!-- Donate -->
+                            <li class="donate-button ">
+                                <a style=" padding: 0px; border: none;" href="#"><img src="img/logo-PSDB.png" alt=""></a>
+
+                            </li>
+                            <!-- /Donate -->
+
+                        </ul>
 
                     </div>
 
@@ -252,23 +348,36 @@
 
                                     <div class="media-item animate-onscroll ">
 
-                                        
+
+                                        <?php
+                                        $seleciona_arquivo = "SELECT * FROM salaimprensa";
+                                        $executa_seleciona_arquivo = mysql_query($seleciona_arquivo)or die(mysql_error());
 
 
-                                        <div class="media-info">
-                                            <div class="media-header">
-                                                <div class="media-caption">
-                                                    <h2>
-                                                        <span style="font-weight: 300; color: #444; font-size: 10px;">arquivo no formato: PDF</span><br/>
-                                                        NOME DO ARQUIVO
-                                                    </h2>
-                                                    <br/>
-                                                    <a href="#" style="font-size: 10px;" class="button"><i class="icons icon-download"></i> BAIXAR ARQUIVO</a>
+                                        while ($array_arquivo = mysql_fetch_array($executa_seleciona_arquivo)) {
+                                            ?>
+                                            <div class="media-info">
+                                                <div class="media-header">
+                                                    <div class="media-caption">
+                                                        <h2>
+                                                            <span style="font-weight: 300; color: #444; font-size: 10px;">arquivo no formato: <?php echo $array_arquivo['tipo_arquivo']; ?></span><br/>
+                                                            <?php echo $array_arquivo['nome']; ?>
+                                                        </h2>
+                                                        <br/>
+                                                        <a href="admin/imagens/salaimprensa/<?php echo $array_arquivo['arquivo']; ?>" style="font-size: 10px;" class="button"><i class="icons icon-download"></i> BAIXAR ARQUIVO</a>
+                                                    </div>
+
                                                 </div>
 
-                                            </div>
+                                            </div>    
 
-                                        </div>
+
+                                            <?php
+                                        }
+                                        ?>
+
+
+
 
 
                                     </div>

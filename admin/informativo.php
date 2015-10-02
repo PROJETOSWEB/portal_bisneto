@@ -58,7 +58,7 @@
 
                                 <div class="row ">
                                     <div class="form-group col-sm-12">
-                                        <label class="col-sm-3 col-sm-3">Usar imagens com tam. padrão 500x700px</label>
+                                        <label class="col-sm-3 col-sm-3">Usar imagens com tam. padrão <br/> <b style="font-size: 20px;">500 x 700 px</b></label>
 
 
                                         <div class="form-group last">

@@ -360,7 +360,7 @@ include './admin/conections/conexao.php';
                                                 <div class="media-hover">
                                                     <div class="media-icons">
                                                         <a href="https://www.youtube.com/watch?v=<?php echo $array_videos['video']; ?>" 	
-                                                           data-group="media-jackbox" 
+                                                           data-group="COLOCAR O 'ID' DO VIDEO AKI" 
                                                            data-thumbnail="img/media/media2-medium.jpg" 
                                                            data-title="<?php echo $array_videos['legenda']; ?>"
                                                            class="jackbox media-icon">

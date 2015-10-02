@@ -269,7 +269,7 @@ include './admin/conections/conexao.php';
                                                         <a href="admin/imagens/fotos/<?php echo $array_fotos['foto']; ?>" 
                                                            data-group="media-jackbox" 
                                                            data-thumbnail="admin/imagens/fotos/<?php echo $array_fotos['foto']; ?>" 
-                                                           data-title="<?php echo $array_fotos[''] ?>"
+                                                           data-title="<?php echo $array_fotos['legenda'] ?>"
                                                            class="jackbox media-icon">
                                                             <i class="icons icon-zoom-in"></i>
                                                         </a>

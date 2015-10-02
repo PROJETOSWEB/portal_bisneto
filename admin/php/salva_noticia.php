@@ -47,7 +47,7 @@ if ($executa_insert) {
     ?>
 
     <script>
-        window.location.href = '../noticias.php?respt=sucesso';
+        window.location.href = '../vnoticia.php?resp=sucesso';
     </script>
 
     <?php
@@ -55,7 +55,7 @@ if ($executa_insert) {
 } else {
     ?>
     <script>
-        window.location.href = '../noticias.php?respt=erro';
+        window.location.href = '../vnoticia.php?resp=erro';
     </script>
     <?php
 

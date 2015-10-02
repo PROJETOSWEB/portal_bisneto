@@ -45,6 +45,24 @@
                 }
             }
             ?>
+            
+            
+                     <?php
+            if (isset($_GET['resp'])) {
+
+                if ($_GET['resp'] == "sucesso") {
+                    ?>
+
+                    <div class="alert alert-success fade in">
+                        <button data-dismiss="alert" class="close close-sm" type="button">
+                            <i class="fa fa-times"></i>
+                        </button>
+                        <strong>SUCESSO!</strong> Notícia cadastrada com sucesso!
+                    </div>
+                    <?php
+                }
+            }
+            ?>
 
 
             <div class="row">

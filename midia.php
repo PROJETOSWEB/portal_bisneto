@@ -211,7 +211,99 @@
                             <span>Menu MOBILE</span>
                         </div>
 
-                        <ul id="navigation">                            <!-- Home -->                            <li class="home-button current-menu-item">                                <a href="index.php"><i class="icons icon-home"></i></a>                            </li>                            <!-- /Home -->                            <!-- biografia -->                            <li>                                <a href="biografia.php">BIOGRAFIA</a>                            </li>                            <!-- // biografia -->                            <!-- opniao -->                            <li>                                <a href="lista-opiniao.php">OPINIÃO</a>                            </li>                            <!-- // opiniao -->                            <!-- DEP. na midia -->                            <li>                                <a href="midia.php">DEPUTADO NA MÍDIA</a>                            </li>                            <!-- // dep. na midia -->                            <!-- DEP. na midia -->                            <li>                                <a href="#">ATIVIDADE PARLAMENTAR</a>                            </li>                            <!-- // dep. na midia -->                            <!-- GALERIA-->                            <li>                                <span>GALERIA</span>                                <ul>                                    <li>                                        <a href="fotos.php">fotos</a>                                    </li>                                    <li>                                        <a href="videos.php">videos</a>                                    </li>                                </ul>                            </li>                            <!-- // galeria -->                            <!-- CONTATO-->                            <li>                                <span>CONTATO</span>                                <ul>                                    <li>                                        <a href="imprensa.php">sala de imprensa</a>                                    </li>                                    <li>                                        <a href="#">contatos</a>                                    </li>                                </ul>                            </li>                            <!-- // CONTATO -->                            <!-- Donate -->                            <li class="donate-button ">                                <a style=" padding: 0px; border: none;" href="#"><img src="img/logo-PSDB.png" alt=""></a>                            </li>                            <!-- /Donate -->                        </ul>
+                        <ul id="navigation">
+
+                            <!-- Home -->
+                            <li class="home-button current-menu-item">
+
+                                <a href="index.php"><i class="icons icon-home"></i></a>
+
+                            </li>
+                            <!-- /Home -->
+
+                            <!-- biografia -->
+                            <li>
+
+                                <a href="biografia.php">BIOGRAFIA</a>
+
+                            </li>
+                            <!-- // biografia -->
+
+                            <!-- opniao -->
+                            <li>
+
+                                <a href="lista-opiniao.php">OPINIÃO</a>
+
+                            </li>
+                            <!-- // opiniao -->
+
+                            <!-- DEP. na midia -->
+                            <li>
+
+                                <a href="midia.php">DEPUTADO NA MÍDIA</a>
+
+                            </li>
+                            <!-- // dep. na midia -->
+
+                            <!-- DEP. na midia -->
+                            <li>
+
+                                <a href="#">ATIVIDADE PARLAMENTAR</a>
+
+                            </li>
+                            <!-- // dep. na midia -->
+
+                            <!-- GALERIA-->
+                            <li>
+
+                                <span>GALERIA</span>
+
+                                <ul>
+
+                                    <li>
+                                        <a href="fotos.php">fotos</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="videos.php">videos</a>
+                                    </li>
+
+
+                                </ul>
+
+                            </li>
+                            <!-- // galeria -->
+
+
+                            <!-- CONTATO-->
+                            <li>
+
+                                <span>CONTATO</span>
+
+                                <ul>
+
+                                    <li>
+                                        <a href="imprensa.php">sala de imprensa</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">contatos</a>
+                                    </li>
+
+
+                                </ul>
+
+                            </li>
+                            <!-- // CONTATO -->
+
+                            <!-- Donate -->
+                            <li class="donate-button ">
+                                <a style=" padding: 0px; border: none;" href="#"><img src="img/logo-PSDB.png" alt=""></a>
+
+                            </li>
+                            <!-- /Donate -->
+
+                        </ul>
 
                     </div>
 
@@ -270,7 +362,7 @@
                                                     <div class="media-hover">
                                                         <div class="media-icons">
 
-                                                            <a href="https://www.youtube.com/watch?v=1WbQe-wVK9E" 
+                                                            <a href="https://www.youtube.com/watch?v=<?php echo $array_midia['link']; ?>" 
                                                                data-group="media-jackbox" 
                                                                data-thumbnail="img/media/media2.jpg"
                                                                data-title="legenda do video" 
@@ -291,7 +383,7 @@
                                                         <div class="media-caption">
                                                             <h2>
                                                                 <span style="font-weight: 300; color: #444; font-size: 10px;">postado em: 14-08-2015</span><br/>
-                                                                <a href="#">TITULO DO VIDEO</a>
+                                                                <a href="#"><?php echo $array_midia['titulo']; ?></a>
                                                             </h2>
                                                         </div>
 
@@ -322,7 +414,7 @@
 
                                             <div class="media-image">
 
-                                                <img src="img/media/media1.jpg" alt="">
+                                                <img src="admin/imagens/depmidia/<?php echo $array_midia['foto']; ?>" alt="">
 
                                                 <div class="media-hover">
                                                     <div class="media-icons">
@@ -346,7 +438,7 @@
                                                         <h2>
                                                             <a href="#">
                                                                 <span style="font-weight: 300; color: #444; font-size: 10px;">postado em: 14-08-2015</span><br/>
-                                                                TÍTULO DA IMAGEM
+                                                               <?php echo $array_midia['titulo']; ?>
                                                             </a>
                                                         </h2>
                                                     </div>

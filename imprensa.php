@@ -339,7 +339,7 @@ include './admin/conections/conexao.php';
 
                         <div class="col-lg-9 col-md-9 col-sm-8">
 
-                            <div class="media-items row">
+                            <div class="media-items row">							<?php                                        $seleciona_arquivo = "SELECT * FROM salaimprensa";                                        $executa_seleciona_arquivo = mysql_query($seleciona_arquivo)or die(mysql_error());                                        while ($array_arquivo = mysql_fetch_array($executa_seleciona_arquivo)) {                                            ?>
 
                                 <!-- ITEM IMAGEM -->
                                 <div class="col-lg-4 col-md-6 col-sm-12 mix category-photos" 
@@ -348,12 +348,7 @@ include './admin/conections/conexao.php';
                                     <div class="media-item animate-onscroll ">
 
 
-                                        <?php
-                                        $seleciona_arquivo = "SELECT * FROM salaimprensa";
-                                        $executa_seleciona_arquivo = mysql_query($seleciona_arquivo)or die(mysql_error());
-
-                                        while ($array_arquivo = mysql_fetch_array($executa_seleciona_arquivo)) {
-                                            ?>
+                                        
                                             <div class="media-info">
                                                 <div class="media-header">
                                                     <div class="media-caption">
@@ -369,10 +364,6 @@ include './admin/conections/conexao.php';
 
                                             </div>    
 
-                                            <?php
-                                        }
-                                        ?>
-
 
 
 
@@ -382,7 +373,7 @@ include './admin/conections/conexao.php';
                                 </div>
                                 <!-- // ITEM IMAGEM -->
 
-
+                                            <?php                                        }                                        ?>			
 
 
 

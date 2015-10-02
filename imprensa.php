@@ -352,7 +352,6 @@ include './admin/conections/conexao.php';
                                         $seleciona_arquivo = "SELECT * FROM salaimprensa";
                                         $executa_seleciona_arquivo = mysql_query($seleciona_arquivo)or die(mysql_error());
 
-
                                         while ($array_arquivo = mysql_fetch_array($executa_seleciona_arquivo)) {
                                             ?>
                                             <div class="media-info">
@@ -369,7 +368,6 @@ include './admin/conections/conexao.php';
                                                 </div>
 
                                             </div>    
-
 
                                             <?php
                                         }

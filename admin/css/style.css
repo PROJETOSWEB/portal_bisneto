@@ -781,8 +781,8 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 }
 
 .state-overview .yellow {
-    background: #f8d347;
-}
+    background: #F09F11;
+}.state-overview .yellow-esc {    background: #CE8611;}
 
 .state-overview .blue {
     background: #57c8f2;

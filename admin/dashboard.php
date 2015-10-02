@@ -21,62 +21,62 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
         <div class="row state-overview">
             <div class="col-lg-3 col-sm-6">
                 <section class="panel">
-                    <div class="symbol terques">
-                        <i class="fa fa-user"></i>
+                    <div class="symbol yellow">
+                        <i class="fa  fa-check-square-o"></i>
                     </div>
                     <div class="value">
                         <h1 class="count">
                             0
                         </h1>
-                        <p>New Users</p>
-                    </div>
-                </section>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <section class="panel">
-                    <div class="symbol red">
-                        <i class="fa fa-tags"></i>
-                    </div>
-                    <div class="value">
-                        <h1 class=" count2">
-                            0
-                        </h1>
-                        <p>Sales</p>
+                        <p style="font-size: 12px; font-weight: 300;">OPINIÕES CADASTRADAS</p>
                     </div>
                 </section>
             </div>
             <div class="col-lg-3 col-sm-6">
                 <section class="panel">
                     <div class="symbol yellow">
-                        <i class="fa fa-shopping-cart"></i>
+                        <i class="fa fa-list-alt "></i>
                     </div>
                     <div class="value">
-                        <h1 class=" count3">
+                        <h1 class=" count2">
                             0
                         </h1>
-                        <p>New Order</p>
+                        <p style="font-size: 12px; font-weight: 300;">NOTÍCIAS CADASTRADAS</p>
                     </div>
                 </section>
             </div>
             <div class="col-lg-3 col-sm-6">
                 <section class="panel">
-                    <div class="symbol blue">
+                    <div class="symbol yellow">
+                        <i class="fa fa-file-text-o"></i>
+                    </div>
+                    <div class="value">
+                        <h1 class=" count3">
+                            0
+                        </h1>
+                        <p style="font-size: 12px; font-weight: 300;">INFORMATIVOS CADASTRADOS</p>
+                    </div>
+                </section>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <section class="panel">
+                    <div class="symbol yellow-esc">
                         <i class="fa fa-bar-chart-o"></i>
                     </div>
                     <div class="value">
                         <h1 class=" count4">
                             0
                         </h1>
-                        <p>Total Profit</p>
+                        <p>TOTAL DE CADASTROS</p>
                     </div>
                 </section>
             </div>
         </div>
         <!--state overview end-->
 
-        <div class="row">
+        <!--<div class="row">
             <div class="col-lg-8">
-                <!--custom chart start-->
+                <!--custom chart start--*>
                 <div class="border-head">
                     <h3>Earning Graph</h3>
                 </div>
@@ -138,10 +138,10 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
                         <div class="value tooltips" data-original-title="90%" data-toggle="tooltip" data-placement="top">90%</div>
                     </div>
                 </div>
-                <!--custom chart end-->
+                <!--custom chart end--*>
             </div>
             <div class="col-lg-4">
-                <!--new earning start-->
+                <!--new earning start--*>
                 <div class="panel terques-chart">
                     <div class="panel-body chart-texture">
                         <div class="chart">
@@ -163,9 +163,9 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
                         </span>
                     </div>
                 </div>
-                <!--new earning end-->
+                <!--new earning end--*>
 
-                <!--total earning start-->
+                <!--total earning start--*>
                 <div class="panel green-chart">
                     <div class="panel-body">
                         <div class="chart">
@@ -181,12 +181,12 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
                         <span class="value">$, 76,54,678</span>
                     </div>
                 </div>
-                <!--total earning end-->
+                <!--total earning end--*>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <!--user info table start-->
+                <!--user info table start--*>
                 <section class="panel">
                     <div class="panel-body">
                         <a href="#" class="task-thumb">
@@ -230,10 +230,10 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
                         </tbody>
                     </table>
                 </section>
-                <!--user info table end-->
+                <!--user info table end--*>
             </div>
             <div class="col-lg-8">
-                <!--work progress start-->
+                <!--work progress start--*>
                 <section class="panel">
                     <div class="panel-body progress-panel">
                         <div class="task-progress">
@@ -313,12 +313,12 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
                         </tbody>
                     </table>
                 </section>
-                <!--work progress end-->
+                <!--work progress end--*>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-8">
-                <!--timeline start-->
+                <!--timeline start--*>
                 <section class="panel">
                     <div class="panel-body">
                         <div class="text-center mbot30">
@@ -417,10 +417,10 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
                         <div class="clearfix">&nbsp;</div>
                     </div>
                 </section>
-                <!--timeline end-->
+                <!--timeline end--*>
             </div>
             <div class="col-lg-4">
-                <!--revenue start-->
+                <!--revenue start--*>
                 <section class="panel">
                     <div class="revenue-head">
                         <span>
@@ -473,8 +473,8 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
                         </ul>
                     </div>
                 </section>
-                <!--revenue end-->
-                <!--features carousel start-->
+                <!--revenue end--*>
+                <!--features carousel start--*>
                 <section class="panel">
                     <div class="flat-carousal">
                         <div id="owl-demo" class="owl-carousel owl-theme">
@@ -527,12 +527,12 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
                         </ul>
                     </div>
                 </section>
-                <!--features carousel end-->
+                <!--features carousel end--*>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-8">
-                <!--latest product info start-->
+                <!--latest product info start--*>
                 <section class="panel post-wrap pro-box">
                     <aside>
                         <div class="post-info">
@@ -562,8 +562,8 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
                         </div>
                     </aside>
                 </section>
-                <!--latest product info end-->
-                <!--twitter feedback start-->
+                <!--latest product info end--*>
+                <!--twitter feedback start--*>
                 <section class="panel post-wrap pro-box">
                     <aside class="post-highlight terques v-align">
                         <div class="panel-body">
@@ -606,12 +606,12 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
                         </div>
                     </aside>
                 </section>
-                <!--twitter feedback end-->
+                <!--twitter feedback end--*>
             </div>
             <div class="col-lg-4">
                 <div class="row">
                     <div class="col-xs-6">
-                        <!--pie chart start-->
+                        <!--pie chart start--*>
                         <section class="panel">
                             <div class="panel-body">
                                 <div class="chart">
@@ -622,10 +622,10 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
                                 Free: 260GB
                             </footer>
                         </section>
-                        <!--pie chart start-->
+                        <!--pie chart start--*>
                     </div>
                     <div class="col-xs-6">
-                        <!--follower start-->
+                        <!--follower start--*>
                         <section class="panel">
                             <div class="follower">
                                 <div class="panel-body">
@@ -649,10 +649,10 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
                                 </ul>
                             </footer>
                         </section>
-                        <!--follower end-->
+                        <!--follower end--*>
                     </div>
                 </div>
-                <!--weather statement start-->
+                <!--weather statement start--*>
                 <section class="panel">
                     <div class="weather-bg">
                         <div class="panel-body">
@@ -688,9 +688,9 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
                     </footer>
 
                 </section>
-                <!--weather statement end-->
+                <!--weather statement end--*>
             </div>
-        </div>
+        </div>-->
 
     </section>
 </section>

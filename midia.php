@@ -355,17 +355,15 @@
 
                                             <div class="media-item animate-onscroll ">
 
-                                                <div class="media-image">
-
-                                                    <img src="img/media/media2.jpg" alt="">
+                                                <div class="media-image">                                                
+														<iframe src="https://www.youtube.com/embed/<?php echo $array_midia['link']; ?>?wmode=transparent" allowfullscreen></iframe>
 
                                                     <div class="media-hover">
                                                         <div class="media-icons">
 
                                                             <a href="https://www.youtube.com/watch?v=<?php echo $array_midia['link']; ?>" 
-                                                               data-group="media-jackbox" 
+                                                               data-group="colocar_o_id_do_video_aki"  
                                                                data-thumbnail="img/media/media2.jpg"
-                                                               data-title="legenda do video" 
                                                                class="jackbox media-icon">
                                                                 <i class="icons icon-play"></i>
                                                             </a>
@@ -382,8 +380,8 @@
 
                                                         <div class="media-caption">
                                                             <h2>
-                                                                <span style="font-weight: 300; color: #444; font-size: 10px;">postado em: 14-08-2015</span><br/>
-                                                                <a href="#"><?php echo $array_midia['titulo']; ?></a>
+                                                                <span style="font-weight: 300; color: #444; font-size: 10px;">postado em: <?php echo $array_midia['data']; ?></span><br/>
+                                                                <a href="LINK DA MATERIA AKI"><?php echo $array_midia['titulo']; ?></a>
                                                             </h2>
                                                         </div>
 
@@ -419,8 +417,8 @@
                                                 <div class="media-hover">
                                                     <div class="media-icons">
 
-                                                        <a href="img/media/media1.jpg" 
-                                                           data-thumbnail="img/media/media1.jpg"
+                                                        <a href="admin/imagens/depmidia/<?php echo $array_midia['foto']; ?>" 
+                                                           data-thumbnail="admin/imagens/depmidia/<?php echo $array_midia['foto']; ?>"
                                                            data-group="media-jackbox"  
                                                            class="jackbox media-icon">
                                                             <i class="icons icon-zoom-in"></i>
@@ -437,7 +435,7 @@
                                                     <div class="media-caption">
                                                         <h2>
                                                             <a href="#">
-                                                                <span style="font-weight: 300; color: #444; font-size: 10px;">postado em: 14-08-2015</span><br/>
+                                                                <span style="font-weight: 300; color: #444; font-size: 10px;">postado em: <?php echo $array_midia['data']; ?></span><br/>
                                                                <?php echo $array_midia['titulo']; ?>
                                                             </a>
                                                         </h2>

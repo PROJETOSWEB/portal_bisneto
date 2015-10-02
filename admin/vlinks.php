@@ -87,8 +87,7 @@
 
                                             <tr class="gradeA">
                                                 <td><?php echo $array_dados['link'] ?></td>
-                                                <td style="text-align: center;"><?php echo $array_dados['usuario'] ?></td>
-                                                <td style="text-align: center;"><a href="#"><img src="img/editar.png" alt="" /></a></td>
+                                                <td style="text-align: center;"><?php echo $array_dados['usuario'] ?></td>                                                <td style="text-align: center;"><a href="links.php?tipo=edit&id=<?php echo $array_dados['links_id']; ?>"><img src="img/editar.png" alt="" /></a></td>
                                                 <td style="text-align: center;"><a href="php/exclui_link.php?id=<?php echo $array_dados['links_id']; ?>"><img src="img/excluir.png" alt="" /></a></td>
 
 

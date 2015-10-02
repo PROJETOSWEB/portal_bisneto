@@ -1,7 +1,6 @@
 <?php 
 include './admin/conections/conexao.php';
 ?>
-
 <html><head>
 
         <!-- Meta Tags -->

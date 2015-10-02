@@ -32,8 +32,6 @@
 
     <div class="container">
 
-
-
         <form method="post" class="form-signin" action="php/login.php">
 
             <?php

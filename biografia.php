@@ -216,7 +216,99 @@ include './admin/conections/conexao.php';
                             <span>Menu MOBILE</span>
                         </div>
 
-                        <ul id="navigation">                            <!-- Home -->                            <li class="home-button current-menu-item">                                <a href="index.php"><i class="icons icon-home"></i></a>                            </li>                            <!-- /Home -->                            <!-- biografia -->                            <li>                                <a href="biografia.php">BIOGRAFIA</a>                            </li>                            <!-- // biografia -->                            <!-- opniao -->                            <li>                                <a href="lista-opiniao.php">OPINIÃO</a>                            </li>                            <!-- // opiniao -->                            <!-- DEP. na midia -->                            <li>                                <a href="midia.php">DEPUTADO NA MÍDIA</a>                            </li>                            <!-- // dep. na midia -->                            <!-- DEP. na midia -->                            <li>                                <a href="#">ATIVIDADE PARLAMENTAR</a>                            </li>                            <!-- // dep. na midia -->                            <!-- GALERIA-->                            <li>                                <span>GALERIA</span>                                <ul>                                    <li>                                        <a href="fotos.php">fotos</a>                                    </li>                                    <li>                                        <a href="videos.php">videos</a>                                    </li>                                </ul>                            </li>                            <!-- // galeria -->                            <!-- CONTATO-->                            <li>                                <span>CONTATO</span>                                <ul>                                    <li>                                        <a href="imprensa.php">sala de imprensa</a>                                    </li>                                    <li>                                        <a href="#">contatos</a>                                    </li>                                </ul>                            </li>                            <!-- // CONTATO -->                            <!-- Donate -->                            <li class="donate-button ">                                <a style=" padding: 0px; border: none;" href="#"><img src="img/logo-PSDB.png" alt=""></a>                            </li>                            <!-- /Donate -->                        </ul>
+                        <ul id="navigation">
+
+                            <!-- Home -->
+                            <li class="home-button current-menu-item">
+
+                                <a href="index.php"><i class="icons icon-home"></i></a>
+
+                            </li>
+                            <!-- /Home -->
+
+                            <!-- biografia -->
+                            <li>
+
+                                <a href="biografia.php">BIOGRAFIA</a>
+
+                            </li>
+                            <!-- // biografia -->
+
+                            <!-- opniao -->
+                            <li>
+
+                                <a href="lista-opiniao.php">OPINIÃO</a>
+
+                            </li>
+                            <!-- // opiniao -->
+
+                            <!-- DEP. na midia -->
+                            <li>
+
+                                <a href="midia.php">DEPUTADO NA MÍDIA</a>
+
+                            </li>
+                            <!-- // dep. na midia -->
+
+                            <!-- DEP. na midia -->
+                            <li>
+
+                                <a href="#">ATIVIDADE PARLAMENTAR</a>
+
+                            </li>
+                            <!-- // dep. na midia -->
+
+                            <!-- GALERIA-->
+                            <li>
+
+                                <span>GALERIA</span>
+
+                                <ul>
+
+                                    <li>
+                                        <a href="fotos.php">fotos</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="videos.php">videos</a>
+                                    </li>
+
+
+                                </ul>
+
+                            </li>
+                            <!-- // galeria -->
+
+
+                            <!-- CONTATO-->
+                            <li>
+
+                                <span>CONTATO</span>
+
+                                <ul>
+
+                                    <li>
+                                        <a href="imprensa.php">sala de imprensa</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">contatos</a>
+                                    </li>
+
+
+                                </ul>
+
+                            </li>
+                            <!-- // CONTATO -->
+
+                            <!-- Donate -->
+                            <li class="donate-button ">
+                                <a style=" padding: 0px; border: none;" href="#"><img src="img/logo-PSDB.png" alt=""></a>
+
+                            </li>
+                            <!-- /Donate -->
+
+                        </ul>
 
                     </div>
 
@@ -345,17 +437,28 @@ include './admin/conections/conexao.php';
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-4 sidebar">
 
-                            <hr/ style="border-bottom: 1px solid #EDEDED;">
+                            <hr style="border-bottom: 1px solid #EDEDED;">
 
+                            
+                            <?php
+                            
+                            $select_video = "select * from videos order by videos_id DESC LIMIT 0,1";
+                            $executa_select_video = mysql_query($select_video)or die(mysql_error());
+                            $dados_video = mysql_fetch_array($executa_select_video);
+                            
+                            
+                            ?>
+                            
+                            
                                 <!-- Featured Video -->
                                 <div class="sidebar-box featured-video animate-onscroll fundo-listra">
                                 <h3><strong>VÍDEO</strong></h3>
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/Lcubw2IeNtM?wmode=transparent" allowfullscreen></iframe>
-                                <a href="#" class="button transparent button-arrow">todos os videos</a>
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $dados_video['video']; ?>?wmode=transparent" allowfullscreen></iframe>
+                                <a href="videos.php" class="button transparent button-arrow">todos os videos</a>
                             </div>
                             <!-- /Featured Video -->
 
-                            <hr/ style="border-bottom: 1px solid #EDEDED;">
+                            <hr style="border-bottom: 1px solid #EDEDED;">
 
                                 <!-- Instagram Photos -->
                                 <div class="sidebar-box white flickr-photos animate-onscroll">

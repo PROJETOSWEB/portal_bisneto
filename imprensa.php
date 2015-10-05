@@ -1,4 +1,4 @@
-<?php 
+<?php
 include './admin/conections/conexao.php';
 ?>
 <html><head>
@@ -339,16 +339,22 @@ include './admin/conections/conexao.php';
 
                         <div class="col-lg-9 col-md-9 col-sm-8">
 
-                            <div class="media-items row">							<?php                                        $seleciona_arquivo = "SELECT * FROM salaimprensa";                                        $executa_seleciona_arquivo = mysql_query($seleciona_arquivo)or die(mysql_error());                                        while ($array_arquivo = mysql_fetch_array($executa_seleciona_arquivo)) {                                            ?>
+                            <div class="media-items row">
+                                <?php
+                                $seleciona_arquivo = "SELECT * FROM salaimprensa";
+                                $executa_seleciona_arquivo = mysql_query($seleciona_arquivo)or die(mysql_error());
 
-                                <!-- ITEM IMAGEM -->
-                                <div class="col-lg-4 col-md-6 col-sm-12 mix category-photos" 
-                                     data-nameorder="1"> <!-- variável "1" para as imagens -->
+                                while ($array_arquivo = mysql_fetch_array($executa_seleciona_arquivo)) {
+                                    ?>
 
-                                    <div class="media-item animate-onscroll ">
+                                    <!-- ITEM IMAGEM -->
+                                    <div class="col-lg-4 col-md-6 col-sm-12 mix category-photos" 
+                                         data-nameorder="1"> <!-- variável "1" para as imagens -->
+
+                                        <div class="media-item animate-onscroll ">
 
 
-                                        
+
                                             <div class="media-info">
                                                 <div class="media-header">
                                                     <div class="media-caption">
@@ -368,12 +374,16 @@ include './admin/conections/conexao.php';
 
 
 
+                                        </div>
+
                                     </div>
+                                    <!-- // ITEM IMAGEM -->
 
-                                </div>
-                                <!-- // ITEM IMAGEM -->
 
-                                            <?php                                        }                                        ?>			
+                                    <?php
+                                }
+                                ?>
+
 
 
 
@@ -452,13 +462,22 @@ include './admin/conections/conexao.php';
 
                             <hr style="border-bottom: 1px solid #EDEDED;">
 
+
+                            <?php
+                            $select_video = "select * from videos order by videos_id DESC LIMIT 0,1";
+                            $executa_select_video = mysql_query($select_video)or die(mysql_error());
+                            $dados_video = mysql_fetch_array($executa_select_video);
+                            ?>
+
+
+
                             <!-- Featured Video -->
                             <div class="sidebar-box featured-video animate-onscroll fundo-listra">
                                 <h3><strong>VÍDEO</strong></h3>
-                                <iframe src="https://www.youtube.com/embed/Lcubw2IeNtM?wmode=transparent" allowfullscreen="" height="315" width="560"></iframe>
-                                <a href="#" class="button transparent button-arrow">todos os videos</a>
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $dados_video['video']; ?>?wmode=transparent" allowfullscreen></iframe>
+                                <a href="videos.php" class="button transparent button-arrow">todos os videos</a>
                             </div>
-                            <!-- /Featured Video -->
+                            <!-- /FeaturVideo -->
 
                             <hr style="border-bottom: 1px solid #EDEDED;">
 

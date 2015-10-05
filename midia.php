@@ -355,8 +355,9 @@
 
                                             <div class="media-item animate-onscroll ">
 
-                                                <div class="media-image">                                                
-														<iframe src="https://www.youtube.com/embed/<?php echo $array_midia['link']; ?>?wmode=transparent" allowfullscreen></iframe>
+                                                <div class="media-image">
+
+                                                    <iframe src="https://www.youtube.com/embed/<?php echo $array_midia['link']; ?>?wmode=transparent" allowfullscreen></iframe>
 
                                                     <div class="media-hover">
                                                         <div class="media-icons">
@@ -436,7 +437,7 @@
                                                         <h2>
                                                             <a href="#">
                                                                 <span style="font-weight: 300; color: #444; font-size: 10px;">postado em: <?php echo $array_midia['data']; ?></span><br/>
-                                                               <?php echo $array_midia['titulo']; ?>
+                                                                <?php echo $array_midia['titulo']; ?>
                                                             </a>
                                                         </h2>
                                                     </div>
@@ -531,11 +532,19 @@
 
                             <hr style="border-bottom: 1px solid #EDEDED;">
 
+
+                            <?php
+                            $select_video = "select * from videos order by videos_id DESC LIMIT 0,1";
+                            $executa_select_video = mysql_query($select_video)or die(mysql_error());
+                            $dados_video = mysql_fetch_array($executa_select_video);
+                            ?>
+
+
                             <!-- Featured Video -->
                             <div class="sidebar-box featured-video animate-onscroll fundo-listra">
                                 <h3><strong>VÍDEO</strong></h3>
-                                <iframe src="https://www.youtube.com/embed/Lcubw2IeNtM?wmode=transparent" allowfullscreen="" height="315" width="560"></iframe>
-                                <a href="#" class="button transparent button-arrow">todos os videos</a>
+                                <iframe src="https://www.youtube.com/embed/<?php echo $dados_video['video']; ?>?wmode=transparent" allowfullscreen="" height="315" width="560"></iframe>
+                                <a href="videos.php" class="button transparent button-arrow">todos os videos</a>
                             </div>
                             <!-- /Featured Video -->
 

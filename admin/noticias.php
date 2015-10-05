@@ -69,6 +69,8 @@
                                         <label for="exampleInputEmail1">TEXTO DO DETALHE (não é obrigatório)</label>
                                         <textarea name="texto_detalhe"  tooltip="se você deseja um destaque no texto, digite aqui. máx 100 caracteres" name="" id="" class="form-control" rows="7" style="border-left: 5px solid #335397;"></textarea>
                                     </div>
+                                    
+                                    
 
                                 </div>
 
@@ -76,36 +78,39 @@
                                 <hr/>
                                 <div class="divider"></div>
 
-                                <div class="col-sm-12">
-                                    <hr/>
+
+                                
+						<div class="form-group col-sm-12">
+                        <hr/>
+                        <br/>
+                        	<label class="col-sm-3">usar imagens com tam. padrão 627x422px.</label>
+                        	<div class="form-group">
+                            	<div class="col-md-3">
+                                	<div class="fileupload fileupload-new" data-provides="fileupload">
+                                	    <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                                	        <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" />
+                                	    </div>
+                                	    <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+                                	    <div>
+                                	        <span class="btn btn-white btn-file">
+                                	            <span class="fileupload-new"><i class="fa fa-paper-clip"></i> selecionar imagem</span>
+                                	            <span class="fileupload-exists"><i class="fa fa-undo"></i> trocar</span>
+                                	            <input type="file" name="img" class="default" />
+                                	        </span>
+                                	        <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload"><i class="fa fa-trash"></i> excluir</a>
+                                	    </div>
+                                	</div>
+                          		</div>
+                                <div class="col-sm-6">
+                                    <label for="exampleInputEmail1">LEGENDA DA FOTO</label>
+                                    <textarea name="texto" id="" class="form-control" rows="3"></textarea>
                                 </div>
 
-                                <div class="row ">
-                                    <div class="form-group col-sm-12">
-                                        <label class="col-sm-3 col-sm-3">usar imagens com tam. padrão 800x430px</label>
-
-
-                                        <div class="form-group last">
-                                            <label class="control-label col-md-3"></label>
-                                            <div class="col-md-9">
-                                                <div class="fileupload fileupload-new" data-provides="fileupload">
-                                                    <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
-                                                        <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" />
-                                                    </div>
-                                                    <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
-                                                    <div>
-                                                        <span class="btn btn-white btn-file">
-                                                            <span class="fileupload-new"><i class="fa fa-paper-clip"></i> selecionar imagem</span>
-                                                            <span class="fileupload-exists"><i class="fa fa-undo"></i> trocar</span>
-                                                            <input type="file" name="img" class="default" />
-                                                        </span>
-                                                        <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload"><i class="fa fa-trash"></i> excluir</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
+                                
+                           	</div>
+                        </div>
+                        
+                                 <div class="row ">
                                     <div class="col-sm-12">
 
                                         <hr/>

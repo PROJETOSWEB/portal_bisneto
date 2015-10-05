@@ -1,9 +1,7 @@
 <?php
 include './admin/conections/conexao.php';
 ?>
-
-<html>
-    <head>
+<html><head>
 
         <!-- Meta Tags -->
         <meta charset="utf-8">
@@ -137,7 +135,7 @@ include './admin/conections/conexao.php';
                             <!-- Logo arthur -->
                             <div id="logo" class="col-lg-4 col-md-4 col-sm-4 animate-onscroll" style="margin: 0px; padding: 0px;">
 
-                                <a href="index.php"><img src="img/Topo-Site-1.png" alt="Logo"></a>
+                                <a href="indexxx.html"><img src="img/Topo-Site-1.png" alt="Logo"></a>
 
                             </div>
                             <!-- /Logo arthur-->
@@ -220,7 +218,7 @@ include './admin/conections/conexao.php';
                             <!-- Home -->
                             <li class="home-button current-menu-item">
 
-                                <a href="index.php"><i class="icons icon-home"></i></a>
+                                <a href="indexxx.html"><i class="icons icon-home"></i></a>
 
                             </li>
                             <!-- /Home -->
@@ -228,7 +226,7 @@ include './admin/conections/conexao.php';
                             <!-- biografia -->
                             <li>
 
-                                <a href="biografia.php">BIOGRAFIA</a>
+                                <a href="#">BIOGRAFIA</a>
 
                             </li>
                             <!-- // biografia -->
@@ -236,7 +234,7 @@ include './admin/conections/conexao.php';
                             <!-- opniao -->
                             <li>
 
-                                <a href="lista-opiniao.php">OPINIÃO</a>
+                                <a href="#">OPINIÃO</a>
 
                             </li>
                             <!-- // opiniao -->
@@ -244,7 +242,7 @@ include './admin/conections/conexao.php';
                             <!-- DEP. na midia -->
                             <li>
 
-                                <a href="midia.php">DEPUTADO NA MÍDIA</a>
+                                <a href="#">DEPUTADO NA MÍDIA</a>
 
                             </li>
                             <!-- // dep. na midia -->
@@ -265,11 +263,11 @@ include './admin/conections/conexao.php';
                                 <ul>
 
                                     <li>
-                                        <a href="fotos.php">fotos</a>
+                                        <a href="#">fotos</a>
                                     </li>
 
                                     <li>
-                                        <a href="videos.php">videos</a>
+                                        <a href="#">videos</a>
                                     </li>
 
 
@@ -287,7 +285,7 @@ include './admin/conections/conexao.php';
                                 <ul>
 
                                     <li>
-                                        <a href="imprensa.php">sala de imprensa</a>
+                                        <a href="#">sala de imprensa</a>
                                     </li>
 
                                     <li>
@@ -323,14 +321,14 @@ include './admin/conections/conexao.php';
 
             <section id="content">	
 
-
                 <!-- Page Heading -->
-                <section class="section page-heading animate-onscroll full-width-bg">
+                <section class="section page-heading animate-onscroll ">
 
-                    <p class="breadcrumb"><a href="index.php">Home</a> /opinião</p>
+                    <p class="breadcrumb"><a href="main-v1.html">Home</a> / Titulo da noticia</p>
 
                 </section>
                 <!-- Page Heading -->
+
 
 
                 <!-- Section -->
@@ -344,76 +342,51 @@ include './admin/conections/conexao.php';
 
                                 <div class="col-lg-12 col-md-12 col-sm-12">
 
-                                    <h1 class="animate-onscroll">LISTA de opinião</h1>
+                                    <?php 
+                                    $id_noticia = $_GET['id'];
+                                    
+                                    $seleciona_noticia = "SELECT * FROM noticia WHERE noticia_id = $id_noticia";
+                                    $executa_seleciona= mysql_query($seleciona_noticia)or die(mysql_error());
+                                    $dados_noticia = mysql_fetch_array($executa_seleciona) ;                                   
+                                    ?>
+                                    
+                                    
+                                    
+                                    
+                                    <h1 class="animate-onscroll"><?php echo $dados_noticia['titulo']; ?></h1>
                                     <hr class="animate-onscroll" style="margin:5px;">
-                                    <br/>
+                                    <ul class="social-buttons animate-onscroll">
+
+                                        <li class="facebook-share">
+                                            <div class="fb-share-button" data-href="https://www.facebook.com/arthurvirgiliobisneto" data-type="button_count"></div>
+                                        </li>
+                                        <li class="twitter-share">
+                                            <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+                                        </li>
+                                    </ul>
+                                    <hr class="animate-onscroll" style="margin:5px;">
+                                    <p class="animate-onscroll" style="font-size: 10px; color: #c0c0c0c0;">Publicado em: 01 de julho de 2015</p>
 
 
-                                    <?php
-                                    $seleciona_opiniao = "SELECT * FROM opiniao";
-                                    $executa_seleciona_opiniao = mysql_query($seleciona_opiniao)or die(mysql_error());
-                                    ?>
+                                    <img class="animate-onscroll" src="admin/imagens/noticia/<?php echo $dados_noticia['img']; ?>" alt=""><!-- FOTO -->
+                                    <div class="legenda animate-onscroll">teste legenda</div> <!-- legenda da foto -->
+
+                                    <br>
+
+                                    <p class="animate-onscroll">
+                                     <?php echo $dados_noticia['texto']; ?>
+                                        
+                                    <blockquote class="align-right animate-onscroll" style="width:45%">
+                                       <?php echo $dados_noticia['texto_detalhe']; ?>
+                                    </blockquote>
+
+                                  <?php echo $dados_noticia['texto']; ?>
+                                </p>
 
 
-                                    <?php
-                                    while ($array_opiniao = mysql_fetch_array($executa_seleciona_opiniao)) {
-                                        ?>
-
-                                        <!-- item -->		
-                                        <div class="blog-post style2 animate-onscroll">
-
-                                            <div class="post-image">
-                                                <img src="admin/imagens/opiniao/<?php echo $array_opiniao['foto']; ?>" alt="">
-                                                <div class="media-hover">
-                                                    <div class="media-icons">
-                                                        <a href="admin/imagens/<?php echo $array_opiniao['foto']; ?>" data-group="media-jackbox" class="jackbox media-icon"><i class="icons icon-zoom-in"></i></a>
-                                                        <a href="materias.html" class="media-icon"><i class="icons icon-link"></i></a>
-                                                    </div>
-                                                </div>								
-                                            </div>
-                                            <div class="post-content">
-                                                <div class="post-header">
-                                                    <h2><a href="materias.html"><?php echo $array_opiniao['titulo']; ?> </a></h2>
-                                                    <div class="post-meta">
-                                                        <span><?php echo $array_opiniao['data']; ?></span>
-                                                    </div>
-                                                </div>
-                                                <div class="post-exceprt">
-
-                                                    <?php
-                                                    $maxp = 100;
-                                                    $strp = $array_opiniao['texto'];
-                                                    ?>
-
-                                                    <p><?php echo substr_replace($strp, (strlen($strp) > $maxp ? '...' : ''), $maxp); ?></p>
-
-                                                    <a href="materias.html" class="button read-more-button big button-arrow">ver</a>
-                                                </div>
-                                            </div>
-
-                                        </div>	
-                                        <div class="divider animate-onscroll"></div>																		
-                                        <!-- // item -->
-
-                                        <?php
-                                    }
-                                    ?>
-
-                                </div>
 
 
-                            </div>
 
-                            <div class="animate-onscroll">
-
-                                <div class="divider"></div>
-
-                                <div class="numeric-pagination">
-                                    <a href="#" class="button"><i class="icons icon-left-dir"></i></a>
-                                    <a href="#" class="button">1</a>
-                                    <a href="#" class="button active-button">2</a>
-                                    <a href="#" class="button">3</a>
-                                    <a href="#" class="button"><i class="icons icon-right-dir"></i></a>
                                 </div>
 
                             </div>
@@ -482,12 +455,11 @@ include './admin/conections/conexao.php';
                             $dados_video = mysql_fetch_array($executa_select_video);
                             ?>
 
-
                             <!-- Featured Video -->
                             <div class="sidebar-box featured-video animate-onscroll fundo-listra">
                                 <h3><strong>VÍDEO</strong></h3>
                                 <iframe src="https://www.youtube.com/embed/<?php echo $dados_video['video']; ?>?wmode=transparent" allowfullscreen="" height="315" width="560"></iframe>
-                                <a href="#" class="button transparent button-arrow">todos os videos</a>
+                                <a href="videos.php" class="button transparent button-arrow">todos os videos</a>
                             </div>
                             <!-- /Featured Video -->
 

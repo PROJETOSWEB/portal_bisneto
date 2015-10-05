@@ -511,7 +511,7 @@ include './admin/conections/conexao.php';
                                                     <img src="admin/imagens/noticia/<?php echo $array_noticia['img']; ?>" alt="">
                                                 </div>
 
-                                                <h5 class="post-title"><a href="#"><?php echo $array_noticia['titulo']; ?></a></h5>
+                                                <h5 class="post-title"><a href="noticias.php?id=<?php echo $array_noticia['noticia_id']; ?>"><?php echo $array_noticia['titulo']; ?></a></h5>
 
                                                 <?php
                                                 $max = 150;
@@ -561,8 +561,26 @@ include './admin/conections/conexao.php';
                                     while ($linha_fotos = mysql_fetch_array($executa_seleciona_imagem)) {
                                         ?>
 
-                                        <div class="col-lg-4 col-md-4 col-sm-4">                                        <div class="media-item animate-onscroll gallery-media">                                        
-											<div class="media-image animate-onscroll">												<img src="admin/imagens/fotos/<?php echo $linha_fotos['foto']; ?>" alt="">																								<div class="media-hover">													<div class="media-icons">														<a href="admin/imagens/fotos/<?php echo $linha_fotos['foto']; ?>" 															data-group="nome-do-album" 															data-thumbnail="admin/imagens/fotos/<?php echo $linha_fotos['foto']; ?>" 															data-title="LEGENDA LEGENDA"															class="jackbox media-icon">															<i class="icons icon-zoom-in"></i>														</a>													</div>												</div>																							</div>											</div>
+                                        <div class="col-lg-4 col-md-4 col-sm-4">
+                                        <div class="media-item animate-onscroll gallery-media">
+                                        
+											<div class="media-image animate-onscroll">
+												<img src="admin/imagens/fotos/<?php echo $linha_fotos['foto']; ?>" alt="">
+												
+												<div class="media-hover">
+													<div class="media-icons">
+														<a href="admin/imagens/fotos/<?php echo $linha_fotos['foto']; ?>" 
+															data-group="nome-do-album" 
+															data-thumbnail="admin/imagens/fotos/<?php echo $linha_fotos['foto']; ?>" 
+															data-title="LEGENDA LEGENDA"
+															class="jackbox media-icon">
+															<i class="icons icon-zoom-in"></i>
+														</a>
+													</div>
+												</div>
+												
+											</div>
+											</div>
 
                                         </div>
 										

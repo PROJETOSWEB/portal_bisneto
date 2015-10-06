@@ -561,7 +561,6 @@ include './admin/conections/conexao.php';
                                     while ($linha_fotos = mysql_fetch_array($executa_seleciona_imagem)) {
                                         ?>
 
-<<<<<<< Updated upstream
                                         <div class="col-lg-4 col-md-4 col-sm-4">
                                         <div class="media-item animate-onscroll gallery-media">
                                         
@@ -582,10 +581,6 @@ include './admin/conections/conexao.php';
 												
 											</div>
 											</div>
-=======
-                                        <div class="col-lg-4 col-md-4 col-sm-4">                                        <div class="media-item animate-onscroll gallery-media">                                        
-											<div class="media-image animate-onscroll">												<img src="admin/imagens/fotos/<?php echo $linha_fotos['foto']; ?>" alt="">																								<div class="media-hover">													<div class="media-icons">														<a href="admin/imagens/fotos/<?php echo $linha_fotos['foto']; ?>" 															data-group="nome-do-album" 															data-thumbnail="admin/imagens/fotos/<?php echo $linha_fotos['foto']; ?>" 															data-title="<?php echo $linha_fotos['legenda']; ?>"															class="jackbox media-icon">															<i class="icons icon-zoom-in"></i>														</a>													</div>												</div>																							</div>											</div>
->>>>>>> Stashed changes
 
                                         </div>
 										

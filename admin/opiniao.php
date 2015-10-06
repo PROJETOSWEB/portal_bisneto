@@ -12,7 +12,7 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
 <!--sidebar end-->
 
 
-<link rel="stylesheet" type="text/css" href="assets/bootstrap-fileupload/bootstrap-fileupload.css" />
+<link rel="stylesheet" type="text/css" href="assets/bootstrap-fileupload/bootstrap-fileupload.css" /><link rel="stylesheet" type="text/css" href="assets/bootstrap-wysihtml5/bootstrap-wysihtml5.css" />
 <link rel="stylesheet" type="text/css" href="assets/bootstrap-datepicker/css/datepicker.css" />
 <!--main content start-->
 <section id="main-content">
@@ -48,7 +48,7 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
                                 <div class="form-group">
 
                                     <label for="exampleInputEmail1">TEXTO</label>
-                                    <textarea name="texto" id="" class="form-control" rows="7"></textarea>
+                                    <textarea name="texto" id="" class="ckeditor form-control" rows="7"></textarea>
 
                                 </div>
 
@@ -57,7 +57,7 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
 
                                     <div class="form-group col-sm-8">
                                         <label for="exampleInputEmail1">TEXTO DO DETALHE (não é obrigatório)</label>
-                                        <textarea name="texto_detalhe"  tooltip="se você deseja um destaque no texto, digite aqui. máx 100 caracteres" name="" id="" class="form-control" rows="7" style="border-left: 5px solid #335397;"></textarea>
+                                        <textarea name="texto_detalhe"  tooltip="se você deseja um destaque no texto, digite aqui. máx 100 caracteres" name="" id="" class="wysihtml5 form-control" rows="7" style="border-left: 5px solid #335397;"></textarea>
                                     </div>
 
                                 </div>
@@ -263,12 +263,9 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
 <!--custom tagsinput-->
 <script src="js/jquery.tagsinput.js"></script>
 <!--this page plugins-->
-
+<script type="text/javascript" src="assets/fuelux/js/spinner.min.js"></script><script type="text/javascript" src="assets/bootstrap-fileupload/bootstrap-fileupload.js"></script><script type="text/javascript" src="assets/bootstrap-wysihtml5/wysihtml5-0.3.0.js"></script><script type="text/javascript" src="assets/bootstrap-wysihtml5/bootstrap-wysihtml5.js"></script><script type="text/javascript" src="assets/bootstrap-datepicker/js/bootstrap-datepicker.js"></script><script type="text/javascript" src="assets/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script><script type="text/javascript" src="assets/bootstrap-daterangepicker/moment.min.js"></script><script type="text/javascript" src="assets/bootstrap-daterangepicker/daterangepicker.js"></script><script type="text/javascript" src="assets/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script><script type="text/javascript" src="assets/bootstrap-timepicker/js/bootstrap-timepicker.js"></script><script type="text/javascript" src="assets/jquery-multi-select/js/jquery.multi-select.js"></script><script type="text/javascript" src="assets/jquery-multi-select/js/jquery.quicksearch.js"></script>
 <!--this page plugins-->
 
-<script type="text/javascript" src="assets/fuelux/js/spinner.min.js"></script>
-<script type="text/javascript" src="assets/bootstrap-fileupload/bootstrap-fileupload.js"></script>
-<script type="text/javascript" src="assets/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 <script type="text/javascript" src="assets/ckeditor/ckeditor.js"></script>
 
 <!--common script for all pages-->

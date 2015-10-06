@@ -351,8 +351,6 @@ include './admin/conections/conexao.php';
                                     ?>
                                     
                                     
-                                    
-                                    
                                     <h1 class="animate-onscroll"><?php echo $dados_noticia['titulo']; ?></h1>
                                     <hr class="animate-onscroll" style="margin:5px;">
                                     <ul class="social-buttons animate-onscroll">

@@ -367,18 +367,18 @@ include './admin/conections/conexao.php';
 
 
                                     <img class="animate-onscroll" src="admin/imagens/noticia/<?php echo $dados_noticia['img']; ?>" alt=""><!-- FOTO -->
-                                    <div class="legenda animate-onscroll">teste legenda</div> <!-- legenda da foto -->
+                                    <div class="legenda animate-onscroll"><?php echo $dados_noticia['legenda']; ?></div> <!-- legenda da foto -->
 
                                     <br>
 
                                     <p class="animate-onscroll">
                                      <?php echo $dados_noticia['texto']; ?>
                                         
-                                    <blockquote class="align-right animate-onscroll" style="width:45%">
+                                    <!--<blockquote class="align-right animate-onscroll" style="width:45%">
                                        <?php echo $dados_noticia['texto_detalhe']; ?>
                                     </blockquote>
 
-                                  <?php echo $dados_noticia['texto']; ?>
+                                  <?php echo $dados_noticia['texto']; ?>-->
                                 </p>
 
 

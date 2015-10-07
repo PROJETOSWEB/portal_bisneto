@@ -454,7 +454,7 @@ include './admin/conections/conexao.php';
                                     <img src="admin/imagens/opiniao/<?php echo $linha_opiniao['foto']; ?>" alt="">
                                 </div>
 
-                                <h5 class="post-title"><a href="blog-single-sidebar.html"><?php echo $linha_opiniao['titulo']; ?> </a></h5>
+                                <h5 class="post-title"><a href="#"><?php echo $linha_opiniao['titulo']; ?> </a></h5>
 
                                 <div class="post-meta">
                                     <span>29 de junho de 2015 •  11:28AM</span>
@@ -471,7 +471,7 @@ include './admin/conections/conexao.php';
 
                                 <p></p>
 
-                                <a href="blog-single-sidebar.html" class="button read-more-button button-arrow">ler mais...</a>
+                                <a href="opniao.php?id=<?php echo $linha_opiniao['opiniao_id']; ?>" class="button read-more-button button-arrow">ler mais...</a>
 
                             </div>
                             <!-- /Blog Post -->						
@@ -480,7 +480,7 @@ include './admin/conections/conexao.php';
 
                                 <div class="owl-header">
 
-                                    <h3 class="animate-onscroll">MAIS NOTÍCIAS</h3>
+                                    <h3 class="animate-onscroll">NOTÍCIAS</h3>
 
                                     <div class="carousel-arrows animate-onscroll">
                                         <span class="left-arrow"><i class="icons icon-left-dir"></i></span>

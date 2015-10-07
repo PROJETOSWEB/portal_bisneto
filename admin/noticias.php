@@ -85,7 +85,7 @@
                         <br/>
                         	<label class="col-sm-3">usar imagens com tam. padrão 627x422px.</label>
                         	<div class="form-group">
-                            	<div class="col-md-3">
+                            	<div class="col-md-4">
                                 	<div class="fileupload fileupload-new" data-provides="fileupload">
                                 	    <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
                                 	        <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" />
@@ -101,7 +101,7 @@
                                 	    </div>
                                 	</div>
                           		</div>
-                                <div class="col-sm-6">
+                                <div class="col-sm-5">
                                     <label for="exampleInputEmail1">LEGENDA DA FOTO</label>
                                     <textarea name="texto" id="" class="form-control" rows="3"></textarea>
                                 </div>
@@ -199,12 +199,11 @@
 
                                 <div class = "row ">
                                     <div class = "form-group col-sm-12">
-                                        <label class = "col-sm-3 col-sm-3">usar imagens com tam. padrão 800x430px</label>
+                                        <label class = "col-sm-3 ">usar imagens com tam. padrão 800x430px</label>
 
 
-                                        <div class = "form-group last">
-                                            <label class = "control-label col-md-3"></label>
-                                            <div class = "col-md-9">
+                                        <div class = "form-group ">
+                                            <div class = "col-md-4">
                                                 <div class = "fileupload fileupload-new" data-provides = "fileupload">
                                                     <div class = "fileupload-new thumbnail" style = "width: 200px; height: 150px;">
                                                         <img src = "imagens/noticia/<?php echo $linha_editar['img']; ?>" alt = "" />
@@ -221,7 +220,7 @@
                                                         <a href = "#" class = "btn btn-danger fileupload-exists" data-dismiss = "fileupload"><i class = "fa fa-trash"></i> excluir</a>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div>                                                                                        <div class="col-sm-5">                                                <label for="exampleInputEmail1">LEGENDA DA FOTO</label>                                                <textarea name="texto" id="" class="form-control" rows="3"></textarea>                                            </div>                                            
                                         </div>
                                     </div>
 

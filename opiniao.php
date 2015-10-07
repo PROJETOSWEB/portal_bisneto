@@ -402,16 +402,16 @@ include './admin/conections/conexao.php';
 
 
                                     <img class="animate-onscroll" src="admin/imagens/opiniao/<?php echo $dados_opiniao['foto']; ?>" alt=""><!-- FOTO -->
-                                    <div class="legenda animate-onscroll">teste legenda</div> <!-- legenda da foto -->
+                                    <div class="legenda animate-onscroll"><?php echo $dados_opiniao['legenda']; ?></div> <!-- legenda da foto -->
 
                                     <br>
 
                                     <p class="animate-onscroll">
                                         “Minha opinião é muito clara no sentido de nós acabarmos com a impunidade dos jovens entre 16 e 18 anos que cometem crimes graves neste país”,  afirmou o deputado federal Arthur Virgílio Bisneto (PSDB-AM), vice-líder da Oposição, durante votação do texto da comissão especial para a PEC que reduz a maioridade penal (PEC 171/93). O plenário da Câmara Federal rejeitou o texto. Foram 303 votos a favor, quando o mínimo necessário eram 308. Foram 184 votos contra e três abstenções.<br><br>
 
-                                    <blockquote class="align-right animate-onscroll" style="width:45%">
+                                   <!-- <blockquote class="align-right animate-onscroll" style="width:45%">
                                         "Quisque diam lorem, interdum vitae, dapibus ac, scelerisque vitae, pede. Donec eget tellus non erat lacinia fermentum. Donec in velit vel ipsum auctor pulvinar."
-                                    </blockquote>
+                                    </blockquote>-->
 
                                     Durante a discussão da proposta, o vice-líder da Oposição liberou a bancada para a votação. “Eu respeito a opinião da bancada daqueles que votam não, mas acredito que os jovens de 16 e 17 anos sabem muito bem o que fazem.  Não digam que são pessoas que não sabem a responsabilidade e o que é cometer um crime contra uma família ou contra um cidadão. Eu falo aqui como pai de dois filhos, eu falo aqui como alguém que se põe no lugar dessas mães e sabe o sofrimento que é perder um filho para criminalidade e ver a impunidade cada vez mais forte”, ressaltou Bisneto.<br><br>
 

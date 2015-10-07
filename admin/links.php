@@ -36,29 +36,79 @@
                 <div class="panel-body">
 
 
+                    <?php
+                    if (isset($_GET['tipo'])) {
 
-                    <form role="form" action="php/salvar_link.php" method="POST">
+                        if ($_GET['tipo'] == "insert") {
+                            ?>
 
-
-
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">NOME DO LINK</label>
-                            <input name="nome" id="nome" tooltip="Título do seu artigo, EVITE TÍTULOS LONGOS" type="text" class="form-control" data-placement="top">
-                        </div>
+                            <form role="form" action="php/salvar_link.php" method="POST">
 
 
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">LINK</label>
-                            <input name="link" id="link" tooltip="Colque aqui o link do site de onde a matéria foi tirada" type="text" class="form-control" value="http://">
-                        </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">NOME DO LINK</label>
+                                    <input name="nome" id="nome" tooltip="Título do seu artigo, EVITE TÍTULOS LONGOS" type="text" class="form-control" data-placement="top">
+                                </div>
 
-                        </br>
 
-                        <hr/>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">LINK</label>
+                                    <input name="link" id="link" tooltip="Colque aqui o link do site de onde a matéria foi tirada" type="text" class="form-control" value="http://">
+                                </div>
 
-                        <input type="submit" class="btn btn-primary" value="SALVAR"></input>
+                                </br>
 
-                    </form>
+                                <hr/>
+
+                                <input type="submit" class="btn btn-primary" value="SALVAR"></input>
+
+                            </form>
+
+                            <?php
+                        }
+                    }
+                    ?>
+
+
+                    <?php
+                    if (isset($_GET['tipo'])) {
+
+                        if ($_GET['tipo'] == "edit") {
+
+                            $id_links = $_GET['id'];
+
+                            $select_editar = "SELECT * FROM links WHERE links_id = $id_links";
+                            $executa_select_editar = mysql_query($select_editar)or die(mysql_error());
+                            $linha_editar = mysql_fetch_array($executa_select_editar);
+                            
+                            ?>
+
+                    <form role="form" action="php/update_link.php" method="POST">
+                                
+                                   <input type="hidden" value="<?php echo $id_links; ?>" name="id_link"/>
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">NOME DO LINK</label>
+                                    <input name="nome" value="<?php echo $linha_editar['nome']; ?>" id="nome" tooltip="Título do seu artigo, EVITE TÍTULOS LONGOS" type="text" class="form-control" data-placement="top">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">LINK</label>
+                                    <input name="link" value="<?php echo $linha_editar['link'];?>" id="link" tooltip="Colque aqui o link do site de onde a matéria foi tirada" type="text" class="form-control" value="http://">
+                                </div>
+
+                                </br>
+
+                                <hr/>
+
+                                <input type="submit" class="btn btn-primary" value="SALVAR"></input>
+
+                            </form>        
+
+        <?php
+    }
+}
+?>
 
                 </div>
             </section>

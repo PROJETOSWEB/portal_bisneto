@@ -47,6 +47,22 @@
             }
             ?>
 
+            <?php
+            if (isset($_GET['resp'])) {
+
+                if ($_GET['resp'] == "sucesso") {
+                    ?>
+
+                    <div class="alert alert-success fade in">
+                        <button data-dismiss="alert" class="close close-sm" type="button">
+                            <i class="fa fa-times"></i>
+                        </button>
+                        <strong>SUCESSO!</strong> Mídia cadastrada com sucesso!
+                    </div>
+                    <?php
+                }
+            }
+            ?>
 
             <div class="row">
                 <div class="col-lg-12">
@@ -77,7 +93,7 @@
 
                                         <?php
                                         $seleciona = "SELECT * FROM depmidia INNER JOIN
-                                                      usuario ON usuario.usuario_id = depmidia.usuario_id";
+                                                      usuario ON usuario.usuario_id = depmidia.usuario_id order by depmidia_id desc";
 
                                         $seleciona_executa = mysql_query($seleciona)or die(mysql_error());
 

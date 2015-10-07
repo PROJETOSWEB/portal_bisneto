@@ -347,10 +347,10 @@ include './admin/conections/conexao.php';
                                     while ($array_not = mysql_fetch_array($executa_seleciona_noticia)) {
                                         ?>
                                         <li id="main_flex_2" style="background: url(admin/imagens/noticia/<?php echo $array_not['img']; ?>) no-repeat;"> 
-                                        <div class="slide align-center">
-                                            <h2><?php echo $array_not['titulo']; ?></h2>
-                                        </div>                                      
-										</li>
+                                            <div class="slide align-center">
+                                                <h2><?php echo $array_not['titulo']; ?></h2>
+                                            </div>                                      
+                                        </li>
                                         <?php
                                     }
                                     ?>
@@ -534,12 +534,12 @@ include './admin/conections/conexao.php';
 
                                 </div>
 
-								<div class="col-lg-4 col-md-4 col-sm-4 animate-onscroll" style="margin-top: 20px;">
-								    <a href="lista-materias.php" class="button read-more-button button-arrow">ver todas</a>
-								</div>
-								<br/>
-								<hr/>
-                                
+                                <div class="col-lg-4 col-md-4 col-sm-4 animate-onscroll" style="margin-top: 20px;">
+                                    <a href="lista-materias.php" class="button read-more-button button-arrow">ver todas</a>
+                                </div>
+                                <br/>
+                                <hr/>
+
 
                             </div>
                             <!-- /Owl Carousel -->	
@@ -562,28 +562,28 @@ include './admin/conections/conexao.php';
                                         ?>
 
                                         <div class="col-lg-4 col-md-4 col-sm-4">
-                                        <div class="media-item animate-onscroll gallery-media">
-                                        
-											<div class="media-image animate-onscroll">
-												<img src="admin/imagens/fotos/<?php echo $linha_fotos['foto']; ?>" alt="">
-												
-												<div class="media-hover">
-													<div class="media-icons">
-														<a href="admin/imagens/fotos/<?php echo $linha_fotos['foto']; ?>" 
-															data-group="nome-do-album" 
-															data-thumbnail="admin/imagens/fotos/<?php echo $linha_fotos['foto']; ?>" 
-															data-title="LEGENDA LEGENDA"
-															class="jackbox media-icon">
-															<i class="icons icon-zoom-in"></i>
-														</a>
-													</div>
-												</div>
-												
-											</div>
-											</div>
+                                            <div class="media-item animate-onscroll gallery-media">
+
+                                                <div class="media-image animate-onscroll">
+                                                    <img src="admin/imagens/fotos/<?php echo $linha_fotos['foto']; ?>" alt="">
+
+                                                    <div class="media-hover">
+                                                        <div class="media-icons">
+                                                            <a href="admin/imagens/fotos/<?php echo $linha_fotos['foto']; ?>" 
+                                                               data-group="nome-do-album" 
+                                                               data-thumbnail="admin/imagens/fotos/<?php echo $linha_fotos['foto']; ?>" 
+                                                               data-title="LEGENDA LEGENDA"
+                                                               class="jackbox media-icon">
+                                                                <i class="icons icon-zoom-in"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
 
                                         </div>
-										
+
 
                                         <?php
                                     }
@@ -640,11 +640,18 @@ include './admin/conections/conexao.php';
                                 <p>É deputado federal pelo PSDB do Amazonas. Na Câmara Federal assumiu a vice-liderança do Bloco da Oposição. É membro titular na Comissão de Minas e Energia (CME) e na Comissão de Integração Nacional, Desenvolvimento Regional e da Amazônia (Cindra) e suplente na Comissão de Ciência e Tecnologia, Comunicação e Informática (CCTCI).</p>
 
 
-                                <a href="biografia.html" class="button read-more-button button-arrow">ler mais...</a>
+                                <a href="biografia.php" class="button read-more-button button-arrow">ler mais...</a>
 
                             </div>
                         </div>
 
+
+
+                        <?php
+                        $select_video = "select * from videos order by videos_id DESC LIMIT 0,1";
+                        $executa_select_video = mysql_query($select_video)or die(mysql_error());
+                        $dados_video = mysql_fetch_array($executa_select_video);
+                        ?>
 
 
                         <!-- Sidebar -->
@@ -652,17 +659,25 @@ include './admin/conections/conexao.php';
                             <!-- Featured Video -->
                             <div class="sidebar-box featured-video animate-onscroll fundo-listra">
                                 <h3><strong>VÍDEO</strong></h3>
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/Lcubw2IeNtM?wmode=transparent" allowfullscreen></iframe>
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $dados_video['video']; ?>?wmode=transparent" allowfullscreen></iframe>
                                 <a href="#" class="button transparent button-arrow">todos os videos</a>
                             </div>
                             <!-- /Featured Video -->
 
-                            <hr/ style="border-bottom: 1px solid #EDEDED;">
+                            <hr style="border-bottom: 1px solid #EDEDED;">
 
-                                <!-- Image Banner -->
-                                <div class="sidebar-box image-banner animate-onscroll">
-                                <a href="#">
-                                    <img src="img/capa-informativo.jpg" alt="">
+
+                            <?php
+                            $seleciona_informativo = "SELECT * FROM informativo order by informativo_id DESC LIMIT 0,1";
+                            $executa_seleciona_informativo = mysql_query($seleciona_informativo)or die(mysql_error());
+                            $dados_informativo = mysql_fetch_array($executa_seleciona_informativo);
+                            ?>
+
+
+                            <!-- Image Banner -->
+                            <div class="sidebar-box image-banner animate-onscroll">
+                                <a href="admin/imagens/informativo/arquivo/<?php echo $dados_informativo['pdf']; ?>">
+                                    <img src="admin/imagens/informativo/<?php echo $dados_informativo['img']; ?>" alt="">
                                     <h3>INFORMATIVO EDIÇÃO 230</h3>
                                     <span class="button  button-arrow">VER TODOS</span>
                                 </a>
@@ -696,21 +711,21 @@ include './admin/conections/conexao.php';
 
                                 <h3>LINKS ÚTEIS</h3>
                                 <ul>
-                                    <?php
-                                    $seleciona_links = "SELECT * FROM links order by links_id DESC LIMIT 0,10";
-                                    $executa_seleciona_links = mysql_query($seleciona_links)or die(mysql_error());
-                                    ?>
+<?php
+$seleciona_links = "SELECT * FROM links order by links_id DESC LIMIT 0,10";
+$executa_seleciona_links = mysql_query($seleciona_links)or die(mysql_error());
+?>
 
                                     <?php
                                     while ($array_links = mysql_fetch_array($executa_seleciona_links)) {
                                         ?>
 
 
-                                        <li><a href="<?php echo $array_links['link']; ?>"><?php echo $array_links['nome']; ?></a></li>
+                                    <li><a target="_blank" href="<?php echo $array_links['link']; ?>"><?php echo $array_links['nome']; ?></a></li>
 
-                                        <?php
-                                    }
-                                    ?>
+    <?php
+}
+?>
 
 
                                 </ul>

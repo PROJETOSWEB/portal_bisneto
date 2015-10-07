@@ -53,7 +53,7 @@
                     <section class="panel">
 
                         <header class="panel-heading">
-                            <a href="usuario.php"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
+                            <a href="usuario.php?tipo=insert"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
                                     </span> USUÁRIOS</button>
                             </a>
                         </header>
@@ -77,7 +77,7 @@
 
 
                                         <?php
-                                        $seleciona = "SELECT * FROM usuario";
+                                        $seleciona = "SELECT * FROM usuario order by usuario_id desc";
 
                                         $seleciona_executa = mysql_query($seleciona)or die(mysql_error());
 
@@ -89,7 +89,7 @@
                                                 <td><?php echo $dados_array['nivel']; ?></td>
 
 
-                                                <td><a href="#"><img src="img/editar.png" alt="" /></a></td>
+                                                <td><a href="usuario.php?tipo=edit&id=<?php echo $dados_array['usuario_id']; ?>"><img src="img/editar.png" alt="" /></a></td>
                                                 <td><a href="php/exclui_usuario.php?id=<?php echo $dados_array['usuario_id']; ?>"><img src="img/excluir.png" alt="" /></a></td>
                                             </tr>
 

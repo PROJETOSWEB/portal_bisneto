@@ -12,27 +12,33 @@ $id_usuario = $_SESSION['id'];
 include '../conections/conexao.php';
 
 //PEGANDO DADOS POR POST
-$data = $_POST['data'];
-$legenda = $_POST['legenda'];
-$codigo = $_POST['codigo'];
 
 
-$insert = "INSERT INTO videos (data_video, legenda, video, usuario_id)VALUES('$data', '$legenda', '$codigo', $id_usuario)";
-$executa_insert = mysql_query($insert)or die(mysql_error());
+$nome = $_POST['nome'];
+$link = $_POST['link'];
+$id_link = $_POST['id_link'];
 
-if ($executa_insert) {
+
+
+ $update_dados = "UPDATE links SET nome = '$nome', link = '$link' WHERE links_id = $id_link";
+$executa_update_dados = mysql_query($update_dados)or die(mysql_error());
+
+
+if ($executa_update_dados) {
     ?>
 
     <script>
-        window.location.href = '../vvideos.php?resp=sucesso';
+        window.location.href = '../vlinks.php?respte=sucesso';
     </script>
 
     <?php
 } else {
     ?>
     <script>
-        window.location.href = '../vvideos.php?resp=erro';
+        window.location.href = '../vlinks.php?respte=erro';
     </script>
     <?php
 }
 ?>
+
+   

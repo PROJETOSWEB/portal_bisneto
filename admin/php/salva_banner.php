@@ -32,14 +32,14 @@ if ($executa_insert) {
     ?>
 
     <script>
-        window.location.href = '../banner.php?respt=sucesso';
+        window.location.href = '../vbanner.php?resp=sucesso';
     </script>
 
     <?php
 } else {
     ?>
     <script>
-        window.location.href = '../banner.php?respt=erro';
+        window.location.href = '../vbanner.php?resp=erro';
     </script>
     <?php
 }

@@ -25,7 +25,7 @@ $fileTmpLoc1 = $_FILES["arquivo"]["tmp_name"];
 $moveResult1 = move_uploaded_file($fileTmpLoc1, $pathAndName1);
 
 
-$insert = "INSERT INTO salaimprensa (data, nome, tipo_arquivo, arquivo, usuario_id)VALUES('$data', '$nomeo', '$tipo', '$fileName1', $id_usuario)";
+$insert = "INSERT INTO salaimprensa (data, nome, tipo_arquivo, arquivo, usuario_id)VALUES('$data', '$nome', '$tipo', '$fileName1', $id_usuario)";
 $executa_insert = mysql_query($insert)or die(mysql_error());
 
 
@@ -33,7 +33,7 @@ if ($executa_insert) {
     ?>
 
     <script>
-        window.location.href = '../salaimprensa.php?respt=sucesso';
+        window.location.href = '../vsalaimprensa.php?respt=sucesso';
     </script>
 
     <?php
@@ -41,7 +41,7 @@ if ($executa_insert) {
 } else {
     ?>
     <script>
-        window.location.href = '../salaimprensa.php?respt=erro';
+        window.location.href = '../vsalaimprensa.php?respt=erro';
     </script>
     <?php
 

@@ -33,14 +33,14 @@ if ($executa_insert) {
     ?>
 
     <script>
-        window.location.href = '../depmidia.php?respt=sucesso';
+        window.location.href = '../vdepmidia.php?resp=sucesso';
     </script>
 
     <?php
 } else {
     ?>
     <script>
-        window.location.href = '../depmidia.php?respt=erro';
+        window.location.href = '../vdepmidia.php?resp=erro';
     </script>
     <?php
 }

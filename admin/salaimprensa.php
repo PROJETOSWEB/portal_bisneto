@@ -55,7 +55,7 @@
 
                                 <div class="col-sm-13">
                                     <label for="exampleInputEmail1">NOME DO ARQUIVO</label>
-                                    <input name="nome" tooltip="Título do seu artigo, EVITE TÍTULOS LONGOS" type="text" name="nome" class="form-control" data-placement="top">
+                                    <input tooltip="Título do seu artigo, EVITE TÍTULOS LONGOS" type="text" name="nome" class="form-control" data-placement="top">
                                 </div>
 
 

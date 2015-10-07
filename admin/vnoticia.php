@@ -96,7 +96,7 @@
 
                                         <?php
                                         $seleciona = "SELECT * FROM noticia INNER JOIN
-                                                      usuario ON noticia.usuario_id = usuario.usuario_id";
+                                                      usuario ON noticia.usuario_id = usuario.usuario_id order by noticia_id desc";
 
                                         $seleciona_executa = mysql_query($seleciona)or die(mysql_error());
 

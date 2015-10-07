@@ -32,7 +32,44 @@
             </br>    
 
 
+            <?php
+            if (isset($_GET['respt'])) {
+
+                if ($_GET['respt'] == "sucesso") {
+                    ?>
+
+                    <div class="alert alert-success fade in">
+                        <button data-dismiss="alert" class="close close-sm" type="button">
+                            <i class="fa fa-times"></i>
+                        </button>
+                        <strong>SUCESSO!</strong> Arquivo cadastrado com sucesso!
+                    </div>
+                    <?php
+                }
+            }
+
+
+            if (isset($_GET['resp'])) {
+
+                if ($_GET['resp'] == "sucesso") {
+                    ?>
+
+                    <div class="alert alert-success fade in">
+                        <button data-dismiss="alert" class="close close-sm" type="button">
+                            <i class="fa fa-times"></i>
+                        </button>
+                        <strong>SUCESSO!</strong> Arquivo excluido com sucesso!
+                    </div>
+                    <?php
+                }
+            }
+            ?>
+
+
+
+
             <div class="row">
+
                 <div class="col-lg-12">
 
                     <section class="panel">
@@ -59,11 +96,11 @@
                                     <tbody>
                                         <?php
                                         $seleciona_dados = "SELECT *, salaimprensa.nome as salaim, usuario.nome as nomeusuario FROM salaimprensa INNER JOIN
-                                                            usuario ON salaimprensa.usuario_id = usuario.usuario_id";
+                                                            usuario ON salaimprensa.usuario_id = usuario.usuario_id order by salaimprensa_id desc";
 
                                         $executa_seleciona_dados = mysql_query($seleciona_dados)or die(mysql_error());
 
-                                        
+
                                         while ($dados_array = mysql_fetch_array($executa_seleciona_dados)) {
                                             ?>
 
@@ -72,7 +109,7 @@
                                                 <td><?php echo $dados_array['tipo_arquivo']; ?></td>
                                                 <td><?php echo $dados_array['nomeusuario']; ?></td>
                                                 <td><a href = "salaimprensa.php?tipo=edit&id=<?php echo $dados_array['salaimprensa_id'] ?>"><img src = "img/editar.png" alt = "" /></a></td>
-                                                <td><a href = "#"><img src = "img/excluir.png" alt = "" /></a></td>
+                                                <td><a href = "php/exclui_salaimprensa.php?id=<?php echo $dados_array['salaimprensa_id'] ?>"><img src = "img/excluir.png" alt = "" /></a></td>
                                             </tr>
 
                                             <?php

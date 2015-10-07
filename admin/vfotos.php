@@ -60,6 +60,23 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
             }
             ?>
 
+            <?php
+            if (isset($_GET['resp'])) {
+
+                if ($_GET['resp'] == "sucesso") {
+                    ?>
+
+                    <div class="alert alert-success fade in">
+                        <button data-dismiss="alert" class="close close-sm" type="button">
+                            <i class="fa fa-times"></i>
+                        </button>
+                        <strong>SUCESSO!</strong> Foto cadastrada com sucesso!
+                    </div>
+                    <?php
+                }
+            }
+            ?>
+
 
 
 
@@ -92,7 +109,7 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
 
                                         <?php
                                         $seleciona_dados = "SELECT * FROM fotos INNER JOIN usuario
-                                                            ON fotos.usuario_id = usuario.usuario_id";
+                                                            ON fotos.usuario_id = usuario.usuario_id order by fotos_id desc";
 
                                         $executa_seleciona_dados = mysql_query($seleciona_dados)or die(mysql_error());
 

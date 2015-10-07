@@ -54,8 +54,8 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
                 }
             }
             ?>
-            
-                        <?php
+
+            <?php
             if (isset($_GET['respte'])) {
 
                 if ($_GET['respte'] == "sucesso") {
@@ -72,6 +72,22 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
             }
             ?>
 
+            <?php
+            if (isset($_GET['resp'])) {
+
+                if ($_GET['resp'] == "sucesso") {
+                    ?>
+
+                    <div class="alert alert-success fade in">
+                        <button data-dismiss="alert" class="close close-sm" type="button">
+                            <i class="fa fa-times"></i>
+                        </button>
+                        <strong>SUCESSO!</strong> Opinião cadastrada com sucesso!
+                    </div>
+                    <?php
+                }
+            }
+            ?>
 
             <div class="row">
                 <div class="col-lg-12">
@@ -103,7 +119,7 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
 
                                         <?php
                                         $seleciona = "SELECT * FROM opiniao INNER JOIN
-                                                      usuario ON opiniao.usuario_id = usuario.usuario_id";
+                                                      usuario ON opiniao.usuario_id = usuario.usuario_id order by opiniao_id desc" ;
 
                                         $seleciona_executa = mysql_query($seleciona)or die(mysql_error());
 

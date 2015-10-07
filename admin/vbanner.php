@@ -61,6 +61,23 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
             }
             ?>
 
+            <?php
+            if (isset($_GET['resp'])) {
+
+                if ($_GET['resp'] == "sucesso") {
+                    ?>
+
+                    <div class="alert alert-success fade in">
+                        <button data-dismiss="alert" class="close close-sm" type="button">
+                            <i class="fa fa-times"></i>
+                        </button>
+                        <strong>SUCESSO!</strong> Banner cadastrado com sucesso!
+                    </div>
+                    <?php
+                }
+            }
+            ?>
+
 
 
 
@@ -93,7 +110,7 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
 
                                         <?php
                                         $seleciona_dados = "SELECT * FROM banner INNER JOIN
-                                                            usuario ON banner.usuario_id = usuario.usuario_id";
+                                                            usuario ON banner.usuario_id = usuario.usuario_id order by banner_id desc";
 
                                         $executa_seleciona_dados = mysql_query($seleciona_dados)or die(mysql_error());
 
@@ -109,7 +126,7 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
                                                 <td><?php echo $dados_array['data_banner']; ?></td>
                                                 <td><?php echo $dados_array['nome']; ?></td>
                                                 <td><a href="#"><img src="img/sim.png" alt="" /></a></td>
-                                                <td><a href="banner.php?tipo=edit&id=<?php echo $dados_array['banner_id'];?>"><img src="img/editar.png" alt="" /></a></td>
+                                                <td><a href="banner.php?tipo=edit&id=<?php echo $dados_array['banner_id']; ?>"><img src="img/editar.png" alt="" /></a></td>
                                                 <td><a href="php/exclui_banner.php?id=<?php echo $dados_array['banner_id']; ?>"><img src="img/excluir.png" alt="" /></a></td>
                                             </tr>
 

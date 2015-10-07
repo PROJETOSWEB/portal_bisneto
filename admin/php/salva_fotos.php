@@ -29,14 +29,14 @@ if ($executa_insert) {
     ?>
 
     <script>
-        window.location.href = '../fotos.php?respt=sucesso';
+        window.location.href = '../vfotos.php?resp=sucesso';
     </script>
 
     <?php
 } else {
     ?>
     <script>
-        window.location.href = '../fotos.php?respt=erro';
+        window.location.href = '../vfotos.php?resp=erro';
     </script>
     <?php
 }

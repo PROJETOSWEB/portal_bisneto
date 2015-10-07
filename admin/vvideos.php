@@ -46,6 +46,24 @@
             }
             ?>
 
+            
+            <?php
+            if (isset($_GET['resp'])) {
+
+                if ($_GET['resp'] == "sucesso") {
+                    ?>
+
+                    <div class="alert alert-success fade in">
+                        <button data-dismiss="alert" class="close close-sm" type="button">
+                            <i class="fa fa-times"></i>
+                        </button>
+                        <strong>SUCESSO!</strong> Vídeo cadastrado com sucesso!
+                    </div>
+                    <?php
+                }
+            }
+            ?>
+
 
 
 
@@ -76,7 +94,7 @@
                                     <tbody>
 
                                         <?php
-                                        $seleciona_dados = "SELECT * FROM videos INNER JOIN usuario ON videos.usuario_id = usuario.usuario_id";
+                                        $seleciona_dados = "SELECT * FROM videos INNER JOIN usuario ON videos.usuario_id = usuario.usuario_id order by videos_id desc";
 
                                         $executa_seleciona_dados = mysql_query($seleciona_dados)or die(mysql_error());
 

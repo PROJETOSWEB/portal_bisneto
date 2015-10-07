@@ -43,6 +43,24 @@
                 }
             }
             ?>
+            
+            
+                        <?php
+            if (isset($_GET['resp'])) {
+
+                if ($_GET['resp'] == "sucesso") {
+                    ?>
+
+                    <div class="alert alert-success fade in">
+                        <button data-dismiss="alert" class="close close-sm" type="button">
+                            <i class="fa fa-times"></i>
+                        </button>
+                        <strong>SUCESSO!</strong> Informativo cadastrado com sucesso!
+                    </div>
+                    <?php
+                }
+            }
+            ?>
 
 
             <div class="row">
@@ -72,7 +90,7 @@
 
 
                                         <?php
-                                        $seleciona = "SELECT * FROM informativo INNER JOIN usuario ON informativo.usuario_id = usuario.usuario_id";
+                                        $seleciona = "SELECT * FROM informativo INNER JOIN usuario ON informativo.usuario_id = usuario.usuario_id order by informativo_id desc";
 
                                         $seleciona_executa = mysql_query($seleciona)or die(mysql_error());
 

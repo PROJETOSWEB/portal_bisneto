@@ -45,6 +45,25 @@
                 }
             }
             ?>
+            
+            
+                        <?php
+            if (isset($_GET['resp'])) {
+
+                if ($_GET['resp'] == "sucesso") {
+                    ?>
+
+                    <div class="alert alert-success fade in">
+                        <button data-dismiss="alert" class="close close-sm" type="button">
+                            <i class="fa fa-times"></i>
+                        </button>
+                        <strong>SUCESSO!</strong> Link cadastrado com sucesso!
+                    </div>
+                    <?php
+                }
+            }
+            ?>
+
 
 
 
@@ -54,7 +73,7 @@
                     <section class="panel">
 
                         <header class="panel-heading">
-                            <a href="links.php"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
+                            <a href="links.php?tipo=insert"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
                                     </span> LINKS</button>
                             </a>
                         </header>
@@ -78,7 +97,7 @@
 
                                         <?php
                                         $sql_seleciona = "SELECT links.nome as link, usuario.nome as usuario, links_id FROM links INNER JOIN
-                                                         usuario ON links.usuario_id = usuario.usuario_id";
+                                                         usuario ON links.usuario_id = usuario.usuario_id order by links_id desc";
 
                                         $executa_sql_selecinona = mysql_query($sql_seleciona)or die(mysql_error());
 
@@ -87,7 +106,8 @@
 
                                             <tr class="gradeA">
                                                 <td><?php echo $array_dados['link'] ?></td>
-                                                <td style="text-align: center;"><?php echo $array_dados['usuario'] ?></td>                                                <td style="text-align: center;"><a href="links.php?tipo=edit&id=<?php echo $array_dados['links_id']; ?>"><img src="img/editar.png" alt="" /></a></td>
+                                                <td style="text-align: center;"><?php echo $array_dados['usuario'] ?></td>
+                                                <td style="text-align: center;"><a href="links.php?tipo=edit&id=<?php echo $array_dados['links_id']; ?>"><img src="img/editar.png" alt="" /></a></td>
                                                 <td style="text-align: center;"><a href="php/exclui_link.php?id=<?php echo $array_dados['links_id']; ?>"><img src="img/excluir.png" alt="" /></a></td>
 
 

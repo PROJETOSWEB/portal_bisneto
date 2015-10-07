@@ -137,7 +137,7 @@ include './admin/conections/conexao.php';
                             <!-- Logo arthur -->
                             <div id="logo" class="col-lg-4 col-md-4 col-sm-4 animate-onscroll" style="margin: 0px; padding: 0px;">
 
-                                <a href="index.php"><img src="img/Topo-Site-1.png" alt="Logo"></a>
+                                <a href="indexxx.html"><img src="img/Topo-Site-1.png" alt="Logo"></a>
 
                             </div>
                             <!-- /Logo arthur-->
@@ -220,7 +220,7 @@ include './admin/conections/conexao.php';
                             <!-- Home -->
                             <li class="home-button current-menu-item">
 
-                                <a href="index.php"><i class="icons icon-home"></i></a>
+                                <a href="indexxx.html"><i class="icons icon-home"></i></a>
 
                             </li>
                             <!-- /Home -->
@@ -228,7 +228,7 @@ include './admin/conections/conexao.php';
                             <!-- biografia -->
                             <li>
 
-                                <a href="biografia.php">BIOGRAFIA</a>
+                                <a href="#">BIOGRAFIA</a>
 
                             </li>
                             <!-- // biografia -->
@@ -236,7 +236,7 @@ include './admin/conections/conexao.php';
                             <!-- opniao -->
                             <li>
 
-                                <a href="lista-opiniao.php">OPINIÃO</a>
+                                <a href="#">OPINIÃO</a>
 
                             </li>
                             <!-- // opiniao -->
@@ -244,7 +244,7 @@ include './admin/conections/conexao.php';
                             <!-- DEP. na midia -->
                             <li>
 
-                                <a href="midia.php">DEPUTADO NA MÍDIA</a>
+                                <a href="#">DEPUTADO NA MÍDIA</a>
 
                             </li>
                             <!-- // dep. na midia -->
@@ -265,11 +265,11 @@ include './admin/conections/conexao.php';
                                 <ul>
 
                                     <li>
-                                        <a href="fotos.php">fotos</a>
+                                        <a href="#">fotos</a>
                                     </li>
 
                                     <li>
-                                        <a href="videos.php">videos</a>
+                                        <a href="#">videos</a>
                                     </li>
 
 
@@ -287,7 +287,7 @@ include './admin/conections/conexao.php';
                                 <ul>
 
                                     <li>
-                                        <a href="imprensa.php">sala de imprensa</a>
+                                        <a href="#">sala de imprensa</a>
                                     </li>
 
                                     <li>
@@ -323,14 +323,14 @@ include './admin/conections/conexao.php';
 
             <section id="content">	
 
-
                 <!-- Page Heading -->
-                <section class="section page-heading animate-onscroll full-width-bg">
+                <section class="section page-heading animate-onscroll ">
 
-                    <p class="breadcrumb"><a href="index.php">Home</a> /opinião</p>
+                    <p class="breadcrumb"><a href="main-v1.html">Home</a> / Titulo da opiniao</p>
 
                 </section>
                 <!-- Page Heading -->
+
 
 
                 <!-- Section -->
@@ -344,76 +344,84 @@ include './admin/conections/conexao.php';
 
                                 <div class="col-lg-12 col-md-12 col-sm-12">
 
-                                    <h1 class="animate-onscroll">LISTA de opinião</h1>
-                                    <hr class="animate-onscroll" style="margin:5px;">
-                                    <br/>
-
 
                                     <?php
-                                    $seleciona_opiniao = "SELECT * FROM opiniao";
+                                    $id = $_GET['id'];
+                                    $seleciona_opiniao = "SELECT * FROM opiniao WHERE opiniao_id = $id";
                                     $executa_seleciona_opiniao = mysql_query($seleciona_opiniao)or die(mysql_error());
-                                    ?>
+                                    $dados_opiniao = mysql_fetch_array($executa_seleciona_opiniao);
 
 
-                                    <?php
-                                    while ($array_opiniao = mysql_fetch_array($executa_seleciona_opiniao)) {
-                                        ?>
+                                    $nova_data = explode("-", $dados_opiniao['data']);
 
-                                        <!-- item -->		
-                                        <div class="blog-post style2 animate-onscroll">
-
-                                            <div class="post-image">
-                                                <img src="admin/imagens/opiniao/<?php echo $array_opiniao['foto']; ?>" alt="">
-                                                <div class="media-hover">
-                                                    <div class="media-icons">
-                                                        <a href="admin/imagens/<?php echo $array_opiniao['foto']; ?>" data-group="media-jackbox" class="jackbox media-icon"><i class="icons icon-zoom-in"></i></a>
-                                                        <a href="materias.html" class="media-icon"><i class="icons icon-link"></i></a>
-                                                    </div>
-                                                </div>								
-                                            </div>
-                                            <div class="post-content">
-                                                <div class="post-header">
-                                                    <h2><a href="materias.html"><?php echo $array_opiniao['titulo']; ?> </a></h2>
-                                                    <div class="post-meta">
-                                                        <span><?php echo $array_opiniao['data']; ?></span>
-                                                    </div>
-                                                </div>
-                                                <div class="post-exceprt">
-
-                                                    <?php
-                                                    $maxp = 100;
-                                                    $strp = $array_opiniao['texto'];
-                                                    ?>
-
-                                                    <p><?php echo substr_replace($strp, (strlen($strp) > $maxp ? '...' : ''), $maxp); ?></p>
-                                                    <a href="opiniao.php?id=<?php echo $array_opiniao['opiniao_id']; ?>" class="button read-more-button big button-arrow">ver</a>
-                                                
-                                                </div>
-                                            </div>
-
-                                        </div>	
-                                        <div class="divider animate-onscroll"></div>																		
-                                        <!-- // item -->
-
-                                        <?php
+                                    function retorna_mes($MES) {
+                                        switch ($MES) {
+                                            case 1 : $MES = 'Janeiro';
+                                                break;
+                                            case 2 : $MES = 'Fevereiro';
+                                                break;
+                                            case 3 : $MES = 'Março';
+                                                break;
+                                            case 4 : $MES = 'Abril';
+                                                break;
+                                            case 5 : $MES = 'Maio';
+                                                break;
+                                            case 6 : $MES = 'Junho';
+                                                break;
+                                            case 7 : $MES = 'Julho';
+                                                break;
+                                            case 8 : $MES = 'Agosto';
+                                                break;
+                                            case 9 : $MES = 'Setembro';
+                                                break;
+                                            case 10 : $MES = 'Outubro';
+                                                break;
+                                            case 11 : $MES = 'Novembro';
+                                                break;
+                                            case 12 : $MES = 'Dezembro';
+                                                break;
+                                        }
+                                        return $MES;
                                     }
                                     ?>
 
-                                </div>
+
+                                    <h1 class="animate-onscroll"><?php echo $dados_opiniao['titulo']; ?></h1>
+                                    <hr class="animate-onscroll" style="margin:5px;">
+                                    <ul class="social-buttons animate-onscroll">
+
+                                        <li class="facebook-share">
+                                            <div class="fb-share-button" data-href="https://www.facebook.com/arthurvirgiliobisneto" data-type="button_count"></div>
+                                        </li>
+                                        <li class="twitter-share">
+                                            <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+                                        </li>
+                                    </ul>
+                                    <hr class="animate-onscroll" style="margin:5px;">
+                                    <p class="animate-onscroll" style="font-size: 10px; color: #c0c0c0c0;">Publicado em: <?php echo $nova_data[0], " de "; ?>  <?php echo retorna_mes($nova_data[1]) . " de "; ?> <?php echo $nova_data[2]; ?></p>
 
 
-                            </div>
+                                    <img class="animate-onscroll" src="admin/imagens/opiniao/<?php echo $dados_opiniao['foto']; ?>" alt=""><!-- FOTO -->
+                                    <div class="legenda animate-onscroll">teste legenda</div> <!-- legenda da foto -->
 
-                            <div class="animate-onscroll">
+                                    <br>
 
-                                <div class="divider"></div>
+                                    <p class="animate-onscroll">
+                                        “Minha opinião é muito clara no sentido de nós acabarmos com a impunidade dos jovens entre 16 e 18 anos que cometem crimes graves neste país”,  afirmou o deputado federal Arthur Virgílio Bisneto (PSDB-AM), vice-líder da Oposição, durante votação do texto da comissão especial para a PEC que reduz a maioridade penal (PEC 171/93). O plenário da Câmara Federal rejeitou o texto. Foram 303 votos a favor, quando o mínimo necessário eram 308. Foram 184 votos contra e três abstenções.<br><br>
 
-                                <div class="numeric-pagination">
-                                    <a href="#" class="button"><i class="icons icon-left-dir"></i></a>
-                                    <a href="#" class="button">1</a>
-                                    <a href="#" class="button active-button">2</a>
-                                    <a href="#" class="button">3</a>
-                                    <a href="#" class="button"><i class="icons icon-right-dir"></i></a>
+                                    <blockquote class="align-right animate-onscroll" style="width:45%">
+                                        "Quisque diam lorem, interdum vitae, dapibus ac, scelerisque vitae, pede. Donec eget tellus non erat lacinia fermentum. Donec in velit vel ipsum auctor pulvinar."
+                                    </blockquote>
+
+                                    Durante a discussão da proposta, o vice-líder da Oposição liberou a bancada para a votação. “Eu respeito a opinião da bancada daqueles que votam não, mas acredito que os jovens de 16 e 17 anos sabem muito bem o que fazem.  Não digam que são pessoas que não sabem a responsabilidade e o que é cometer um crime contra uma família ou contra um cidadão. Eu falo aqui como pai de dois filhos, eu falo aqui como alguém que se põe no lugar dessas mães e sabe o sofrimento que é perder um filho para criminalidade e ver a impunidade cada vez mais forte”, ressaltou Bisneto.<br><br>
+
+                                    A proposta rejeitada reduziria de 18 para 16 anos a maioridade penal para crimes hediondos, como estupro, latrocínio e homicídio qualificado (quando há agravantes). O adolescente dessa faixa etária também poderia ser condenado por crimes de lesão corporal grave ou lesão corporal seguida de morte e roubo agravado (quando há uso de arma ou participação de dois ou mais criminosos, entre outras circunstâncias). O texto original, que pode ir à votação nesta quarta-feira (1°), reduz a maioridade para 16 em todos os casos.
+                                    </p>
+
+
+
+
+
                                 </div>
 
                             </div>
@@ -476,17 +484,10 @@ include './admin/conections/conexao.php';
 
                             <hr style="border-bottom: 1px solid #EDEDED;">
 
-                            <?php
-                            $select_video = "select * from videos order by videos_id DESC LIMIT 0,1";
-                            $executa_select_video = mysql_query($select_video)or die(mysql_error());
-                            $dados_video = mysql_fetch_array($executa_select_video);
-                            ?>
-
-
                             <!-- Featured Video -->
                             <div class="sidebar-box featured-video animate-onscroll fundo-listra">
                                 <h3><strong>VÍDEO</strong></h3>
-                                <iframe src="https://www.youtube.com/embed/<?php echo $dados_video['video']; ?>?wmode=transparent" allowfullscreen="" height="315" width="560"></iframe>
+                                <iframe src="https://www.youtube.com/embed/Lcubw2IeNtM?wmode=transparent" allowfullscreen="" height="315" width="560"></iframe>
                                 <a href="#" class="button transparent button-arrow">todos os videos</a>
                             </div>
                             <!-- /Featured Video -->

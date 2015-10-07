@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 30-Set-2015 às 05:47
+-- Generation Time: 07-Out-2015 às 02:09
 -- Versão do servidor: 5.6.15-log
 -- PHP Version: 5.5.8
 
@@ -87,7 +87,6 @@ CREATE TABLE IF NOT EXISTS `depmidia` (
 --
 
 INSERT INTO `depmidia` (`depmidia_id`, `data`, `titulo`, `link`, `codigo`, `foto`, `usuario_id`) VALUES
-(1, 'HUAHDUA', 'DUAHUSD', 'DAHSUDAUD', 'DD', '11866412_923345824399818_7638106130952624583_n.jpg', 1),
 (3, '', 'TITULO TESTE', 'http://dasdadad', 'dafsdfs', '2.jpg', 1),
 (4, '12-09-2015', 'HDUAHUD', 'DAHDUHAUD', 'DAD', 'adventure-time-jake.jpg', 1),
 (5, '22-09-2015', 'DUAHUSDhudahud', '', 'DD', 'hora-de-aventura-finn-5373ac5591bd4.jpg', 1);
@@ -131,7 +130,7 @@ CREATE TABLE IF NOT EXISTS `informativo` (
   `pdf` varchar(100) NOT NULL DEFAULT '',
   `usuario_id` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`informativo_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Extraindo dados da tabela `informativo`
@@ -139,9 +138,7 @@ CREATE TABLE IF NOT EXISTS `informativo` (
 
 INSERT INTO `informativo` (`informativo_id`, `data_informativo`, `edicao`, `img`, `pdf`, `usuario_id`) VALUES
 (2, '04-09-2015', 'DUAHDUAHDU', 'hora-de-aventura-destaque.jpg', 'hora-de-aventura-destaque.jpg', 1),
-(3, '11-09-2015', 'DUAHDU', 'hora-de-aventura-destaque.jpg', 'ordem.sql', 1),
-(4, '04-09-2016', 'DUAHDUAHDU', '', '', 1),
-(5, '04-09-2016', 'DUAHDUAHDUYGYAGSDA', '', '', 1);
+(3, '11-09-2015', 'DUAHDU', 'hora-de-aventura-destaque.jpg', 'ordem.sql', 1);
 
 -- --------------------------------------------------------
 
@@ -156,7 +153,7 @@ CREATE TABLE IF NOT EXISTS `links` (
   `data_cadastro` varchar(100) NOT NULL DEFAULT '',
   `usuario_id` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`links_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=21 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
 
 --
 -- Extraindo dados da tabela `links`
@@ -167,7 +164,8 @@ INSERT INTO `links` (`links_id`, `nome`, `link`, `data_cadastro`, `usuario_id`) 
 (16, 'PSDB Nacional', 'K', '05-setembro-2015', 1),
 (17, 'PSDB Regional', 'DASDASD', '06-setembro-2015', 1),
 (18, 'Governo do Amazonas', 'KK', '06-setembro-2015', 1),
-(20, 'SEDUC-AM', 'http://', 'DASD', 1);
+(20, 'SEDUC-AM', 'http://', 'DASD', 1),
+(21, 'TESTEEEEEE', 'SDADASD', '', 1);
 
 -- --------------------------------------------------------
 
@@ -186,14 +184,15 @@ CREATE TABLE IF NOT EXISTS `noticia` (
   `publicar` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '1-ATIVO 2-INATIVO',
   `usuario_id` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`noticia_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Extraindo dados da tabela `noticia`
 --
 
 INSERT INTO `noticia` (`noticia_id`, `data_noticia`, `titulo`, `texto`, `texto_detalhe`, `img`, `destaque_banner`, `publicar`, `usuario_id`) VALUES
-(2, '03-09-2016', 'HUHAUD', 'SDHAUDHUAHDUAHXDHASSDHAUDHUAHDUAHXDHASSDHAUDHUAHDUAHXDHASSDHAUDHUAHDUAHXDHASSDHAUDHUAHDUAHXDHASSDHAUDHUAHDUAHXDHASSDHAUDHUAHDUAHXDHASSDHAUDHUAHDUAHXDHASSDHAUDHUAHDUAHXDHASSDHAUDHUAHDUAHXDHAS', 'DUASHDUAHDUAHUD', 'hora_de_aventura.gif', 1, 2, 1);
+(2, '03-09-2016', 'HUHAUD', 'SDHAUDHUAHDUAHXDHASSDHAUDHUAHDUAHXDHASSDHAUDHUAHDUAHXDHASSDHAUDHUAHDUAHXDHASSDHAUDHUAHDUAHXDHASSDHAUDHUAHDUAHXDHASSDHAUDHUAHDUAHXDHASSDHAUDHUAHDUAHXDHASSDHAUDHUAHDUAHXDHASSDHAUDHUAHDUAHXDHAS', 'DUASHDUAHDUAHUD', 'hora_de_aventura.gif', 1, 2, 1),
+(3, '02-10-2015', 'hudau', '“Minha opiniã“Minha opinião é muito clara no sentido de nós acabarmos com a impunidade dos jovens entre 16 e 18 anos que cometem crimes graves neste país”, afirmou o deputado federal Arthur Virgílio Bisneto (PSDB-AM), vice-líder da Oposição, durante votação do texto da comissão especial para a PEC que reduz a maioridade penal (PEC 171/93). O plenário da Câmara Federal rejeitou o texto. Foram 303 votos a favor, quando o mínimo necessário eram 308. Foram 184 votos contra e três abstenções.o é muito clara no sentido de nós acabarmos com a impunidade dos jovens entre 16 e 18 anos que cometem crimes graves neste país”, afirmou o deputado federal Arthur Virgílio Bisneto (PSDB-AM), vice-líder da Oposição, durante votação do texto da comissão especial para a PEC que reduz a maioridade penal (PEC 171/93). O plenário da Câmara Federal rejeitou o texto. Foram 303 votos a favor, quando o mínimo necessário eram 308. Foram 184 votos contra e três abstenções.', 'audhuad', 'hora_de_aventura.gif', 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -211,14 +210,18 @@ CREATE TABLE IF NOT EXISTS `opiniao` (
   `publicar` int(10) unsigned DEFAULT NULL COMMENT '1-ATIVO 2-INATIVO',
   `usuario_id` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`opiniao_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=23 ;
 
 --
 -- Extraindo dados da tabela `opiniao`
 --
 
 INSERT INTO `opiniao` (`opiniao_id`, `data`, `titulo`, `texto`, `texto_detalhe`, `foto`, `publicar`, `usuario_id`) VALUES
-(18, '03-09-2015', 'AUHDAUDHAUD', 'TEXTO TESTE ts', 'DUAHDUAHDUAHDU', 'hora_de_aventura.gif', 1, 1);
+(18, '03-09-2015', 'AUHDAUDHAUD', 'TEXTO TESTE ts', 'DUAHDUAHDUAHDU', 'hora_de_aventura.gif', 1, 1),
+(19, '', '', '', '', '', 2, 1),
+(20, '02-09-2015', 'TITULO TESTE', 'cdcscsc', 'dasdas', 'banner-footer.jpg', 0, 1),
+(21, '30-09-2015', 'TITULO TESTE', 'jdadas', 'sczxczc', 'banner-footer.jpg', 1, 1),
+(22, '02-10-2015', 'teste de foto', 'dhsaduad', 'dasuhduasd', '2.jpg', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -234,7 +237,7 @@ CREATE TABLE IF NOT EXISTS `salaimprensa` (
   `arquivo` varchar(100) DEFAULT NULL,
   `usuario_id` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`salaimprensa_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Extraindo dados da tabela `salaimprensa`
@@ -242,7 +245,8 @@ CREATE TABLE IF NOT EXISTS `salaimprensa` (
 
 INSERT INTO `salaimprensa` (`salaimprensa_id`, `data`, `nome`, `tipo_arquivo`, `arquivo`, `usuario_id`) VALUES
 (1, '11-09-2015', 'HUDHAD', 'PNG', 'ordem.sql', 1),
-(2, '11-09-2015', 'KKOKOO', 'JPG', 'boletoRequisicao.pdf', 1);
+(2, '11-09-2015', 'KKOKOO', 'JPG', 'boletoRequisicao.pdf', 1),
+(4, '01-10-2015', 'KARLINE', 'PDF', 'items.png', 1);
 
 -- --------------------------------------------------------
 
@@ -266,8 +270,8 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 --
 
 INSERT INTO `usuario` (`usuario_id`, `nome`, `login`, `senha`, `status`, `email`, `nivel`) VALUES
-(1, 'Karol Oliveira', 'karol', '123', 1, '', 0),
-(2, 'Thiago Maneschy', 'thiago', '123', 1, '', 0);
+(1, 'Karol Oliveira', 'karol', '123', 1, 'jhudhaud', 0),
+(2, 'Thiago Maneschy', 'thiago', '123', 1, 'udahduhaudhaud', 0);
 
 -- --------------------------------------------------------
 

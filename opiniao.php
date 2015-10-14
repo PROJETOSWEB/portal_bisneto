@@ -214,43 +214,43 @@ include './admin/conections/conexao.php';
                             </div>
                             <span>Menu MOBILE</span>
                         </div>
-
+                        
                         <ul id="navigation">
 
                             <!-- Home -->
                             <li class="home-button current-menu-item">
 
-                                <a href="indexxx.html"><i class="icons icon-home"></i></a>
+                                <a href="index.php"><i class="icons icon-home"></i></a>
 
                             </li>
                             <!-- /Home -->
 
                             <!-- biografia -->
-                            <li>
+                            <li >
 
-                                <a href="#">BIOGRAFIA</a>
+                                <a href="biografia.php">BIOGRAFIA</a>
 
                             </li>
                             <!-- // biografia -->
 
                             <!-- opniao -->
-                            <li>
+                            <li >
 
-                                <a href="#">OPINIÃO</a>
+                                <a href="lista-opiniao.php">OPINIÃO</a>
 
                             </li>
                             <!-- // opiniao -->
 
                             <!-- DEP. na midia -->
-                            <li>
+                            <li >
 
-                                <a href="#">DEPUTADO NA MÍDIA</a>
+                                <a href="midia.php">DEPUTADO NA MÍDIA</a>
 
                             </li>
                             <!-- // dep. na midia -->
 
                             <!-- DEP. na midia -->
-                            <li>
+                            <li >
 
                                 <a href="#">ATIVIDADE PARLAMENTAR</a>
 
@@ -258,18 +258,18 @@ include './admin/conections/conexao.php';
                             <!-- // dep. na midia -->
 
                             <!-- GALERIA-->
-                            <li>
+                            <li >
 
                                 <span>GALERIA</span>
 
                                 <ul>
 
                                     <li>
-                                        <a href="#">fotos</a>
+                                        <a href="fotos.php">fotos</a>
                                     </li>
 
                                     <li>
-                                        <a href="#">videos</a>
+                                        <a href="videos.php">videos</a>
                                     </li>
 
 
@@ -280,14 +280,14 @@ include './admin/conections/conexao.php';
 
 
                             <!-- CONTATO-->
-                            <li>
+                            <li >
 
                                 <span>CONTATO</span>
 
                                 <ul>
 
                                     <li>
-                                        <a href="#">sala de imprensa</a>
+                                        <a href="imprensa.php">sala de imprensa</a>
                                     </li>
 
                                     <li>
@@ -302,7 +302,7 @@ include './admin/conections/conexao.php';
 
                             <!-- Donate -->
                             <li class="donate-button ">
-                                <a style=" padding: 0px; border: none;" href="#"><img src="img/logo-PSDB.png" alt=""></a>
+                                <a style=" padding: 0px; border: none;" href="#"><img src="img/logo-PSDB.png" alt="" /></a>
 
                             </li>
                             <!-- /Donate -->
@@ -326,7 +326,7 @@ include './admin/conections/conexao.php';
                 <!-- Page Heading -->
                 <section class="section page-heading animate-onscroll ">
 
-                    <p class="breadcrumb"><a href="main-v1.html">Home</a> / Titulo da opiniao</p>
+                    <p class="breadcrumb"><a href="index.php">Home</a> / <a href="lista-opiniao.php">Home</a> / Titulo da opiniao</p>
 
                 </section>
                 <!-- Page Heading -->

@@ -159,15 +159,7 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
                                 </div>
 
 
-                                <div class="col-sm-12" style="margin-bottom: 25px;">
-
-                                    <div class="form-group col-sm-8">
-                                        <label for="exampleInputEmail1">TEXTO DO DETALHE (não é obrigatório)</label>
-                                        <textarea name="texto_detalhe"  tooltip="se você deseja um destaque no texto, digite aqui. máx 100 caracteres" name="" id="" class="form-control" rows="7" style="border-left: 5px solid #335397;"><?php echo $linha_editar['texto_detalhe']; ?></textarea>
-                                    </div>
-
-                                </div>
-
+                                
                                 <div class="divider"></div>
                                 <hr/>
                                 <div class="divider"></div>

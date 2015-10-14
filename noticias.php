@@ -232,7 +232,7 @@ include './admin/conections/conexao.php';
                 <!-- Page Heading -->
                 <section class="section page-heading animate-onscroll ">
 
-                    <p class="breadcrumb"><a href="main-v1.html">Home</a> / Titulo da noticia</p>
+                    <p class="breadcrumb"><a href="index.php">Home</a> / <a href="lista-noticias.php">Notícias</a> / Titulo da noticia</p>
 
                 </section>
                 <!-- Page Heading -->

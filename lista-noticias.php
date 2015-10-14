@@ -211,42 +211,42 @@
                             <span>Menu MOBILE</span>
                         </div>
 
-                        <ul id="navigation">
+						<ul id="navigation">
 
                             <!-- Home -->
                             <li class="home-button current-menu-item">
 
-                                <a href="indexxx.html"><i class="icons icon-home"></i></a>
+                                <a href="index.php"><i class="icons icon-home"></i></a>
 
                             </li>
                             <!-- /Home -->
 
                             <!-- biografia -->
-                            <li>
+                            <li >
 
-                                <a href="#">BIOGRAFIA</a>
+                                <a href="biografia.php">BIOGRAFIA</a>
 
                             </li>
                             <!-- // biografia -->
 
                             <!-- opniao -->
-                            <li>
+                            <li >
 
-                                <a href="#">OPINIÃO</a>
+                                <a href="lista-opiniao.php">OPINIÃO</a>
 
                             </li>
                             <!-- // opiniao -->
 
                             <!-- DEP. na midia -->
-                            <li>
+                            <li >
 
-                                <a href="#">DEPUTADO NA MÍDIA</a>
+                                <a href="midia.php">DEPUTADO NA MÍDIA</a>
 
                             </li>
                             <!-- // dep. na midia -->
 
                             <!-- DEP. na midia -->
-                            <li>
+                            <li >
 
                                 <a href="#">ATIVIDADE PARLAMENTAR</a>
 
@@ -254,18 +254,18 @@
                             <!-- // dep. na midia -->
 
                             <!-- GALERIA-->
-                            <li>
+                            <li >
 
                                 <span>GALERIA</span>
 
                                 <ul>
 
                                     <li>
-                                        <a href="#">fotos</a>
+                                        <a href="fotos.php">fotos</a>
                                     </li>
 
                                     <li>
-                                        <a href="#">videos</a>
+                                        <a href="videos.php">videos</a>
                                     </li>
 
 
@@ -276,14 +276,14 @@
 
 
                             <!-- CONTATO-->
-                            <li>
+                            <li >
 
                                 <span>CONTATO</span>
 
                                 <ul>
 
                                     <li>
-                                        <a href="#">sala de imprensa</a>
+                                        <a href="imprensa.php">sala de imprensa</a>
                                     </li>
 
                                     <li>
@@ -298,7 +298,7 @@
 
                             <!-- Donate -->
                             <li class="donate-button ">
-                                <a style=" padding: 0px; border: none;" href="#"><img src="img/logo-PSDB.png" alt=""></a>
+                                <a style=" padding: 0px; border: none;" href="#"><img src="img/logo-PSDB.png" alt="" /></a>
 
                             </li>
                             <!-- /Donate -->
@@ -340,7 +340,7 @@
 
                                 <div class="col-lg-12 col-md-12 col-sm-12">
 
-                                    <h1 class="animate-onscroll">LISTA de noticia</h1>
+                                    <h1 class="animate-onscroll">LISTA de notícia</h1>
                                     <hr class="animate-onscroll" style="margin:5px;">
                                     <br/>
 
@@ -378,11 +378,18 @@
                                                     </div>
                                                 </div>
                                                 <div class="post-exceprt">
-                                                    <p><?php echo $array_noticia['texto']; ?> </p>
+                                                    
+                                                    <?php
+                                                    $maxp = 100;
+                                                    $strp = $array_noticia['texto'];
+                                                    ?>
+
+                                                    <p><?php echo substr_replace($strp, (strlen($strp) > $maxp ? '...' : ''), $maxp); ?></p>
+                                                    
                                                     <a href="noticias.php?id=<?php echo $array_noticia['noticia_id']; ?>" class="button read-more-button big button-arrow">ver</a>
                                                 </div>
                                             </div>
-
+										
                                         </div>
 
 

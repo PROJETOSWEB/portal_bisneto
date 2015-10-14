@@ -471,7 +471,10 @@ include './admin/conections/conexao.php';
 
                                 <p></p>
 
-                                <a href="opniao.php?id=<?php echo $linha_opiniao['opiniao_id']; ?>" class="button read-more-button button-arrow">ler mais...</a>
+                                <a href="opiniao.php?id=<?php echo $linha_opiniao['opiniao_id']; ?>" class="button read-more-button button-arrow">ler mais...</a>
+                                
+
+                                                <h5 class="post-title"><a href="noticias.php?id=<?php echo $array_noticia['noticia_id']; ?>"><?php echo $array_noticia['titulo']; ?></a></h5>
 
                             </div>
                             <!-- /Blog Post -->						
@@ -535,7 +538,7 @@ include './admin/conections/conexao.php';
                                 </div>
 
                                 <div class="col-lg-4 col-md-4 col-sm-4 animate-onscroll" style="margin-top: 20px;">
-                                    <a href="lista-noticias.php" class="button read-more-button button-arrow">ver todas</a>
+                                    <a href="lista-noticias.php" class="button read-more-button button-arrow">todas as notícias </a>
                                 </div>
                                 <br/>
                                 <hr/>
@@ -676,10 +679,10 @@ include './admin/conections/conexao.php';
 
                             <!-- Image Banner -->
                             <div class="sidebar-box image-banner animate-onscroll">
-                                <a href="admin/imagens/informativo/arquivo/<?php echo $dados_informativo['pdf']; ?>">
-                                    <img src="admin/imagens/informativo/<?php echo $dados_informativo['img']; ?>" alt="">
-                                    <h3>INFORMATIVO EDIÇÃO 230</h3>
-                                    <span class="button  button-arrow">VER TODOS</span>
+                                <a href="admin/imagens/informativo/arquivo/<?php echo $dados_informativo['pdf']; ?>" target="_blank">
+                                    <img src="admin/imagens/informativo/<?php echo $dados_informativo['img']; ?>" alt=""></a>
+                                    <h3>INFORMATIVO EDIÇÃO <?php echo $dados_informativo['edicao']; ?></h3>
+                                    <a href="admin/imagens/informativo/arquivo/<?php echo $dados_informativo['pdf']; ?>" target="_blank"><span class="button  button-arrow">VER TODOS</span>
                                 </a>
                             </div>
                             <!-- /Image Banner -->

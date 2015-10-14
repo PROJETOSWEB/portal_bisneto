@@ -10,7 +10,7 @@
 <section id="main-content">
     <section class="wrapper">
 
-        <div class="col-lg-6">
+        <div class="col-lg-9">
 
             <?php
             if (isset($_GET['respt'])) {
@@ -103,7 +103,7 @@
                           		</div>
                                 <div class="col-sm-5">
                                     <label for="exampleInputEmail1">LEGENDA DA FOTO</label>
-                                    <textarea name="texto" id="" class="form-control" rows="3"></textarea>
+                                    <textarea name="legenda" id="" class="form-control" rows="3"></textarea>
                                 </div>
 
                                 
@@ -175,7 +175,7 @@
                                 <div class = "form-group">
 
                                     <label for = "exampleInputEmail1">TEXTO</label>
-                                    <textarea name = "texto" id = "" class = "form-control" rows = "7"><?php echo $linha_editar['texto']; ?></textarea>
+                                    <textarea name="texto" id="" class="wysihtml5 form-control" rows="7"><?php echo $linha_editar['texto']; ?></textarea>
 
                                 </div>
 
@@ -220,7 +220,7 @@
                                                         <a href = "#" class = "btn btn-danger fileupload-exists" data-dismiss = "fileupload"><i class = "fa fa-trash"></i> excluir</a>
                                                     </div>
                                                 </div>
-                                            </div>                                                                                        <div class="col-sm-5">                                                <label for="exampleInputEmail1">LEGENDA DA FOTO</label>                                                <textarea name="texto" id="" class="form-control" rows="3"></textarea>                                            </div>                                            
+                                            </div>                                                                                        <div class="col-sm-5">                                                <label for="exampleInputEmail1">LEGENDA DA FOTO</label>                                               <textarea name="legenda" id="" class="form-control" rows="3"><?php echo $linha_editar['leganda']; ?></textarea>                                            </div>                                            
                                         </div>
                                     </div>
 

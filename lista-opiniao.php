@@ -367,25 +367,27 @@ include './admin/conections/conexao.php';
                                                 <div class="media-hover">
                                                     <div class="media-icons">
                                                         <a href="admin/imagens/<?php echo $array_opiniao['foto']; ?>" data-group="media-jackbox" class="jackbox media-icon"><i class="icons icon-zoom-in"></i></a>
-                                                        <a href="materias.html" class="media-icon"><i class="icons icon-link"></i></a>
+                                                        <a href="opiniao.php?id=<?php echo $array_opiniao['opiniao_id']; ?>" class="media-icon"><i class="icons icon-link"></i></a>
                                                     </div>
                                                 </div>								
                                             </div>
                                             <div class="post-content">
                                                 <div class="post-header">
-                                                    <h2><a href="materias.html"><?php echo $array_opiniao['titulo']; ?> </a></h2>
+                                                    <h2><a href="opiniao.php?id=<?php echo $array_opiniao['opiniao_id']; ?>"><?php echo $array_opiniao['titulo']; ?> </a></h2>
                                                     <div class="post-meta">
                                                         <span><?php echo $array_opiniao['data']; ?></span>
                                                     </div>
                                                 </div>
                                                 <div class="post-exceprt">
 
+                                                    
                                                     <?php
                                                     $maxp = 100;
                                                     $strp = $array_opiniao['texto'];
                                                     ?>
 
                                                     <p><?php echo substr_replace($strp, (strlen($strp) > $maxp ? '...' : ''), $maxp); ?></p>
+                                                    
                                                     <a href="opiniao.php?id=<?php echo $array_opiniao['opiniao_id']; ?>" class="button read-more-button big button-arrow">ver</a>
                                                 
                                                 </div>

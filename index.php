@@ -680,10 +680,10 @@ include './admin/conections/conexao.php';
                             <!-- Image Banner -->
                             <div class="sidebar-box image-banner animate-onscroll">
                                 <a href="admin/imagens/informativo/arquivo/<?php echo $dados_informativo['pdf']; ?>" target="_blank">
-                                    <img src="admin/imagens/informativo/<?php echo $dados_informativo['img']; ?>" alt=""></a>
+                                    <img src="admin/imagens/informativo/<?php echo $dados_informativo['img']; ?>" alt="">
                                     <h3>INFORMATIVO EDIÇÃO <?php echo $dados_informativo['edicao']; ?></h3>
-                                    <a href="admin/imagens/informativo/arquivo/<?php echo $dados_informativo['pdf']; ?>" target="_blank"><span class="button  button-arrow">VER TODOS</span>
                                 </a>
+                                <a href="lista-informativos.html" class="button  button-arrow">VER TODOS</span></a>
                             </div>
                             <!-- /Image Banner -->
 

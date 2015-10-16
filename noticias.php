@@ -213,7 +213,7 @@ include './admin/conections/conexao.php';
                             <span>Menu MOBILE</span>
                         </div>
 
-						<ul id="navigation">                            <!-- Home -->                            <li class="home-button current-menu-item">                                <a href="index.php"><i class="icons icon-home"></i></a>                            </li>                            <!-- /Home -->                            <!-- biografia -->                            <li >                                <a href="biografia.php">BIOGRAFIA</a>                            </li>                            <!-- // biografia -->                            <!-- opniao -->                            <li >                                <a href="lista-opiniao.php">OPINIÃO</a>                            </li>                            <!-- // opiniao -->                            <!-- DEP. na midia -->                            <li >                                <a href="midia.php">DEPUTADO NA MÍDIA</a>                            </li>                            <!-- // dep. na midia -->                            <!-- DEP. na midia -->                            <li >                                <a href="#">ATIVIDADE PARLAMENTAR</a>                            </li>                            <!-- // dep. na midia -->                            <!-- GALERIA-->                            <li >                                <span>GALERIA</span>                                <ul>                                    <li>                                        <a href="fotos.php">fotos</a>                                    </li>                                    <li>                                        <a href="videos.php">videos</a>                                    </li>                                </ul>                            </li>                            <!-- // galeria -->                            <!-- CONTATO-->                            <li >                                <span>CONTATO</span>                                <ul>                                    <li>                                        <a href="imprensa.php">sala de imprensa</a>                                    </li>                                    <li>                                        <a href="#">contatos</a>                                    </li>                                </ul>                            </li>                            <!-- // CONTATO -->                            <!-- Donate -->                            <li class="donate-button ">                                <a style=" padding: 0px; border: none;" href="#"><img src="img/logo-PSDB.png" alt="" /></a>                            </li>                            <!-- /Donate -->                        </ul>
+						<ul id="navigation">                            <!-- Home -->                            <li class="home-button current-menu-item">                                <a href="index.php"><i class="icons icon-home"></i></a>                            </li>                            <!-- /Home -->                            <!-- biografia -->                            <li >                                <a href="biografia.php">BIOGRAFIA</a>                            </li>                            <!-- // biografia -->                            <!-- opniao -->                            <li >                                <a href="lista-opiniao.php">OPINIÃO</a>                            </li>                            <!-- // opiniao -->                            <!-- DEP. na midia -->                            <li >                                <a href="midia.php">DEPUTADO NA MÍDIA</a>                            </li>                            <!-- // dep. na midia -->                            <!-- DEP. na midia -->                            <li >                                <a href="http://www.camara.leg.br/internet/deputado/Dep_Detalhe.asp?id=5830441" target="_blank">ATIVIDADE PARLAMENTAR</a>                            </li>                            <!-- // dep. na midia -->                            <!-- GALERIA-->                            <li >                                <span>GALERIA</span>                                <ul>                                    <li>                                        <a href="fotos.php">fotos</a>                                    </li>                                    <li>                                        <a href="videos.php">videos</a>                                    </li>                                </ul>                            </li>                            <!-- // galeria -->                            <!-- CONTATO-->                            <li >                                <span>CONTATO</span>                                <ul>                                    <li>                                        <a href="imprensa.php">sala de imprensa</a>                                    </li>                                    <li>                                        <a href="contato.php">contatos</a>                                    </li>                                </ul>                            </li>                            <!-- // CONTATO -->                            <!-- Donate -->                            <li class="donate-button ">                                <a style=" padding: 0px; border: none;" href="#"><img src="img/logo-PSDB.png" alt="" /></a>                            </li>                            <!-- /Donate -->                        </ul>
 
                     </div>
 
@@ -306,51 +306,7 @@ include './admin/conections/conexao.php';
 
 
                         <!-- Sidebar -->
-                        <div class="col-lg-3 col-md-3 col-sm-4 sidebar">
-
-                            <div class="social-media animate-onscroll">
-                                <span class="small-caption">CONECTE-SE COM A GENTE</span>
-                                <ul class="social-icons">
-                                    <li class="facebook"><a href="https://www.facebook.com/arthurvirgiliobisneto" target="_blank" class="tooltip-ontop" title="Facebook"><i class="icons icon-facebook-1"></i></a></li>
-                                    <li class="twitter"><a href="https://twitter.com/arthurbisneto" target="_blank" class="tooltip-ontop" title="Twitter"><i class="icons icon-twitter-1"></i></a></li>
-                                    <li class="instagram"><a href="https://instagram.com/arthurbisnetooficial" target="_blank" class="tooltip-ontop" title="Instagram"><i class="icons icon-instagram-1"></i></a></li>
-                                    <li class="youtube"><a href="https://www.youtube.com/user/arthurbisneto" target="_blank" class="tooltip-ontop" title="Youtube"><i class="icons icon-youtube-1"></i></a></li>
-                                    <li class="flickr"><a href="#" class="tooltip-ontop" title="Flickr"><i class="icons icon-flickr-1"></i></a></li>
-                                    <li class="email"><a href="#" class="tooltip-ontop" title="Email"><i class="icons icon-mail-1"></i></a></li>
-                                </ul>
-
-                            </div>
-
-                            <div class="banner-wrapper">
-                                <a class="banner animate-onscroll" href="#">
-                                    <i class="icons icon-calendar"></i>
-                                    <h4>AGENDA<br> PARLAMENTAR</h4>
-                                </a>
-                            </div>
-
-                            <div class="banner-wrapper">
-                                <a class="banner animate-onscroll" href="#">
-                                    <i class="icons icon-check"></i>
-                                    <h4>OPNIÃO DO<br> DEPUTADO</h4>
-                                </a>
-                            </div>
-
-                            <div class="banner-wrapper">
-                                <a class="banner animate-onscroll" href="#">
-                                    <i class="icons icon-user"></i>
-                                    <h4>SALA DE <br>IMPRENSA</h4>
-                                </a>
-                            </div>
-                            <div class="banner-wrapper">
-                                <a class="banner animate-onscroll" href="#">
-                                    <i class="icons icon-camera-alt"></i>
-                                    <h4>CLIPPING</h4>
-                                    <p> Tudo sobre o Deputado</p>
-                                </a>
-                            </div>
-
-
-                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-4 sidebar">                            <div class="social-media animate-onscroll">                                <span class="small-caption">CONECTE-SE COM A GENTE</span>                                <ul class="social-icons">                                    <li class="facebook"><a href="https://www.facebook.com/arthurvirgiliobisneto" target="_blank" class="tooltip-ontop" title="Facebook"><i class="icons icon-facebook-1"></i></a></li>                                    <li class="twitter"><a href="https://twitter.com/arthurbisneto" target="_blank" class="tooltip-ontop" title="Twitter"><i class="icons icon-twitter-1"></i></a></li>                                    <li class="instagram"><a href="https://instagram.com/arthurbisnetooficial" target="_blank" class="tooltip-ontop" title="Instagram"><i class="icons icon-instagram-1"></i></a></li>                                    <li class="youtube"><a href="https://www.youtube.com/user/arthurbisneto" target="_blank" class="tooltip-ontop" title="Youtube"><i class="icons icon-youtube-1"></i></a></li>                                    <li class="flickr"><a href="#" class="tooltip-ontop" title="Flickr"><i class="icons icon-flickr-1"></i></a></li>                                    <li class="email"><a href="contato.php" class="tooltip-ontop" title="Email"><i class="icons icon-mail-1"></i></a></li>                                </ul>                            </div>                            <div class="banner-wrapper">                                <a class="banner animate-onscroll" href="http://www.camara.leg.br/internet/deputado/Dep_Detalhe.asp?id=5830441" target="_blank">                                    <i class="icons icon-calendar"></i>                                    <h4>AGENDA<br> PARLAMENTAR</h4>                                </a>                            </div>                            <div class="banner-wrapper">                                <a class="banner animate-onscroll" href="lista-opiniao.php">                                    <i class="icons icon-check"></i>                                    <h4>OPNIÃO DO<br> DEPUTADO</h4>                                </a>                            </div>                            <div class="banner-wrapper">                                <a class="banner animate-onscroll" href="imprensa.php">                                    <i class="icons icon-user"></i>                                    <h4>SALA DE <br>IMPRENSA</h4>                                </a>                            </div>                            <div class="banner-wrapper">                                <a class="banner animate-onscroll" href="midia.php">                                    <i class="icons icon-camera-alt"></i>                                    <h4>CLIPPING</h4>                                    <p> Tudo sobre o Deputado</p>                                </a>                            </div>                        </div>
                         <div class="col-lg-3 col-md-3 col-sm-4 sidebar">
 
                             <hr style="border-bottom: 1px solid #EDEDED;">

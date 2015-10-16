@@ -254,7 +254,7 @@ include './admin/conections/conexao.php';
                             <!-- DEP. na midia -->
                             <li >
 
-                                <a href="#">ATIVIDADE PARLAMENTAR</a>
+                                <a href="http://www.camara.leg.br/internet/deputado/Dep_Detalhe.asp?id=5830441" target="_blank">ATIVIDADE PARLAMENTAR</a>
 
                             </li>
                             <!-- // dep. na midia -->
@@ -293,7 +293,7 @@ include './admin/conections/conexao.php';
                                     </li>
 
                                     <li>
-                                        <a href="#">contatos</a>
+                                        <a href="contato.php">contatos</a>
                                     </li>
 
 
@@ -366,61 +366,7 @@ include './admin/conections/conexao.php';
                         </div>
 
 
-                        <div class="col-lg-3 col-md-3 col-sm-4 sidebar">
-
-                            <div class="social-media animate-onscroll">
-                                <span class="small-caption">CONECTE-SE COM A GENTE</span>
-                                <ul class="social-icons">
-                                    <li class="facebook"><a href="https://www.facebook.com/arthurvirgiliobisneto" target="_blank" class="tooltip-ontop" title="Facebook"><i class="icons icon-facebook-1"></i></a></li>
-                                    <li class="twitter"><a href="https://twitter.com/arthurbisneto" target="_blank" class="tooltip-ontop" title="Twitter"><i class="icons icon-twitter-1"></i></a></li>
-                                    <li class="instagram"><a href="https://instagram.com/arthurbisnetooficial" target="_blank" class="tooltip-ontop" title="Instagram"><i class="icons icon-instagram-1"></i></a></li>
-                                    <li class="youtube"><a href="https://www.youtube.com/user/arthurbisneto" target="_blank" class="tooltip-ontop" title="Youtube"><i class="icons icon-youtube-1"></i></a></li>
-                                    <li class="flickr"><a href="#" class="tooltip-ontop" title="Flickr"><i class="icons icon-flickr-1"></i></a></li>
-                                    <li class="email"><a href="#" class="tooltip-ontop" title="Email"><i class="icons icon-mail-1"></i></a></li>
-                                </ul>
-                                <ul class="social-buttons">
-                                    <li>
-                                        <iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Farthurvirgiliobisneto&amp;width=50&amp;height=21&amp;show_faces=true&amp;colorscheme=light&amp;stream=false&amp;border_color&amp;header=false" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:21px;" allowTransparency="true"></iframe>
-                                    </li>
-                                    <li class="facebook-share">
-                                        <div class="fb-share-button" data-href="https://www.facebook.com/arthurvirgiliobisneto" data-type="button_count"></div>
-                                    </li>
-                                    <li class="twitter-share">
-                                        <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="banner-wrapper">
-                                <a class="banner animate-onscroll" href="#">
-                                    <i class="icons icon-calendar"></i>
-                                    <h4>AGENDA<br/> PARLAMENTAR</h4>
-                                </a>
-                            </div>
-
-                            <div class="banner-wrapper">
-                                <a class="banner animate-onscroll" href="#">
-                                    <i class="icons icon-check"></i>
-                                    <h4>OPNIÃO DO<br/> DEPUTADO</h4>
-                                </a>
-                            </div>
-
-                            <div class="banner-wrapper">
-                                <a class="banner animate-onscroll" href="#">
-                                    <i class="icons icon-user"></i>
-                                    <h4>SALA DE <br/>IMPRENSA</h4>
-                                </a>
-                            </div>
-                            <div class="banner-wrapper">
-                                <a class="banner animate-onscroll" href="#">
-                                    <i class="icons icon-camera-alt"></i>
-                                    <h4>CLIPPING</h4>
-                                    <P> Tudo sobre o Deputado</P>
-                                </a>
-                            </div>
-
-
-                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-4 sidebar">                                                                            <div class="social-media animate-onscroll">                                                        <span class="small-caption">CONECTE-SE COM A GENTE</span>                                                        <ul class="social-icons">                                                            <li class="facebook"><a href="https://www.facebook.com/arthurvirgiliobisneto" target="_blank" class="tooltip-ontop" title="Facebook"><i class="icons icon-facebook-1"></i></a></li>                                                            <li class="twitter"><a href="https://twitter.com/arthurbisneto" target="_blank" class="tooltip-ontop" title="Twitter"><i class="icons icon-twitter-1"></i></a></li>                                                            <li class="instagram"><a href="https://instagram.com/arthurbisnetooficial" target="_blank" class="tooltip-ontop" title="Instagram"><i class="icons icon-instagram-1"></i></a></li>                                                            <li class="youtube"><a href="https://www.youtube.com/user/arthurbisneto" target="_blank" class="tooltip-ontop" title="Youtube"><i class="icons icon-youtube-1"></i></a></li>                                                            <li class="flickr"><a href="#" class="tooltip-ontop" title="Flickr"><i class="icons icon-flickr-1"></i></a></li>                                                            <li class="email"><a href="contato.php" class="tooltip-ontop" title="Email"><i class="icons icon-mail-1"></i></a></li>                                                        </ul>                                                                            </div>                                                                            <div class="banner-wrapper">                                                        <a class="banner animate-onscroll" href="http://www.camara.leg.br/internet/deputado/Dep_Detalhe.asp?id=5830441" target="_blank">                                                            <i class="icons icon-calendar"></i>                                                            <h4>AGENDA<br> PARLAMENTAR</h4>                                                        </a>                                                    </div>                                                                            <div class="banner-wrapper">                                                        <a class="banner animate-onscroll" href="lista-opiniao.php">                                                            <i class="icons icon-check"></i>                                                            <h4>OPNIÃO DO<br> DEPUTADO</h4>                                                        </a>                                                    </div>                                                                            <div class="banner-wrapper">                                                        <a class="banner animate-onscroll" href="imprensa.php">                                                            <i class="icons icon-user"></i>                                                            <h4>SALA DE <br>IMPRENSA</h4>                                                        </a>                                                    </div>                                                    <div class="banner-wrapper">                                                        <a class="banner animate-onscroll" href="midia.php">                                                            <i class="icons icon-camera-alt"></i>                                                            <h4>CLIPPING</h4>                                                            <p> Tudo sobre o Deputado</p>                                                        </a>                                                    </div>                                                                                                </div>
 
                     </div>
 

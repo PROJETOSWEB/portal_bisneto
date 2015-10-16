@@ -250,7 +250,7 @@ include './admin/conections/conexao.php';
                             <!-- DEP. na midia -->
                             <li>
 
-                                <a href="#">ATIVIDADE PARLAMENTAR</a>
+                                <a href="http://www.camara.leg.br/internet/deputado/Dep_Detalhe.asp?id=5830441" target="_blank">ATIVIDADE PARLAMENTAR</a>
 
                             </li>
                             <!-- // dep. na midia -->
@@ -289,7 +289,7 @@ include './admin/conections/conexao.php';
                                     </li>
 
                                     <li>
-                                        <a href="#">contatos</a>
+                                        <a href="contato.php">contatos</a>
                                     </li>
 
 

@@ -521,7 +521,7 @@ include './admin/conections/conexao.php';
                                                             <a href="admin/imagens/fotos/<?php echo $linha_fotos['foto']; ?>" 
                                                                data-group="nome-do-album" 
                                                                data-thumbnail="admin/imagens/fotos/<?php echo $linha_fotos['foto']; ?>" 
-                                                               data-title="LEGENDA LEGENDA"
+                                                               data-title="<?php echo $linha_fotos['legenda']; ?>"
                                                                class="jackbox media-icon">
                                                                 <i class="icons icon-zoom-in"></i>
                                                             </a>

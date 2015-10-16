@@ -52,14 +52,14 @@ if ($executa_insert) {
     ?>
 
     <script>
-        window.location.href = '../vopiniao.php?resp=sucesso';
+        window.location.href = '../vopniao.php?resp=sucesso';
     </script>
 
     <?php
 } else {
     ?>
     <script>
-        window.location.href = '../vopiniao.php?resp=erro';
+        window.location.href = '../vopniao.php?resp=erro';
     </script>
     <?php
 }

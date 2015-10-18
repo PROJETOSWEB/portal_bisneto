@@ -182,11 +182,7 @@
                                         <div class="switch switch-square"
                                              data-off-label="<i class='fa fa-times'></i>"
                                              data-on-label="<i class=' fa fa-check'></i>">
-                                            <input name="publicar" value="1" type="checkbox" <?php if ($linha_editar['publicar'] == 1) {
-                        echo "checked";
-                    } else {
-                        echo "";
-                    } ?> />
+                                            <input name="publicar" value="1" type="checkbox" <?php if($linha_editar['publicar']==1) echo "checked";?>
                                         </div>
 
 

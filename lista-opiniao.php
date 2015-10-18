@@ -252,7 +252,7 @@ include './admin/conections/conexao.php';
                             <!-- DEP. na midia -->
                             <li>
 
-                                <a href="#">ATIVIDADE PARLAMENTAR</a>
+                                <a href="http://www.camara.leg.br/internet/deputado/Dep_Detalhe.asp?id=5830441" target="_blank">ATIVIDADE PARLAMENTAR</a>
 
                             </li>
                             <!-- // dep. na midia -->
@@ -291,7 +291,7 @@ include './admin/conections/conexao.php';
                                     </li>
 
                                     <li>
-                                        <a href="#">contatos</a>
+                                        <a href="contato.php">contatos</a>
                                     </li>
 
 
@@ -367,25 +367,27 @@ include './admin/conections/conexao.php';
                                                 <div class="media-hover">
                                                     <div class="media-icons">
                                                         <a href="admin/imagens/<?php echo $array_opiniao['foto']; ?>" data-group="media-jackbox" class="jackbox media-icon"><i class="icons icon-zoom-in"></i></a>
-                                                        <a href="materias.html" class="media-icon"><i class="icons icon-link"></i></a>
+                                                        <a href="opiniao.php?id=<?php echo $array_opiniao['opiniao_id']; ?>" class="media-icon"><i class="icons icon-link"></i></a>
                                                     </div>
                                                 </div>								
                                             </div>
                                             <div class="post-content">
                                                 <div class="post-header">
-                                                    <h2><a href="materias.html"><?php echo $array_opiniao['titulo']; ?> </a></h2>
+                                                    <h2><a href="opiniao.php?id=<?php echo $array_opiniao['opiniao_id']; ?>"><?php echo $array_opiniao['titulo']; ?> </a></h2>
                                                     <div class="post-meta">
                                                         <span><?php echo $array_opiniao['data']; ?></span>
                                                     </div>
                                                 </div>
                                                 <div class="post-exceprt">
 
+                                                    
                                                     <?php
                                                     $maxp = 100;
                                                     $strp = $array_opiniao['texto'];
                                                     ?>
 
                                                     <p><?php echo substr_replace($strp, (strlen($strp) > $maxp ? '...' : ''), $maxp); ?></p>
+                                                    
                                                     <a href="opiniao.php?id=<?php echo $array_opiniao['opiniao_id']; ?>" class="button read-more-button big button-arrow">ver</a>
                                                 
                                                 </div>
@@ -437,33 +439,33 @@ include './admin/conections/conexao.php';
                                     <li class="instagram"><a href="https://instagram.com/arthurbisnetooficial" target="_blank" class="tooltip-ontop" title="Instagram"><i class="icons icon-instagram-1"></i></a></li>
                                     <li class="youtube"><a href="https://www.youtube.com/user/arthurbisneto" target="_blank" class="tooltip-ontop" title="Youtube"><i class="icons icon-youtube-1"></i></a></li>
                                     <li class="flickr"><a href="#" class="tooltip-ontop" title="Flickr"><i class="icons icon-flickr-1"></i></a></li>
-                                    <li class="email"><a href="#" class="tooltip-ontop" title="Email"><i class="icons icon-mail-1"></i></a></li>
+                                    <li class="email"><a href="contato.php" class="tooltip-ontop" title="Email"><i class="icons icon-mail-1"></i></a></li>
                                 </ul>
 
                             </div>
 
                             <div class="banner-wrapper">
-                                <a class="banner animate-onscroll" href="#">
+                                <a class="banner animate-onscroll" href="http://www.camara.leg.br/internet/deputado/Dep_Detalhe.asp?id=5830441" target="_blank">
                                     <i class="icons icon-calendar"></i>
                                     <h4>AGENDA<br> PARLAMENTAR</h4>
                                 </a>
                             </div>
 
                             <div class="banner-wrapper">
-                                <a class="banner animate-onscroll" href="#">
+                                <a class="banner animate-onscroll" href="lista-opiniao.php">
                                     <i class="icons icon-check"></i>
                                     <h4>OPNIÃO DO<br> DEPUTADO</h4>
                                 </a>
                             </div>
 
                             <div class="banner-wrapper">
-                                <a class="banner animate-onscroll" href="#">
+                                <a class="banner animate-onscroll" href="imprensa.php">
                                     <i class="icons icon-user"></i>
                                     <h4>SALA DE <br>IMPRENSA</h4>
                                 </a>
                             </div>
                             <div class="banner-wrapper">
-                                <a class="banner animate-onscroll" href="#">
+                                <a class="banner animate-onscroll" href="midia.php">
                                     <i class="icons icon-camera-alt"></i>
                                     <h4>CLIPPING</h4>
                                     <p> Tudo sobre o Deputado</p>

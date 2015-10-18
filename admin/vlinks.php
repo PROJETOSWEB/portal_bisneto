@@ -45,9 +45,9 @@
                 }
             }
             ?>
-            
-            
-                        <?php
+
+
+            <?php
             if (isset($_GET['resp'])) {
 
                 if ($_GET['resp'] == "sucesso") {
@@ -101,6 +101,8 @@
 
                                         $executa_sql_selecinona = mysql_query($sql_seleciona)or die(mysql_error());
 
+                                        $cont = 1;
+                                        $cont2 = 1;
                                         while ($array_dados = mysql_fetch_array($executa_sql_selecinona)) {
                                             ?>
 
@@ -108,14 +110,35 @@
                                                 <td><?php echo $array_dados['link'] ?></td>
                                                 <td style="text-align: center;"><?php echo $array_dados['usuario'] ?></td>
                                                 <td style="text-align: center;"><a href="links.php?tipo=edit&id=<?php echo $array_dados['links_id']; ?>"><img src="img/editar.png" alt="" /></a></td>
-                                                <td style="text-align: center;"><a href="php/exclui_link.php?id=<?php echo $array_dados['links_id']; ?>"><img src="img/excluir.png" alt="" /></a></td>
+                                                <td style="text-align: center;"><a data-toggle="modal" href="#myModal2<?php echo $cont++; ?>"><img src="img/excluir.png" alt="" /></a></td>
 
 
                                             </tr>
 
-                                            <?php
-                                        }
-                                        ?>
+
+                                        <div class="modal fade" id="myModal2<?php echo $cont2++; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                        <h4 class="modal-title">Excluir Link</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        Deseja realmente excluir este Link?
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button data-dismiss="modal" class="btn btn-default" type="button">Fechar</button>
+                                                        <a href="php/exclui_link.php?id=<?php echo $array_dados['links_id']; ?>"><button class="btn btn-warning" type="button"> Confirmar</button></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+                                        <?php
+                                    }
+                                    ?>
 
 
 

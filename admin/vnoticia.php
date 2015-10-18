@@ -45,9 +45,9 @@
                 }
             }
             ?>
-            
-            
-                     <?php
+
+
+            <?php
             if (isset($_GET['resp'])) {
 
                 if ($_GET['resp'] == "sucesso") {
@@ -100,6 +100,8 @@
 
                                         $seleciona_executa = mysql_query($seleciona)or die(mysql_error());
 
+                                        $cont = 1;
+                                        $cont2 = 1;
                                         while ($dados_array = mysql_fetch_array($seleciona_executa)) {
                                             ?>
 
@@ -139,12 +141,33 @@
 
                                                 </td>
                                                 <td><a href="noticias.php?tipo=edit&id=<?php echo $dados_array['noticia_id'] ?>"><img src="img/editar.png" alt="" /></a></td>
-                                                <td><a href="php/exclui_noticia.php?id=<?php echo $dados_array['noticia_id']; ?>"><img src="img/excluir.png" alt="" /></a></td>
+                                                <td><a data-toggle="modal" href="#myModal2<?php echo $cont++; ?>"><img src="img/excluir.png" alt="" /></a></td>
+
                                             </tr>
 
-                                            <?php
-                                        }
-                                        ?>
+
+
+                                        <div class="modal fade" id="myModal2<?php echo $cont2++; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                        <h4 class="modal-title">Excluir Notícia</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        Deseja realmente excluir esta Notícia?
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button data-dismiss="modal" class="btn btn-default" type="button">Fechar</button>
+                                                        <a href="php/exclui_noticia.php?id=<?php echo $dados_array['noticia_id']; ?>"><button class="btn btn-warning" type="button"> Confirmar</button></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <?php
+                                    }
+                                    ?>
 
                                     </tbody>
 

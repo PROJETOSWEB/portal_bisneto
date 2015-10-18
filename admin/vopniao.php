@@ -119,10 +119,12 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
 
                                         <?php
                                         $seleciona = "SELECT * FROM opiniao INNER JOIN
-                                                      usuario ON opiniao.usuario_id = usuario.usuario_id order by opiniao_id desc" ;
+                                                      usuario ON opiniao.usuario_id = usuario.usuario_id order by opiniao_id desc";
 
                                         $seleciona_executa = mysql_query($seleciona)or die(mysql_error());
 
+                                        $cont = 1;
+                                        $cont2 = 1;
                                         while ($dados_array = mysql_fetch_array($seleciona_executa)) {
                                             ?>
 
@@ -148,12 +150,31 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
                                                 </td>
 
                                                 <td><a href="opiniao.php?tipo=edit&id=<?php echo $dados_array['opiniao_id']; ?>"><img src="img/editar.png" alt="" /></a></td>
-                                                <td><a href="php/exclui_opiniao.php?id=<?php echo $dados_array['opiniao_id']; ?>"><img src="img/excluir.png" alt="" /></a></td>
+                                                <td><a data-toggle="modal" href="#myModal2<?php echo $cont++; ?>"><img src="img/excluir.png" alt="" /></a></td>
                                             </tr>
 
-                                            <?php
-                                        }
-                                        ?>
+
+                                        <div class="modal fade" id="myModal2<?php echo $cont2++; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                        <h4 class="modal-title">Excluir Opinião</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        Deseja realmente excluir esta Opinião?
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button data-dismiss="modal" class="btn btn-default" type="button">Fechar</button>
+                                                        <a href="php/exclui_opiniao.php?id=<?php echo $dados_array['opiniao_id']; ?>"><button class="btn btn-warning" type="button"> Confirmar</button></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <?php
+                                    }
+                                    ?>
 
                                     </tbody>
 

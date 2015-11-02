@@ -135,7 +135,7 @@ include './admin/conections/conexao.php';
                             <!-- Logo arthur -->
                             <div id="logo" class="col-lg-4 col-md-4 col-sm-4 animate-onscroll" style="margin: 0px; padding: 0px;">
 
-                                <a href="indexxx.html"><img src="img/Topo-Site-1.png" alt="Logo"></a>
+                                <a href="index.php"><img src="img/Topo-Site-1.png" alt="Logo"></a>
 
                             </div>
                             <!-- /Logo arthur-->
@@ -213,7 +213,99 @@ include './admin/conections/conexao.php';
                             <span>Menu MOBILE</span>
                         </div>
 
-						<ul id="navigation">                            <!-- Home -->                            <li class="home-button current-menu-item">                                <a href="index.php"><i class="icons icon-home"></i></a>                            </li>                            <!-- /Home -->                            <!-- biografia -->                            <li >                                <a href="biografia.php">BIOGRAFIA</a>                            </li>                            <!-- // biografia -->                            <!-- opniao -->                            <li >                                <a href="lista-opiniao.php">OPINIÃO</a>                            </li>                            <!-- // opiniao -->                            <!-- DEP. na midia -->                            <li >                                <a href="midia.php">DEPUTADO NA MÍDIA</a>                            </li>                            <!-- // dep. na midia -->                            <!-- DEP. na midia -->                            <li >                                <a href="http://www.camara.leg.br/internet/deputado/Dep_Detalhe.asp?id=5830441" target="_blank">ATIVIDADE PARLAMENTAR</a>                            </li>                            <!-- // dep. na midia -->                            <!-- GALERIA-->                            <li >                                <span>GALERIA</span>                                <ul>                                    <li>                                        <a href="fotos.php">fotos</a>                                    </li>                                    <li>                                        <a href="videos.php">videos</a>                                    </li>                                </ul>                            </li>                            <!-- // galeria -->                            <!-- CONTATO-->                            <li >                                <span>CONTATO</span>                                <ul>                                    <li>                                        <a href="imprensa.php">sala de imprensa</a>                                    </li>                                    <li>                                        <a href="contato.php">contatos</a>                                    </li>                                </ul>                            </li>                            <!-- // CONTATO -->                            <!-- Donate -->                            <li class="donate-button ">                                <a style=" padding: 0px; border: none;" href="#"><img src="img/logo-PSDB.png" alt="" /></a>                            </li>                            <!-- /Donate -->                        </ul>
+                        <ul id="navigation">
+
+                            <!-- Home -->
+                            <li class="home-button current-menu-item">
+
+                                <a href="index.php"><i class="icons icon-home"></i></a>
+
+                            </li>
+                            <!-- /Home -->
+
+                            <!-- biografia -->
+                            <li >
+
+                                <a href="biografia.php">BIOGRAFIA</a>
+
+                            </li>
+                            <!-- // biografia -->
+
+                            <!-- opniao -->
+                            <li >
+
+                                <a href="lista-opiniao.php">OPINIÃO</a>
+
+                            </li>
+                            <!-- // opiniao -->
+
+                            <!-- DEP. na midia -->
+                            <li >
+
+                                <a href="midia.php">DEPUTADO NA MÍDIA</a>
+
+                            </li>
+                            <!-- // dep. na midia -->
+
+                            <!-- DEP. na midia -->
+                            <li >
+
+                                <a href="http://www.camara.leg.br/internet/deputado/Dep_Detalhe.asp?id=5830441" target="_blank">ATIVIDADE PARLAMENTAR</a>
+
+                            </li>
+                            <!-- // dep. na midia -->
+
+                            <!-- GALERIA-->
+                            <li >
+
+                                <span>GALERIA</span>
+
+                                <ul>
+
+                                    <li>
+                                        <a href="fotos.php">fotos</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="videos.php">videos</a>
+                                    </li>
+
+
+                                </ul>
+
+                            </li>
+                            <!-- // galeria -->
+
+
+                            <!-- CONTATO-->
+                            <li >
+
+                                <span>CONTATO</span>
+
+                                <ul>
+
+                                    <li>
+                                        <a href="imprensa.php">sala de imprensa</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="contato.php">contatos</a>
+                                    </li>
+
+
+                                </ul>
+
+                            </li>
+                            <!-- // CONTATO -->
+
+                            <!-- Donate -->
+                            <li class="donate-button ">
+                                <a style=" padding: 0px; border: none;" href="#"><img src="img/logo-PSDB.png" alt="" /></a>
+
+                            </li>
+                            <!-- /Donate -->
+
+                        </ul>
 
                     </div>
 
@@ -250,15 +342,48 @@ include './admin/conections/conexao.php';
 
                                 <div class="col-lg-12 col-md-12 col-sm-12">
 
-                                    <?php 
+                                    <?php
                                     $id_noticia = $_GET['id'];
-                                    
+
                                     $seleciona_noticia = "SELECT * FROM noticia WHERE noticia_id = $id_noticia";
-                                    $executa_seleciona= mysql_query($seleciona_noticia)or die(mysql_error());
-                                    $dados_noticia = mysql_fetch_array($executa_seleciona) ;                                   
+                                    $executa_seleciona = mysql_query($seleciona_noticia)or die(mysql_error());
+                                    $dados_noticia = mysql_fetch_array($executa_seleciona);
+
+
+                                    $nova_data = explode("-", $dados_noticia['data_noticia']);
+
+                                    function retorna_mes($MES) {
+                                        switch ($MES) {
+                                            case 1 : $MES = 'Janeiro';
+                                                break;
+                                            case 2 : $MES = 'Fevereiro';
+                                                break;
+                                            case 3 : $MES = 'Março';
+                                                break;
+                                            case 4 : $MES = 'Abril';
+                                                break;
+                                            case 5 : $MES = 'Maio';
+                                                break;
+                                            case 6 : $MES = 'Junho';
+                                                break;
+                                            case 7 : $MES = 'Julho';
+                                                break;
+                                            case 8 : $MES = 'Agosto';
+                                                break;
+                                            case 9 : $MES = 'Setembro';
+                                                break;
+                                            case 10 : $MES = 'Outubro';
+                                                break;
+                                            case 11 : $MES = 'Novembro';
+                                                break;
+                                            case 12 : $MES = 'Dezembro';
+                                                break;
+                                        }
+                                        return $MES;
+                                    }
                                     ?>
-                                    
-                                    
+
+
                                     <h1 class="animate-onscroll"><?php echo $dados_noticia['titulo']; ?></h1>
                                     <hr class="animate-onscroll" style="margin:5px;">
                                     <ul class="social-buttons animate-onscroll">
@@ -271,7 +396,14 @@ include './admin/conections/conexao.php';
                                         </li>
                                     </ul>
                                     <hr class="animate-onscroll" style="margin:5px;">
-                                    <p class="animate-onscroll" style="font-size: 10px; color: #c0c0c0c0;">Publicado em: 01 de julho de 2015</p>
+
+
+
+
+
+
+
+                                    <p class="animate-onscroll" style="font-size: 10px; color: #c0c0c0c0;">Publicado em <?php echo $nova_data[0], " de "; ?>  <?php echo retorna_mes($nova_data[1]) . " de "; ?> <?php echo $nova_data[2]; ?></p>
 
 
                                     <img class="animate-onscroll" src="admin/imagens/noticia/<?php echo $dados_noticia['img']; ?>" alt=""><!-- FOTO -->
@@ -279,15 +411,15 @@ include './admin/conections/conexao.php';
 
                                     <br>
 
-                                    <p class="animate-onscroll">
-                                     <?php echo $dados_noticia['texto']; ?>
-                                        
-                                    <!--<blockquote class="align-right animate-onscroll" style="width:45%">
-                                       <?php echo $dados_noticia['texto_detalhe']; ?>
-                                    </blockquote>
+                                    <p style="text-align: justify;" class="animate-onscroll">
+                                        <?php echo $dados_noticia['texto']; ?>
 
-                                  <?php echo $dados_noticia['texto']; ?>-->
-                                </p>
+                                        <!--<blockquote class="align-right animate-onscroll" style="width:45%">
+                                        <?php echo $dados_noticia['texto_detalhe']; ?>
+                                        </blockquote>
+    
+                                        <?php echo $dados_noticia['texto']; ?>-->
+                                    </p>
 
 
 
@@ -297,16 +429,56 @@ include './admin/conections/conexao.php';
 
                             </div>
 
-
-
-
-
                         </div>
 
 
 
                         <!-- Sidebar -->
-                        <div class="col-lg-3 col-md-3 col-sm-4 sidebar">                            <div class="social-media animate-onscroll">                                <span class="small-caption">CONECTE-SE COM A GENTE</span>                                <ul class="social-icons">                                    <li class="facebook"><a href="https://www.facebook.com/arthurvirgiliobisneto" target="_blank" class="tooltip-ontop" title="Facebook"><i class="icons icon-facebook-1"></i></a></li>                                    <li class="twitter"><a href="https://twitter.com/arthurbisneto" target="_blank" class="tooltip-ontop" title="Twitter"><i class="icons icon-twitter-1"></i></a></li>                                    <li class="instagram"><a href="https://instagram.com/arthurbisnetooficial" target="_blank" class="tooltip-ontop" title="Instagram"><i class="icons icon-instagram-1"></i></a></li>                                    <li class="youtube"><a href="https://www.youtube.com/user/arthurbisneto" target="_blank" class="tooltip-ontop" title="Youtube"><i class="icons icon-youtube-1"></i></a></li>                                    <li class="flickr"><a href="#" class="tooltip-ontop" title="Flickr"><i class="icons icon-flickr-1"></i></a></li>                                    <li class="email"><a href="contato.php" class="tooltip-ontop" title="Email"><i class="icons icon-mail-1"></i></a></li>                                </ul>                            </div>                            <div class="banner-wrapper">                                <a class="banner animate-onscroll" href="http://www.camara.leg.br/internet/deputado/Dep_Detalhe.asp?id=5830441" target="_blank">                                    <i class="icons icon-calendar"></i>                                    <h4>AGENDA<br> PARLAMENTAR</h4>                                </a>                            </div>                            <div class="banner-wrapper">                                <a class="banner animate-onscroll" href="lista-opiniao.php">                                    <i class="icons icon-check"></i>                                    <h4>OPNIÃO DO<br> DEPUTADO</h4>                                </a>                            </div>                            <div class="banner-wrapper">                                <a class="banner animate-onscroll" href="imprensa.php">                                    <i class="icons icon-user"></i>                                    <h4>SALA DE <br>IMPRENSA</h4>                                </a>                            </div>                            <div class="banner-wrapper">                                <a class="banner animate-onscroll" href="midia.php">                                    <i class="icons icon-camera-alt"></i>                                    <h4>CLIPPING</h4>                                    <p> Tudo sobre o Deputado</p>                                </a>                            </div>                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-4 sidebar">
+
+                            <div class="social-media animate-onscroll">
+                                <span class="small-caption">CONECTE-SE COM A GENTE</span>
+                                <ul class="social-icons">
+                                    <li class="facebook"><a href="https://www.facebook.com/arthurvirgiliobisneto" target="_blank" class="tooltip-ontop" title="Facebook"><i class="icons icon-facebook-1"></i></a></li>
+                                    <li class="twitter"><a href="https://twitter.com/arthurbisneto" target="_blank" class="tooltip-ontop" title="Twitter"><i class="icons icon-twitter-1"></i></a></li>
+                                    <li class="instagram"><a href="https://instagram.com/arthurbisnetooficial" target="_blank" class="tooltip-ontop" title="Instagram"><i class="icons icon-instagram-1"></i></a></li>
+                                    <li class="youtube"><a href="https://www.youtube.com/user/arthurbisneto" target="_blank" class="tooltip-ontop" title="Youtube"><i class="icons icon-youtube-1"></i></a></li>
+                                    <li class="flickr"><a href="#" class="tooltip-ontop" title="Flickr"><i class="icons icon-flickr-1"></i></a></li>
+                                    <li class="email"><a href="contato.php" class="tooltip-ontop" title="Email"><i class="icons icon-mail-1"></i></a></li>
+                                </ul>
+
+                            </div>
+
+                            <div class="banner-wrapper">
+                                <a class="banner animate-onscroll" href="http://www.camara.leg.br/internet/deputado/Dep_Detalhe.asp?id=5830441" target="_blank">
+                                    <i class="icons icon-calendar"></i>
+                                    <h4>AGENDA<br> PARLAMENTAR</h4>
+                                </a>
+                            </div>
+
+                            <div class="banner-wrapper">
+                                <a class="banner animate-onscroll" href="lista-opiniao.php">
+                                    <i class="icons icon-check"></i>
+                                    <h4>OPNIÃO DO<br> DEPUTADO</h4>
+                                </a>
+                            </div>
+
+                            <div class="banner-wrapper">
+                                <a class="banner animate-onscroll" href="imprensa.php">
+                                    <i class="icons icon-user"></i>
+                                    <h4>SALA DE <br>IMPRENSA</h4>
+                                </a>
+                            </div>
+                            <div class="banner-wrapper">
+                                <a class="banner animate-onscroll" href="midia.php">
+                                    <i class="icons icon-camera-alt"></i>
+                                    <h4>CLIPPING</h4>
+                                    <p> Tudo sobre o Deputado</p>
+                                </a>
+                            </div>
+
+
+                        </div>
                         <div class="col-lg-3 col-md-3 col-sm-4 sidebar">
 
                             <hr style="border-bottom: 1px solid #EDEDED;">

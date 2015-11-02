@@ -133,7 +133,7 @@
                             <!-- Logo arthur -->
                             <div id="logo" class="col-lg-4 col-md-4 col-sm-4 animate-onscroll" style="margin: 0px; padding: 0px;">
 
-                                <a href="indexxx.html"><img src="img/Topo-Site-1.png" alt="Logo"></a>
+                                <a href="index.php"><img src="img/Topo-Site-1.png" alt="Logo"></a>
 
                             </div>
                             <!-- /Logo arthur-->
@@ -211,7 +211,7 @@
                             <span>Menu MOBILE</span>
                         </div>
 
-						<ul id="navigation">
+                        <ul id="navigation">
 
                             <!-- Home -->
                             <li class="home-button current-menu-item">
@@ -265,7 +265,7 @@
                                     </li>
 
                                     <li>
-                                        <a href="videos.php">videos</a>
+                                        <a href="lista-noticias.php">videos</a>
                                     </li>
 
 
@@ -345,9 +345,22 @@
                                     <br/>
 
 
-
                                     <?php
-                                    $Seleciona_noticia = "SELECT * FROM noticia order by noticia_id DESC";
+                                    //PEGANDO PAGINA ATUAL
+                                    $p = $_GET["page"];
+                                    if (isset($p)) {
+                                        $p = $p;
+                                    } else {
+                                        $p = 1;
+                                    }
+
+                                    //DEFININDO A QUANTIDADE DE REGISTROS POR PAGINA
+
+                                    $qnt = 1;
+                                    $inicio = ($p * $qnt) - $qnt;
+
+
+                                    $Seleciona_noticia = "SELECT * FROM noticia order by noticia_id DESC LIMIT $inicio, $qnt";
                                     $executa_noticia = mysql_query($Seleciona_noticia)or die(mysql_error());
 
 
@@ -378,18 +391,18 @@
                                                     </div>
                                                 </div>
                                                 <div class="post-exceprt">
-                                                    
+
                                                     <?php
-                                                    $maxp = 100;
+                                                    $maxp = 250;
                                                     $strp = $array_noticia['texto'];
                                                     ?>
 
-                                                    <p><?php echo substr_replace($strp, (strlen($strp) > $maxp ? '...' : ''), $maxp); ?></p>
-                                                    
+                                                    <p style="text-align: justify;"><?php echo substr_replace($strp, (strlen($strp) > $maxp ? '...' : ''), $maxp); ?></p>
+
                                                     <a href="noticias.php?id=<?php echo $array_noticia['noticia_id']; ?>" class="button read-more-button big button-arrow">ver</a>
                                                 </div>
                                             </div>
-										
+
                                         </div>
 
 
@@ -413,25 +426,146 @@
                                 <div class="divider"></div>
 
                                 <div class="numeric-pagination">
-                                    <a href="#" class="button"><i class="icons icon-left-dir"></i></a>
-                                    <a href="#" class="button">1</a>
-                                    <a href="#" class="button active-button">2</a>
-                                    <a href="#" class="button">3</a>
-                                    <a href="#" class="button"><i class="icons icon-right-dir"></i></a>
+
+                                    <?php
+                                    
+                                    $sql_noticia_count = "SELECT * FROM noticia order by noticia_id DESC";
+                                    $sql_query_all = mysql_query($sql_noticia_count)or die(mysql_error());
+                                    $total_registros = mysql_num_rows($sql_query_all);
+                                    $pags = ceil($total_registros / $qnt);
+
+                                    // Número máximos de botões de paginação 
+                                    $max_links = 5;
+
+
+                                    if (isset($_GET['page'])) {
+
+
+                                        if ($_GET['page'] == 1) {
+                                            ?>
+                                            <a href="lista-noticias.php?page=1" class="button"><i class="icons icon-left-dir"></i></a>
+
+
+                                            <?php
+                                        } else {
+                                            ?>
+                                            <a href="lista-noticias.php?page=<?php echo $p - 1; ?>" class="button"><i class="icons icon-left-dir"></i></a>
+
+                                            <?php
+                                        }
+                                    } else {
+                                        ?>
+                                        <a href="lista-noticias.php?page=1" class="button"><i class="icons icon-left-dir"></i></a>
+
+                                        <?php
+                                    }
+                                    ?>
+
+
+                                    <?php
+                                    for ($i = $p - $max_links; $i <= $p - 1; $i++) {
+
+                                        if ($i <= 0) {
+
+                                            //FAZ NADA
+                                        } else {
+                                            ?> 
+                                            <a href="lista-noticias.php?page=<?php echo $i; ?>" class="button"><?php echo $i; ?></a>
+                                            <?php
+                                        }
+                                    }
+
+
+                                    echo "<a href='#' class='button active-button'>$p</a>";
+
+                                    for ($i = $p + 1; $i <= $p + $max_links; $i++) {
+
+
+                                        if ($i > $pags) {
+
+                                            //FAZ NADA
+                                        } else {
+                                            ?>
+                                            <a href="lista-noticias.php?page=<?php echo $i; ?>" class="button"><?php echo $i; ?></a>
+
+                                            <?php
+                                        }
+                                    }
+
+
+                                    if (isset($_GET['page'])) {
+
+                                        if ($_GET['page'] == $pags) {
+                                            ?>
+                                            <a href="lista-noticias.php?page=<?php echo $pags ?>" class="button"><i class="icons icon-right-dir"></i></a>
+
+                                            <?php
+                                        } else {
+                                            ?>
+                                            <a href="lista-noticias.php?page=<?php echo $p + 1; ?>" class="button"><i class="icons icon-right-dir"></i></a>
+
+                                            <?php
+                                        }
+                                    } else {
+                                        ?>
+                                        <a href="lista-noticias.php?page=<?php echo $pags ?>" class="button"><i class="icons icon-right-dir"></i></a>
+
+                                        <?php
+                                    }
+                                    ?>
+
                                 </div>
 
                             </div>
 
+                        </div>
 
+                        <!-- Sidebar -->
+                        <div class="col-lg-3 col-md-3 col-sm-4 sidebar">
 
+                            <div class="social-media animate-onscroll">
+                                <span class="small-caption">CONECTE-SE COM A GENTE</span>
+                                <ul class="social-icons">
+                                    <li class="facebook"><a href="https://www.facebook.com/arthurvirgiliobisneto" target="_blank" class="tooltip-ontop" title="Facebook"><i class="icons icon-facebook-1"></i></a></li>
+                                    <li class="twitter"><a href="https://twitter.com/arthurbisneto" target="_blank" class="tooltip-ontop" title="Twitter"><i class="icons icon-twitter-1"></i></a></li>
+                                    <li class="instagram"><a href="https://instagram.com/arthurbisnetooficial" target="_blank" class="tooltip-ontop" title="Instagram"><i class="icons icon-instagram-1"></i></a></li>
+                                    <li class="youtube"><a href="https://www.youtube.com/user/arthurbisneto" target="_blank" class="tooltip-ontop" title="Youtube"><i class="icons icon-youtube-1"></i></a></li>
+                                    <li class="flickr"><a href="#" class="tooltip-ontop" title="Flickr"><i class="icons icon-flickr-1"></i></a></li>
+                                    <li class="email"><a href="contato.php" class="tooltip-ontop" title="Email"><i class="icons icon-mail-1"></i></a></li>
+                                </ul>
+
+                            </div>
+
+                            <div class="banner-wrapper">
+                                <a class="banner animate-onscroll" href="http://www.camara.leg.br/internet/deputado/Dep_Detalhe.asp?id=5830441" target="_blank">
+                                    <i class="icons icon-calendar"></i>
+                                    <h4>AGENDA<br> PARLAMENTAR</h4>
+                                </a>
+                            </div>
+
+                            <div class="banner-wrapper">
+                                <a class="banner animate-onscroll" href="lista-opiniao.php">
+                                    <i class="icons icon-check"></i>
+                                    <h4>OPNIÃO DO<br> DEPUTADO</h4>
+                                </a>
+                            </div>
+
+                            <div class="banner-wrapper">
+                                <a class="banner animate-onscroll" href="imprensa.php">
+                                    <i class="icons icon-user"></i>
+                                    <h4>SALA DE <br>IMPRENSA</h4>
+                                </a>
+                            </div>
+                            <div class="banner-wrapper">
+                                <a class="banner animate-onscroll" href="midia.php">
+                                    <i class="icons icon-camera-alt"></i>
+                                    <h4>CLIPPING</h4>
+                                    <p> Tudo sobre o Deputado</p>
+                                </a>
+                            </div>
 
 
                         </div>
-
-
-
-                        <!-- Sidebar -->
-                        <div class="col-lg-3 col-md-3 col-sm-4 sidebar">                            <div class="social-media animate-onscroll">                                <span class="small-caption">CONECTE-SE COM A GENTE</span>                                <ul class="social-icons">                                    <li class="facebook"><a href="https://www.facebook.com/arthurvirgiliobisneto" target="_blank" class="tooltip-ontop" title="Facebook"><i class="icons icon-facebook-1"></i></a></li>                                    <li class="twitter"><a href="https://twitter.com/arthurbisneto" target="_blank" class="tooltip-ontop" title="Twitter"><i class="icons icon-twitter-1"></i></a></li>                                    <li class="instagram"><a href="https://instagram.com/arthurbisnetooficial" target="_blank" class="tooltip-ontop" title="Instagram"><i class="icons icon-instagram-1"></i></a></li>                                    <li class="youtube"><a href="https://www.youtube.com/user/arthurbisneto" target="_blank" class="tooltip-ontop" title="Youtube"><i class="icons icon-youtube-1"></i></a></li>                                    <li class="flickr"><a href="#" class="tooltip-ontop" title="Flickr"><i class="icons icon-flickr-1"></i></a></li>                                    <li class="email"><a href="contato.php" class="tooltip-ontop" title="Email"><i class="icons icon-mail-1"></i></a></li>                                </ul>                            </div>                            <div class="banner-wrapper">                                <a class="banner animate-onscroll" href="http://www.camara.leg.br/internet/deputado/Dep_Detalhe.asp?id=5830441" target="_blank">                                    <i class="icons icon-calendar"></i>                                    <h4>AGENDA<br> PARLAMENTAR</h4>                                </a>                            </div>                            <div class="banner-wrapper">                                <a class="banner animate-onscroll" href="lista-opiniao.php">                                    <i class="icons icon-check"></i>                                    <h4>OPNIÃO DO<br> DEPUTADO</h4>                                </a>                            </div>                            <div class="banner-wrapper">                                <a class="banner animate-onscroll" href="imprensa.php">                                    <i class="icons icon-user"></i>                                    <h4>SALA DE <br>IMPRENSA</h4>                                </a>                            </div>                            <div class="banner-wrapper">                                <a class="banner animate-onscroll" href="midia.php">                                    <i class="icons icon-camera-alt"></i>                                    <h4>CLIPPING</h4>                                    <p> Tudo sobre o Deputado</p>                                </a>                            </div>                        </div>
                         <div class="col-lg-3 col-md-3 col-sm-4 sidebar">
 
                             <hr style="border-bottom: 1px solid #EDEDED;">

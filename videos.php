@@ -234,7 +234,7 @@ include './admin/conections/conexao.php';
                             <!-- opniao -->
                             <li>
 
-                                <a href="lista-opiniao.php">OPINIÃO</a>
+                                <a href="videos.php">OPINIÃO</a>
 
                             </li>
                             <!-- // opiniao -->
@@ -343,7 +343,22 @@ include './admin/conections/conexao.php';
                             <div class="media-items row">
 
                                 <?php
-                                $seleciona_videos = "SELECT * FROM videos order by videos_id DESC";
+                                //PEGANDO PAGINA ATUAL
+                                $p = $_GET["page"];
+                                if (isset($p)) {
+                                    $p = $p;
+                                } else {
+                                    $p = 1;
+                                }
+
+                                //DEFININDO A QUANTIDADE DE REGISTROS POR PAGINA
+
+                                $qnt = 8;
+                                $inicio = ($p * $qnt) - $qnt;
+
+
+
+                                $seleciona_videos = "SELECT * FROM videos order by videos_id DESC LIMIT $inicio, $qnt";
                                 $executa_seleciona_videos = mysql_query($seleciona_videos)or die(mysql_error());
                                 ?>
 
@@ -355,7 +370,8 @@ include './admin/conections/conexao.php';
                                     <div class="col-lg-3 col-md-4 col-sm-6">
                                         <div class="media-item animate-onscroll gallery-media">
 
-                                            <div class="media-image">                                            	<iframe src="https://www.youtube.com/embed/<?php echo $array_videos['video']; ?>?wmode=transparent" allowfullscreen></iframe>
+                                            <div class="media-image">
+                                                <iframe src="https://www.youtube.com/embed/<?php echo $array_videos['video']; ?>?wmode=transparent" allowfullscreen></iframe>
 
                                                 <div class="media-hover">
                                                     <div class="media-icons">
@@ -389,24 +405,97 @@ include './admin/conections/conexao.php';
                                 <div class="divider"></div>
 
                                 <div class="numeric-pagination">
-                                    <a href="#" class="button"><i class="icons icon-left-dir"></i></a>
-                                    <a href="#" class="button">1</a>
-                                    <a href="#" class="button active-button">2</a>
-                                    <a href="#" class="button">3</a>
-                                    <a href="#" class="button"><i class="icons icon-right-dir"></i></a>
+
+                                    <?php
+                                    $sql_video_count = "SELECT * FROM videos order by videos_id DESC";
+                                    $sql_query_all = mysql_query($sql_video_count)or die(mysql_error());
+                                    $total_registros = mysql_num_rows($sql_query_all);
+                                    $pags = ceil($total_registros / $qnt);
+
+                                    // Número máximos de botões de paginação 
+                                    $max_links = 5;
+
+
+                                    if (isset($_GET['page'])) {
+
+
+                                        if ($_GET['page'] == 1) {
+                                            ?>
+                                            <a href="videos.php?page=1" class="button"><i class="icons icon-left-dir"></i></a>
+
+
+                                            <?php
+                                        } else {
+                                            ?>
+                                            <a href="videos.php?page=<?php echo $p - 1; ?>" class="button"><i class="icons icon-left-dir"></i></a>
+
+                                            <?php
+                                        }
+                                    } else {
+                                        ?>
+                                        <a href="videos.php?page=1" class="button"><i class="icons icon-left-dir"></i></a>
+
+                                        <?php
+                                    }
+                                    ?>
+
+
+                                    <?php
+                                    for ($i = $p - $max_links; $i <= $p - 1; $i++) {
+
+                                        if ($i <= 0) {
+
+                                            //FAZ NADA
+                                        } else {
+                                            ?> 
+                                            <a href="videos.php?page=<?php echo $i; ?>" class="button"><?php echo $i; ?></a>
+                                            <?php
+                                        }
+                                    }
+
+
+                                    echo "<a href='#' class='button active-button'>$p</a>";
+
+                                    for ($i = $p + 1; $i <= $p + $max_links; $i++) {
+
+
+                                        if ($i > $pags) {
+
+                                            //FAZ NADA
+                                        } else {
+                                            ?>
+                                            <a href="videos.php?page=<?php echo $i; ?>" class="button"><?php echo $i; ?></a>
+
+                                            <?php
+                                        }
+                                    }
+
+
+                                    if (isset($_GET['page'])) {
+
+                                        if ($_GET['page'] == $pags) {
+                                            ?>
+                                            <a href="videos.php?page=<?php echo $pags ?>" class="button"><i class="icons icon-right-dir"></i></a>
+
+                                            <?php
+                                        } else {
+                                            ?>
+                                            <a href="videos.php?page=<?php echo $p + 1; ?>" class="button"><i class="icons icon-right-dir"></i></a>
+
+                                            <?php
+                                        }
+                                    } else {
+                                        ?>
+                                        <a href="videos.php?page=<?php echo $pags ?>" class="button"><i class="icons icon-right-dir"></i></a>
+
+                                        <?php
+                                    }
+                                    ?>
+
                                 </div>
 
                             </div>
-
-
                         </div>
-
-
-
-
-
-
-
 
                     </div>
 
@@ -416,15 +505,8 @@ include './admin/conections/conexao.php';
             </section>
 
 
-
-
             <!-- Footer -->
             <footer id="footer">
-
-
-
-
-
 
                 <!-- Lower Footer -->
                 <div id="lower-footer">
@@ -523,6 +605,5 @@ include './admin/conections/conexao.php';
         <![endif]-->
 
 
-
-
-    </body></html>
+    </body>
+</html>

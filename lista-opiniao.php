@@ -350,12 +350,32 @@ include './admin/conections/conexao.php';
 
 
                                     <?php
-                                    $seleciona_opiniao = "SELECT * FROM opiniao";
+                                    //PEGANDO PAGINA ATUAL
+                                    $p = $_GET["page"];
+                                    if (isset($p)) {
+                                        $p = $p;
+                                    } else {
+                                        $p = 1;
+                                    }
+
+                                    //DEFININDO A QUANTIDADE DE REGISTROS POR PAGINA
+
+                                    $qnt = 5;
+                                    $inicio = ($p * $qnt) - $qnt;
+
+
+                                    $seleciona_opiniao = "SELECT * FROM opiniao WHERE publicar = 1 ORDER BY opiniao_id DESC LIMIT $inicio, $qnt";
                                     $executa_seleciona_opiniao = mysql_query($seleciona_opiniao)or die(mysql_error());
                                     ?>
 
 
                                     <?php
+
+                                    function limitarTexto($texto, $limite) {
+                                        $texto = substr($texto, 0, strrpos(substr($texto, 0, $limite), ' ')) . '...';
+                                        return $texto;
+                                    }
+
                                     while ($array_opiniao = mysql_fetch_array($executa_seleciona_opiniao)) {
                                         ?>
 
@@ -380,16 +400,13 @@ include './admin/conections/conexao.php';
                                                 </div>
                                                 <div class="post-exceprt">
 
-                                                    
-                                                    <?php
-                                                    $maxp = 100;
-                                                    $strp = $array_opiniao['texto'];
-                                                    ?>
 
-                                                    <p><?php echo substr_replace($strp, (strlen($strp) > $maxp ? '...' : ''), $maxp); ?></p>
-                                                    
+                                                    <p style="text-align: justify;">
+                                                        <?php print(limitarTexto($array_opiniao['texto'], $limite = 200)); ?>
+                                                    </p>
+
                                                     <a href="opiniao.php?id=<?php echo $array_opiniao['opiniao_id']; ?>" class="button read-more-button big button-arrow">ver</a>
-                                                
+
                                                 </div>
                                             </div>
 
@@ -411,11 +428,103 @@ include './admin/conections/conexao.php';
                                 <div class="divider"></div>
 
                                 <div class="numeric-pagination">
-                                    <a href="#" class="button"><i class="icons icon-left-dir"></i></a>
+
+
+
+                                    <?php
+                                    $sql_opiniao_count = "SELECT * FROM opiniao WHERE publicar = 1 ORDER BY opiniao_id DESC";
+                                    $sql_query_all = mysql_query($sql_opiniao_count)or die(mysql_error());
+                                    $total_registros = mysql_num_rows($sql_query_all);
+                                    $pags = ceil($total_registros / $qnt);
+
+                                    // Número máximos de botões de paginação 
+                                    $max_links = 5;
+
+
+                                    if (isset($_GET['page'])) {
+
+
+                                        if ($_GET['page'] == 1) {
+                                            ?>
+                                            <a href="lista-opiniao.php?page=1" class="button"><i class="icons icon-left-dir"></i></a>
+
+
+                                            <?php
+                                        } else {
+                                            ?>
+                                            <a href="lista-opiniao.php?page=<?php echo $p - 1; ?>" class="button"><i class="icons icon-left-dir"></i></a>
+
+                                            <?php
+                                        }
+                                    } else {
+                                        ?>
+                                        <a href="lista-opiniao.php?page=1" class="button"><i class="icons icon-left-dir"></i></a>
+
+                                        <?php
+                                    }
+                                    ?>
+
+
+                                    <?php
+                                    for ($i = $p - $max_links; $i <= $p - 1; $i++) {
+
+                                        if ($i <= 0) {
+
+                                            //FAZ NADA
+                                        } else {
+                                            ?> 
+                                            <a href="lista-opiniao.php?page=<?php echo $i; ?>" class="button"><?php echo $i; ?></a>
+                                            <?php
+                                        }
+                                    }
+
+
+                                    echo "<a href='#' class='button active-button'>$p</a>";
+
+                                    for ($i = $p + 1; $i <= $p + $max_links; $i++) {
+
+
+                                        if ($i > $pags) {
+
+                                            //FAZ NADA
+                                        } else {
+                                            ?>
+                                            <a href="lista-opiniao.php?page=<?php echo $i; ?>" class="button"><?php echo $i; ?></a>
+
+                                            <?php
+                                        }
+                                    }
+
+
+                                    if (isset($_GET['page'])) {
+
+                                        if ($_GET['page'] == $pags) {
+                                            ?>
+                                            <a href="lista-opiniao.php?page=<?php echo $pags ?>" class="button"><i class="icons icon-right-dir"></i></a>
+
+                                            <?php
+                                        } else {
+                                            ?>
+                                            <a href="lista-opiniao.php?page=<?php echo $p + 1; ?>" class="button"><i class="icons icon-right-dir"></i></a>
+
+                                            <?php
+                                        }
+                                    } else {
+                                        ?>
+                                        <a href="lista-opiniao.php?page=<?php echo $pags ?>" class="button"><i class="icons icon-right-dir"></i></a>
+
+                                        <?php
+                                    }
+                                    ?>
+
+
+<!--                                <a href="#" class="button"><i class="icons icon-left-dir"></i></a>
                                     <a href="#" class="button">1</a>
                                     <a href="#" class="button active-button">2</a>
                                     <a href="#" class="button">3</a>
-                                    <a href="#" class="button"><i class="icons icon-right-dir"></i></a>
+                                    <a href="#" class="button"><i class="icons icon-right-dir"></i></a>-->
+
+
                                 </div>
 
                             </div>

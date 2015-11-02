@@ -340,14 +340,27 @@
                             <div class="media-items row">
 
                                 <?php
-                                $seleciona_midia = "SELECT * FROM depmidia";
+                                //PEGANDO PAGINA ATUAL
+                                $p = $_GET["page"];
+                                if (isset($p)) {
+                                    $p = $p;
+                                } else {
+                                    $p = 1;
+                                }
+
+                                //DEFININDO A QUANTIDADE DE REGISTROS POR PAGINA
+                                $qnt = 9;
+                                $inicio = ($p * $qnt) - $qnt;
+
+
+                                $seleciona_midia = "SELECT * FROM depmidia ORDER BY depmidia_id DESC LIMIT $inicio, $qnt";
                                 $executa_seleciona_midia = mysql_query($seleciona_midia)or die(mysql_error());
                                 ?>
 
                                 <?php
                                 while ($array_midia = mysql_fetch_array($executa_seleciona_midia)) {
 
-                                    if ($array_midia['link'] <> "") {
+                                    if ($array_midia['codigo'] <> "") {
                                         ?>
                                         <!-- ITEM VIDEO -->
                                         <div class="col-lg-4 col-md-6 col-sm-12 mix category-videos category-meetings" 
@@ -465,25 +478,149 @@
                                 <div class="divider"></div>
 
                                 <div class="numeric-pagination">
-                                    <a href="#" class="button"><i class="icons icon-left-dir"></i></a>
-                                    <a href="#" class="button">1</a>
-                                    <a href="#" class="button active-button">2</a>
-                                    <a href="#" class="button">3</a>
-                                    <a href="#" class="button"><i class="icons icon-right-dir"></i></a>
+
+
+                                    <?php
+                                    
+                                    $sql_midia_count = "SELECT * FROM depmidia ORDER BY depmidia_id DESC";
+                                    $sql_query_all = mysql_query($sql_midia_count)or die(mysql_error());
+                                    $total_registros = mysql_num_rows($sql_query_all);
+                                    $pags = ceil($total_registros / $qnt);
+
+                                    // Número máximos de botões de paginação 
+                                    $max_links = 5;
+
+
+                                    if (isset($_GET['page'])) {
+
+
+                                        if ($_GET['page'] == 1) {
+                                            ?>
+                                            <a href="midia.php?page=1" class="button"><i class="icons icon-left-dir"></i></a>
+
+
+                                            <?php
+                                        } else {
+                                            ?>
+                                            <a href="midia.php?page=<?php echo $p - 1; ?>" class="button"><i class="icons icon-left-dir"></i></a>
+
+                                            <?php
+                                        }
+                                    } else {
+                                        ?>
+                                        <a href="midia.php?page=1" class="button"><i class="icons icon-left-dir"></i></a>
+
+                                        <?php
+                                    }
+                                    ?>
+
+
+                                    <?php
+                                    for ($i = $p - $max_links; $i <= $p - 1; $i++) {
+
+                                        if ($i <= 0) {
+
+                                            //FAZ NADA
+                                        } else {
+                                            ?> 
+                                            <a href="midia.php?page=<?php echo $i; ?>" class="button"><?php echo $i; ?></a>
+                                            <?php
+                                        }
+                                    }
+
+
+                                    echo "<a href='#' class='button active-button'>$p</a>";
+
+                                    for ($i = $p + 1; $i <= $p + $max_links; $i++) {
+
+
+                                        if ($i > $pags) {
+
+                                            //FAZ NADA
+                                        } else {
+                                            ?>
+                                            <a href="midia.php?page=<?php echo $i; ?>" class="button"><?php echo $i; ?></a>
+
+                                            <?php
+                                        }
+                                    }
+
+
+                                    if (isset($_GET['page'])) {
+
+                                        if ($_GET['page'] == $pags) {
+                                            ?>
+                                            <a href="midia.php?page=<?php echo $pags ?>" class="button"><i class="icons icon-right-dir"></i></a>
+
+                                            <?php
+                                        } else {
+                                            ?>
+                                            <a href="midia.php?page=<?php echo $p + 1; ?>" class="button"><i class="icons icon-right-dir"></i></a>
+
+                                            <?php
+                                        }
+                                    } else {
+                                        ?>
+                                        <a href="midia.php?page=<?php echo $pags ?>" class="button"><i class="icons icon-right-dir"></i></a>
+
+                                        <?php
+                                    }
+                                    ?>
+
                                 </div>
 
                             </div>
-
-
-
-
 
                         </div>
 
 
 
                         <!-- Sidebar -->
-                        <div class="col-lg-3 col-md-3 col-sm-4 sidebar">                            <div class="social-media animate-onscroll">                                <span class="small-caption">CONECTE-SE COM A GENTE</span>                                <ul class="social-icons">                                    <li class="facebook"><a href="https://www.facebook.com/arthurvirgiliobisneto" target="_blank" class="tooltip-ontop" title="Facebook"><i class="icons icon-facebook-1"></i></a></li>                                    <li class="twitter"><a href="https://twitter.com/arthurbisneto" target="_blank" class="tooltip-ontop" title="Twitter"><i class="icons icon-twitter-1"></i></a></li>                                    <li class="instagram"><a href="https://instagram.com/arthurbisnetooficial" target="_blank" class="tooltip-ontop" title="Instagram"><i class="icons icon-instagram-1"></i></a></li>                                    <li class="youtube"><a href="https://www.youtube.com/user/arthurbisneto" target="_blank" class="tooltip-ontop" title="Youtube"><i class="icons icon-youtube-1"></i></a></li>                                    <li class="flickr"><a href="#" class="tooltip-ontop" title="Flickr"><i class="icons icon-flickr-1"></i></a></li>                                    <li class="email"><a href="contato.php" class="tooltip-ontop" title="Email"><i class="icons icon-mail-1"></i></a></li>                                </ul>                            </div>                            <div class="banner-wrapper">                                <a class="banner animate-onscroll" href="http://www.camara.leg.br/internet/deputado/Dep_Detalhe.asp?id=5830441" target="_blank">                                    <i class="icons icon-calendar"></i>                                    <h4>AGENDA<br> PARLAMENTAR</h4>                                </a>                            </div>                            <div class="banner-wrapper">                                <a class="banner animate-onscroll" href="lista-opiniao.php">                                    <i class="icons icon-check"></i>                                    <h4>OPNIÃO DO<br> DEPUTADO</h4>                                </a>                            </div>                            <div class="banner-wrapper">                                <a class="banner animate-onscroll" href="imprensa.php">                                    <i class="icons icon-user"></i>                                    <h4>SALA DE <br>IMPRENSA</h4>                                </a>                            </div>                            <div class="banner-wrapper">                                <a class="banner animate-onscroll" href="midia.php">                                    <i class="icons icon-camera-alt"></i>                                    <h4>CLIPPING</h4>                                    <p> Tudo sobre o Deputado</p>                                </a>                            </div>                        </div>                        <div class="col-lg-3 col-md-3 col-sm-4 sidebar">
+                        <div class="col-lg-3 col-md-3 col-sm-4 sidebar">
+
+                            <div class="social-media animate-onscroll">
+                                <span class="small-caption">CONECTE-SE COM A GENTE</span>
+                                <ul class="social-icons">
+                                    <li class="facebook"><a href="https://www.facebook.com/arthurvirgiliobisneto" target="_blank" class="tooltip-ontop" title="Facebook"><i class="icons icon-facebook-1"></i></a></li>
+                                    <li class="twitter"><a href="https://twitter.com/arthurbisneto" target="_blank" class="tooltip-ontop" title="Twitter"><i class="icons icon-twitter-1"></i></a></li>
+                                    <li class="instagram"><a href="https://instagram.com/arthurbisnetooficial" target="_blank" class="tooltip-ontop" title="Instagram"><i class="icons icon-instagram-1"></i></a></li>
+                                    <li class="youtube"><a href="https://www.youtube.com/user/arthurbisneto" target="_blank" class="tooltip-ontop" title="Youtube"><i class="icons icon-youtube-1"></i></a></li>
+                                    <li class="flickr"><a href="#" class="tooltip-ontop" title="Flickr"><i class="icons icon-flickr-1"></i></a></li>
+                                    <li class="email"><a href="contato.php" class="tooltip-ontop" title="Email"><i class="icons icon-mail-1"></i></a></li>
+                                </ul>
+
+                            </div>
+
+                            <div class="banner-wrapper">
+                                <a class="banner animate-onscroll" href="http://www.camara.leg.br/internet/deputado/Dep_Detalhe.asp?id=5830441" target="_blank">
+                                    <i class="icons icon-calendar"></i>
+                                    <h4>AGENDA<br> PARLAMENTAR</h4>
+                                </a>
+                            </div>
+
+                            <div class="banner-wrapper">
+                                <a class="banner animate-onscroll" href="lista-opiniao.php">
+                                    <i class="icons icon-check"></i>
+                                    <h4>OPNIÃO DO<br> DEPUTADO</h4>
+                                </a>
+                            </div>
+
+                            <div class="banner-wrapper">
+                                <a class="banner animate-onscroll" href="imprensa.php">
+                                    <i class="icons icon-user"></i>
+                                    <h4>SALA DE <br>IMPRENSA</h4>
+                                </a>
+                            </div>
+                            <div class="banner-wrapper">
+                                <a class="banner animate-onscroll" href="midia.php">
+                                    <i class="icons icon-camera-alt"></i>
+                                    <h4>CLIPPING</h4>
+                                    <p> Tudo sobre o Deputado</p>
+                                </a>
+                            </div>
+
+
+                        </div>                        <div class="col-lg-3 col-md-3 col-sm-4 sidebar">
 
                             <hr style="border-bottom: 1px solid #EDEDED;">
 

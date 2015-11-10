@@ -82,6 +82,7 @@
                                         <tr>
                                             <th style="text-align: left;">TITULO</th>
                                             <th style="text-align: center;">DATA</th>
+                                            <th style="text-align: center;">PUBLICADO?</th>
                                             <th style="text-align: center;">POSTADO POR</th>
                                             <th style="text-align: center;">EDITAR</th>
                                             <th style="text-align: center;">EXCLUIR</th>
@@ -107,6 +108,21 @@
                                             <tr class="gradeA" style="text-align: center;">
                                                 <td style="text-align: left;"><?php echo $array_dados['titulo']; ?></td>
                                                 <td><?php echo $array_dados['data']; ?></td>
+                                                 <td>
+
+                                                    <?php
+                                                    if ($array_dados['publicar'] == 1) {
+                                                        ?>
+                                                        <img src="img/sim.png" alt="">
+                                                        <?php
+                                                    } else {
+                                                        ?>
+                                                        <img src="img/nao.png" alt="">
+                                                        <?php
+                                                    }
+                                                    ?>
+
+                                                </td>
                                                 <td><?php echo $array_dados['nome']; ?></td>
 
                                                 <td><a href="depmidia.php?tipo=edit&id=<?php echo $array_dados['depmidia_id']; ?>"><img src="img/editar.png" alt="" /></a></td>

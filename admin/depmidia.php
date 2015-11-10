@@ -98,7 +98,21 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
 
                                     <div class="col-sm-12">
 
+
                                         <hr/>
+
+                                        <label style="margin-right: 20px;" class="col-sm-3 col-sm-3">PUBLICAR?</label>
+                                        <div class="switch switch-square"
+                                             data-off-label="<i class='fa fa-times'></i>"
+                                             data-on-label="<i class=' fa fa-check'></i>">
+                                            <input name="publicar" value="1" type="checkbox"  checked />
+                                        </div>
+
+
+                                        <hr/>
+
+
+
 
                                     </div>
                                 </div>
@@ -187,6 +201,16 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
                                     </div>
 
                                     <div class="col-sm-12">
+
+                                        
+                                        <hr/>
+                                        <label style="margin-right: 20px;" class="col-sm-3 col-sm-3">PUBLICAR?</label>
+                                        <div class="switch switch-square"
+                                             data-off-label="<i class='fa fa-times'></i>"
+                                             data-on-label="<i class=' fa fa-check'></i>">
+                                            <input name="publicar" value="1" type="checkbox"  checked />
+                                        </div>
+
 
                                         <hr/>
 

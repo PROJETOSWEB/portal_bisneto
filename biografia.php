@@ -189,53 +189,7 @@ include './admin/conections/conexao.php';
 
 
                         <!-- Sidebar -->
-                        <div class="col-lg-3 col-md-3 col-sm-4 sidebar">                            <div class="social-media animate-onscroll">                                <span class="small-caption">CONECTE-SE COM A GENTE</span>                                <ul class="social-icons">                                    <li class="facebook"><a href="https://www.facebook.com/arthurvirgiliobisneto" target="_blank" class="tooltip-ontop" title="Facebook"><i class="icons icon-facebook-1"></i></a></li>                                    <li class="twitter"><a href="https://twitter.com/arthurbisneto" target="_blank" class="tooltip-ontop" title="Twitter"><i class="icons icon-twitter-1"></i></a></li>                                    <li class="instagram"><a href="https://instagram.com/arthurbisnetooficial" target="_blank" class="tooltip-ontop" title="Instagram"><i class="icons icon-instagram-1"></i></a></li>                                    <li class="youtube"><a href="https://www.youtube.com/user/arthurbisneto" target="_blank" class="tooltip-ontop" title="Youtube"><i class="icons icon-youtube-1"></i></a></li>                                    <li class="flickr"><a href="#" class="tooltip-ontop" title="Flickr"><i class="icons icon-flickr-1"></i></a></li>                                    <li class="email"><a href="contato.php" class="tooltip-ontop" title="Email"><i class="icons icon-mail-1"></i></a></li>                                </ul>                            </div>                            <div class="banner-wrapper">                                <a class="banner animate-onscroll" href="http://www.camara.leg.br/internet/deputado/Dep_Detalhe.asp?id=5830441" target="_blank">                                    <i class="icons icon-calendar"></i>                                    <h4>AGENDA<br> PARLAMENTAR</h4>                                </a>                            </div>                            <div class="banner-wrapper">                                <a class="banner animate-onscroll" href="lista-opiniao.php">                                    <i class="icons icon-check"></i>                                    <h4>OPNIÃO DO<br> DEPUTADO</h4>                                </a>                            </div>                            <div class="banner-wrapper">                                <a class="banner animate-onscroll" href="imprensa.php">                                    <i class="icons icon-user"></i>                                    <h4>SALA DE <br>IMPRENSA</h4>                                </a>                            </div>                            <div class="banner-wrapper">                                <a class="banner animate-onscroll" href="midia.php">                                    <i class="icons icon-camera-alt"></i>                                    <h4>CLIPPING</h4>                                    <p> Tudo sobre o Deputado</p>                                </a>                            </div>                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-4 sidebar">
-
-                            <hr style="border-bottom: 1px solid #EDEDED;">
-
-                            
-                            <?php
-                            
-                            $select_video = "select * from videos order by videos_id DESC LIMIT 0,1";
-                            $executa_select_video = mysql_query($select_video)or die(mysql_error());
-                            $dados_video = mysql_fetch_array($executa_select_video);
-                            
-                            
-                            ?>
-                            
-                            
-                                <!-- Featured Video -->
-                                <div class="sidebar-box featured-video animate-onscroll fundo-listra">
-                                <h3><strong>VÍDEO</strong></h3>
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $dados_video['video']; ?>?wmode=transparent" allowfullscreen></iframe>
-                                <a href="videos.php" class="button transparent button-arrow">todos os videos</a>
-                            </div>
-                            <!-- /Featured Video -->
-
-                            <hr style="border-bottom: 1px solid #EDEDED;">
-
-                                <!-- Instagram Photos -->
-                                <div class="sidebar-box white flickr-photos animate-onscroll">
-                                <h3>Nosso Instagram</h3>
-                                <ul id="instagram-feed">
-                                </ul>
-                            </div>
-                            <!-- /Instagram Photos -->	
-
-                            <hr/ style="border-bottom: 1px solid #EDEDED;">		
-
-                                <!-- Flickr Photos -->
-                                <div class="sidebar-box white flickr-photos animate-onscroll">
-                                <h3>Fotos do Flickr</h3>
-                                <ul class="flickr-feed">
-                                </ul>
-                            </div>
-                            <!-- /Flickr Photos -->	
-
-                            <hr/ style="border-bottom: 1px solid #EDEDED;">
-
-                        </div>
+                        <?php include './sidebar_bisneto.php'; ?>
 
                         <!-- /Sidebar -->
 

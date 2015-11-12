@@ -4145,9 +4145,9 @@ a.button.details-button:hover:after{
 	background-color:#324e79;
 	border-top:1px solid #41669e;
 	border-bottom:1px solid #243f6a;
-}
-
-
+}
+.social-icons .instagram>a{	background-color:#324e79;	border-top:1px solid #41669e;	border-bottom:1px solid #243f6a;}
+.social-icons .instagram>a{	background-color:#324e79;	border-top:1px solid #41669e;	border-bottom:1px solid #243f6a;}
 
 
 

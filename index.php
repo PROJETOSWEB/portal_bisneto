@@ -126,198 +126,7 @@ include './admin/conections/conexao.php';
 
 
             <!-- Header -->
-            <header id="header" class="animate-onscroll">
-
-                <!-- Main Header -->
-                <div id="main-header">
-
-                    <div class="container">
-
-                        <div class="row">
-
-
-                            <!-- Logo arthur -->
-                            <div id="logo" class="col-lg-4 col-md-4 col-sm-4 animate-onscroll" style="margin: 0px; padding: 0px;">
-
-                                <a href="index.php"><img src="img/Topo-Site-1.png"alt="Logo"></a>
-
-                            </div>
-                            <!-- /Logo arthur-->
-
-
-
-                            <!-- foto arthur bisneto -->
-                            <div class="col-lg-4 col-md-4 col-sm-4 animate-onscroll" style="margin: 0px; padding: 0px;">
-                                <img src="img/Topo-Site-2.png"alt="" />
-
-                            </div>
-                            <!-- // foto arthur bisneto -->
-
-                            <!-- Main Quote -->
-                            <div class="col-lg-4 col-md-4 col-sm-4 animate-onscroll" style="margin: 0px; padding: 0px;">
-                                <img src="img/Topo-Site-3.png" alt="" />
-
-                            </div>
-                            <!-- /Main Quote -->
-
-
-
-                            <!-- Newsletter -->
-                            <!--<div class="col-lg-4 col-md-5 col-sm-5">
-                                    
-                                    <form id="newsletter" action="php/newsletter-form.php" method="POST">
-                                            
-                                            <h5><strong>Sign up</strong> for email updates</h5>
-                                            <div class="newsletter-form">
-                                            
-                                                    <div class="newsletter-email">
-                                                            <input type="text" name="newsletter-email" placeholder="Email address">
-                                                    </div>
-                                                    
-                                                    <div class="newsletter-zip">
-                                                            <input type="text" name="newsletter-zip" placeholder="Zip code">
-                                                    </div>
-                                                    
-                                                    <div class="newsletter-submit">
-                                                            <input type="submit" value="">
-                                                            <i class="icons icon-right-thin"></i>
-                                                    </div>
-                                                    
-                                            </div>
-                                            
-                                    </form>
-                                    
-                            </div>-->
-                            <!-- /Newsletter -->
-
-
-
-                        </div>
-
-                    </div>
-
-                </div>
-                <!-- /Main Header -->
-
-
-
-
-
-                <!-- Lower Header -->
-                <div id="lower-header">
-
-                    <div class="container">
-
-                        <div id="menu-button">
-                            <div>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
-                            <span>Menu MOBILE</span>
-                        </div>
-
-                        <ul id="navigation">
-
-                            <!-- Home -->
-                            <li class="home-button current-menu-item">
-
-                                <a href="index.php"><i class="icons icon-home"></i></a>
-
-                            </li>
-                            <!-- /Home -->
-
-                            <!-- biografia -->
-                            <li >
-
-                                <a href="biografia.php">BIOGRAFIA</a>
-
-                            </li>
-                            <!-- // biografia -->
-
-                            <!-- opniao -->
-                            <li >
-
-                                <a href="lista-opiniao.php">OPINIÃO</a>
-
-                            </li>
-                            <!-- // opiniao -->
-
-                            <!-- DEP. na midia -->
-                            <li >
-
-                                <a href="midia.php">DEPUTADO NA MÍDIA</a>
-
-                            </li>
-                            <!-- // dep. na midia -->
-
-                            <!-- DEP. na midia -->
-                            <li >
-
-                                <a href="http://www.camara.leg.br/internet/deputado/Dep_Detalhe.asp?id=5830441" target="_blank">ATIVIDADE PARLAMENTAR</a>
-
-                            </li>
-                            <!-- // dep. na midia -->
-
-                            <!-- GALERIA-->
-                            <li >
-
-                                <span>GALERIA</span>
-
-                                <ul>
-
-                                    <li>
-                                        <a href="fotos.php">fotos</a>
-                                    </li>
-
-                                    <li>
-                                        <a href="videos.php">videos</a>
-                                    </li>
-
-
-                                </ul>
-
-                            </li>
-                            <!-- // galeria -->
-
-
-                            <!-- CONTATO-->
-                            <li >
-
-                                <span>CONTATO</span>
-
-                                <ul>
-
-                                    <li>
-                                        <a href="imprensa.php">sala de imprensa</a>
-                                    </li>
-
-                                    <li>
-                                        <a href="contato.php">contatos</a>
-                                    </li>
-
-
-                                </ul>
-
-                            </li>
-                            <!-- // CONTATO -->
-
-                            <!-- Donate -->
-                            <li class="donate-button ">
-                                <a style=" padding: 0px; border: none;" href="#"><img src="img/logo-PSDB.png" alt="" /></a>
-
-                            </li>
-                            <!-- /Donate -->
-
-                        </ul>
-
-                    </div>
-
-                </div>
-                <!-- /Lower Header -->
-
-
-            </header>
+           <?php include './menu_bisneto.php'; ?> 
             <!-- /Header -->
 
 
@@ -348,7 +157,7 @@ include './admin/conections/conexao.php';
                                         ?>
                                         <li id="main_flex_2" style="background: url(admin/imagens/noticia/<?php echo $array_not['img']; ?>) no-repeat;"> 
                                             <div class="slide align-center">
-                                                <h2><?php echo $array_not['titulo']; ?></h2>
+                                                <a style="color: #fff;" href="noticias.php?id=<?php echo $array_not['noticia_id']; ?>"><h2><?php echo $array_not['titulo']; ?></h2></a>
                                             </div>                                      
                                         </li>
                                         <?php
@@ -366,51 +175,7 @@ include './admin/conections/conexao.php';
                         </div>
 
 
-                        <div class="col-lg-3 col-md-3 col-sm-4 sidebar">
-                        
-                                                    <div class="social-media animate-onscroll">
-                                                        <span class="small-caption">CONECTE-SE COM A GENTE</span>
-                                                        <ul class="social-icons">
-                                                            <li class="facebook"><a href="https://www.facebook.com/arthurvirgiliobisneto" target="_blank" class="tooltip-ontop" title="Facebook"><i class="icons icon-facebook-1"></i></a></li>
-                                                            <li class="twitter"><a href="https://twitter.com/arthurbisneto" target="_blank" class="tooltip-ontop" title="Twitter"><i class="icons icon-twitter-1"></i></a></li>
-                                                            <li class="instagram"><a href="https://instagram.com/arthurbisnetooficial" target="_blank" class="tooltip-ontop" title="Instagram"><i class="icons icon-instagram-1"></i></a></li>
-                                                            <li class="youtube"><a href="https://www.youtube.com/user/arthurbisneto" target="_blank" class="tooltip-ontop" title="Youtube"><i class="icons icon-youtube-1"></i></a></li>
-                                                            <li class="flickr"><a href="#" class="tooltip-ontop" title="Flickr"><i class="icons icon-flickr-1"></i></a></li>
-                                                            <li class="email"><a href="contato.php" class="tooltip-ontop" title="Email"><i class="icons icon-mail-1"></i></a></li>
-                                                        </ul>
-                        
-                                                    </div>
-                        
-                                                    <div class="banner-wrapper">
-                                                        <a class="banner animate-onscroll" href="http://www.camara.leg.br/internet/deputado/Dep_Detalhe.asp?id=5830441" target="_blank">
-                                                            <i class="icons icon-calendar"></i>
-                                                            <h4>AGENDA<br> PARLAMENTAR</h4>
-                                                        </a>
-                                                    </div>
-                        
-                                                    <div class="banner-wrapper">
-                                                        <a class="banner animate-onscroll" href="lista-opiniao.php">
-                                                            <i class="icons icon-check"></i>
-                                                            <h4>OPNIÃO DO<br> DEPUTADO</h4>
-                                                        </a>
-                                                    </div>
-                        
-                                                    <div class="banner-wrapper">
-                                                        <a class="banner animate-onscroll" href="imprensa.php">
-                                                            <i class="icons icon-user"></i>
-                                                            <h4>SALA DE <br>IMPRENSA</h4>
-                                                        </a>
-                                                    </div>
-                                                    <div class="banner-wrapper">
-                                                        <a class="banner animate-onscroll" href="midia.php">
-                                                            <i class="icons icon-camera-alt"></i>
-                                                            <h4>CLIPPING</h4>
-                                                            <p> Tudo sobre o Deputado</p>
-                                                        </a>
-                                                    </div>
-                        
-                        
-                                                </div>
+                        <div class="col-lg-3 col-md-3 col-sm-4 sidebar">                            <?php include './menu_lateral_bisneto.php'; ?>                         </div>
 
                     </div>
 
@@ -447,7 +212,7 @@ include './admin/conections/conexao.php';
                                 <h5 class="post-title"><a href="#"><?php echo $linha_opiniao['titulo']; ?> </a></h5>
 
                                 <div class="post-meta">
-                                    <span>29 de junho de 2015 •  11:28AM</span>
+                                    <span><?php echo $linha_opiniao['data']; ?></span>
                                 </div>
 
                                 <?php
@@ -667,7 +432,7 @@ include './admin/conections/conexao.php';
                             ?>
 
 
-                            <!-- Image Banner -->
+                            <!-- Informativo -->
                             <div class="sidebar-box image-banner animate-onscroll">
                                 <a href="admin/imagens/informativo/arquivo/<?php echo $dados_informativo['pdf']; ?>" target="_blank">
                                     <img src="admin/imagens/informativo/<?php echo $dados_informativo['img']; ?>" alt="">
@@ -675,8 +440,8 @@ include './admin/conections/conexao.php';
                                 </a>
                                 <a href="lista-informativos.html" class="button  button-arrow">VER TODOS</span></a>
                             </div>
-                            <!-- /Image Banner -->
-
+                            <!-- /informativo -->
+                            
                             <hr style="border-bottom: 1px solid #EDEDED;">
 
                                 <!-- Instagram Photos -->
@@ -689,13 +454,9 @@ include './admin/conections/conexao.php';
 
                             <hr style="border-bottom: 1px solid #EDEDED;">		
 
-                                <!-- Flickr Photos -->
-                                <div class="sidebar-box white flickr-photos animate-onscroll">
-                                <h3>Fotos do Flickr</h3>
-                                <ul class="flickr-feed">
-                                </ul>
-                            </div>
-                            <!-- /Flickr Photos -->	
+                                <!-- SoundCloud -->
+                                <iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/48918610&amp;color=0066cc&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+                            <!-- /SoundCloud -->	
 
                             <hr style="border-bottom: 1px solid #EDEDED;">	
 
@@ -744,47 +505,7 @@ $executa_seleciona_links = mysql_query($seleciona_links)or die(mysql_error());
 
 
             <!-- Footer -->
-            <footer id="footer">
-
-
-
-
-
-
-                <!-- Lower Footer -->
-                <div id="lower-footer">
-
-                    <div class="row">
-
-                        <div class="col-lg-4 col-md-4 col-sm-4 animate-onscroll">
-
-                            <p class="copyright">copyright © 2015 • Todos os direitos reservados</p>
-
-                        </div>
-
-                        <div class="col-lg-8 col-md-8 col-sm-8 animate-onscroll">
-
-                            <div class="social-media">
-                                <ul class="social-icons">
-                                    <li class="facebook"><a href="https://www.facebook.com/arthurvirgiliobisneto" target="_blank" class="tooltip-ontop" title="Facebook"><i class="icons icon-facebook-1"></i></a></li>
-                                    <li class="twitter"><a href="https://twitter.com/arthurbisneto" target="_blank" class="tooltip-ontop" title="Twitter"><i class="icons icon-twitter-1"></i></a></li>
-                                    <li class="instagram"><a href="https://instagram.com/arthurbisnetooficial" target="_blank" class="tooltip-ontop" title="Instagram"><i class="icons icon-instagram-1"></i></a></li>
-                                    <li class="youtube"><a href="https://www.youtube.com/user/arthurbisneto" target="_blank" class="tooltip-ontop" title="Youtube"><i class="icons icon-youtube-1"></i></a></li>
-                                    <li class="flickr"><a href="#" class="tooltip-ontop" title="Flickr"><i class="icons icon-flickr-1"></i></a></li>
-                                    <li class="email"><a href="#" class="tooltip-ontop" title="Email"><i class="icons icon-mail-1"></i></a></li>
-                                </ul>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-                <!-- /Lower Footer -->
-
-
-            </footer>
+      <?php include './footer_bisneto.php'; ?>  
             <!-- // Footer -->
 
 
@@ -820,8 +541,6 @@ $executa_seleciona_links = mysql_query($seleciona_links)or die(mysql_error());
         <!-- Chosen -->
         <script type="text/javascript" src="js/chosen.jquery.min.js"></script>
 
-        <!-- jFlickrFeed -->
-        <script type="text/javascript" src="js/jflickrfeed.min.js"></script>
 
         <!-- InstaFeed -->
         <script type="text/javascript" src="js/instafeed.min.js"></script>

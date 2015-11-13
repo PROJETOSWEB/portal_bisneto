@@ -4,7 +4,8 @@
 <!--sidebar end-->
 
 
-<link rel="stylesheet" type="text/css" href="assets/bootstrap-fileupload/bootstrap-fileupload.css" /><link rel="stylesheet" type="text/css" href="assets/bootstrap-wysihtml5/bootstrap-wysihtml5.css" />
+<link rel="stylesheet" type="text/css" href="assets/bootstrap-fileupload/bootstrap-fileupload.css" />
+<link rel="stylesheet" type="text/css" href="assets/bootstrap-wysihtml5/bootstrap-wysihtml5.css" />
 <link rel="stylesheet" type="text/css" href="assets/bootstrap-datepicker/css/datepicker.css" />
 <!--main content start-->
 <section id="main-content">
@@ -52,7 +53,7 @@
 
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">TÍTULO</label>
-                                    <input name="titulo" tooltip="Título do seu artigo, EVITE TÍTULOS LONGOS" name="titulo" type="text" class="form-control" data-placement="top">
+                                    <input name="titulo" maxlength=""  tooltip="Título do seu artigo, EVITE TÍTULOS LONGOS" name="titulo" type="text" class="form-control" data-placement="top">
                                 </div>
 
                                 <div class="form-group">
@@ -116,6 +117,7 @@
                                         <hr/>
 
                                         <label style="margin-right: 20px;" class="col-sm-3 col-sm-3">DESTAQUE • BANNER</label>
+                                        
                                         <div class="switch switch-square"
                                              data-on-label="<i class=' fa fa-check'></i>"
                                              data-off-label="<i class='fa fa-times'></i>">
@@ -220,7 +222,13 @@
                                                         <a href = "#" class = "btn btn-danger fileupload-exists" data-dismiss = "fileupload"><i class = "fa fa-trash"></i> excluir</a>
                                                     </div>
                                                 </div>
-                                            </div>                                                                                        <div class="col-sm-5">                                                <label for="exampleInputEmail1">LEGENDA DA FOTO</label>                                               <textarea name="legenda" id="" class="form-control" rows="3"><?php echo $linha_editar['leganda']; ?></textarea>                                            </div>                                            
+                                            </div>
+                                            
+                                            <div class="col-sm-5">
+                                                <label for="exampleInputEmail1">LEGENDA DA FOTO</label>
+                                               <textarea name="legenda" id="" class="form-control" rows="3"><?php echo $linha_editar['leganda']; ?></textarea>
+                                            </div>
+                                            
                                         </div>
                                     </div>
 
@@ -292,7 +300,19 @@
 <script src="js/bootstrap-switch.js"></script>
 <!--custom tagsinput-->
 <script src="js/jquery.tagsinput.js"></script>
-<!--this page plugins--><script type="text/javascript" src="assets/fuelux/js/spinner.min.js"></script><script type="text/javascript" src="assets/bootstrap-fileupload/bootstrap-fileupload.js"></script><script type="text/javascript" src="assets/bootstrap-wysihtml5/wysihtml5-0.3.0.js"></script><script type="text/javascript" src="assets/bootstrap-wysihtml5/bootstrap-wysihtml5.js"></script><script type="text/javascript" src="assets/bootstrap-datepicker/js/bootstrap-datepicker.js"></script><script type="text/javascript" src="assets/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script><script type="text/javascript" src="assets/bootstrap-daterangepicker/moment.min.js"></script><script type="text/javascript" src="assets/bootstrap-daterangepicker/daterangepicker.js"></script><script type="text/javascript" src="assets/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script><script type="text/javascript" src="assets/bootstrap-timepicker/js/bootstrap-timepicker.js"></script><script type="text/javascript" src="assets/jquery-multi-select/js/jquery.multi-select.js"></script><script type="text/javascript" src="assets/jquery-multi-select/js/jquery.quicksearch.js"></script>
+<!--this page plugins-->
+<script type="text/javascript" src="assets/fuelux/js/spinner.min.js"></script>
+<script type="text/javascript" src="assets/bootstrap-fileupload/bootstrap-fileupload.js"></script>
+<script type="text/javascript" src="assets/bootstrap-wysihtml5/wysihtml5-0.3.0.js"></script>
+<script type="text/javascript" src="assets/bootstrap-wysihtml5/bootstrap-wysihtml5.js"></script>
+<script type="text/javascript" src="assets/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="assets/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript" src="assets/bootstrap-daterangepicker/moment.min.js"></script>
+<script type="text/javascript" src="assets/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script type="text/javascript" src="assets/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
+<script type="text/javascript" src="assets/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
+<script type="text/javascript" src="assets/jquery-multi-select/js/jquery.multi-select.js"></script>
+<script type="text/javascript" src="assets/jquery-multi-select/js/jquery.quicksearch.js"></script>
 
 <!--this page plugins-->
 <script type="text/javascript" src="assets/ckeditor/ckeditor.js"></script>

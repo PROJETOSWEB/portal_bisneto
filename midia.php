@@ -162,7 +162,7 @@
                                 $inicio = ($p * $qnt) - $qnt;
 
 
-                                $seleciona_midia = "SELECT * FROM depmidia ORDER BY depmidia_id DESC LIMIT $inicio, $qnt";
+                                $seleciona_midia = "SELECT * FROM depmidia WHERE publicar = 1 ORDER BY depmidia_id DESC LIMIT $inicio, $qnt";
                                 $executa_seleciona_midia = mysql_query($seleciona_midia)or die(mysql_error());
                                 ?>
 

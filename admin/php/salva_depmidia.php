@@ -17,6 +17,13 @@ $titulo = $_POST['titulo'];
 $link = $_POST['link'];
 $codigo = $_POST['codigo'];
 $img = $_FILES['img'];
+$publicar = $_POST['publicar'];
+
+
+if ($publicar == "") {
+
+    $publicar = 2;
+}
 
 
 $fileName = $_FILES["img"]["name"];
@@ -25,7 +32,7 @@ $fileTmpLoc = $_FILES["img"]["tmp_name"];
 $moveResult = move_uploaded_file($fileTmpLoc, $pathAndName);
 
 
-$insert = "INSERT INTO depmidia (data,titulo, link, codigo, foto, usuario_id)VALUES('$data', '$titulo', '$link', '$codigo', '$fileName', $id_usuario)";
+$insert = "INSERT INTO depmidia (data,titulo, link, codigo, foto, publicar, usuario_id)VALUES('$data', '$titulo', '$link', '$codigo', '$fileName', $publicar, $id_usuario)";
 $executa_insert = mysql_query($insert)or die(mysql_error());
 
 

@@ -42,7 +42,7 @@
                     <span>Galeria & Banner</span>
                 </a>
                 <ul class="sub">
-                    <li><a style="background: none;" href="vfotos.php"><i class="fa fa-camera"></i>fotos</a></li>
+                    <li><a style="background: none;" href="valbuns.php"><i class="fa fa-camera"></i>fotos</a></li>
                     <li><a style="background: none;" href="vvideos.php"><i class="fa fa-video-camera"></i>vídeos</a></li>
                     <li><a style="background: none;" href="vbanner.php"><i class="fa fa-picture-o"></i>banners</a></li>
                 </ul>

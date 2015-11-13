@@ -21,10 +21,10 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
 <link href="assets/advanced-datatable/media/css/demo_page.css" rel="stylesheet" />
 <link href="assets/advanced-datatable/media/css/demo_table.css" rel="stylesheet" />
 <link rel="stylesheet" href="assets/data-tables/DT_bootstrap.css" />
-
+<link rel="stylesheet" type="text/css" href="assets/bootstrap-datepicker/css/datepicker.css" />
 <link href="assets/fancybox/source/jquery.fancybox.css" rel="stylesheet" />
 <link rel="stylesheet" type="text/css" href="css/gallery.css" />
-
+<link rel="stylesheet" type="text/css" href="assets/bootstrap-fileupload/bootstrap-fileupload.css" />
 <!-- Custom styles for this template -->
 <link href="css/style.css" rel="stylesheet">
 <link href="css/style-responsive.css" rel="stylesheet" />
@@ -37,7 +37,7 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
     <section id="main-content">
         <section class="wrapper site-min-height">
 
-            <h1 style="font-weight: 300;"><span class="fa fa-video-camera"></span> GALERIA DE FOTOS</h1>
+            <h1 style="font-weight: 300;"><span class="fa fa-video-camera"></span> ÁLBUM :<strong> XXXXXXXXX</strong></h1>
             <hr style="border: 1px solid #333;">
             <div class="divider"></div>
             <div class="divider"></div>
@@ -88,7 +88,7 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
                         <header class="panel-heading">
                             <a href="fotos.php?tipo=insert"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
                                     </span> Fotos</button>
-                            </a>
+                            </a>                                                    <a style="float: right; margin-left: 20px;" href="#publicar_album"><button class="btn btn-success"><i class="fa  fa-cloud-upload"></i> PUBLICAR ESTE ÁLBUM</button></a>                                                        <a style="float: right;"  href="#nao_publicar_album"><button class="btn btn-default"><i class="fa  fa-cloud-download"></i>  <strong>NÃO</strong> PUBLICAR ESTE ÁLBUM</button></a>                                                                                    
                         </header>
 
                         <div class="panel-body">
@@ -181,38 +181,5 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
 <!--footer start-->
 <?php include './footer.php'; ?>
 <!--footer end-->
-
-
-<script type="text/javascript" language="javascript" src="assets/advanced-datatable/media/js/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script class="include" type="text/javascript" src="js/jquery.dcjqaccordion.2.7.js"></script>
-<script src="assets/fancybox/source/jquery.fancybox.js"></script>
-<script src="js/jquery.scrollTo.min.js"></script>
-<script src="js/jquery.nicescroll.js" type="text/javascript"></script>
-<script type="text/javascript" language="javascript" src="assets/advanced-datatable/media/js/jquery.dataTables.js"></script>
-<script type="text/javascript" src="assets/data-tables/DT_bootstrap.js"></script>
-<script src="js/respond.min.js" ></script>
-
-
-<!--common script for all pages-->
-<script src="js/common-scripts.js"></script>
-
-<!--script for this page only-->
-
-<script type="text/javascript" charset="utf-8">
-    $(document).ready(function () {
-        $('#example').dataTable({
-            "aaSorting": [[4, "desc"]]
-        });
-    });
-</script>
-<script type="text/javascript">
-    $(function () {
-        //    fancybox
-        jQuery(".fancybox").fancybox();
-    });
-
-</script>
-
-</body>
-</html>
+<script type="text/javascript" src="assets/fuelux/js/spinner.min.js"></script><script type="text/javascript" src="assets/bootstrap-datepicker/js/bootstrap-datepicker.js"></script><script type="text/javascript" src="assets/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" language="javascript" src="assets/advanced-datatable/media/js/jquery.js"></script><script src="js/bootstrap.min.js"></script><script class="include" type="text/javascript" src="js/jquery.dcjqaccordion.2.7.js"></script><script src="assets/fancybox/source/jquery.fancybox.js"></script><script src="js/jquery.scrollTo.min.js"></script><script src="js/jquery.nicescroll.js" type="text/javascript"></script><script type="text/javascript" src="assets/bootstrap-daterangepicker/daterangepicker.js"></script><script type="text/javascript" src="assets/bootstrap-datepicker/js/bootstrap-datepicker.js"></script><script type="text/javascript" language="javascript" src="assets/advanced-datatable/media/js/jquery.dataTables.js"></script><script type="text/javascript" src="assets/data-tables/DT_bootstrap.js"></script><script src="js/advanced-form-components.js"></script><script src="js/respond.min.js" ></script><!--common script for all pages--><script src="js/common-scripts.js"></script><!--script for this page only--><script type="text/javascript" charset="utf-8">    $(document).ready(function () {        $('#example').dataTable({            "aaSorting": [[4, "desc"]]        });    });</script><script type="text/javascript">    $(function () {        //    fancybox        jQuery(".fancybox").fancybox();    });</script></body></html>

@@ -44,7 +44,7 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
 
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">TÍTULO</label>
-                                    <input name="titulo" type="text" class="form-control tooltips" data-placement="top" data-original-title="Título do seu artigo, EVITE TÍTULOS LONGOS">
+                                    <input name="titulo" maxlength="" type="text" class="form-control tooltips" data-placement="top" data-original-title="Título do seu artigo, EVITE TÍTULOS LONGOS">
                                 </div>
 
                                 <div class="form-group">
@@ -101,18 +101,15 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
 
                                         <hr/>
 
-                                        <label style="margin-right: 20px;" class="col-sm-3 col-sm-3">PUBLICAR?</label>
+                                                                                <label style="margin-right: 20px;" class="col-sm-3 col-sm-3">PUBLICAR?</label>
+
                                         <div class="switch switch-square"
                                              data-off-label="<i class='fa fa-times'></i>"
                                              data-on-label="<i class=' fa fa-check'></i>">
                                             <input name="publicar" value="1" type="checkbox"  checked />
-                                        </div>
-
+                                        </div>                                        
 
                                         <hr/>
-
-
-
 
                                     </div>
                                 </div>
@@ -183,7 +180,7 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
                                                 <div class="fileupload fileupload-new" data-provides="fileupload">
                                                     <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
                                                         <img src="imagens/depmidia/<?php echo $linha_editar['foto']; ?>" alt="" />
-                                                        <input type="hidden" name="imagem"/>
+                                                        <input type="hidden" value="<?php echo $linha_editar['foto']; ?>" name="imagem"/>
                                                         <input type="hidden" value="<?php echo $id_depmidia; ?>" name="depmidia_id"/>
                                                     </div>
                                                     <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
@@ -202,13 +199,14 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
 
                                     <div class="col-sm-12">
 
-                                        
+
                                         <hr/>
                                         <label style="margin-right: 20px;" class="col-sm-3 col-sm-3">PUBLICAR?</label>
+
                                         <div class="switch switch-square"
-                                             data-off-label="<i class='fa fa-times'></i>"
-                                             data-on-label="<i class=' fa fa-check'></i>">
-                                            <input name="publicar" value="1" type="checkbox"  checked />
+                                             data-on-label="<i class=' fa fa-check'></i>"
+                                             data-off-label="<i class='fa fa-times'></i>">
+                                            <input name="publicar" value="1" type="checkbox"  <?php if ($linha_editar['publicar'] == 1) echo "checked"; ?> />
                                         </div>
 
 

@@ -15,13 +15,14 @@ include '../conections/conexao.php';
 
 //PEGANDO VARIAVEIS POR POST
 $nomealbum = $_POST['nome'];
+$data = $_POST['data'];
 
 
-$insert = "INSERT INTO album (nome, usuario_id)VALUES('$nomealbum', $id_usuario)";
+$insert = "INSERT INTO album_fotos (data_album, nome, publicar, usuario_id)VALUES('$data', '$nomealbum', 2, $id_usuario)";
 $executa_insert = mysql_query($insert)or die(mysql_error());
 
 
-$seleciona_ultimo_registro = "SELECT MAX(album_id) as ultimo FROM album";
+$seleciona_ultimo_registro = "SELECT MAX(album_fotos_id) as ultimo FROM album_fotos";
 $executa_seleciona_registro = mysql_query($seleciona_ultimo_registro)or die(mysql_error());
 $dados_max = mysql_fetch_array($executa_seleciona_registro);
 $ultimo = $dados_max['ultimo'];

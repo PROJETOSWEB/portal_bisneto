@@ -19,7 +19,70 @@
 
                         if ($_GET['tipo'] == "insert") {
                             ?>
-							<form role="form" action="php/salva_usuario.php" method="POST">								                                <div class="form-group">                                    <label for="exampleInputEmail1">NOME</label>                                    <input name="nome" id="nome"                                    	placeholder = "seu nome completo"                                    	data-ng-minlength = "2"                                    	data-ng-maxlength = "200"                                     	required                                    	type="text"                                     	class="form-control"                                     	data-placement="top">                                </div>                                                                <div class="form-group">                                    <label for="exampleInputEmail1">LOGIN</label>                                    <input name="login" id="login"                                    	placeholder = "escolha um login"                                    	data-ng-minlength = "2"                                    	data-ng-maxlength = "12"                                     	required                                    	type="text"                                     	class="form-control"                                     	data-placement="top">                                </div>                                                                <div class="form-group">                                    <label for="exampleInputEmail1">SEU EMAIL</label>                                    <input name="email" id="email"                                    	placeholder = "seu email"                                    	data-ng-minlength = "2"                                    	data-ng-maxlength = "200"                                     	required                                    	type="email"                                     	class="form-control"                                     	data-placement="top">                                </div>                                                                <div class = "form-group">                                    <label for="exampleInputEmail1">SENHA</label>                                        <input type = "password"                                               name = "senha"                                               id = "senha"                                               required                                               class = "form-control">                                                                   </div>                                <div class = "form-group">                                        <label for = "">CONFIRME A SENHA</label>                                        <input type = "password"                                        required                                               class = "form-control">                                                                     </div>                                </br>                                <hr/>                                <input type="submit" class="btn btn-primary" value="SALVAR"></input>                            </form>
+                            <form role="form" action="php/salva_usuario.php" method="POST">
+
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">NOME</label>
+                                    <input name="nome" id="nome"
+                                           placeholder = "seu nome completo"
+                                           data-ng-minlength = "2"
+                                           data-ng-maxlength = "200" 
+                                           required
+                                           type="text" 
+                                           class="form-control" 
+                                           data-placement="top">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">LOGIN</label>
+                                    <input name="login" id="login"
+                                           placeholder = "escolha um login"
+                                           data-ng-minlength = "2"
+                                           data-ng-maxlength = "12" 
+                                           required
+                                           type="text" 
+                                           class="form-control" 
+                                           data-placement="top">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">SEU EMAIL</label>
+                                    <input name="email" id="email"
+                                           placeholder = "seu email"
+                                           data-ng-minlength = "2"
+                                           data-ng-maxlength = "200" 
+                                           required
+                                           type="email" 
+                                           class="form-control" 
+                                           data-placement="top">
+                                </div>
+
+                                <div class = "form-group">
+                                    <label for="exampleInputEmail1">SENHA</label>
+                                    <input type = "password"
+                                           name = "senha"
+                                           id = "senha"
+                                           required
+                                           class = "form-control">
+
+                                </div>
+                                <div class = "form-group">
+                                    <label for = "">CONFIRME A SENHA</label>
+                                    <input type = "password"
+                                           name="password"
+                                           required
+                                           class = "form-control">
+
+                                </div>
+
+                                </br>
+
+                                <hr/>
+
+                                <input type="submit" class="btn btn-primary" value="SALVAR"></input>
+
+                            </form>
 
                             <?php
                         }
@@ -35,11 +98,77 @@
                             $select_editar = "SELECT * FROM usuario WHERE usuario_id = $id_usuario";
                             $executa_select_editar = mysql_query($select_editar)or die(mysql_error());
                             $linha_editar = mysql_fetch_array($executa_select_editar);
-                            
-                            
                             ?>
-<form role="form" action="php/salva_usuario.php" method="POST">								                                <div class="form-group">                                    <label for="exampleInputEmail1">NOME</label>                                    <input name="nome" id="nome"                                    	placeholder = "seu nome completo"                                    	value ="<?php echo $linha_editar['nome']; ?>"                                    	data-ng-minlength = "2"                                    	data-ng-maxlength = "200"                                     	required                                    	type ="text"                                     	class ="form-control"                                     	data-placement ="top">                                </div>                                                                <div class="form-group">                                    <label for="exampleInputEmail1">LOGIN</label>                                    <input name="login" id="login"                                    	placeholder = "escolha um login"                                    	value ="<?php echo $linha_editar['login']; ?>"                                    	data-ng-minlength = "2"                                    	data-ng-maxlength = "12"                                     	required                                    	type ="text"                                     	class ="form-control"                                     	data-placement ="top">                                </div>                                                                <div class="form-group">                                    <label for="exampleInputEmail1">SEU EMAIL</label>                                    <input name="email" id="email"                                    	placeholder = "seu email"                                    	data-ng-minlength = "2"                                    	data-ng-maxlength = "200"                                     	value ="<?php echo $linha_editar['email']; ?>"                                    	required                                    	type ="email"                                     	class ="form-control"                                     	data-placement ="top">                                </div>                                                                <div class = "form-group">                                    <label for="exampleInputEmail1">SENHA</label>                                        <input type = "password"                                               name = "senha"                                               value ="<?php echo $linha_editar['senha']; ?>"                                               id = "senha"                                               required                                               class = "form-control">                                                                   </div>                                <div class = "form-group">                                        <label for = "">CONFIRME A SENHA</label>                                        <input type = "password"                                        value ="<?php echo $linha_editar['senha']; ?>"                                        required                                               class = "form-control">                                                                     </div>                                </br>                                <hr/>                                <input type="submit" class="btn btn-primary" value="SALVAR"></input>                            </form>                            
-                          
+                            <form role="form" action="php/salva_usuario.php" method="POST">
+
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">NOME</label>
+                                    <input name="nome" id="nome"
+                                           placeholder = "seu nome completo"
+                                           value ="<?php echo $linha_editar['nome']; ?>"
+                                           data-ng-minlength = "2"
+                                           data-ng-maxlength = "200" 
+                                           required
+                                           type ="text" 
+                                           class ="form-control" 
+                                           data-placement ="top">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">LOGIN</label>
+                                    <input name="login" id="login"
+                                           placeholder = "escolha um login"
+                                           value ="<?php echo $linha_editar['login']; ?>"
+                                           data-ng-minlength = "2"
+                                           data-ng-maxlength = "12" 
+                                           required
+                                           type ="text" 
+                                           class ="form-control" 
+                                           data-placement ="top">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">SEU EMAIL</label>
+                                    <input name="email" id="email"
+                                           placeholder = "seu email"
+                                           data-ng-minlength = "2"
+                                           data-ng-maxlength = "200" 
+                                           value ="<?php echo $linha_editar['email']; ?>"
+                                           required
+                                           type ="email" 
+                                           class ="form-control" 
+                                           data-placement ="top">
+                                </div>
+
+                                <div class = "form-group">
+                                    <label for="exampleInputEmail1">SENHA</label>
+                                    <input type = "password"
+                                           name = "senha"
+                                           value ="<?php echo $linha_editar['senha']; ?>"
+                                           id = "senha"
+                                           required
+                                           class = "form-control">
+
+                                </div>
+                                <div class = "form-group">
+                                    <label for = "">CONFIRME A SENHA</label>
+                                    <input type = "password"
+                                           value ="<?php echo $linha_editar['senha']; ?>"
+                                           required
+                                           class = "form-control">
+
+                                </div>
+
+                                </br>
+
+                                <hr/>
+
+                                <input type="submit" class="btn btn-primary" value="SALVAR"></input>
+
+                            </form>
+
+
         <?php
     }
 }

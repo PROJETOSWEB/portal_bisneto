@@ -50,7 +50,7 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
 
                         if ($_GET['tipo'] == "insert") {
                             ?>
-                            <form role="form" action="php/salva_fotos.php" method="POST" enctype='multipart/form-data'>
+                            <form role="form" action="php/salva_fotos.php?album=<?php echo $_GET['album']; ?>" method="POST" enctype='multipart/form-data'>
 
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">SELECIONE A DATA</label>
@@ -125,7 +125,7 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
                             $linha_editar = mysql_fetch_array($executa_select_editar);
                             ?>
 
-                            <form role="form" action="php/update_fotos.php" method="POST" enctype='multipart/form-data'>
+                            <form role="form" action="php/update_fotos.php?album=<?php echo $_GET['album']; ?>" method="POST" enctype='multipart/form-data'>
 
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">SELECIONE A DATA</label>
@@ -151,7 +151,7 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
                                             <div class="col-md-9">
                                                 <div class="fileupload fileupload-new" data-provides="fileupload">
                                                     <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
-                                                        <img src="imagens/fotos/<?php echo $linha_editar['foto']?>" alt="" />
+                                                        <img src="imagens/fotos/<?php echo $linha_editar['foto'] ?>" alt="" />
                                                         <input type="hidden" value="<?php echo $linha_editar['foto']; ?>" name="imagem"/>
                                                         <input type="hidden" value="<?php echo $id_fotos; ?>" name="fotos_id"/>
                                                     </div>
@@ -179,10 +179,10 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
                                 <input type="submit" class="btn btn-primary" value="SALVAR"></input>
 
                             </form>
-        <?php
-    }
-}
-?>
+                            <?php
+                        }
+                    }
+                    ?>
 
                 </div>
             </section>

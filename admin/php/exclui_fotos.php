@@ -12,7 +12,7 @@ if ($executa_delete) {
     ?>
 
     <script>
-        window.location.href = '../vfotos.php?respt=sucesso';
+        window.location.href = '../vfotos_album.php?respt=sucesso&id=<?php echo $_GET['album']; ?>';
     </script>
     <?php
 
@@ -20,7 +20,7 @@ if ($executa_delete) {
     ?>
 
     <script>
-        window.location.href = '../vfotos.php?respt=erro';
+        window.location.href = '../vfotos_album.php?respt=erro&id=<?php echo $_GET['album']; ?>';
     </script>
     <?php
 

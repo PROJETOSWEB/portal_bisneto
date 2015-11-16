@@ -52,14 +52,14 @@ if ($executa_update_dados) {
     ?>
 
     <script>
-        window.location.href = '../vfotos.php?respte=sucesso';
+        window.location.href = '../vfotos_album.php?respte=sucesso&id=<?php echo $_GET['album']; ?>';
     </script>
 
     <?php
 } else {
     ?>
     <script>
-        window.location.href = '../vfotos.php?respte=erro';
+        window.location.href = '../vfotos_album.php?respte=erro&id=<?php echo $_GET['album']; ?>';
     </script>
     <?php
 }

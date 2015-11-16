@@ -28,7 +28,59 @@
             <div class="divider"></div>
 
             </br>
-           
+
+            <?php
+            if (isset($_GET['resp'])) {
+                if ($_GET['resp'] == "sucesso") {
+                    ?>
+
+                    <div class="alert alert-success fade in">
+                        <button data-dismiss="alert" class="close close-sm" type="button">
+                            <i class="fa fa-times"></i>
+                        </button>
+                        <strong>SUCESSO!</strong> Usuário cadastrado com sucesso!
+                    </div>
+                    <?php
+                } else if ($_GET['resp'] == "erro") {
+                    ?>
+
+                    <div class="alert alert-danger fade in">
+                        <button data-dismiss="alert" class="close close-sm" type="button">
+                            <i class="fa fa-times"></i>
+                        </button>
+                        <strong>ERRO!</strong> Ocorreu um erro ao cadastrar o Usuário
+                    </div>
+                    <?php
+                }
+            }
+            ?>
+
+            <?php
+            if (isset($_GET['respe'])) {
+
+                if ($_GET['respe'] == "sucesso") {
+                    ?>
+
+                    <div class="alert alert-success fade in">
+                        <button data-dismiss="alert" class="close close-sm" type="button">
+                            <i class="fa fa-times"></i>
+                        </button>
+                        <strong>SUCESSO!</strong> Usuário alterado com sucesso!
+                    </div>
+                    <?php
+                } else if ($_GET['respe'] == "erro") {
+                    ?>
+
+                    <div class="alert alert-danger fade in">
+                        <button data-dismiss="alert" class="close close-sm" type="button">
+                            <i class="fa fa-times"></i>
+                        </button>
+                        <strong>ERRO!</strong> Ocorreu um erro ao alterar o Usuário
+                    </div>
+                    <?php
+                }
+            }
+            ?>
 
             <?php
             if (isset($_GET['respt'])) {
@@ -40,12 +92,23 @@
                         <button data-dismiss="alert" class="close close-sm" type="button">
                             <i class="fa fa-times"></i>
                         </button>
-                        <strong>SUCESSO!</strong> Usuario excluido com sucesso!
+                        <strong>SUCESSO!</strong> Usuário excluido com sucesso!
+                    </div>
+                    <?php
+                } else if ($_GET['respt'] == "erro") {
+                    ?>
+
+                    <div class="alert alert-danger fade in">
+                        <button data-dismiss="alert" class="close close-sm" type="button">
+                            <i class="fa fa-times"></i>
+                        </button>
+                        <strong>ERRO!</strong> Ocorreu um erro ao excluir o Usuário
                     </div>
                     <?php
                 }
             }
             ?>
+
 
             <div class="row">
                 <div class="col-lg-12">
@@ -63,7 +126,7 @@
                                 <table  class="display table table-bordered table-striped" id="example">
                                     <thead>
                                         <tr>
-                                            <th style="text-align: center;">NOME</th>
+                                            <th style="text-align: left;">NOME</th>
                                             <th style="text-align: center;">NIVEL</th>
                                             <th style="text-align: center;">EDITAR</th>
                                             <th style="text-align: center;">EXCLUIR</th>
@@ -77,25 +140,45 @@
 
 
                                         <?php
-                                        $seleciona = "SELECT * FROM usuario order by usuario_id desc";
+                                        $seleciona_usuario = "SELECT * FROM usuario ORDER BY usuario_id DESC";
 
-                                        $seleciona_executa = mysql_query($seleciona)or die(mysql_error());
+                                        $seleciona_executa_usuario = mysql_query($seleciona_usuario)or die(mysql_error());
 
-                                        while ($dados_array = mysql_fetch_array($seleciona_executa)) {
+                                        $cont = 1;
+                                        $cont2 = 1;
+                                        
+                                        while ($dados_array_usuario = mysql_fetch_array($seleciona_executa_usuario)) {
                                             ?>
 
                                             <tr class="gradeA" style="text-align: center;">
-                                                <td><?php echo $dados_array['nome']; ?></td>
-                                                <td><?php echo $dados_array['nivel']; ?></td>
-
-
-                                                <td><a href="usuario.php?tipo=edit&id=<?php echo $dados_array['usuario_id']; ?>"><img src="img/editar.png" alt="" /></a></td>
-                                                <td><a href="php/exclui_usuario.php?id=<?php echo $dados_array['usuario_id']; ?>"><img src="img/excluir.png" alt="" /></a></td>
+                                                <td><?php echo $dados_array_usuario['nome']; ?></td>
+                                                <td><?php echo $dados_array_usuario['nivel']; ?></td>
+                                                <td><a href="usuario.php?tipo=edit&id=<?php echo $dados_array_usuario['usuario_id']; ?>"><img src="img/editar.png" alt="" /></a></td>
+                                                <td><a data-toggle="modal" href="#myModal2<?php echo $cont++; ?>"><img src="img/excluir.png" alt="" /></a></td>
                                             </tr>
 
-                                            <?php
-                                        }
-                                        ?>
+                                        <div class="modal fade" id="myModal2<?php echo $cont2++; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                        <h4 class="modal-title">Excluir Usuário</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        Deseja realmente excluir este usuário?
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button data-dismiss="modal" class="btn btn-default" type="button">Fechar</button>
+                                                        <a href="php/exclui_usuario.php?id=<?php echo $dados_array_usuario['usuario_id']; ?>"><button class="btn btn-warning" type="button"> Confirmar</button></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <?php
+                                    }
+                                    ?>
 
 
 

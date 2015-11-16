@@ -44,7 +44,7 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
 
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">TÍTULO</label>
-                                    <input name="titulo" maxlength="" type="text" class="form-control tooltips" data-placement="top" data-original-title="Título do seu artigo, EVITE TÍTULOS LONGOS">
+                                    <input name="titulo" maxlength="140" type="text" class="form-control tooltips" data-placement="top" data-original-title="Título do seu artigo, EVITE TÍTULOS LONGOS">
                                 </div>
 
                                 <div class="form-group">
@@ -145,7 +145,7 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
 
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">TÍTULO</label>
-                                    <input value="<?php echo $linha_editar['titulo']; ?>" name="titulo" type="text" class="form-control tooltips" data-placement="top" data-original-title="Título do seu artigo, EVITE TÍTULOS LONGOS">
+                                    <input maxlength="140" value="<?php echo $linha_editar['titulo']; ?>" name="titulo" type="text" class="form-control tooltips" data-placement="top" data-original-title="Título do seu artigo, EVITE TÍTULOS LONGOS">
                                 </div>
 
                                 <div class="form-group">

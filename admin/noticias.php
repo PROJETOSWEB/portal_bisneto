@@ -53,7 +53,7 @@
 
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">TÍTULO</label>
-                                    <input name="titulo" maxlength=""  tooltip="Título do seu artigo, EVITE TÍTULOS LONGOS" name="titulo" type="text" class="form-control" data-placement="top">
+                                    <input name="titulo" maxlength="140"  tooltip="Título do seu artigo, EVITE TÍTULOS LONGOS" name="titulo" type="text" class="form-control" data-placement="top">
                                 </div>
 
                                 <div class="form-group">
@@ -66,12 +66,12 @@
 
                                 <div class="col-sm-12" style="margin-bottom: 25px;">
 
-                                   <!-- <div class="form-group col-sm-11">
-                                        <label for="exampleInputEmail1">TEXTO DO DETALHE (não é obrigatório)</label>
-                                        <textarea name="texto_detalhe"  tooltip="se você deseja um destaque no texto, digite aqui. máx 100 caracteres" name="" id="" class="wysihtml5 form-control" rows="7" style="border-left: 5px solid #335397;"></textarea>
-                                    </div>-->
-                                    
-                                    
+                                    <!-- <div class="form-group col-sm-11">
+                                         <label for="exampleInputEmail1">TEXTO DO DETALHE (não é obrigatório)</label>
+                                         <textarea name="texto_detalhe"  tooltip="se você deseja um destaque no texto, digite aqui. máx 100 caracteres" name="" id="" class="wysihtml5 form-control" rows="7" style="border-left: 5px solid #335397;"></textarea>
+                                     </div>-->
+
+
 
                                 </div>
 
@@ -80,44 +80,44 @@
                                 <div class="divider"></div>
 
 
-                                
-						<div class="form-group col-sm-12">
-                        <hr/>
-                        <br/>
-                        	<label class="col-sm-3">usar imagens com tam. padrão 627x422px.</label>
-                        	<div class="form-group">
-                            	<div class="col-md-4">
-                                	<div class="fileupload fileupload-new" data-provides="fileupload">
-                                	    <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
-                                	        <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" />
-                                	    </div>
-                                	    <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
-                                	    <div>
-                                	        <span class="btn btn-white btn-file">
-                                	            <span class="fileupload-new"><i class="fa fa-paper-clip"></i> selecionar imagem</span>
-                                	            <span class="fileupload-exists"><i class="fa fa-undo"></i> trocar</span>
-                                	            <input type="file" name="img" class="default" />
-                                	        </span>
-                                	        <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload"><i class="fa fa-trash"></i> excluir</a>
-                                	    </div>
-                                	</div>
-                          		</div>
-                                <div class="col-sm-5">
-                                    <label for="exampleInputEmail1">LEGENDA DA FOTO</label>
-                                    <textarea name="legenda" id="" class="form-control" rows="3"></textarea>
+
+                                <div class="form-group col-sm-12">
+                                    <hr/>
+                                    <br/>
+                                    <label class="col-sm-3">usar imagens com tam. padrão 627x422px.</label>
+                                    <div class="form-group">
+                                        <div class="col-md-4">
+                                            <div class="fileupload fileupload-new" data-provides="fileupload">
+                                                <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                                                    <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" />
+                                                </div>
+                                                <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+                                                <div>
+                                                    <span class="btn btn-white btn-file">
+                                                        <span class="fileupload-new"><i class="fa fa-paper-clip"></i> selecionar imagem</span>
+                                                        <span class="fileupload-exists"><i class="fa fa-undo"></i> trocar</span>
+                                                        <input type="file" name="img" class="default" />
+                                                    </span>
+                                                    <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload"><i class="fa fa-trash"></i> excluir</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-5">
+                                            <label for="exampleInputEmail1">LEGENDA DA FOTO</label>
+                                            <textarea name="legenda" id="" class="form-control" rows="3"></textarea>
+                                        </div>
+
+
+                                    </div>
                                 </div>
 
-                                
-                           	</div>
-                        </div>
-                        
-                                 <div class="row ">
+                                <div class="row ">
                                     <div class="col-sm-12">
 
                                         <hr/>
 
                                         <label style="margin-right: 20px;" class="col-sm-3 col-sm-3">DESTAQUE • BANNER</label>
-                                        
+
                                         <div class="switch switch-square"
                                              data-on-label="<i class=' fa fa-check'></i>"
                                              data-off-label="<i class='fa fa-times'></i>">
@@ -171,7 +171,7 @@
 
                                 <div class = "form-group">
                                     <label for = "exampleInputEmail1">TÍTULO</label>
-                                    <input value="<?php echo $linha_editar['titulo']; ?>" name = "titulo" tooltip = "Título do seu artigo, EVITE TÍTULOS LONGOS" name = "titulo" type = "text" class = "form-control" data-placement = "top">
+                                    <input maxlength="140" value="<?php echo $linha_editar['titulo']; ?>" name = "titulo" tooltip = "Título do seu artigo, EVITE TÍTULOS LONGOS" name = "titulo" type = "text" class = "form-control" data-placement = "top">
                                 </div>
 
                                 <div class = "form-group">
@@ -223,12 +223,12 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            
+
                                             <div class="col-sm-5">
                                                 <label for="exampleInputEmail1">LEGENDA DA FOTO</label>
-                                               <textarea name="legenda" id="" class="form-control" rows="3"><?php echo $linha_editar['leganda']; ?></textarea>
+                                                <textarea name="legenda" id="" class="form-control" rows="3"><?php echo $linha_editar['leganda']; ?></textarea>
                                             </div>
-                                            
+
                                         </div>
                                     </div>
 
@@ -240,8 +240,8 @@
                                         <div class = "switch switch-square"
                                              data-on-label = "<i class=' fa fa-check'></i>"
                                              data-off-label = "<i class='fa fa-times'></i>">
-                                            <input name = "destaque" value = "1" type = "checkbox" <?php if($linha_editar['destaque_banner']==1) echo "checked";?> />
-                                            
+                                            <input name = "destaque" value = "1" type = "checkbox" <?php if ($linha_editar['destaque_banner'] == 1) echo "checked"; ?> />
+
                                         </div>
 
                                         <hr/>
@@ -250,7 +250,7 @@
                                         <div class = "switch switch-square"
                                              data-off-label = "<i class='fa fa-times'></i>"
                                              data-on-label = "<i class=' fa fa-check'></i>">
-                                            <input name = "publicar" value = "1" type = "checkbox" <?php if($linha_editar['publicar']==1) echo "checked";?>/>
+                                            <input name = "publicar" value = "1" type = "checkbox" <?php if ($linha_editar['publicar'] == 1) echo "checked"; ?>/>
                                         </div>
 
 

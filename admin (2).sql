@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 15-Nov-2015 às 01:17
+-- Generation Time: 16-Nov-2015 às 01:27
 -- Versão do servidor: 5.6.15-log
 -- PHP Version: 5.5.8
 
@@ -19,6 +19,28 @@ SET time_zone = "+00:00";
 --
 -- Database: `admin`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `album_fotos`
+--
+
+CREATE TABLE IF NOT EXISTS `album_fotos` (
+  `album_fotos_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `data_album` varchar(45) NOT NULL DEFAULT '',
+  `nome` varchar(200) NOT NULL DEFAULT '',
+  `publicar` int(10) unsigned NOT NULL DEFAULT '0',
+  `usuario_id` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`album_fotos_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Extraindo dados da tabela `album_fotos`
+--
+
+INSERT INTO `album_fotos` (`album_fotos_id`, `data_album`, `nome`, `publicar`, `usuario_id`) VALUES
+(4, '', 'FESTA', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -82,7 +104,7 @@ CREATE TABLE IF NOT EXISTS `depmidia` (
   `publicar` int(10) unsigned NOT NULL DEFAULT '0',
   `usuario_id` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`depmidia_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Extraindo dados da tabela `depmidia`
@@ -102,17 +124,18 @@ CREATE TABLE IF NOT EXISTS `fotos` (
   `data_foto` varchar(45) NOT NULL DEFAULT '',
   `legenda` varchar(45) NOT NULL DEFAULT '',
   `foto` varchar(45) NOT NULL DEFAULT '',
+  `album_fotos_id` int(10) unsigned NOT NULL DEFAULT '0',
   `usuario_id` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`fotos_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
 -- Extraindo dados da tabela `fotos`
 --
 
-INSERT INTO `fotos` (`fotos_id`, `data_foto`, `legenda`, `foto`, `usuario_id`) VALUES
-(5, '16-10-2015', 'troca legenda', 'arthur-bisneto02.jpg', 2),
-(6, '23-10-2015', 'foto festa tal', 'arthur-bisneto.jpg', 2);
+INSERT INTO `fotos` (`fotos_id`, `data_foto`, `legenda`, `foto`, `album_fotos_id`, `usuario_id`) VALUES
+(9, '', 'LEGENDA 1', 'arthur-bisneto.jpg', 4, 1),
+(10, '', 'LEGENDA 2', 'banner2.jpg', 4, 1);
 
 -- --------------------------------------------------------
 
@@ -254,15 +277,15 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `email` varchar(100) NOT NULL DEFAULT '',
   `nivel` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`usuario_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Extraindo dados da tabela `usuario`
 --
 
 INSERT INTO `usuario` (`usuario_id`, `nome`, `login`, `senha`, `status`, `email`, `nivel`) VALUES
-(1, 'Karol Oliveira', 'karol', '123', 1, 'jhudhaud', 0),
-(2, 'Thiago Maneschy', 'thiago', '123', 1, 'udahduhaudhaud', 0);
+(1, 'Administrador Sistema', 'admin', 'admin', 1, 'jhudhaud', 0),
+(4, 'Thiago Maneschy', 'thiago', '123', 1, 'udahduhaudhaud', 0);
 
 -- --------------------------------------------------------
 

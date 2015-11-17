@@ -130,7 +130,7 @@
 
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Texto</label>
-                                <textarea name="texto" id="" class="form-control" rows="7"></textarea>
+                                <textarea name="texto" id="" class="wysihtml5 form-control" rows="7"></textarea>
                             </div>
 
                             <div class="form-group">

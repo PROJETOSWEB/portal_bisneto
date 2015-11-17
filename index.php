@@ -305,7 +305,7 @@ include './admin/conections/conexao.php';
                             <!-- Related Articles -->
                             <div class="related-articles">
 
-                                <h3 class="animate-onscroll">GALERIA DE IMAGENS</h3>
+                                <h3 class="animate-onscroll">GALERIA DE FOTOS</h3>
 
                                 <div class="row">
 
@@ -327,10 +327,7 @@ include './admin/conections/conexao.php';
 
                                                     <div class="media-hover">
                                                         <div class="media-icons">
-                                                            <a href="admin/imagens/fotos/<?php echo $linha_fotos['foto']; ?>" 
-                                                               data-group="nome-do-album" 
-                                                               data-thumbnail="admin/imagens/fotos/<?php echo $linha_fotos['foto']; ?>" 
-                                                               data-title="<?php echo $linha_fotos['legenda']; ?>"
+                                                            <a href="item_fotos_album.php" 
                                                                class="jackbox media-icon">
                                                                 <i class="icons icon-zoom-in"></i>
                                                             </a>
@@ -351,7 +348,7 @@ include './admin/conections/conexao.php';
 
 
                                     <div class="col-lg-4 col-md-4 col-sm-4 animate-onscroll" style="margin-top: 20px;">
-                                        <a href="fotos.php" class="button donate button-arrow">toda galeria</a>
+                                        <a href="lista-albuns.php" class="button donate button-arrow">todos os álbuns</a>
                                     </div>
                                 </div>
 

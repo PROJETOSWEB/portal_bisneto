@@ -1,4 +1,6 @@
-<?php include './admin/conections/conexao.php'; ?>
+<?php
+include './admin/conections/conexao.php';
+?>
 <html><head>
 
         <!-- Meta Tags -->
@@ -131,8 +133,8 @@
                 <!-- Page Heading -->
                 <section class="section page-heading animate-onscroll ">
 
-                    <h1>Deputado na Mídia</h1>
-                    <p class="breadcrumb"><a href="index.php">Home</a> / Deputado na Mídia</p>
+                    <h1>NOME DO ÁLBUM</h1>
+                    <p class="breadcrumb"><a href="index.php">Home</a> / Galeria / nome do album</p>
 
                 </section>
                 <!-- Page Heading -->
@@ -144,7 +146,8 @@
 
                     <div class="row">
 
-                        <div class="col-lg-9 col-md-9 col-sm-8">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+
 
                             <div class="media-items row">
 
@@ -158,121 +161,45 @@
                                 }
 
                                 //DEFININDO A QUANTIDADE DE REGISTROS POR PAGINA
-                                $qnt = 9;
+
+                                $qnt = 8;
                                 $inicio = ($p * $qnt) - $qnt;
 
 
-                                $seleciona_midia = "SELECT * FROM depmidia WHERE publicar = 1 ORDER BY depmidia_id DESC LIMIT $inicio, $qnt";
-                                $executa_seleciona_midia = mysql_query($seleciona_midia)or die(mysql_error());
-                                ?>
 
-                                <?php
-                                while ($array_midia = mysql_fetch_array($executa_seleciona_midia)) {
+                                $seleciona_fotos = "SELECT * FROM album_fotos INNER JOIN
+                                                    fotos ON album_fotos.album_fotos_id = fotos.album_fotos_id
+                                                    GROUP BY fotos.album_fotos_id ORDER BY album_fotos.album_fotos_id DESC LIMIT $inicio, $qnt";
 
-                                    if ($array_midia['codigo'] <> "") {
-                                        ?>
-                                        <!-- ITEM VIDEO -->
-                                        <div class="col-lg-4 col-md-6 col-sm-12 mix category-videos category-meetings" 
-                                             data-nameorder="2"><!-- variável "2" para os videos -->
+                                $executa_seleciona_fotos = mysql_query($seleciona_fotos)or die(mysql_error());
 
-                                            <div class="media-item animate-onscroll ">
-
-                                                <div class="media-image">
-
-                                                    <iframe src="https://www.youtube.com/embed/<?php echo $array_midia['codigo']; ?>?wmode=transparent" allowfullscreen></iframe>
-
-                                                    <div class="media-hover">
-                                                        <div class="media-icons">
-
-                                                            <a href="https://www.youtube.com/watch?v=<?php echo $array_midia['codigo']; ?>" 
-                                                               data-group="colocar_o_id_do_video_aki"  
-                                                               data-thumbnail="img/media/media2.jpg"
-                                                               class="jackbox media-icon">
-                                                                <i class="icons icon-play"></i>
-                                                            </a>
-
-                                                        </div>
-                                                    </div>
-
-                                                </div>	
-
-
-                                                <div class="media-info">
-
-                                                    <div class="media-header">
-
-                                                        <div class="media-caption">
-                                                            <h2>
-                                                                <span style="font-weight: 300; color: #444; font-size: 10px;">postado em: <?php echo $array_midia['data']; ?></span><br/>
-                                                                <a target="_blank" href="<?php echo $array_midia['link']; ?>"><?php echo $array_midia['titulo']; ?></a>
-                                                            </h2>
-                                                        </div>
-
-                                                    </div>
-
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-                                        <!-- // ITEM VIDEO -->
-                                        <?php
-                                    }
-
-
-                                    if ($array_midia['foto'] <> "") {
-                                        ?>
-
-
-                                        <?php
-                                    }
+                                while ($array_fotos = mysql_fetch_array($executa_seleciona_fotos)) {
                                     ?>
-                                    <!-- ITEM IMAGEM -->
-                                    <div class="col-lg-4 col-md-6 col-sm-12 mix category-photos" 
-                                         data-nameorder="1"> <!-- variável "1" para as imagens -->
 
-                                        <div class="media-item animate-onscroll ">
+                                    <!-- item IMAGENS -->
+                                    <div class="col-lg-3 col-md-4 col-sm-6">
+                                        <div class="media-item animate-onscroll gallery-media">
 
                                             <div class="media-image">
-
-                                                <img src="admin/imagens/depmidia/<?php echo $array_midia['foto']; ?>" alt="">
+                                                <img src="admin/imagens/fotos/<?php echo $array_fotos['foto'] ?>" alt="">
 
                                                 <div class="media-hover">
                                                     <div class="media-icons">
-
-                                                        <a href="admin/imagens/depmidia/<?php echo $array_midia['foto']; ?>" 
-                                                           data-thumbnail="admin/imagens/depmidia/<?php echo $array_midia['foto']; ?>"
-                                                           data-group="media-jackbox"  
+                                                        <a href="admin/imagens/fotos/<?php echo $array_fotos['foto']; ?>" 
+                                                           data-group="media-jackbox" 
+                                                           data-thumbnail="admin/imagens/fotos/<?php echo $array_fotos['foto']; ?>" 
+                                                           data-title="<?php echo $array_fotos['legenda'] ?>"
                                                            class="jackbox media-icon">
                                                             <i class="icons icon-zoom-in"></i>
                                                         </a>
-
                                                     </div>
                                                 </div>
 
                                             </div>
 
-
-                                            <div class="media-info">
-                                                <div class="media-header">
-                                                    <div class="media-caption">
-                                                        <h2>
-                                                            <a href="#">
-                                                                <span style="font-weight: 300; color: #444; font-size: 10px;">postado em: <?php echo $array_midia['data']; ?></span><br/>
-                                                                <a target="_blank" href="<?php echo $array_midia['link']; ?>"><?php echo $array_midia['titulo']; ?></a>
-                                                            </a>
-                                                        </h2>
-                                                    </div>
-
-                                                </div>
-
-                                            </div>
-
-
-                                        </div>
-
+                                        </div>							
                                     </div>
-                                    <!-- // ITEM IMAGEM -->
+                                    <!-- // item IMAGENS -->
 
 
                                     <?php
@@ -280,19 +207,54 @@
                                 ?>
 
 
+
+
+
+                                <!-- item VIDEOS -->
+                                <!--                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                                                    <div class="media-item animate-onscroll gallery-media">
+                                
+                                                                        <div class="media-image">
+                                                                            <img src="img/media/media2-medium.jpg" alt="">
+                                
+                                                                            <div class="media-hover">
+                                                                                <div class="media-icons">
+                                                                                    <a href="https://www.youtube.com/watch?v=1WbQe-wVK9E" 	
+                                                                                       data-group="media-jackbox" 
+                                                                                       data-thumbnail="img/media/media2-medium.jpg" 
+                                                                                       data-title="LEGENDA LEGENDA"
+                                                                                       class="jackbox media-icon">
+                                                                                        <i class="icons icon-play"></i>
+                                                                                    </a>
+                                                                                </div>
+                                                                            </div>
+                                
+                                                                        </div>
+                                
+                                
+                                                                    </div>							
+                                                                </div>-->
+                                <!-- // item VIDEOS -->
+
+
+
+
+
+
+
                             </div>
+
 
                             <div class="animate-onscroll">
 
                                 <div class="divider"></div>
 
+
                                 <div class="numeric-pagination">
 
-
                                     <?php
-                                    
-                                    $sql_midia_count = "SELECT * FROM depmidia ORDER BY depmidia_id DESC";
-                                    $sql_query_all = mysql_query($sql_midia_count)or die(mysql_error());
+                                    $sql_video_count = "SELECT * FROM album_fotos";
+                                    $sql_query_all = mysql_query($sql_video_count)or die(mysql_error());
                                     $total_registros = mysql_num_rows($sql_query_all);
                                     $pags = ceil($total_registros / $qnt);
 
@@ -305,19 +267,19 @@
 
                                         if ($_GET['page'] == 1) {
                                             ?>
-                                            <a href="midia.php?page=1" class="button"><i class="icons icon-left-dir"></i></a>
+                                            <a href="fotos.php?page=1" class="button"><i class="icons icon-left-dir"></i></a>
 
 
                                             <?php
                                         } else {
                                             ?>
-                                            <a href="midia.php?page=<?php echo $p - 1; ?>" class="button"><i class="icons icon-left-dir"></i></a>
+                                            <a href="fotos.php?page=<?php echo $p - 1; ?>" class="button"><i class="icons icon-left-dir"></i></a>
 
                                             <?php
                                         }
                                     } else {
                                         ?>
-                                        <a href="midia.php?page=1" class="button"><i class="icons icon-left-dir"></i></a>
+                                        <a href="fotos.php?page=1" class="button"><i class="icons icon-left-dir"></i></a>
 
                                         <?php
                                     }
@@ -332,7 +294,7 @@
                                             //FAZ NADA
                                         } else {
                                             ?> 
-                                            <a href="midia.php?page=<?php echo $i; ?>" class="button"><?php echo $i; ?></a>
+                                            <a href="fotos.php?page=<?php echo $i; ?>" class="button"><?php echo $i; ?></a>
                                             <?php
                                         }
                                     }
@@ -348,7 +310,7 @@
                                             //FAZ NADA
                                         } else {
                                             ?>
-                                            <a href="midia.php?page=<?php echo $i; ?>" class="button"><?php echo $i; ?></a>
+                                            <a href="fotos.php?page=<?php echo $i; ?>" class="button"><?php echo $i; ?></a>
 
                                             <?php
                                         }
@@ -359,35 +321,36 @@
 
                                         if ($_GET['page'] == $pags) {
                                             ?>
-                                            <a href="midia.php?page=<?php echo $pags ?>" class="button"><i class="icons icon-right-dir"></i></a>
+                                            <a href="fotos.php?page=<?php echo $pags ?>" class="button"><i class="icons icon-right-dir"></i></a>
 
                                             <?php
                                         } else {
                                             ?>
-                                            <a href="midia.php?page=<?php echo $p + 1; ?>" class="button"><i class="icons icon-right-dir"></i></a>
+                                            <a href="fotos.php?page=<?php echo $p + 1; ?>" class="button"><i class="icons icon-right-dir"></i></a>
 
                                             <?php
                                         }
                                     } else {
                                         ?>
-                                        <a href="midia.php?page=<?php echo $pags ?>" class="button"><i class="icons icon-right-dir"></i></a>
+                                        <a href="fotos.php?page=<?php echo $pags ?>" class="button"><i class="icons icon-right-dir"></i></a>
 
                                         <?php
                                     }
                                     ?>
 
+
                                 </div>
 
+
+
                             </div>
+
 
                         </div>
 
 
 
-                        <!-- Sidebar -->
-                        <?php include './sidebar_bisneto.php'; ?>
 
-                        <!-- /Sidebar -->
 
 
 

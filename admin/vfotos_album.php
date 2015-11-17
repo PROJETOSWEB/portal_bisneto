@@ -129,13 +129,29 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
                     <section class="panel">
 
                         <header class="panel-heading">
+
+
+
                             <a href="fotos.php?tipo=insert&album=<?php echo $_GET['id']; ?>"><button class="btn btn-primary"><span class="glyphicon glyphicon-plus">
                                     </span> Fotos</button>
                             </a>
 
-                            <a style="float: right; margin-left: 20px;" href="php/publica_album.php?tipo=1&album=<?php echo $_GET['id']; ?>"><button class="btn btn-success"><i class="fa  fa-cloud-upload"></i> PUBLICAR ESTE ÁLBUM</button></a>
+                            <?php
+                            if ($dados_album['publicar'] == 1) {
+                                ?>
+                                <a style="float: right;"  href="php/publica_album.php?tipo=2&album=<?php echo $_GET['id']; ?>"><button class="btn btn-default"><i class="fa  fa-cloud-download"></i>  <strong>NÃO</strong> PUBLICAR ESTE ÁLBUM</button></a>
 
-                            <a style="float: right;"  href="php/publica_album.php?tipo=2&album=<?php echo $_GET['id']; ?>"><button class="btn btn-default"><i class="fa  fa-cloud-download"></i>  <strong>NÃO</strong> PUBLICAR ESTE ÁLBUM</button></a>
+                                <?php
+                            } else if ($dados_album['publicar'] == 2) {
+                                ?>
+                                <a style="float: right; margin-left: 20px;" href="php/publica_album.php?tipo=1&album=<?php echo $_GET['id']; ?>"><button class="btn btn-success"><i class="fa  fa-cloud-upload"></i> PUBLICAR ESTE ÁLBUM</button></a>
+
+                                <?php
+                            }
+                            ?>
+
+
+
 
 
 

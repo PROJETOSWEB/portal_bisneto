@@ -133,8 +133,21 @@ include './admin/conections/conexao.php';
                 <!-- Page Heading -->
                 <section class="section page-heading animate-onscroll ">
 
-                    <h1>NOME DO ÁLBUM</h1>
+                    <?php
+                    $album = $_GET['album'];
+                    $seleciona_album = "SELECT * FROM album_fotos WHERE album_fotos_id =$album ";
+                    $executa_seleciona_album = mysql_query($seleciona_album)or die(mysql_error());
+                    $dados_album = mysql_fetch_array($executa_seleciona_album);
+                    ?>
+
+
+
+                    <h1><?php echo $dados_album['nome']; ?></h1>
                     <p class="breadcrumb"><a href="index.php">Home</a> / Galeria / nome do album</p>
+
+
+
+
 
                 </section>
                 <!-- Page Heading -->
@@ -151,30 +164,28 @@ include './admin/conections/conexao.php';
 
                             <div class="media-items row">
 
-                                <?php
-                                //PEGANDO PAGINA ATUAL
-                                $p = $_GET["page"];
-                                if (isset($p)) {
-                                    $p = $p;
-                                } else {
-                                    $p = 1;
-                                }
+<?php
+//PEGANDO PAGINA ATUAL
+$p = $_GET["page"];
+if (isset($p)) {
+    $p = $p;
+} else {
+    $p = 1;
+}
 
-                                //DEFININDO A QUANTIDADE DE REGISTROS POR PAGINA
+//DEFININDO A QUANTIDADE DE REGISTROS POR PAGINA
 
-                                $qnt = 8;
-                                $inicio = ($p * $qnt) - $qnt;
+$qnt = 8;
+$inicio = ($p * $qnt) - $qnt;
 
 
 
-                                $seleciona_fotos = "SELECT * FROM album_fotos INNER JOIN
-                                                    fotos ON album_fotos.album_fotos_id = fotos.album_fotos_id
-                                                    GROUP BY fotos.album_fotos_id ORDER BY album_fotos.album_fotos_id DESC LIMIT $inicio, $qnt";
+$seleciona_fotos = "SELECT * FROM fotos WHERE album_fotos_id = $album ORDER BY fotos_id DESC LIMIT $inicio, $qnt";
 
-                                $executa_seleciona_fotos = mysql_query($seleciona_fotos)or die(mysql_error());
+$executa_seleciona_fotos = mysql_query($seleciona_fotos)or die(mysql_error());
 
-                                while ($array_fotos = mysql_fetch_array($executa_seleciona_fotos)) {
-                                    ?>
+while ($array_fotos = mysql_fetch_array($executa_seleciona_fotos)) {
+    ?>
 
                                     <!-- item IMAGENS -->
                                     <div class="col-lg-3 col-md-4 col-sm-6">
@@ -202,9 +213,9 @@ include './admin/conections/conexao.php';
                                     <!-- // item IMAGENS -->
 
 
-                                    <?php
-                                }
-                                ?>
+    <?php
+}
+?>
 
 
 
@@ -252,34 +263,34 @@ include './admin/conections/conexao.php';
 
                                 <div class="numeric-pagination">
 
-                                    <?php
-                                    $sql_video_count = "SELECT * FROM album_fotos";
-                                    $sql_query_all = mysql_query($sql_video_count)or die(mysql_error());
-                                    $total_registros = mysql_num_rows($sql_query_all);
-                                    $pags = ceil($total_registros / $qnt);
+<?php
+$sql_video_count = "SELECT * FROM fotos WHERE album_fotos_id = $album ORDER BY fotos_id DESC";
+$sql_query_all = mysql_query($sql_video_count)or die(mysql_error());
+$total_registros = mysql_num_rows($sql_query_all);
+$pags = ceil($total_registros / $qnt);
 
-                                    // Número máximos de botões de paginação 
-                                    $max_links = 5;
-
-
-                                    if (isset($_GET['page'])) {
+// Número máximos de botões de paginação 
+$max_links = 5;
 
 
-                                        if ($_GET['page'] == 1) {
-                                            ?>
-                                            <a href="fotos.php?page=1" class="button"><i class="icons icon-left-dir"></i></a>
+if (isset($_GET['page'])) {
+
+
+    if ($_GET['page'] == 1) {
+        ?>
+                                            <a href="item_fotos_album.php?page=1&album=<?php echo $album; ?>" class="button"><i class="icons icon-left-dir"></i></a>
 
 
                                             <?php
                                         } else {
                                             ?>
-                                            <a href="fotos.php?page=<?php echo $p - 1; ?>" class="button"><i class="icons icon-left-dir"></i></a>
+                                            <a href="item_fotos_album.php?page=<?php echo $p - 1; ?>&album=<?php echo $album; ?>" class="button"><i class="icons icon-left-dir"></i></a>
 
                                             <?php
                                         }
                                     } else {
                                         ?>
-                                        <a href="fotos.php?page=1" class="button"><i class="icons icon-left-dir"></i></a>
+                                        <a href="item_fotos_album.php?page=1&album=<?php echo $album; ?>" class="button"><i class="icons icon-left-dir"></i></a>
 
                                         <?php
                                     }
@@ -294,7 +305,7 @@ include './admin/conections/conexao.php';
                                             //FAZ NADA
                                         } else {
                                             ?> 
-                                            <a href="fotos.php?page=<?php echo $i; ?>" class="button"><?php echo $i; ?></a>
+                                            <a href="item_fotos_album.php?page=<?php echo $i; ?>&album=<?php echo $album; ?>" class="button"><?php echo $i; ?></a>
                                             <?php
                                         }
                                     }
@@ -310,7 +321,7 @@ include './admin/conections/conexao.php';
                                             //FAZ NADA
                                         } else {
                                             ?>
-                                            <a href="fotos.php?page=<?php echo $i; ?>" class="button"><?php echo $i; ?></a>
+                                            <a href="item_fotos_album.php?album=<?php echo $album; ?>&page=<?php echo $i; ?>" class="button"><?php echo $i; ?></a>
 
                                             <?php
                                         }
@@ -321,18 +332,18 @@ include './admin/conections/conexao.php';
 
                                         if ($_GET['page'] == $pags) {
                                             ?>
-                                            <a href="fotos.php?page=<?php echo $pags ?>" class="button"><i class="icons icon-right-dir"></i></a>
+                                            <a href="item_fotos_album.php?page=<?php echo $pags ?>&album=<?php echo $album; ?>" class="button"><i class="icons icon-right-dir"></i></a>
 
                                             <?php
                                         } else {
                                             ?>
-                                            <a href="fotos.php?page=<?php echo $p + 1; ?>" class="button"><i class="icons icon-right-dir"></i></a>
+                                            <a href="item_fotos_album.php?page=<?php echo $p + 1; ?>&album=<?php echo $album; ?>" class="button"><i class="icons icon-right-dir"></i></a>
 
                                             <?php
                                         }
                                     } else {
                                         ?>
-                                        <a href="fotos.php?page=<?php echo $pags ?>" class="button"><i class="icons icon-right-dir"></i></a>
+                                        <a href="item_fotos_album.php?page=<?php echo $pags ?>&album=<?php echo $album; ?>" class="button"><i class="icons icon-right-dir"></i></a>
 
                                         <?php
                                     }
@@ -366,7 +377,7 @@ include './admin/conections/conexao.php';
 
 
             <!-- Footer -->
-            <?php include './footer_bisneto.php'; ?> 
+<?php include './footer_bisneto.php'; ?> 
             <!-- // Footer -->
 
 

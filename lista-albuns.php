@@ -124,19 +124,13 @@
             <!-- /Header -->
 
 
-
-
             <section id="content">	
-
                 <!-- Page Heading -->
                 <section class="section page-heading animate-onscroll ">
-
                     <h1>TODOS OS ÁLBUNS</h1>
                     <p class="breadcrumb"><a href="index.php">Home</a> / Álbuns</p>
-
                 </section>
                 <!-- Page Heading -->
-
 
 
                 <!-- Section -->
@@ -162,28 +156,15 @@
                                 $inicio = ($p * $qnt) - $qnt;
 
 
-                                $seleciona_midia = "SELECT * FROM depmidia WHERE publicar = 1 ORDER BY depmidia_id DESC LIMIT $inicio, $qnt";
+                                $seleciona_midia = "SELECT * FROM album_fotos INNER JOIN
+                                                    fotos ON album_fotos.album_fotos_id = fotos.album_fotos_id
+                                                    GROUP BY fotos.album_fotos_id ORDER BY album_fotos.album_fotos_id DESC LIMIT $inicio, $qnt";
+
                                 $executa_seleciona_midia = mysql_query($seleciona_midia)or die(mysql_error());
                                 ?>
 
                                 <?php
                                 while ($array_midia = mysql_fetch_array($executa_seleciona_midia)) {
-
-                                    if ($array_midia['codigo'] <> "") {
-                                        ?>
-                                        <!-- ITEM VIDEO -->
-                                        
-                                        <!-- // ITEM VIDEO -->
-                                        <?php
-                                    }
-
-
-                                    if ($array_midia['foto'] <> "") {
-                                        ?>
-
-
-                                        <?php
-                                    }
                                     ?>
                                     <!-- ITEM IMAGEM -->
                                     <div class="col-lg-4 col-md-6 col-sm-12 mix category-photos" 
@@ -193,29 +174,26 @@
 
                                             <div class="media-image">
 
-                                                <img src="admin/imagens/depmidia/<?php echo $array_midia['foto']; ?>" alt="">
+                                                <img src="admin/imagens/fotos/<?php echo $array_midia['foto']; ?>" alt="">
 
                                                 <div class="media-hover">
                                                     <div class="media-icons">
-
-                                                        <a href="item_fotos_album.php" 
+                                                        <a href="item_fotos_album.php?album=<?php echo $array_midia['album_fotos_id']; ?>" 
                                                            class="media-icon">
                                                             <i class="icons icon-zoom-in"></i>
                                                         </a>
-
                                                     </div>
                                                 </div>
 
                                             </div>
 
-
                                             <div class="media-info">
                                                 <div class="media-header">
                                                     <div class="media-caption">
                                                         <h2>
-                                                            
-                                                                <span style="font-weight: 300; color: #444; font-size: 10px;">postado em: <?php echo $array_midia['data']; ?></span><br/>
-                                                                 <a href="item_fotos_album.php">nome do album</a>
+
+                                                            <span style="font-weight: 300; color: #444; font-size: 10px;">postado em: <?php echo $array_midia['data_album']; ?></span><br/>
+                                                            <a href="item_fotos_album.php?album=<?php echo $array_midia['album_fotos_id']; ?>"><?php echo $array_midia['nome']; ?> </a>
                                                         </h2>
                                                     </div>
 
@@ -245,13 +223,14 @@
 
 
                                     <?php
-                                    
-                                    $sql_midia_count = "SELECT * FROM depmidia ORDER BY depmidia_id DESC";
+                                    $sql_midia_count = "SELECT * FROM album_fotos INNER JOIN
+                                                    fotos ON album_fotos.album_fotos_id = fotos.album_fotos_id
+                                                    GROUP BY fotos.album_fotos_id ORDER BY album_fotos.album_fotos_id DESC";
                                     $sql_query_all = mysql_query($sql_midia_count)or die(mysql_error());
                                     $total_registros = mysql_num_rows($sql_query_all);
                                     $pags = ceil($total_registros / $qnt);
 
-                                    // Número máximos de botões de paginação 
+// Número máximos de botões de paginação 
                                     $max_links = 5;
 
 
@@ -260,19 +239,19 @@
 
                                         if ($_GET['page'] == 1) {
                                             ?>
-                                            <a href="midia.php?page=1" class="button"><i class="icons icon-left-dir"></i></a>
+                                            <a href="lista-albuns.php?page=1" class="button"><i class="icons icon-left-dir"></i></a>
 
 
                                             <?php
                                         } else {
                                             ?>
-                                            <a href="midia.php?page=<?php echo $p - 1; ?>" class="button"><i class="icons icon-left-dir"></i></a>
+                                            <a href="lista-albuns.php?page=<?php echo $p - 1; ?>" class="button"><i class="icons icon-left-dir"></i></a>
 
                                             <?php
                                         }
                                     } else {
                                         ?>
-                                        <a href="midia.php?page=1" class="button"><i class="icons icon-left-dir"></i></a>
+                                        <a href="lista-albuns.php?page=1" class="button"><i class="icons icon-left-dir"></i></a>
 
                                         <?php
                                     }
@@ -287,7 +266,7 @@
                                             //FAZ NADA
                                         } else {
                                             ?> 
-                                            <a href="midia.php?page=<?php echo $i; ?>" class="button"><?php echo $i; ?></a>
+                                            <a href="lista-albuns.php?page=<?php echo $i; ?>" class="button"><?php echo $i; ?></a>
                                             <?php
                                         }
                                     }
@@ -303,7 +282,7 @@
                                             //FAZ NADA
                                         } else {
                                             ?>
-                                            <a href="midia.php?page=<?php echo $i; ?>" class="button"><?php echo $i; ?></a>
+                                            <a href="lista-albuns.php?page=<?php echo $i; ?>" class="button"><?php echo $i; ?></a>
 
                                             <?php
                                         }
@@ -314,18 +293,18 @@
 
                                         if ($_GET['page'] == $pags) {
                                             ?>
-                                            <a href="midia.php?page=<?php echo $pags ?>" class="button"><i class="icons icon-right-dir"></i></a>
+                                            <a href="lista-albuns.php?page=<?php echo $pags ?>" class="button"><i class="icons icon-right-dir"></i></a>
 
                                             <?php
                                         } else {
                                             ?>
-                                            <a href="midia.php?page=<?php echo $p + 1; ?>" class="button"><i class="icons icon-right-dir"></i></a>
+                                            <a href="lista-albuns.php?page=<?php echo $p + 1; ?>" class="button"><i class="icons icon-right-dir"></i></a>
 
                                             <?php
                                         }
                                     } else {
                                         ?>
-                                        <a href="midia.php?page=<?php echo $pags ?>" class="button"><i class="icons icon-right-dir"></i></a>
+                                        <a href="lista-albuns.php?page=<?php echo $pags ?>" class="button"><i class="icons icon-right-dir"></i></a>
 
                                         <?php
                                     }

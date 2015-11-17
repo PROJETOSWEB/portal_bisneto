@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 16-Nov-2015 às 01:27
+-- Generation Time: 17-Nov-2015 às 03:29
 -- Versão do servidor: 5.6.15-log
 -- PHP Version: 5.5.8
 
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `album_fotos` (
 --
 
 INSERT INTO `album_fotos` (`album_fotos_id`, `data_album`, `nome`, `publicar`, `usuario_id`) VALUES
-(4, '', 'FESTA', 1, 1);
+(4, '03/10/2015', 'FESTA', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -135,7 +135,7 @@ CREATE TABLE IF NOT EXISTS `fotos` (
 
 INSERT INTO `fotos` (`fotos_id`, `data_foto`, `legenda`, `foto`, `album_fotos_id`, `usuario_id`) VALUES
 (9, '', 'LEGENDA 1', 'arthur-bisneto.jpg', 4, 1),
-(10, '', 'LEGENDA 2', 'banner2.jpg', 4, 1);
+(10, '', 'LEGENDA 2', 'arthur-bisneto02.jpg', 4, 1);
 
 -- --------------------------------------------------------
 

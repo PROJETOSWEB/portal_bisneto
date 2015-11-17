@@ -1,9 +1,5 @@
-<?php
-include './admin/conections/conexao.php';
-?>
-
-<html>
-    <head>
+<?php include './admin/conections/conexao.php'; ?>
+<html><head>
 
         <!-- Meta Tags -->
         <meta charset="utf-8">
@@ -132,14 +128,15 @@ include './admin/conections/conexao.php';
 
             <section id="content">	
 
-
                 <!-- Page Heading -->
-                <section class="section page-heading animate-onscroll full-width-bg">
+                <section class="section page-heading animate-onscroll ">
 
-                    <p class="breadcrumb"><a href="index.php">Home</a> /opinião</p>
+                    <h1>Deputado na Mídia</h1>
+                    <p class="breadcrumb"><a href="index.php">Home</a> / Deputado na Mídia</p>
 
                 </section>
                 <!-- Page Heading -->
+
 
 
                 <!-- Section -->
@@ -149,85 +146,133 @@ include './admin/conections/conexao.php';
 
                         <div class="col-lg-9 col-md-9 col-sm-8">
 
-                            <div class="row">
+                            <div class="media-items row">
 
-                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                <?php
+                                //PEGANDO PAGINA ATUAL
+                                $p = $_GET["page"];
+                                if (isset($p)) {
+                                    $p = $p;
+                                } else {
+                                    $p = 1;
+                                }
 
-                                    <h1 class="animate-onscroll">LISTA de opinião</h1>
-                                    <hr class="animate-onscroll" style="margin:5px;">
-                                    <br/>
-
-
-                                    <?php
-                                    //PEGANDO PAGINA ATUAL
-                                    $p = $_GET["page"];
-                                    if (isset($p)) {
-                                        $p = $p;
-                                    } else {
-                                        $p = 1;
-                                    }
-
-                                    //DEFININDO A QUANTIDADE DE REGISTROS POR PAGINA
-
-                                    $qnt = 5;
-                                    $inicio = ($p * $qnt) - $qnt;
+                                //DEFININDO A QUANTIDADE DE REGISTROS POR PAGINA
+                                $qnt = 9;
+                                $inicio = ($p * $qnt) - $qnt;
 
 
-                                    $seleciona_opiniao = "SELECT * FROM opiniao WHERE publicar = 1 ORDER BY opiniao_id DESC LIMIT $inicio, $qnt";
-                                    $executa_seleciona_opiniao = mysql_query($seleciona_opiniao)or die(mysql_error());
-                                    ?>
+                                $seleciona_midia = "SELECT * FROM depmidia WHERE publicar = 1 ORDER BY depmidia_id DESC LIMIT $inicio, $qnt";
+                                $executa_seleciona_midia = mysql_query($seleciona_midia)or die(mysql_error());
+                                ?>
 
+                                <?php
+                                while ($array_midia = mysql_fetch_array($executa_seleciona_midia)) {
 
-                                    <?php
-
-                                    function limitarTexto($texto, $limite) {
-                                        $texto = substr($texto, 0, strrpos(substr($texto, 0, $limite), ' ')) . '...';
-                                        return $texto;
-                                    }
-
-                                    while ($array_opiniao = mysql_fetch_array($executa_seleciona_opiniao)) {
+                                    if ($array_midia['codigo'] <> "") {
                                         ?>
+                                        <!-- ITEM VIDEO -->
+                                        <div class="col-lg-4 col-md-6 col-sm-12 mix category-videos category-meetings" 
+                                             data-nameorder="2"><!-- variável "2" para os videos -->
 
-                                        <!-- item -->		
-                                        <div class="blog-post style2 animate-onscroll">
+                                            <div class="media-item animate-onscroll ">
 
-                                            <div class="post-image">
-                                                <img src="admin/imagens/opiniao/<?php echo $array_opiniao['foto']; ?>" alt="">
-                                                <div class="media-hover">
-                                                    <div class="media-icons">
-                                                        <a href="admin/imagens/opiniao<?php echo $array_opiniao['foto']; ?>" data-group="media-jackbox" class="jackbox media-icon"><i class="icons icon-zoom-in"></i></a>
-                                                        <a href="opiniao.php?id=<?php echo $array_opiniao['opiniao_id']; ?>" class="media-icon"><i class="icons icon-link"></i></a>
+                                                <div class="media-image">
+
+                                                    <iframe src="https://www.youtube.com/embed/<?php echo $array_midia['codigo']; ?>?wmode=transparent" allowfullscreen></iframe>
+
+                                                    <div class="media-hover">
+                                                        <div class="media-icons">
+
+                                                            <a href="https://www.youtube.com/watch?v=<?php echo $array_midia['codigo']; ?>" 
+                                                               data-group="colocar_o_id_do_video_aki"  
+                                                               data-thumbnail="img/media/media2.jpg"
+                                                               class="jackbox media-icon">
+                                                                <i class="icons icon-play"></i>
+                                                            </a>
+
+                                                        </div>
                                                     </div>
-                                                </div>								
-                                            </div>
-                                            <div class="post-content">
-                                                <div class="post-header">
-                                                    <h2><a href="opiniao.php?id=<?php echo $array_opiniao['opiniao_id']; ?>"><?php echo $array_opiniao['titulo']; ?> </a></h2>
-                                                    <div class="post-meta">
-                                                        <span><?php echo $array_opiniao['data']; ?></span>
+
+                                                </div>	
+
+
+                                                <div class="media-info">
+
+                                                    <div class="media-header">
+
+                                                        <div class="media-caption">
+                                                            <h2>
+                                                                <span style="font-weight: 300; color: #444; font-size: 10px;">postado em: <?php echo $array_midia['data']; ?></span><br/>
+                                                                <a target="_blank" href="<?php echo $array_midia['link']; ?>"><?php echo $array_midia['titulo']; ?></a>
+                                                            </h2>
+                                                        </div>
+
                                                     </div>
-                                                </div>
-                                                <div class="post-exceprt">
-
-
-                                                    <p style="text-align: justify;">
-                                                        <?php print(limitarTexto($array_opiniao['texto'], $limite = 200)); ?>
-                                                    </p>
-
-                                                    <a href="opiniao.php?id=<?php echo $array_opiniao['opiniao_id']; ?>" class="button read-more-button big button-arrow">ver</a>
 
                                                 </div>
+
                                             </div>
 
-                                        </div>	
-                                        <div class="divider animate-onscroll"></div>																		
-                                        <!-- // item -->
+                                        </div>
+                                        <!-- // ITEM VIDEO -->
+                                        <?php
+                                    }
+
+
+                                    if ($array_midia['foto'] <> "") {
+                                        ?>
+                                        <!-- ITEM IMAGEM -->
+                                        <div class="col-lg-4 col-md-6 col-sm-12 mix category-photos" 
+                                             data-nameorder="1"> <!-- variável "1" para as imagens -->
+
+                                            <div class="media-item animate-onscroll ">
+
+                                                <div class="media-image">
+
+                                                    <img src="admin/imagens/depmidia/<?php echo $array_midia['foto']; ?>" alt="">
+
+                                                    <div class="media-hover">
+                                                        <div class="media-icons">
+
+                                                            <a href="admin/imagens/depmidia/<?php echo $array_midia['foto']; ?>" 
+                                                               data-thumbnail="admin/imagens/depmidia/<?php echo $array_midia['foto']; ?>"
+                                                               data-group="media-jackbox"  
+                                                               class="jackbox media-icon">
+                                                                <i class="icons icon-zoom-in"></i>
+                                                            </a>
+
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+
+                                                <div class="media-info">
+                                                    <div class="media-header">
+                                                        <div class="media-caption">
+                                                            <h2>
+                                                                <a href="#">
+                                                                    <span style="font-weight: 300; color: #444; font-size: 10px;">postado em: <?php echo $array_midia['data']; ?></span><br/>
+                                                                    <a target="_blank" href="<?php echo $array_midia['link']; ?>"><?php echo $array_midia['titulo']; ?></a>
+                                                                </a>
+                                                            </h2>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+
+                                            </div>
+
+                                        </div>
+                                        <!-- // ITEM IMAGEM -->
 
                                         <?php
                                     }
-                                    ?>
-
-                                </div>
+                                }
+                                ?>
 
 
                             </div>
@@ -239,10 +284,9 @@ include './admin/conections/conexao.php';
                                 <div class="numeric-pagination">
 
 
-
                                     <?php
-                                    $sql_opiniao_count = "SELECT * FROM opiniao WHERE publicar = 1 ORDER BY opiniao_id DESC";
-                                    $sql_query_all = mysql_query($sql_opiniao_count)or die(mysql_error());
+                                    $sql_midia_count = "SELECT * FROM depmidia ORDER BY depmidia_id DESC";
+                                    $sql_query_all = mysql_query($sql_midia_count)or die(mysql_error());
                                     $total_registros = mysql_num_rows($sql_query_all);
                                     $pags = ceil($total_registros / $qnt);
 
@@ -255,19 +299,19 @@ include './admin/conections/conexao.php';
 
                                         if ($_GET['page'] == 1) {
                                             ?>
-                                            <a href="lista-opiniao.php?page=1" class="button"><i class="icons icon-left-dir"></i></a>
+                                            <a href="midia.php?page=1" class="button"><i class="icons icon-left-dir"></i></a>
 
 
                                             <?php
                                         } else {
                                             ?>
-                                            <a href="lista-opiniao.php?page=<?php echo $p - 1; ?>" class="button"><i class="icons icon-left-dir"></i></a>
+                                            <a href="midia.php?page=<?php echo $p - 1; ?>" class="button"><i class="icons icon-left-dir"></i></a>
 
                                             <?php
                                         }
                                     } else {
                                         ?>
-                                        <a href="lista-opiniao.php?page=1" class="button"><i class="icons icon-left-dir"></i></a>
+                                        <a href="midia.php?page=1" class="button"><i class="icons icon-left-dir"></i></a>
 
                                         <?php
                                     }
@@ -282,7 +326,7 @@ include './admin/conections/conexao.php';
                                             //FAZ NADA
                                         } else {
                                             ?> 
-                                            <a href="lista-opiniao.php?page=<?php echo $i; ?>" class="button"><?php echo $i; ?></a>
+                                            <a href="midia.php?page=<?php echo $i; ?>" class="button"><?php echo $i; ?></a>
                                             <?php
                                         }
                                     }
@@ -298,7 +342,7 @@ include './admin/conections/conexao.php';
                                             //FAZ NADA
                                         } else {
                                             ?>
-                                            <a href="lista-opiniao.php?page=<?php echo $i; ?>" class="button"><?php echo $i; ?></a>
+                                            <a href="midia.php?page=<?php echo $i; ?>" class="button"><?php echo $i; ?></a>
 
                                             <?php
                                         }
@@ -309,38 +353,26 @@ include './admin/conections/conexao.php';
 
                                         if ($_GET['page'] == $pags) {
                                             ?>
-                                            <a href="lista-opiniao.php?page=<?php echo $pags ?>" class="button"><i class="icons icon-right-dir"></i></a>
+                                            <a href="midia.php?page=<?php echo $pags ?>" class="button"><i class="icons icon-right-dir"></i></a>
 
                                             <?php
                                         } else {
                                             ?>
-                                            <a href="lista-opiniao.php?page=<?php echo $p + 1; ?>" class="button"><i class="icons icon-right-dir"></i></a>
+                                            <a href="midia.php?page=<?php echo $p + 1; ?>" class="button"><i class="icons icon-right-dir"></i></a>
 
                                             <?php
                                         }
                                     } else {
                                         ?>
-                                        <a href="lista-opiniao.php?page=<?php echo $pags ?>" class="button"><i class="icons icon-right-dir"></i></a>
+                                        <a href="midia.php?page=<?php echo $pags ?>" class="button"><i class="icons icon-right-dir"></i></a>
 
                                         <?php
                                     }
                                     ?>
 
-
-<!--                                <a href="#" class="button"><i class="icons icon-left-dir"></i></a>
-                                    <a href="#" class="button">1</a>
-                                    <a href="#" class="button active-button">2</a>
-                                    <a href="#" class="button">3</a>
-                                    <a href="#" class="button"><i class="icons icon-right-dir"></i></a>-->
-
-
                                 </div>
 
                             </div>
-
-
-
-
 
                         </div>
 

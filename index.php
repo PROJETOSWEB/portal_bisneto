@@ -175,7 +175,11 @@ include './admin/conections/conexao.php';
                         </div>
 
 
-                        <div class="col-lg-3 col-md-3 col-sm-4 sidebar">                            <?php include './menu_lateral_bisneto.php'; ?>                         </div>
+                        <div class="col-lg-3 col-md-3 col-sm-4 sidebar">
+
+                            <?php include './menu_lateral_bisneto.php'; ?> 
+
+                        </div>
 
                     </div>
 
@@ -310,7 +314,7 @@ include './admin/conections/conexao.php';
                                 <div class="row">
 
                                     <?php
-//SELECIONANDO AS ULTIMAS 3 IMAGENS DA GALERIA
+                                    //SELECIONANDO AS ULTIMAS 3 IMAGENS DA GALERIA
                                     $seleciona_imagem = "SELECT * FROM fotos order by fotos_id DESC LIMIT 0,3";
                                     $executa_seleciona_imagem = mysql_query($seleciona_imagem) or die(mysql_error());
                                     ?>
@@ -327,7 +331,7 @@ include './admin/conections/conexao.php';
 
                                                     <div class="media-hover">
                                                         <div class="media-icons">
-                                                            <a href="item_fotos_album.php" 
+                                                            <a href="item_fotos_album.php?album=<?php echo $linha_fotos['album_fotos_id']; ?>" 
                                                                class="jackbox media-icon">
                                                                 <i class="icons icon-zoom-in"></i>
                                                             </a>

@@ -157,8 +157,8 @@
 
 
                                 $seleciona_midia = "SELECT * FROM album_fotos INNER JOIN
-                                                    fotos ON album_fotos.album_fotos_id = fotos.album_fotos_id
-                                                    GROUP BY fotos.album_fotos_id ORDER BY album_fotos.album_fotos_id DESC LIMIT $inicio, $qnt";
+                                                    fotos ON album_fotos.album_fotos_id = fotos.album_fotos_id WHERE publicar = 1
+                                                    GROUP BY fotos.album_fotos_id  ORDER BY album_fotos.album_fotos_id DESC LIMIT $inicio, $qnt";
 
                                 $executa_seleciona_midia = mysql_query($seleciona_midia)or die(mysql_error());
                                 ?>
@@ -224,7 +224,7 @@
 
                                     <?php
                                     $sql_midia_count = "SELECT * FROM album_fotos INNER JOIN
-                                                    fotos ON album_fotos.album_fotos_id = fotos.album_fotos_id
+                                                    fotos ON album_fotos.album_fotos_id = fotos.album_fotos_id WHERE publicar = 1
                                                     GROUP BY fotos.album_fotos_id ORDER BY album_fotos.album_fotos_id DESC";
                                     $sql_query_all = mysql_query($sql_midia_count)or die(mysql_error());
                                     $total_registros = mysql_num_rows($sql_query_all);

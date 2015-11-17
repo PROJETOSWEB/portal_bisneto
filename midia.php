@@ -222,60 +222,55 @@
 
                                     if ($array_midia['foto'] <> "") {
                                         ?>
+                                        <!-- ITEM IMAGEM -->
+                                        <div class="col-lg-4 col-md-6 col-sm-12 mix category-photos" 
+                                             data-nameorder="1"> <!-- variável "1" para as imagens -->
 
+                                            <div class="media-item animate-onscroll ">
+
+                                                <div class="media-image">
+
+                                                    <img src="admin/imagens/depmidia/<?php echo $array_midia['foto']; ?>" alt="">
+
+                                                    <div class="media-hover">
+                                                        <div class="media-icons">
+
+                                                            <a href="admin/imagens/depmidia/<?php echo $array_midia['foto']; ?>" 
+                                                               data-thumbnail="admin/imagens/depmidia/<?php echo $array_midia['foto']; ?>"
+                                                               data-group="media-jackbox"  
+                                                               class="jackbox media-icon">
+                                                                <i class="icons icon-zoom-in"></i>
+                                                            </a>
+
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+
+                                                <div class="media-info">
+                                                    <div class="media-header">
+                                                        <div class="media-caption">
+                                                            <h2>
+                                                                <a href="#">
+                                                                    <span style="font-weight: 300; color: #444; font-size: 10px;">postado em: <?php echo $array_midia['data']; ?></span><br/>
+                                                                    <a target="_blank" href="<?php echo $array_midia['link']; ?>"><?php echo $array_midia['titulo']; ?></a>
+                                                                </a>
+                                                            </h2>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+
+                                            </div>
+
+                                        </div>
+                                        <!-- // ITEM IMAGEM -->
 
                                         <?php
                                     }
-                                    ?>
-                                    <!-- ITEM IMAGEM -->
-                                    <div class="col-lg-4 col-md-6 col-sm-12 mix category-photos" 
-                                         data-nameorder="1"> <!-- variável "1" para as imagens -->
-
-                                        <div class="media-item animate-onscroll ">
-
-                                            <div class="media-image">
-
-                                                <img src="admin/imagens/depmidia/<?php echo $array_midia['foto']; ?>" alt="">
-
-                                                <div class="media-hover">
-                                                    <div class="media-icons">
-
-                                                        <a href="admin/imagens/depmidia/<?php echo $array_midia['foto']; ?>" 
-                                                           data-thumbnail="admin/imagens/depmidia/<?php echo $array_midia['foto']; ?>"
-                                                           data-group="media-jackbox"  
-                                                           class="jackbox media-icon">
-                                                            <i class="icons icon-zoom-in"></i>
-                                                        </a>
-
-                                                    </div>
-                                                </div>
-
-                                            </div>
-
-
-                                            <div class="media-info">
-                                                <div class="media-header">
-                                                    <div class="media-caption">
-                                                        <h2>
-                                                            <a href="#">
-                                                                <span style="font-weight: 300; color: #444; font-size: 10px;">postado em: <?php echo $array_midia['data']; ?></span><br/>
-                                                                <a target="_blank" href="<?php echo $array_midia['link']; ?>"><?php echo $array_midia['titulo']; ?></a>
-                                                            </a>
-                                                        </h2>
-                                                    </div>
-
-                                                </div>
-
-                                            </div>
-
-
-                                        </div>
-
-                                    </div>
-                                    <!-- // ITEM IMAGEM -->
-
-
-                                    <?php
                                 }
                                 ?>
 
@@ -290,7 +285,6 @@
 
 
                                     <?php
-                                    
                                     $sql_midia_count = "SELECT * FROM depmidia ORDER BY depmidia_id DESC";
                                     $sql_query_all = mysql_query($sql_midia_count)or die(mysql_error());
                                     $total_registros = mysql_num_rows($sql_query_all);

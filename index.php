@@ -315,7 +315,9 @@ include './admin/conections/conexao.php';
 
                                     <?php
                                     //SELECIONANDO AS ULTIMAS 3 IMAGENS DA GALERIA
-                                    $seleciona_imagem = "SELECT * FROM fotos order by fotos_id DESC LIMIT 0,3";
+                                    $seleciona_imagem = "SELECT * FROM album_fotos INNER JOIN
+                                                    fotos ON album_fotos.album_fotos_id = fotos.album_fotos_id WHERE publicar = 1
+                                                    GROUP BY fotos.album_fotos_id  ORDER BY album_fotos.album_fotos_id DESC LIMIT 0,3";
                                     $executa_seleciona_imagem = mysql_query($seleciona_imagem) or die(mysql_error());
                                     ?>
 

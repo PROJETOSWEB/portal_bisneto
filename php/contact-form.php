@@ -2,10 +2,8 @@
 
 /* Candidate Contact Form */
 
-
-
 // Email To 
-$email_to = "thiago@maneschy.com";
+$email_to = "karolfurletti@gmail.com";
 
 
 // Default Subject
@@ -77,46 +75,6 @@ if(isset($_POST['contact-lastname']) && !empty($_POST['contact-lastname'])){
 
 
 
-/* Zip Code */
-if(isset($_POST['contact-zip']) && !empty($_POST['contact-zip'])){
-	
-	$zipcode = $_POST['contact-zip'];
-	
-}else{
-
-	$error = true;
-	$error_message .= 'Please fill in the zip code field<br>';
-	
-}
-
-
-/* Address */
-if(isset($_POST['contact-address']) && !empty($_POST['contact-address'])){
-	
-	$address = $_POST['contact-address'];
-	
-}
-
-
-
-/* City */
-if(isset($_POST['contact-city']) && !empty($_POST['contact-city'])){
-	
-	$city = $_POST['contact-city'];
-	
-}
-
-
-
-/* State */
-if(isset($_POST['contact-state']) && !empty($_POST['contact-state'])){
-	
-	$state = $_POST['contact-state'];
-	
-}
-
-
-
 /* Phone */
 if(isset($_POST['contact-phone']) && !empty($_POST['contact-phone'])){
 	
@@ -144,9 +102,6 @@ if(isset($_POST['contact-message']) && !empty($_POST['contact-message'])){
 
 
 
-
-
-
 /* Error Handle */
 if($error == true){
 	
@@ -166,19 +121,10 @@ if($error == true){
 	/* Message */
 	$email_message = 	"First Name: " . $first_name . "\r\n" .
 						"Last Name: " . $last_name . "\r\n" .
-						"Email: " . $email . "\r\n" .
-						"ZIP Code: " . $zipcode . "\r\n";
+						"Email: " . $email . "\r\n" ;
+						
 	
 	
-	/* Not Required Fields */
-	if(isset($address))
-		$email_message .= "Address: " . $address . "\r\n";
-	
-	if(isset($city))
-		$email_message .= "City: " . $city . "\r\n";
-	
-	if(isset($state))
-		$email_message .= "State: " . $state . "\r\n";
 		
 	if(isset($phone))
 		$email_message .= "Phone: " . $phone . "\r\n";
@@ -200,9 +146,6 @@ if($error == true){
 
 
 }
-
-
-
 
 
 

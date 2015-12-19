@@ -351,7 +351,7 @@ h6.shortcodes-caption{
 
 #newsletter{
 	background:#324e79;
-	padding:20px;
+	padding:5px;
 	border-radius:5px;
 	-webkit-border-radius:5px;
 	-moz-border-radius:5px;
@@ -423,7 +423,7 @@ h6.shortcodes-caption{
 	-moz-border-radius:3px;
 	height:35px;
 	background:#f3f4f6;
-	width:100%;
+	width:200px;	margin-right: 10px;
 	color:#3e474c;
 	font-size:13px;
 	margin-bottom:0;
@@ -437,8 +437,8 @@ h6.shortcodes-caption{
 	border:none;
 	padding:0;
 	display:block;
-	margin:0;
-	background:#63b2f5;
+	margin:0;	margin-right: 15px;
+	background: #FAC82C;
 	border-radius:3px;
 	-webkit-border-radius:3px;
 	-moz-border-radius:3px;
@@ -468,7 +468,7 @@ h6.shortcodes-caption{
 	font-size:16px;
 	width:40px;
 	height:35px;
-	background:#63b2f5;
+	background: #FAC82C;
 	color:#FFF;
 	border-radius:3px;
 	-webkit-border-radius:3px;

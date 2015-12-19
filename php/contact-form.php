@@ -5,7 +5,7 @@
 
 
 // Email To 
-$email_to = "support@companyname.com";
+$email_to = "thiago@maneschy.com";
 
 
 // Default Subject

@@ -152,8 +152,12 @@ include './admin/conections/conexao.php';
                             <div class="row">
 
                                 <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <?php 
+                                    $busca = $_POST['busca'];
+                                    
+                                    ?>
 
-                                    <h1 class="animate-onscroll">Você procura por: xxxxxxxxxxx</h1>
+                                    <h1 class="animate-onscroll">Você procura por: <?php echo $busca; ?></h1>
                                     <hr class="animate-onscroll" style="margin:5px;">
                                     <br/>
 
@@ -173,7 +177,7 @@ include './admin/conections/conexao.php';
                                     $inicio = ($p * $qnt) - $qnt;
 
 
-                                    $seleciona_opiniao = "SELECT * FROM opiniao WHERE publicar = 1 ORDER BY opiniao_id DESC LIMIT $inicio, $qnt";
+                                    $seleciona_opiniao = "SELECT * FROM noticia WHERE publicar = 1 AND titulo LIKE '%$busca%' ORDER BY noticia_id DESC LIMIT $inicio, $qnt";
                                     $executa_seleciona_opiniao = mysql_query($seleciona_opiniao)or die(mysql_error());
                                     ?>
 

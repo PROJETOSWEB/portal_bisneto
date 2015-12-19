@@ -152,9 +152,8 @@ include './admin/conections/conexao.php';
                             <div class="row">
 
                                 <div class="col-lg-12 col-md-12 col-sm-12">
-                                    <?php 
-                                    $busca = $_POST['busca'];
-                                    
+                                    <?php
+                                    $busca = $_GET['busca'];
                                     ?>
 
                                     <h1 class="animate-onscroll">Você procura por: <?php echo $busca; ?></h1>
@@ -177,7 +176,9 @@ include './admin/conections/conexao.php';
                                     $inicio = ($p * $qnt) - $qnt;
 
 
-                                    $seleciona_opiniao = "SELECT * FROM noticia WHERE publicar = 1 AND titulo LIKE '%$busca%' ORDER BY noticia_id DESC LIMIT $inicio, $qnt";
+                                    $seleciona_opiniao = "select opiniao_id as id, titulo, texto, 'opiniao' as tipo from opiniao WHERE publicar = 1
+                                                         UNION
+                                                         select noticia_id, titulo, texto, 'noticia' from noticia where publicar = 1 AND titulo LIKE '%$busca%' ORDER BY id DESC LIMIT $inicio, $qnt";
                                     $executa_seleciona_opiniao = mysql_query($seleciona_opiniao)or die(mysql_error());
                                     ?>
 
@@ -197,7 +198,23 @@ include './admin/conections/conexao.php';
 
                                             <div class="post-content" style="padding-left: 1px;">
                                                 <div class="post-header">
-                                                    <h2><a href="opiniao.php?id=<?php echo $array_opiniao['opiniao_id']; ?>"><?php echo $array_opiniao['titulo']; ?> </a></h2>
+                                                    <?php
+                                                    if ($array_opiniao['tipo'] == "opiniao") {
+                                                        ?>
+                                                        <h2><a href="opiniao.php?id=<?php echo $array_opiniao['id']; ?>"><?php echo $array_opiniao['titulo']; ?> </a></h2>
+
+                                                        <?php
+                                                    } else if ($array_opiniao['tipo'] == 'noticia') {
+                                                        ?>
+                                                        <h2><a href="noticias.php?id=<?php echo $array_opiniao['id']; ?>"><?php echo $array_opiniao['titulo']; ?> </a></h2>
+
+                                                        <?php
+                                                    }
+                                                    ?>
+
+
+
+
                                                     <div class="post-meta">
                                                         <span><?php echo $array_opiniao['data']; ?></span>
                                                     </div>
@@ -234,12 +251,15 @@ include './admin/conections/conexao.php';
 
 
                                     <?php
-                                    $sql_opiniao_count = "SELECT * FROM opiniao WHERE publicar = 1 ORDER BY opiniao_id DESC";
+                                    $sql_opiniao_count = "select opiniao_id as id, titulo, texto, 'opiniao' as tipo from opiniao WHERE publicar = 1
+                                                         UNION
+                                                         select noticia_id, titulo, texto, 'noticia' from noticia where publicar = 1 AND titulo LIKE '%$busca%' ORDER BY id DESC";
+
                                     $sql_query_all = mysql_query($sql_opiniao_count)or die(mysql_error());
                                     $total_registros = mysql_num_rows($sql_query_all);
                                     $pags = ceil($total_registros / $qnt);
 
-                                    // Número máximos de botões de paginação 
+// Número máximos de botões de paginação 
                                     $max_links = 5;
 
 
@@ -248,19 +268,19 @@ include './admin/conections/conexao.php';
 
                                         if ($_GET['page'] == 1) {
                                             ?>
-                                            <a href="lista-opiniao.php?page=1" class="button"><i class="icons icon-left-dir"></i></a>
+                                            <a href="lista-busca.php?page=1&busca=<?php echo $busca; ?>" class="button"><i class="icons icon-left-dir"></i></a>
 
 
                                             <?php
                                         } else {
                                             ?>
-                                            <a href="lista-opiniao.php?page=<?php echo $p - 1; ?>" class="button"><i class="icons icon-left-dir"></i></a>
+                                            <a href="lista-busca.php?page=<?php echo $p - 1; ?>&busca=<?php echo $busca; ?>" class="button"><i class="icons icon-left-dir"></i></a>
 
                                             <?php
                                         }
                                     } else {
                                         ?>
-                                        <a href="lista-opiniao.php?page=1" class="button"><i class="icons icon-left-dir"></i></a>
+                                        <a href="lista-busca.php?page=1&busca=<?php echo $busca; ?>" class="button"><i class="icons icon-left-dir"></i></a>
 
                                         <?php
                                     }
@@ -275,7 +295,7 @@ include './admin/conections/conexao.php';
                                             //FAZ NADA
                                         } else {
                                             ?> 
-                                            <a href="lista-opiniao.php?page=<?php echo $i; ?>" class="button"><?php echo $i; ?></a>
+                                            <a href="lista-busca.php?page=<?php echo $i; ?>&busca=<?php echo $busca; ?>" class="button"><?php echo $i; ?></a>
                                             <?php
                                         }
                                     }
@@ -291,7 +311,7 @@ include './admin/conections/conexao.php';
                                             //FAZ NADA
                                         } else {
                                             ?>
-                                            <a href="lista-opiniao.php?page=<?php echo $i; ?>" class="button"><?php echo $i; ?></a>
+                                            <a href="lista-busca.php?page=<?php echo $i; ?>&busca=<?php echo $busca; ?>" class="button"><?php echo $i; ?></a>
 
                                             <?php
                                         }
@@ -302,18 +322,18 @@ include './admin/conections/conexao.php';
 
                                         if ($_GET['page'] == $pags) {
                                             ?>
-                                            <a href="lista-opiniao.php?page=<?php echo $pags ?>" class="button"><i class="icons icon-right-dir"></i></a>
+                                            <a href="lista-busca.php?page=<?php echo $pags ?>&busca=<?php echo $busca; ?>" class="button"><i class="icons icon-right-dir"></i></a>
 
                                             <?php
                                         } else {
                                             ?>
-                                            <a href="lista-opiniao.php?page=<?php echo $p + 1; ?>" class="button"><i class="icons icon-right-dir"></i></a>
+                                            <a href="lista-busca.php?page=<?php echo $p + 1; ?>&busca=<?php echo $busca; ?>" class="button"><i class="icons icon-right-dir"></i></a>
 
                                             <?php
                                         }
                                     } else {
                                         ?>
-                                        <a href="lista-opiniao.php?page=<?php echo $pags ?>" class="button"><i class="icons icon-right-dir"></i></a>
+                                        <a href="lista-busca.php?page=<?php echo $pags ?>&busca=<?php echo $busca; ?>" class="button"><i class="icons icon-right-dir"></i></a>
 
                                         <?php
                                     }

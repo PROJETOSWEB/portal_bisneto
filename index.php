@@ -199,7 +199,7 @@ include './admin/conections/conexao.php';
                             <h1 class="animate-onscroll no-margin-top">OPINIÃO</h1>
 
                             <?php
-                            $seleciona_opiniao = "SELECT * FROM opiniao order by opiniao_id DESC LIMIT 0,1";
+                            $seleciona_opiniao = "SELECT * FROM opiniao WHERE publicar = 1 order by opiniao_id DESC LIMIT 0,1";
                             $executa_seleciona_opiniao = mysql_query($seleciona_opiniao)or die(mysql_error());
                             $linha_opiniao = mysql_fetch_array($executa_seleciona_opiniao);
                             ?>
@@ -236,7 +236,10 @@ include './admin/conections/conexao.php';
                                                 <h5 class="post-title"><a href="noticias.php?id=<?php echo $array_noticia['noticia_id']; ?>"><?php echo $array_noticia['titulo']; ?></a></h5>
 
                             </div>
-                            <!-- /Blog Post -->		                                                        <hr/>                            				
+                            <!-- /Blog Post -->		
+                            
+                            <hr/>
+                            				
                             <!-- Owl Carousel -->
                             <div class="owl-carousel-container">
 

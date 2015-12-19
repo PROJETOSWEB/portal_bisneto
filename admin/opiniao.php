@@ -18,7 +18,7 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
 <section id="main-content">
     <section class="wrapper">
 
-        <div class="col-lg-6">
+        <div class="col-lg-9">
             <section class="panel">
 
                 <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> CADASTRO DE OPINIÃO</strong></div>
@@ -48,7 +48,7 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
                                 <div class="form-group">
 
                                     <label for="exampleInputEmail1">TEXTO</label>
-                                    <textarea name="texto" id="" class="wysihtml5 form-control" rows="7"></textarea>
+                                    <textarea name="texto" id="" class="wysihtml5 form-control" rows="30"></textarea>
 
                                 </div>
 
@@ -154,7 +154,7 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
                                 <div class="form-group">
 
                                     <label for="exampleInputEmail1">TEXTO</label>
-                                    <textarea name="texto" id="" class="form-control" rows="7"><?php echo $linha_editar['texto']; ?></textarea>
+                                    <textarea name="texto" id="" class="form-control" rows="30"><?php echo $linha_editar['texto']; ?></textarea>
 
                                 </div>
 

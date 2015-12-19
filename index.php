@@ -213,7 +213,7 @@ include './admin/conections/conexao.php';
                                     <img src="admin/imagens/opiniao/<?php echo $linha_opiniao['foto']; ?>" alt="">
                                 </div>
 
-                                <h5 class="post-title"><a href="#"><?php echo $linha_opiniao['titulo']; ?> </a></h5>
+                                <h5 class="post-title"><a href="opiniao.php?id=<?php echo $linha_opiniao['opiniao_id']; ?>" ><?php echo $linha_opiniao['titulo']; ?> </a></h5>
 
                                 <div class="post-meta">
                                     <span><?php echo $linha_opiniao['data']; ?></span>
@@ -236,7 +236,7 @@ include './admin/conections/conexao.php';
                                                 <h5 class="post-title"><a href="noticias.php?id=<?php echo $array_noticia['noticia_id']; ?>"><?php echo $array_noticia['titulo']; ?></a></h5>
 
                             </div>
-                            <!-- /Blog Post -->						
+                            <!-- /Blog Post -->		                                                        <hr/>                            				
                             <!-- Owl Carousel -->
                             <div class="owl-carousel-container">
 

@@ -176,7 +176,7 @@ include './admin/conections/conexao.php';
                                                 <?php
                                                 if ($array_not['tipo'] == "banner") {
                                                     ?>
-                                                    <a style="color: #fff;" href="#"><h2><?php echo $array_not['titulo']; ?></h2></a>
+                                                    <a style="color: #fff;" href="#"><h2></h2></a>
 
                                                     <?php
                                                 } else if ($array_not['tipo'] == "noticia") {

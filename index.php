@@ -126,7 +126,7 @@ include './admin/conections/conexao.php';
 
 
             <!-- Header -->
-           <?php include './menu_bisneto.php'; ?> 
+            <?php include './menu_bisneto.php'; ?> 
             <!-- /Header -->
 
 
@@ -147,17 +147,48 @@ include './admin/conections/conexao.php';
                                 <ul class="slides">
 
                                     <?php
-                                    $seleciona_noticia = "SELECT * FROM noticia WHERE destaque_banner = 1 "
-                                            . "order by noticia_id DESC LIMIT 0,5";
+                                    $seleciona_noticia = "select titulo, noticia_id, 'noticia' as tipo, img from noticia where destaque_banner = 1
+                                                          UNION
+                                                          select nome_banner, banner_id, 'banner' as tipo, img from banner where publicar = 1 ORDER BY  noticia_id DESC";
+
                                     $executa_seleciona_noticia = mysql_query($seleciona_noticia)or die(mysql_error());
                                     ?>
 
                                     <?php
                                     while ($array_not = mysql_fetch_array($executa_seleciona_noticia)) {
                                         ?>
-                                        <li id="main_flex_2" style="background: url(admin/imagens/noticia/<?php echo $array_not['img']; ?>) no-repeat;"> 
+                                        <?php
+                                        if ($array_not['tipo'] == "banner") {
+                                            ?>
+                                            <li id="main_flex_2" style="background: url(admin/imagens/banner/<?php echo $array_not['img']; ?>) no-repeat;"> 
+
+                                                <?php
+                                            } else if ($array_not['tipo'] == "noticia") {
+                                                ?>
+                                            <li id="main_flex_2" style="background: url(admin/imagens/noticia/<?php echo $array_not['img']; ?>) no-repeat;"> 
+
+                                                <?php
+                                            }
+                                            ?>
+
                                             <div class="slide align-center">
-                                                <a style="color: #fff;" href="noticias.php?id=<?php echo $array_not['noticia_id']; ?>"><h2><?php echo $array_not['titulo']; ?></h2></a>
+
+                                                <?php
+                                                if ($array_not['tipo'] == "banner") {
+                                                    ?>
+                                                    <a style="color: #fff;" href="#"><h2><?php echo $array_not['titulo']; ?></h2></a>
+
+                                                    <?php
+                                                } else if ($array_not['tipo'] == "noticia") {
+                                                    ?>
+                                                    <a style="color: #fff;" href="noticias.php?id=<?php echo $array_not['noticia_id']; ?>"><h2><?php echo $array_not['titulo']; ?></h2></a>
+
+                                                    <?php
+                                                }
+                                                ?>
+
+
+
                                             </div>                                      
                                         </li>
                                         <?php
@@ -231,15 +262,15 @@ include './admin/conections/conexao.php';
                                 <p></p>
 
                                 <a href="opiniao.php?id=<?php echo $linha_opiniao['opiniao_id']; ?>" class="button read-more-button button-arrow">ler mais...</a>
-                                
 
-                                                <h5 class="post-title"><a href="noticias.php?id=<?php echo $array_noticia['noticia_id']; ?>"><?php echo $array_noticia['titulo']; ?></a></h5>
+
+                                <h5 class="post-title"><a href="noticias.php?id=<?php echo $array_noticia['noticia_id']; ?>"><?php echo $array_noticia['titulo']; ?></a></h5>
 
                             </div>
                             <!-- /Blog Post -->		
-                            
+
                             <hr/>
-                            				
+
                             <!-- Owl Carousel -->
                             <div class="owl-carousel-container">
 
@@ -317,7 +348,7 @@ include './admin/conections/conexao.php';
                                 <div class="row">
 
                                     <?php
-                                    //SELECIONANDO AS ULTIMAS 3 IMAGENS DA GALERIA
+//SELECIONANDO AS ULTIMAS 3 IMAGENS DA GALERIA
                                     $seleciona_imagem = "SELECT * FROM album_fotos INNER JOIN
                                                     fotos ON album_fotos.album_fotos_id = fotos.album_fotos_id WHERE publicar = 1
                                                     GROUP BY fotos.album_fotos_id  ORDER BY album_fotos.album_fotos_id DESC LIMIT 0,3";
@@ -447,11 +478,11 @@ include './admin/conections/conexao.php';
                                 <a href="lista-informativos.html" class="button  button-arrow">VER TODOS</span></a>
                             </div>
                             <!-- /informativo -->
-                            
+
                             <hr style="border-bottom: 1px solid #EDEDED;">
 
-                                <!-- Instagram Photos -->
-                                <div class="sidebar-box white flickr-photos animate-onscroll">
+                            <!-- Instagram Photos -->
+                            <div class="sidebar-box white flickr-photos animate-onscroll">
                                 <h3>Nosso Instagram</h3>
                                 <ul id="instagram-feed">
                                 </ul>
@@ -460,8 +491,8 @@ include './admin/conections/conexao.php';
 
                             <hr style="border-bottom: 1px solid #EDEDED;">		
 
-                                <!-- SoundCloud -->
-                                <iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/48918610&amp;color=0066cc&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+                            <!-- SoundCloud -->
+                            <iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/48918610&amp;color=0066cc&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
                             <!-- /SoundCloud -->	
 
                             <hr style="border-bottom: 1px solid #EDEDED;">	
@@ -471,21 +502,21 @@ include './admin/conections/conexao.php';
 
                                 <h3>LINKS ÚTEIS</h3>
                                 <ul>
-<?php
-$seleciona_links = "SELECT * FROM links order by links_id DESC LIMIT 0,10";
-$executa_seleciona_links = mysql_query($seleciona_links)or die(mysql_error());
-?>
+                                    <?php
+                                    $seleciona_links = "SELECT * FROM links order by links_id DESC LIMIT 0,10";
+                                    $executa_seleciona_links = mysql_query($seleciona_links)or die(mysql_error());
+                                    ?>
 
                                     <?php
                                     while ($array_links = mysql_fetch_array($executa_seleciona_links)) {
                                         ?>
 
 
-                                    <li><a target="_blank" href="<?php echo $array_links['link']; ?>"><?php echo $array_links['nome']; ?></a></li>
+                                        <li><a target="_blank" href="<?php echo $array_links['link']; ?>"><?php echo $array_links['nome']; ?></a></li>
 
-    <?php
-}
-?>
+                                        <?php
+                                    }
+                                    ?>
 
 
                                 </ul>
@@ -511,7 +542,7 @@ $executa_seleciona_links = mysql_query($seleciona_links)or die(mysql_error());
 
 
             <!-- Footer -->
-      <?php include './footer_bisneto.php'; ?>  
+            <?php include './footer_bisneto.php'; ?>  
             <!-- // Footer -->
 
 

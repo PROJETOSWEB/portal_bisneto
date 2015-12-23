@@ -7,11 +7,11 @@ $email_to = "karolfurletti@gmail.com";
 
 
 // Default Subject
-$email_subject = 'Candidate Template Contact Form';
+$email_subject = 'Contato do site Arthur Bisneto';
 	
 	
 // Success Message
-$success_message = "Thanks for contacting us, we'll be in touch soon!";
+$success_message = "Obrigado pelo contato!";
 
 
 

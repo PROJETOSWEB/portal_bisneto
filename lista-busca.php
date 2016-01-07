@@ -176,7 +176,7 @@ include './admin/conections/conexao.php';
                                     $inicio = ($p * $qnt) - $qnt;
 
 
-                                    $seleciona_opiniao = "select opiniao_id as id, titulo, texto, 'opiniao' as tipo from opiniao WHERE publicar = 1
+                                     $seleciona_opiniao = "select opiniao_id as id, titulo, texto, 'opiniao' as tipo from opiniao WHERE publicar = 1  AND titulo LIKE '%$busca%'
                                                          UNION
                                                          select noticia_id, titulo, texto, 'noticia' from noticia where publicar = 1 AND titulo LIKE '%$busca%' ORDER BY id DESC LIMIT $inicio, $qnt";
                                     $executa_seleciona_opiniao = mysql_query($seleciona_opiniao)or die(mysql_error());
@@ -251,7 +251,7 @@ include './admin/conections/conexao.php';
 
 
                                     <?php
-                                    $sql_opiniao_count = "select opiniao_id as id, titulo, texto, 'opiniao' as tipo from opiniao WHERE publicar = 1
+                                    $sql_opiniao_count = "select opiniao_id as id, titulo, texto, 'opiniao' as tipo from opiniao WHERE publicar = 1  AND titulo LIKE '%$busca%'
                                                          UNION
                                                          select noticia_id, titulo, texto, 'noticia' from noticia where publicar = 1 AND titulo LIKE '%$busca%' ORDER BY id DESC";
 

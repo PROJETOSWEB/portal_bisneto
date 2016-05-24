@@ -204,7 +204,7 @@
                                                         <div class="media-caption">
                                                             <h2>
                                                                 <span style="font-weight: 300; color: #444; font-size: 10px;">postado em: <?php echo $array_midia['data']; ?></span><br/>
-                                                                <a target="_blank" href="<?php echo $array_midia['link']; ?>"><?php echo $array_midia['titulo']; ?></a>
+                                                                <?php echo $array_midia['titulo']; ?>
                                                             </h2>
                                                         </div>
 
@@ -252,10 +252,10 @@
                                                     <div class="media-header">
                                                         <div class="media-caption">
                                                             <h2>
-                                                                <a href="#">
+                                                                
                                                                     <span style="font-weight: 300; color: #444; font-size: 10px;">postado em: <?php echo $array_midia['data']; ?></span><br/>
-                                                                    <a target="_blank" href="<?php echo $array_midia['link']; ?>"><?php echo $array_midia['titulo']; ?></a>
-                                                                </a>
+                                                                    <?php echo $array_midia['titulo']; ?>
+                                                                
                                                             </h2>
                                                         </div>
 

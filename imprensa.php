@@ -186,7 +186,7 @@ include './admin/conections/conexao.php';
                                                             <?php echo $array_arquivo['nome']; ?>
                                                         </h2>
                                                         <br/>
-                                                        <a href="admin/imagens/salaimprensa/<?php echo $array_arquivo['arquivo']; ?>" style="font-size: 10px;" class="button"><i class="icons icon-download"></i> BAIXAR ARQUIVO</a>
+                                                        <a href="http://arthurbisneto.com.br/beta/admin/imagens/salaimprensa/arquivo/<?php echo $array_arquivo['arquivo']; ?>" target="_blank" style="font-size: 10px;" class="button"><i class="icons icon-download"></i> BAIXAR ARQUIVO</a>
                                                     </div>
 
                                                 </div>

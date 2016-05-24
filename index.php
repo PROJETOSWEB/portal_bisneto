@@ -227,7 +227,7 @@ include './admin/conections/conexao.php';
 
                         <div class="col-lg-9 col-md-9 col-sm-8">
 
-                            <h1 class="animate-onscroll no-margin-top"><i class="icons icon-check"></i> OPINIÃO</h1>
+                            <a href="lista-opiniao.php"><h1 class="animate-onscroll no-margin-top"><i class="icons icon-check"></i> OPINIÃO</h1></a>
 
                             <?php
                             $seleciona_opiniao = "SELECT * FROM opiniao WHERE publicar = 1 order by opiniao_id DESC LIMIT 0,1";
@@ -276,7 +276,7 @@ include './admin/conections/conexao.php';
 
                                 <div class="owl-header">
 
-                                    <h3 class="animate-onscroll"><i class="icons icon-list"></i>NOTÍCIAS</h3>
+                                    <a href="lista-noticias.php"><h3 class="animate-onscroll"><i class="icons icon-list"></i>NOTÍCIAS</h3></a>
 
                                     <div class="carousel-arrows animate-onscroll">
                                         <span class="left-arrow"><i class="icons icon-left-dir"></i></span>
@@ -343,7 +343,7 @@ include './admin/conections/conexao.php';
                             <!-- Related Articles -->
                             <div class="related-articles">
 
-                                <h3 class="animate-onscroll"><i class="icons icon-photo"></i> GALERIA DE FOTOS</h3>
+                                <a href="lista-albuns.php"><h3 class="animate-onscroll"><i class="icons icon-photo"></i> GALERIA DE FOTOS</h3></a>
 
                                 <div class="row">
 

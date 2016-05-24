@@ -136,7 +136,7 @@
 
                                 <div class="col-sm-13">
                                     <label for="exampleInputEmail1">NOME DO ARQUIVO</label>
-                                    <input value="<?php echo $linha_editar['nome'];?>" name="nome" tooltip="Título do seu artigo, EVITE TÍTULOS LONGOS" type="text" name="nome" class="form-control" data-placement="top">
+                                    <input value="<?php echo $linha_editar['nome'];?>" name="nome" tooltip="Título do seu post, EVITE TÍTULOS LONGOS" type="text" name="nome" class="form-control" data-placement="top">
                                 </div>
 
 

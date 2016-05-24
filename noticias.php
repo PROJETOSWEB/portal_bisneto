@@ -133,7 +133,7 @@ include './admin/conections/conexao.php';
                 <!-- Page Heading -->
                 <section class="section page-heading animate-onscroll ">
 
-                    <p class="breadcrumb"><a href="index.php">Home</a> / <a href="lista-noticias.php">Notícias</a> / Titulo da noticia</p>
+                    <p class="breadcrumb"><a href="index.php">Home</a> / <a href="lista-noticias.php">Notícias</a></p>
 
                 </section>
                 <!-- Page Heading -->
@@ -218,7 +218,7 @@ include './admin/conections/conexao.php';
                                     <img class="animate-onscroll" src="admin/imagens/noticia/<?php echo $dados_noticia['img']; ?>" alt=""><!-- FOTO -->
                                     <div class="legenda animate-onscroll"><?php echo $dados_noticia['legenda']; ?></div> <!-- legenda da foto -->
 
-                                    <br>
+                                    <br/>
 
                                     <p style="text-align: justify;" class="animate-onscroll">
                                         <?php echo $dados_noticia['texto']; ?>

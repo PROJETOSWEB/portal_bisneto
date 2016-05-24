@@ -110,7 +110,7 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
                                             <th style="text-align: center;">POSTADO POR</th>
                                             <th style="text-align: center;">PUBLICADO?</th>
                                             <th style="text-align: center;">EDITAR</th>
-                                            <th style="text-align: center;">EXCLUIR</th>
+                                            <th style="text-align: center;">EXCLUIR</th>                                            <th style="text-align: center;">ID</th>
 
                                         </tr>
                                     </thead>
@@ -130,7 +130,7 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
 
                                             <tr class="gradeA" style="text-align: center;">
                                                 <td style="text-align: left;"><?php echo $dados_array['titulo']; ?></td>
-                                                <td><?php echo $dados_array['data']; ?></td>
+                                                                                                <td><?php echo $dados_array['data']; ?></td>
                                                 <td><?php echo $dados_array['nome']; ?></td>
                                                 <td>
 
@@ -150,7 +150,7 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
                                                 </td>
 
                                                 <td><a href="opiniao.php?tipo=edit&id=<?php echo $dados_array['opiniao_id']; ?>"><img src="img/editar.png" alt="" /></a></td>
-                                                <td><a data-toggle="modal" href="#myModal2<?php echo $cont++; ?>"><img src="img/excluir.png" alt="" /></a></td>
+                                                <td><a data-toggle="modal" href="#myModal2<?php echo $cont++; ?>"><img src="img/excluir.png" alt="" /></a></td>                                                <td><?php echo $dados_array['opiniao_id']; ?></td>
                                             </tr>
 
 

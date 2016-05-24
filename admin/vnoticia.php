@@ -87,7 +87,7 @@
                                             <th style="text-align: center;">PUBLICADO?</th>
                                             <th style="text-align: center;">DESTAQUE•BANNER</th>
                                             <th style="text-align: center;">EDITAR</th>
-                                            <th style="text-align: center;">EXCLUIR</th>
+                                            <th style="text-align: center;">EXCLUIR</th>                                            <th style="text-align: center;">ID</th>
 
                                         </tr>
                                     </thead>
@@ -141,7 +141,7 @@
 
                                                 </td>
                                                 <td><a href="noticias.php?tipo=edit&id=<?php echo $dados_array['noticia_id'] ?>"><img src="img/editar.png" alt="" /></a></td>
-                                                <td><a data-toggle="modal" href="#myModal2<?php echo $cont++; ?>"><img src="img/excluir.png" alt="" /></a></td>
+                                                <td><a data-toggle="modal" href="#myModal2<?php echo $cont++; ?>"><img src="img/excluir.png" alt="" /></a></td>                                                <td><?php echo $dados_array['noticia_id']; ?></td>
 
                                             </tr>
 

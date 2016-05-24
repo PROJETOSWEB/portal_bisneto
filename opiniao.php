@@ -135,7 +135,7 @@ include './admin/conections/conexao.php';
                 <!-- Page Heading -->
                 <section class="section page-heading animate-onscroll ">
 
-                    <p class="breadcrumb"><a href="index.php">Home</a> / <a href="lista-opiniao.php">Home</a> / <?php echo $dados_opiniao['titulo']; ?></p>
+                    <p class="breadcrumb"><a href="index.php">Home</a> / <a href="lista-opiniao.php">Opinião</a> / <?php echo $dados_opiniao['titulo']; ?></p>
 
                 </section>
                 <!-- Page Heading -->
@@ -210,11 +210,11 @@ include './admin/conections/conexao.php';
                                     <p class="animate-onscroll" style="font-size: 10px; color: #c0c0c0c0;">Publicado em: <?php echo $nova_data[0], " de "; ?>  <?php echo retorna_mes($nova_data[1]) . " de "; ?> <?php echo $nova_data[2]; ?></p>
 
 
-                                    <img class="animate-onscroll" src="admin/imagens/opiniao/<?php echo $dados_opiniao['foto']; ?>" alt=""><!-- FOTO -->
+                                    <img style="border-radius: 5px;" class="animate-onscroll" src="admin/imagens/opiniao/<?php echo $dados_opiniao['foto']; ?>" alt=""><!-- FOTO -->
                                    
-                                    <br>
+                                    <br/>
 
-                                    <p class="animate-onscroll">
+                                    <p class="animate-onscroll" style="margin-top: 20px;">
                                         <?php echo $dados_opiniao['texto']; ?>
                                     </p>
 

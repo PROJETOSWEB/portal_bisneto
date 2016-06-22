@@ -169,7 +169,8 @@
                                     $inicio = ($p * $qnt) - $qnt;
 
 
-                                    $Seleciona_noticia = "SELECT * FROM noticia order by noticia_id DESC LIMIT $inicio, $qnt";
+                                    $Seleciona_noticia = "SELECT * FROM noticia WHERE DATE_FORMAT(CURDATE(),'%d-%m-%Y') >= data_noticia"
+                                            . " ORDER BY STR_TO_DATE(data_noticia, '%d-%m-%Y') DESC LIMIT $inicio, $qnt";
                                     $executa_noticia = mysql_query($Seleciona_noticia)or die(mysql_error());
 
 

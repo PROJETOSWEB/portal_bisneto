@@ -173,7 +173,8 @@ include './admin/conections/conexao.php';
                                     $inicio = ($p * $qnt) - $qnt;
 
 
-                                    $seleciona_opiniao = "SELECT * FROM opiniao WHERE publicar = 1 ORDER BY opiniao_id DESC LIMIT $inicio, $qnt";
+                                    $seleciona_opiniao = "SELECT * FROM opiniao WHERE DATE_FORMAT(CURDATE(),'%d-%m-%Y') >= data "
+                                            . " AND publicar = 1  ORDER BY STR_TO_DATE(data, '%d-%m-%Y') DESC LIMIT $inicio, $qnt";
                                     $executa_seleciona_opiniao = mysql_query($seleciona_opiniao)or die(mysql_error());
                                     ?>
 

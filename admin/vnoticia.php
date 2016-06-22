@@ -97,7 +97,7 @@
 
                                         <?php
                                         $seleciona = "SELECT * FROM noticia INNER JOIN
-                                                      usuario ON noticia.usuario_id = usuario.usuario_id order by data_noticia DESC";
+                                                      usuario ON noticia.usuario_id = usuario.usuario_id ORDER BY STR_TO_DATE(data_noticia, '%d-%m-%Y') DESC";
 
                                         $seleciona_executa = mysql_query($seleciona)or die(mysql_error());
 

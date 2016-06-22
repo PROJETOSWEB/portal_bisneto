@@ -96,7 +96,7 @@
                                     <tbody>
                                         <?php
                                         $seleciona_dados = "SELECT *, salaimprensa.nome as salaim, usuario.nome as nomeusuario FROM salaimprensa INNER JOIN
-                                                            usuario ON salaimprensa.usuario_id = usuario.usuario_id order by data desc";
+                                                            usuario ON salaimprensa.usuario_id = usuario.usuario_id ORDER BY STR_TO_DATE(data, '%d-%m-%Y')DESC";
 
                                         $executa_seleciona_dados = mysql_query($seleciona_dados)or die(mysql_error());
 

@@ -120,7 +120,7 @@ if ((!isset($_SESSION['usuario']) == true) and ( !isset($_SESSION['senha']) == t
 
                                         <?php
                                         $seleciona = "SELECT * FROM opiniao INNER JOIN
-                                                      usuario ON opiniao.usuario_id = usuario.usuario_id order by data desc";
+                                                      usuario ON opiniao.usuario_id = usuario.usuario_id ORDER BY STR_TO_DATE(data, '%d-%m-%Y') DESC";
 
                                         $seleciona_executa = mysql_query($seleciona)or die(mysql_error());
 

@@ -230,7 +230,7 @@ include './admin/conections/conexao.php';
                             <a href="lista-opiniao.php"><h1 class="animate-onscroll no-margin-top"><i class="icons icon-check"></i> OPINIÃO</h1></a>
 
                             <?php
-                            $seleciona_opiniao = "SELECT * FROM opiniao WHERE publicar = 1 order by opiniao_id DESC LIMIT 0,1";
+                            $seleciona_opiniao = "SELECT * FROM opiniao  WHERE DATE_FORMAT(CURDATE(),'%d-%m-%Y') >= data AND publicar = 1 ORDER BY STR_TO_DATE(data, '%d-%m-%Y') DESC LIMIT 0,1";
                             $executa_seleciona_opiniao = mysql_query($seleciona_opiniao)or die(mysql_error());
                             $linha_opiniao = mysql_fetch_array($executa_seleciona_opiniao);
                             ?>
@@ -289,7 +289,7 @@ include './admin/conections/conexao.php';
 
 
                                     <?php
-                                    $seleciona_noticias = "SELECT * FROM noticia WHERE publicar = 1 order by noticia_id DESC LIMIT 0,5";
+                                    $seleciona_noticias = "SELECT * FROM noticia WHERE DATE_FORMAT(CURDATE(),'%d-%m-%Y') >= data_noticia AND publicar = 1 ORDER BY STR_TO_DATE(data_noticia, '%d-%m-%Y') DESC LIMIT 0,5";
                                     $executa_seleciona_noticia = mysql_query($seleciona_noticias)or die(mysql_error());
                                     ?>
 

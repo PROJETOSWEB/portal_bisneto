@@ -95,7 +95,7 @@
 
                                         <?php
                                         $seleciona = "SELECT * FROM depmidia INNER JOIN
-                                                      usuario ON usuario.usuario_id = depmidia.usuario_id order by depmidia_id desc";
+                                                      usuario ON usuario.usuario_id = depmidia.usuario_id order by data desc";
 
                                         $seleciona_executa = mysql_query($seleciona)or die(mysql_error());
 

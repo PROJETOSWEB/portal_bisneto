@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 17-Nov-2015 às 03:29
+-- Generation Time: 22-Jun-2016 às 15:17
 -- Versão do servidor: 5.6.15-log
 -- PHP Version: 5.5.8
 
@@ -97,21 +97,21 @@ INSERT INTO `biografia` (`biografia_id`, `texto`, `foto`, `usuario_id`) VALUES
 CREATE TABLE IF NOT EXISTS `depmidia` (
   `depmidia_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `data` varchar(45) NOT NULL DEFAULT '',
-  `titulo` varchar(45) NOT NULL DEFAULT '',
+  `titulo` varchar(200) NOT NULL DEFAULT '',
   `link` varchar(45) NOT NULL DEFAULT '',
   `codigo` varchar(100) NOT NULL DEFAULT '',
   `foto` varchar(100) NOT NULL DEFAULT '',
   `publicar` int(10) unsigned NOT NULL DEFAULT '0',
   `usuario_id` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`depmidia_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Extraindo dados da tabela `depmidia`
 --
 
 INSERT INTO `depmidia` (`depmidia_id`, `data`, `titulo`, `link`, `codigo`, `foto`, `publicar`, `usuario_id`) VALUES
-(1, '06-11-2015', 'DAUHDUAHDU', 'DHASUDHAUDHAUDH', 'UDAHUDHAUD', 'hora-de-aventura-destaque.jpg', 1, 1);
+(1, '06-11-2015', 'DAUHDUAHDU', 'DHASUDHAUDHAUDH', 'ii', '', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -193,7 +193,7 @@ INSERT INTO `links` (`links_id`, `nome`, `link`, `data_cadastro`, `usuario_id`) 
 CREATE TABLE IF NOT EXISTS `noticia` (
   `noticia_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `data_noticia` varchar(45) NOT NULL DEFAULT '',
-  `titulo` varchar(100) NOT NULL DEFAULT '',
+  `titulo` varchar(200) NOT NULL DEFAULT '',
   `texto` longtext NOT NULL,
   `texto_detalhe` longtext NOT NULL,
   `img` varchar(100) NOT NULL DEFAULT '',
@@ -222,7 +222,7 @@ INSERT INTO `noticia` (`noticia_id`, `data_noticia`, `titulo`, `texto`, `texto_d
 CREATE TABLE IF NOT EXISTS `opiniao` (
   `opiniao_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `data` varchar(45) NOT NULL DEFAULT '',
-  `titulo` varchar(45) NOT NULL DEFAULT '',
+  `titulo` varchar(200) NOT NULL DEFAULT '',
   `texto` longtext NOT NULL,
   `texto_detalhe` varchar(45) DEFAULT NULL,
   `foto` varchar(45) NOT NULL DEFAULT '',
@@ -236,7 +236,7 @@ CREATE TABLE IF NOT EXISTS `opiniao` (
 --
 
 INSERT INTO `opiniao` (`opiniao_id`, `data`, `titulo`, `texto`, `texto_detalhe`, `foto`, `publicar`, `usuario_id`) VALUES
-(5, '16-10-2015', 'Arthur pede explicações da Eletrobras sobre', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed\r\n diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam \r\nerat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation \r\nullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. \r\nDuis autem vel eum iriure dolor in hendrerit in vulputate velit esse \r\nmolestie consequat, vel illum dolore eu feugiat nulla facilisis at vero \r\neros et accumsan et iusto odio dignissim qui blandit praesent luptatum \r\nzzril delenit augue duis dolore te feugait nulla facilisi. Nam liber \r\ntempor cum soluta nobis eleifend option congue nihil imperdiet doming id\r\n quod mazim place<br>', '', 'arthur-bisneto02.jpg', 1, 2),
+(5, '16-10-2015', 'ddd', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed\r\n diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam \r\nerat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation \r\nullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. \r\nDuis autem vel eum iriure dolor in hendrerit in vulputate velit esse \r\nmolestie consequat, vel illum dolore eu feugiat nulla facilisis at vero \r\neros et accumsan et iusto odio dignissim qui blandit praesent luptatum \r\nzzril delenit augue duis dolore te feugait nulla facilisi. Nam liber \r\ntempor cum soluta nobis eleifend option congue nihil imperdiet doming id\r\n quod mazim place<br>', '', 'arthur-bisneto02.jpg', 1, 2),
 (6, '16-10-2015', 'Arthur pede explicações da Eletrobras sobre', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed\r\n diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam \r\nerat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation \r\nullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. \r\nDuis autem vel eum iriure dolor in hendrerit in vulputate velit esse \r\nmolestie consequat, vel illum dolore eu feugiat nulla facilisis at vero \r\neros et accumsan et iusto odio dignissim qui blandit praesent luptatum \r\nzzril delenit augue duis dolore te feugait nulla facilisi. Nam liber \r\ntempor cum soluta nobis eleifend option congue nihil imperdiet doming id\r\n quod mazim place<br>', '', 'arthur-bisneto03.jpg', 1, 2);
 
 -- --------------------------------------------------------
@@ -277,7 +277,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `email` varchar(100) NOT NULL DEFAULT '',
   `nivel` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`usuario_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Extraindo dados da tabela `usuario`
@@ -285,7 +285,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 
 INSERT INTO `usuario` (`usuario_id`, `nome`, `login`, `senha`, `status`, `email`, `nivel`) VALUES
 (1, 'Administrador Sistema', 'admin', 'admin', 1, 'jhudhaud', 0),
-(4, 'Thiago Maneschy', 'thiago', '123', 1, 'udahduhaudhaud', 0);
+(2, 'Thiago Maneschy', 'thiago', '123', 1, 'udahduhaudhaud', 0);
 
 -- --------------------------------------------------------
 
